@@ -14,7 +14,8 @@ import csv
 import asyncio
 
 from src.index_youtube.constants import KEYWORDS_TO_INCLUDE, KEYWORDS_TO_EXCLUDE, YOUTUBE_VIDEOS_CSV_FILE_PATH, AUTHORS, FIRMS
-from src.index_youtube.utils import root_directory, authenticate_service_account, get_videos_from_playlist, get_channel_id, get_channel_name
+from src.index_youtube.utils import root_directory, authenticate_service_account, get_videos_from_playlist, \
+    get_channel_id, reset_channel_mappings, get_channel_names
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -277,34 +278,6 @@ def separate_channels_based_on_csv(channel_handle_to_name, existing_channel_name
     return channels_in_csv, channels_not_in_csv
 
 
-def get_channel_names(api_key, yt_channels):
-    mapping_filepath = os.path.join(root_directory(), "data/links/channel_handle_to_name_mapping.json")
-
-    # Check if mapping file exists, if so, load it
-    if os.path.exists(mapping_filepath):
-        with open(mapping_filepath, 'r', encoding='utf-8') as file:
-            channel_handle_to_name = json.load(file)
-    else:
-        channel_handle_to_name = {}
-
-    # Check if any channel handles are missing in the loaded/existing mapping, and fetch those
-    missing_handles = [handle for handle in yt_channels if handle not in channel_handle_to_name]
-
-    for channel_handle in missing_handles:
-        channel_name = get_channel_name(api_key, channel_handle)
-        if channel_name:
-            # Check if the channel name starts with "=" and wrap it in triple quotes if so
-            if channel_name.startswith("="):
-                channel_name = f'"""{channel_name}"""'
-            channel_handle_to_name[channel_handle] = channel_name
-            logging.info(f"[{channel_handle}] added channel name: {channel_name}")
-
-    # Save the updated mapping to file
-    with open(mapping_filepath, 'w', encoding='utf-8') as file:
-        json.dump(channel_handle_to_name, file, ensure_ascii=False, indent=4)
-
-    return channel_handle_to_name
-
 
 def load_existing_data(csv_file_exists, csv_file_path):
     # Create a DataFrame to store existing data read from the CSV file and create sets of existing video names and channel names
@@ -366,7 +339,6 @@ def drop_duplicates_and_write_to_csv(filtered_away_csv_file_path, filtered_away_
 
 
 def filter_and_remove_videos(input_csv_path, keywords, keywords_to_exclude, PASSTHROUGH, channel_specific_filters=None):
-    # Read the CSV file into a DataFrame
     if channel_specific_filters is None:
         channel_specific_filters = {}
     df = pd.read_csv(input_csv_path)
@@ -376,10 +348,14 @@ def filter_and_remove_videos(input_csv_path, keywords, keywords_to_exclude, PASS
     non_passthrough_df = df[~df['channel_name'].str.lower().isin([channel.lower() for channel in PASSTHROUGH])]
 
     # Apply global keyword filtering only to non-PASSTHROUGH channels
-    global_filtered_df = non_passthrough_df[non_passthrough_df['title'].str.lower().str.contains('|'.join(keywords).lower(), na=False)]
+    if keywords:  # Only filter if keywords exist
+        global_filtered_df = non_passthrough_df[non_passthrough_df['title'].str.lower().str.contains('|'.join(keywords).lower(), na=False)]
+    else:
+        global_filtered_df = non_passthrough_df  # Keep all non-passthrough if no keywords
 
     # Filter out titles from passthrough_df that contain any of the keywords_to_exclude
-    passthrough_df = passthrough_df[~passthrough_df['title'].str.lower().str.contains('|'.join(keywords_to_exclude).lower(), na=False)]
+    if keywords_to_exclude:  # Only filter if exclusion keywords exist
+        passthrough_df = passthrough_df[~passthrough_df['title'].str.lower().str.contains('|'.join(keywords_to_exclude).lower(), na=False)]
 
     # Concatenate PASSTHROUGH and non-PASSTHROUGH videos
     global_filtered_df = pd.concat([global_filtered_df, passthrough_df])
@@ -408,7 +384,7 @@ def filter_and_remove_videos(input_csv_path, keywords, keywords_to_exclude, PASS
 
     # Log the removed video titles
     for _, removed_video in removed_df.iterrows():
-        logging.info(f"Removed video: {removed_video['title']} - Channel: {removed_video['channel_name']}")
+        logging.info(f"Removed video: {removed_video['title']} - Channel: [{removed_video['channel_name']}]")
 
     # Append removed videos to filtered_away_youtube_videos.csv
     filtered_away_csv_file_path = f"{root_directory()}/data/links/youtube/filtered_away_youtube_videos.csv"
@@ -434,47 +410,126 @@ def get_youtube_channels_from_file(file_path):
 def run():
     fetch_videos = True
 
-    PASSTHROUGH = ['Tim Roughgarden Lectures', 'Solana', ]  # do not apply any filtering to these channels
-    # Define the channel-specific filters which are applied after the first keyword selection
-    channel_specific_filters = {
-        "": [] + AUTHORS + FIRMS,
-    }
+    # Setup logging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+    # Get all channel names that will be processed
+    yt_channels_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
+    yt_channels = get_youtube_channels_from_file(yt_channels_file)
+
+    api_key = os.environ.get('YOUTUBE_API_KEY')
+    if not api_key:
+        raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
+
+    # Check for known bad mappings and reset if needed
+    mapping_file = os.path.join(root_directory(), "data/links/channel_handle_to_name_mapping.json")
+    if os.path.exists(mapping_file):
+        with open(mapping_file, 'r') as f:
+            existing_mappings = json.load(f)
+
+            # Known incorrect mappings
+            bad_mappings = {
+                '@Delphi_Digital': ['Jambo Technology', 'DealFlow Podcast'],
+                '@SolanaFndn': ['Web3RM', 'PAWS LABS OFFICIAL'],
+                '@notthreadguy': ['Thread Guy Shorts', 'Thread Guy Media', 'Thread Guy Clips']
+            }
+
+            # Check if any bad mapping exists
+            needs_reset = False
+            for handle, wrong_names in bad_mappings.items():
+                if handle in existing_mappings and existing_mappings[handle] in wrong_names:
+                    logging.warning(f"Detected incorrect mapping: {handle} -> {existing_mappings[handle]}")
+                    needs_reset = True
+
+            if needs_reset:
+                logging.warning("Resetting all mappings...")
+                reset_channel_mappings()
+
+    # Get channel names using the comprehensive resolution method
+    logging.info("=" * 60)
+    logging.info("RESOLVING CHANNEL NAMES (COMPREHENSIVE)")
+    logging.info("=" * 60)
+
+    channel_handle_to_name = get_channel_names(api_key, yt_channels)
+
+    # Verify we got valid mappings for all channels
+    missing_channels = []
+    for channel in yt_channels:
+        if channel not in channel_handle_to_name or not channel_handle_to_name[channel]:
+            missing_channels.append(channel)
+            logging.error(f"Failed to resolve: {channel}")
+
+    if missing_channels:
+        logging.warning(f"Could not resolve {len(missing_channels)} channels: {missing_channels}")
+        # You might want to exit or handle this differently
+
+    # Display final mappings
+    logging.info("\n" + "=" * 60)
+    logging.info("FINAL CHANNEL MAPPINGS:")
+    for handle, name in channel_handle_to_name.items():
+        status = "✓" if name else "✗"
+        logging.info(f"  {status} {handle} -> {name if name else 'NOT FOUND'}")
+    logging.info("=" * 60 + "\n")
+
+    # Put ALL channels in PASSTHROUGH (filter out None values)
+    PASSTHROUGH = [name for name in channel_handle_to_name.values() if name]
+
+    logging.info(f"PASSTHROUGH mode enabled for {len(PASSTHROUGH)} channels")
+
+    # Empty channel-specific filters since everything is in passthrough
+    channel_specific_filters = {}
 
     if not fetch_videos:
-        logging.info(f"Applying new filters only, not fetching videos.")
+        logging.info("Applying new filters only, not fetching videos.")
+        return
 
-    if fetch_videos:
-        api_key = os.environ.get('YOUTUBE_API_KEY')
-        if not api_key:
-            raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
+    # Fetch videos
+    yt_playlists = os.environ.get('YOUTUBE_PLAYLISTS')
+    if yt_playlists:
+        yt_playlists = [playlist.strip() for playlist in yt_playlists.split(',')]
 
-        yt_channels_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
+    if not yt_channels and not yt_playlists:
+        raise ValueError(
+            "No channels or playlists provided. Please provide channel names, IDs, or playlist IDs.")
 
-        # Fetch the yt_channels from the file
-        yt_channels = get_youtube_channels_from_file(yt_channels_file)
+    # Fetch all videos without filtering
+    asyncio.run(fetch_all_videos(
+        api_key,
+        yt_channels,
+        yt_playlists,
+        keywords=[],  # No keyword filtering
+        keywords_to_exclude=[],  # No exclusions
+        PASSTHROUGH=PASSTHROUGH,
+        fetch_videos=True
+    ))
 
-        yt_playlists = os.environ.get('YOUTUBE_PLAYLISTS')
-        if yt_playlists:
-            yt_playlists = [playlist.strip() for playlist in yt_playlists.split(',')]
+    # Apply filter (which won't filter anything since everything is in PASSTHROUGH)
+    filter_and_remove_videos(
+        YOUTUBE_VIDEOS_CSV_FILE_PATH,
+        keywords=[],
+        keywords_to_exclude=[],
+        PASSTHROUGH=PASSTHROUGH,
+        channel_specific_filters=channel_specific_filters
+    )
 
-        if not yt_channels and not yt_playlists:
-            raise ValueError(
-                "No channels or playlists provided. Please provide channel names, IDs, or playlist IDs via command line argument or .env file.")
-
-        asyncio.run(fetch_all_videos(api_key, yt_channels, yt_playlists, KEYWORDS_TO_INCLUDE, KEYWORDS_TO_EXCLUDE, PASSTHROUGH, fetch_videos=True))
-
-    # Call the filter_and_log_removed_videos method to filter and log removed videos
-    filter_and_remove_videos(YOUTUBE_VIDEOS_CSV_FILE_PATH, KEYWORDS_TO_INCLUDE, KEYWORDS_TO_EXCLUDE, PASSTHROUGH, channel_specific_filters)
-
-    # Load CSV into a pandas DataFrame
+    # Clean up the CSV
     df = pd.read_csv(YOUTUBE_VIDEOS_CSV_FILE_PATH, delimiter=',')
+    initial_count = len(df)
 
     # Drop duplicates
     df.drop_duplicates(inplace=True)
+    final_count = len(df)
 
-    # Optionally, save the cleaned data back to the CSV
+    # Save cleaned data
     df.to_csv(YOUTUBE_VIDEOS_CSV_FILE_PATH, index=False)
 
+    # Summary statistics
+    logging.info("\n" + "=" * 60)
+    logging.info("SUMMARY:")
+    logging.info(f"  Total videos: {final_count}")
+    logging.info(f"  Duplicates removed: {initial_count - final_count}")
+    logging.info(f"  Channels processed: {len([c for c in channel_handle_to_name.values() if c])}")
+    logging.info("=" * 60)
 
 if __name__ == '__main__':
     run()

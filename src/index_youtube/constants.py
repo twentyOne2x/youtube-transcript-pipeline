@@ -1,4 +1,4 @@
-from src.utils import root_directory
+from src.utils.utils import root_directory
 
 AUTHORS = ['Kyle Samani', 'Threadguy']
 
