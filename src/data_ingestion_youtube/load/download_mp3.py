@@ -1,8 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import sys
+import os
+
+# Fix encoding BEFORE any other imports
+if sys.version_info[0] >= 3:
+    # Force UTF-8 for Python 3
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
+
+# Set environment to UTF-8
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+os.environ['LC_ALL'] = 'en_US.UTF-8'
+os.environ['LANG'] = 'en_US.UTF-8'
+
+# Now do other imports
 import asyncio
+import subprocess
 import time
 import itertools
 import json
-import os
 import argparse
 from typing import List, Optional, Dict
 from dotenv import load_dotenv
@@ -10,13 +30,39 @@ import pandas as pd
 import yt_dlp as ydlp
 from yt_dlp import DownloadError
 import logging
-import sys
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 
 from src import root_directory, YOUTUBE_VIDEO_DIRECTORY
-from src.data_ingestion_youtube.load.utils import get_videos_from_playlist, get_channel_id, get_playlist_title, get_video_info
-from src.utils.utils import authenticate_service_account, move_remaining_mp3_to_their_subdirs, clean_fullwidth_characters, merge_directories, delete_mp3_if_text_or_json_exists, start_logging, copy_and_verify_files
-from concurrent.futures import ThreadPoolExecutor
+from src.data_ingestion_youtube.load.utils import get_channel_id, get_video_info
+from src.utils.utils import authenticate_service_account, move_remaining_mp3_to_their_subdirs, \
+    clean_fullwidth_characters, merge_directories, delete_mp3_if_text_or_json_exists, start_logging
+
+import sys, os, io
+
+
+def ensure_utf8_stdio():
+    # Best effort to make stdout/stderr UTF-8 even if locale is Latin-1
+    for stream_name in ("stdout", "stderr"):
+        s = getattr(sys, stream_name)
+        try:
+            # Python 3.7+: reconfigure available on real text streams
+            if hasattr(s, "reconfigure"):
+                s.reconfigure(encoding="utf-8", errors="replace")
+            else:
+                # Fall back to wrapping the underlying buffer
+                wrapped = io.TextIOWrapper(getattr(s, "buffer", s), encoding="utf-8", errors="replace")
+                setattr(sys, stream_name, wrapped)
+        except Exception:
+            # Last resort: leave it as-is
+            pass
+
+    # Also hint to child processes and libraries
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    os.environ.setdefault("LC_ALL", "en_US.UTF-8")
+    os.environ.setdefault("LANG", "en_US.UTF-8")
+
+ensure_utf8_stdio()
 
 load_dotenv()
 api_key = os.environ.get('YOUTUBE_API_KEY')
@@ -34,37 +80,105 @@ os.environ['PYTHONIOENCODING'] = 'utf-8'
 # Load environment variables from the .env file
 DOWNLOAD_AUDIO = os.environ.get('DOWNLOAD_AUDIO', 'True').lower() == 'true'
 
+def start_logging(name: str, level=logging.INFO, log_dir="logs"):
+    os.makedirs(log_dir, exist_ok=True)
+
+    # Build a clean root logger
+    root = logging.getLogger()
+    root.setLevel(level)
+    # Remove any pre-existing handlers (avoid duplicates on reload)
+    for h in list(root.handlers):
+        root.removeHandler(h)
+
+    fmt = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+    # Stream handler to stderr, force UTF-8 (with graceful fallback)
+    try:
+        sh = logging.StreamHandler(sys.stderr)
+        if hasattr(sh.stream, "reconfigure"):
+            sh.stream.reconfigure(encoding="utf-8", errors="replace")
+        sh.setLevel(level)
+        sh.setFormatter(fmt)
+        root.addHandler(sh)
+    except Exception:
+        # Ultimate fallback: write to stdout
+        sh = logging.StreamHandler(sys.stdout)
+        sh.setLevel(level)
+        sh.setFormatter(fmt)
+        root.addHandler(sh)
+
+    # File handler, explicit UTF-8
+    fh = logging.FileHandler(os.path.join(log_dir, f"{name}.log"), encoding="utf-8")
+    fh.setLevel(level)
+    fh.setFormatter(fmt)
+    root.addHandler(fh)
+
+    # Quiet down noisy libs if desired
+    logging.getLogger("googleapiclient.discovery_cache").setLevel(logging.WARNING)
+    logging.getLogger("urllib3").setLevel(logging.WARNING)
+
 # Now start logging (this will set up its own handlers)
 start_logging(f"download_mp3s")
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.WARNING)
 
+def sanitize_filename(filename):
+    """Remove or replace characters that might cause filesystem issues"""
+    # Replace common problematic characters
+    replacements = {
+        ''': "'", ''': "'", '"': '', '"': '', '"': '',
+        '—': '-', '–': '-', '…': '...',
+        '：': '-', '|': '-', '\\': '-', '/': '-',
+        '<': '', '>': '', '*': '', '?': ''
+    }
+    for old, new in replacements.items():
+        filename = filename.replace(old, new)
+
+    # Remove any remaining non-ASCII characters
+    filename = unicodedata.normalize('NFKD', filename)
+    filename = ''.join(c for c in filename if ord(c) < 128)
+
+    return filename.strip()
+
 
 def setup_cookies():
-    """
-    Setup YouTube cookies for authentication
-    """
-    cookies_file = 'youtube_cookies.txt'
+    """Setup YouTube cookies for yt-dlp - REQUIRED for downloads"""
+    logging.info("Setting up YouTube cookies...")
 
-    if not os.path.exists(cookies_file):
-        logging.info("Setting up YouTube cookies...")
+    # Define the exact path you want to use
+    cookie_paths = [
+        'src/data_ingestion_youtube/load/youtube_cookies.txt',
+        os.path.join(root_directory(), 'src/data_ingestion_youtube/load/youtube_cookies.txt'),
+        'youtube_cookies.txt',
+        os.path.join(root_directory(), 'youtube_cookies.txt'),
+    ]
 
-        # Try to extract cookies using yt-dlp
-        try:
-            import subprocess
-            # This extracts cookies from browser
-            cmd = [
-                'yt-dlp',
-                '--cookies-from-browser', 'chrome',  # or 'firefox', 'edge'
-                '--cookies', cookies_file,
-                '--skip-download',
-                'https://www.youtube.com'
-            ]
-            subprocess.run(cmd, check=True)
-            logging.info(f"Cookies extracted to {cookies_file}")
-        except Exception as e:
-            logging.warning(f"Could not extract cookies automatically: {e}")
-            logging.info("Please manually export cookies from your browser to youtube_cookies.txt")
-            logging.info("You can use browser extensions like 'Get cookies.txt' or 'EditThisCookie'")
+    # Check each path
+    for cookie_file in cookie_paths:
+        if os.path.exists(cookie_file):
+            logging.info(f"✓ Found cookie file at: {sanitize_filename(cookie_file)}")
+            # Verify it's not empty
+            if os.path.getsize(cookie_file) > 0:
+                return os.path.abspath(cookie_file)  # Return absolute path
+            else:
+                logging.error(f"Cookie file is empty: {cookie_file}")
+
+    # If we get here, no valid cookie file was found - CRASH
+    error_msg = f"""
+    ❌ CRITICAL ERROR: No valid YouTube cookie file found!
+
+    Searched in these locations:
+    {chr(10).join(f'  - {path}' for path in cookie_paths)}
+
+    To fix this:
+    1. Export cookies from your browser using a cookies.txt extension
+    2. Save the file as 'youtube_cookies.txt' 
+    3. Place it in: {cookie_paths[0]}
+
+    See: https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp
+    """
+    logging.error(error_msg)
+    raise FileNotFoundError(error_msg)
+
 
 def chunked_iterable(iterable, size):
     """Splits an iterable into chunks of a specified size."""
@@ -75,10 +189,12 @@ def chunked_iterable(iterable, size):
             break
         yield chunk
 
-def get_ydl_opts(video_dir_path: str, video_title: str) -> dict:
-    """
-    Create yt-dlp options with proper authentication and format settings
-    """
+
+def get_ydl_opts(video_dir_path: str, video_title: str, cookie_file: str | None = None) -> dict:
+    use_cookies_file = bool(cookie_file and os.path.exists(cookie_file))
+
+    player_clients = ['web'] if use_cookies_file else ['android', 'web']
+
     ydl_opts = {
         'format': 'bestaudio/best',
         'postprocessors': [{
@@ -87,7 +203,6 @@ def get_ydl_opts(video_dir_path: str, video_title: str) -> dict:
             'preferredquality': '192',
         }],
         'outtmpl': f'{video_dir_path}/{video_title}.%(ext)s',
-        # Add authentication and network options
         'quiet': False,
         'no_warnings': False,
         'retries': 10,
@@ -95,49 +210,50 @@ def get_ydl_opts(video_dir_path: str, video_title: str) -> dict:
         'concurrent_fragments': 5,
         'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         'referer': 'https://www.youtube.com/',
-        'extractor_args': {'youtube': {'player_client': ['web', 'android']}},
+        'extractor_args': {'youtube': {'player_client': player_clients}},
+        # Prefer a cookies file; if you sometimes want to run without a file, add the fallback below
+        'cookiefile': cookie_file if use_cookies_file else None,
+        # Optional: fallback to Brave profile if no file (comment out if you don't want runtime browser access)
+        # 'cookiesfrombrowser': ('brave', 'Default', None) if not use_cookies_file else None,
+        'progress_with_newline': True,  # nicer logs
+        'noprogress': False,
+        # 'keepvideo': False,  # default; you already see it deleting the .mp4 after extracting audio
     }
+    # remove None keys to avoid confusing yt-dlp
+    ydl_opts = {k: v for k, v in ydl_opts.items() if v is not None}
 
-    # Check for cookies file
-    cookies_paths = [
-        'src/data_ingestion_youtube/load/youtube_cookies.txt',
-        'youtube_cookies.txt',
-        os.path.join(root_directory(), '/src/data_ingestion_youtube/load/youtube_cookies.txt'),
-        os.environ.get('YOUTUBE_COOKIES_FILE', '')
-    ]
-
-    for cookie_path in cookies_paths:
-        if cookie_path and os.path.exists(cookie_path):
-            ydl_opts['cookiefile'] = cookie_path
-            logging.info(f"Using cookies file: {cookie_path}")
-            break
-    else:
-        logging.warning("No cookies file found. Some videos may fail to download.")
-
+    logging.debug(f"yt-dlp options configured. Cookie file: {cookie_file if use_cookies_file else 'none'}; clients={player_clients}")
     return ydl_opts
 
 def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
-    """
-    Download a single video with retry logic
-    """
     for attempt in range(retries):
         try:
             with ydlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
-                logging.info(f"Successfully downloaded: {url}")
-                return True
-        except Exception as e:
-            if "429" in str(e) or "rate" in str(e).lower():
-                wait_time = (attempt + 1) * 10
-                logging.warning(f"Rate limited. Waiting {wait_time} seconds...")
-                time.sleep(wait_time)
-            logging.warning(f"Attempt {attempt + 1} failed for {url}: {e}")
+                # Check if already downloaded
+                info = ydl.extract_info(url, download=False)
+                filename = ydl.prepare_filename(info)
+                if os.path.exists(filename.replace('.webm', '.mp3').replace('.m4a', '.mp3')):
+                    logging.info(f"Already exists: {filename}")
+                    return True
 
-    logging.error(f"Failed to download after {retries} attempts: {url}")
+                # Download
+                ydl.download([url])
+                return True
+
+        except DownloadError as e:
+            if "Video unavailable" in str(e):
+                logging.error(f"Video unavailable: {url}")
+                return False
+            elif "429" in str(e):
+                wait_time = (attempt + 1) * 30
+                logging.warning(f"Rate limited. Waiting {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                logging.warning(f"Attempt {attempt + 1} failed: {e}")
+
     return False
 
-
-async def download_audio_batch(video_infos: List[dict], base_dir: str):
+async def download_audio_batch(video_infos: List[dict], base_dir: str, cookie_file: str = None):
     """
     Download a batch of videos in parallel
     """
@@ -146,23 +262,7 @@ async def download_audio_batch(video_infos: List[dict], base_dir: str):
 
     futures = []
 
-    def sanitize_filename(filename):
-        """Remove or replace characters that might cause filesystem issues"""
-        # Replace common problematic characters
-        replacements = {
-            ''': "'", ''': "'", '"': '', '"': '', '"': '',
-            '—': '-', '–': '-', '…': '...',
-            '：': '-', '|': '-', '\\': '-', '/': '-',
-            '<': '', '>': '', '*': '', '?': ''
-        }
-        for old, new in replacements.items():
-            filename = filename.replace(old, new)
 
-        # Remove any remaining non-ASCII characters
-        filename = unicodedata.normalize('NFKD', filename)
-        filename = ''.join(c for c in filename if ord(c) < 128)
-
-        return filename.strip()
 
     for info in video_infos:
         # Create individual directories and options for each video
@@ -173,7 +273,7 @@ async def download_audio_batch(video_infos: List[dict], base_dir: str):
         video_dir_path = os.path.join(base_dir, video_title_with_date)
         os.makedirs(video_dir_path, exist_ok=True)
 
-        ydl_opts = get_ydl_opts(video_dir_path, video_title_with_date)
+        ydl_opts = get_ydl_opts(video_dir_path, video_title_with_date, cookie_file)
 
         future = loop.run_in_executor(
             executor,
@@ -230,7 +330,7 @@ async def video_valid_for_processing(channel_name, video_title, dir_path):
             ):
                 # logging.info(f"video_valid_for_processing: {video_title} is already processed")
                 return False
-        logging.info(f"[{channel_name}] video_valid_for_processing: [{video_title}] is not processed yet, adding to the list!")
+        logging.info(f"[{channel_name}] video_valid_for_processing: [{sanitize_filename(video_title)}] is not processed yet, adding to the list!")
         return True
     except Exception as e:
         logging.warning(f"Exception in video_valid_for_processing: {e}")
@@ -261,7 +361,7 @@ async def prepare_download_info(video_info, dir_path, video_title):
 
 
 async def process_video_batches(channel_name: str, video_info_list: List[dict],
-                                dir_path: str, youtube_videos_df, batch_size: int = 10):
+                                dir_path: str, youtube_videos_df, batch_size: int = 10, cookie_file: str = None):
     """
     Process videos in smaller batches to avoid rate limiting
     """
@@ -286,14 +386,14 @@ async def process_video_batches(channel_name: str, video_info_list: List[dict],
         batch = valid_videos[i:i + batch_size]
         logging.info(f"[{channel_name}] Processing batch {i // batch_size + 1}")
 
-        await download_audio_batch(batch, dir_path)
+        await download_audio_batch(batch, dir_path, cookie_file)
 
         # Add delay between batches to avoid rate limiting
         if i + batch_size < len(valid_videos):
             await asyncio.sleep(5)
 
 
-async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df):
+async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file: str = None):
     logging.info(f"Processing channel: {channel_name}")
     dir_path = YOUTUBE_VIDEO_DIRECTORY
     # Get video information from the channel
@@ -308,10 +408,10 @@ async def process_video_batches_async(channel_id, channel_name, credentials, you
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
-    await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df)
+    await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df, cookie_file=cookie_file)
 
 
-async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlists: Optional[List[str]] = None):
+async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlists: Optional[List[str]] = None, cookie_file: str = None):
     """
     Run function that takes a YouTube Data API key and a list of YouTube channel names, fetches video transcripts,
     and saves them as .txt files in a data directory.
@@ -347,7 +447,7 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
     youtube_videos_df = pd.read_csv(videos_path)
 
     # Iterate through the dictionary of channel IDs and channel names
-    await asyncio.gather(*(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df)
+    await asyncio.gather(*(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file)
                            for channel_id, channel_name in yt_id_name.items()))
 
     # Iterate through the dictionary of channel IDs and channel names
@@ -390,21 +490,21 @@ def get_youtube_channels_from_file(file_path):
 
 
 def main():
-    setup_cookies()
     parser = argparse.ArgumentParser(description='Fetch YouTube video transcripts.')
-    parser.add_argument('--api_key', type=str, help='YouTube Data API key')  # to be moved back to main() to use CLI arguments
+    parser.add_argument('--api_key', type=str, help='YouTube Data API key')
     parser.add_argument('--channels', nargs='+', type=str, help='YouTube channel names or IDs')
     parser.add_argument('--playlists', nargs='+', type=str, help='YouTube playlist IDs')
 
     args = parser.parse_args()
 
-    # api_key = args.api_key or os.environ.get('YOUTUBE_API_KEY')
-    # if not api_key:
-    #     raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
+    # Setup cookies FIRST and crash if not found
+    try:
+        cookie_file = setup_cookies()
+    except FileNotFoundError as e:
+        print(str(e))
+        sys.exit(1)  # Exit with error code
 
     yt_channels_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
-
-    # Fetch the yt_channels from the file
     yt_channels = get_youtube_channels_from_file(yt_channels_file)
 
     yt_playlists = args.playlists or os.environ.get('YOUTUBE_PLAYLISTS')
@@ -412,11 +512,9 @@ def main():
         yt_playlists = [playlist.strip() for playlist in yt_playlists.split(',')]
 
     if not yt_channels and not yt_playlists:
-        raise ValueError(
-            "No channels or playlists provided. Please provide channel names, IDs, or playlist IDs via command line argument or .env file.")
+        raise ValueError("No channels or playlists provided.")
 
-    asyncio.run(run(api_key, yt_channels, yt_playlists))
-
+    asyncio.run(run(api_key, yt_channels, yt_playlists, cookie_file))
 
 if __name__ == '__main__':
     main()
