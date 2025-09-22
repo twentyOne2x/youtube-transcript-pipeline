@@ -1,37 +1,70 @@
 import asyncio
-import concurrent
-import glob
+import time
 import itertools
 import json
 import os
 import argparse
 from typing import List, Optional, Dict
 from dotenv import load_dotenv
-# To download videos and transcripts from private Channels or Playlists
 import pandas as pd
 import yt_dlp as ydlp
 from yt_dlp import DownloadError
 import logging
+import sys
+import unicodedata
 
 from src import root_directory, YOUTUBE_VIDEO_DIRECTORY
 from src.data_ingestion_youtube.load.utils import get_videos_from_playlist, get_channel_id, get_playlist_title, get_video_info
 from src.utils.utils import authenticate_service_account, move_remaining_mp3_to_their_subdirs, clean_fullwidth_characters, merge_directories, delete_mp3_if_text_or_json_exists, start_logging, copy_and_verify_files
-
 from concurrent.futures import ThreadPoolExecutor
 
 load_dotenv()
-# executor = ThreadPoolExecutor(max_workers=os.cpu_count())
-executor = ThreadPoolExecutor(max_workers=15)
 api_key = os.environ.get('YOUTUBE_API_KEY')
 if not api_key:
     raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
 
+# Force UTF-8 encoding - simplified approach
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
+# Set environment variable for Python
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+
 # Load environment variables from the .env file
-load_dotenv()
 DOWNLOAD_AUDIO = os.environ.get('DOWNLOAD_AUDIO', 'True').lower() == 'true'
+
+# Now start logging (this will set up its own handlers)
 start_logging(f"download_mp3s")
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.WARNING)
 
+
+def setup_cookies():
+    """
+    Setup YouTube cookies for authentication
+    """
+    cookies_file = 'youtube_cookies.txt'
+
+    if not os.path.exists(cookies_file):
+        logging.info("Setting up YouTube cookies...")
+
+        # Try to extract cookies using yt-dlp
+        try:
+            import subprocess
+            # This extracts cookies from browser
+            cmd = [
+                'yt-dlp',
+                '--cookies-from-browser', 'chrome',  # or 'firefox', 'edge'
+                '--cookies', cookies_file,
+                '--skip-download',
+                'https://www.youtube.com'
+            ]
+            subprocess.run(cmd, check=True)
+            logging.info(f"Cookies extracted to {cookies_file}")
+        except Exception as e:
+            logging.warning(f"Could not extract cookies automatically: {e}")
+            logging.info("Please manually export cookies from your browser to youtube_cookies.txt")
+            logging.info("You can use browser extensions like 'Get cookies.txt' or 'EditThisCookie'")
 
 def chunked_iterable(iterable, size):
     """Splits an iterable into chunks of a specified size."""
@@ -42,38 +75,118 @@ def chunked_iterable(iterable, size):
             break
         yield chunk
 
-
-def download_video(url, ydl_opts, retries=3):
-    while retries > 0:
-        with ydlp.YoutubeDL(ydl_opts) as ydl:
-            try:
-                ydl.download([url])
-                logging.info(f"Downloaded video: {url}")
-                break  # Exit the loop if download succeeds
-            except DownloadError:
-                logging.warning(f"Download error for {url}. Retrying... {retries} attempts left.")
-            except Exception as e:
-                logging.warning(f"Error downloading {url}: {e}")
-        retries -= 1  # Decrement the number of retries after an exception
-
-
-
-async def download_audio_batch(video_infos: List[dict], ydl_opts: dict):
+def get_ydl_opts(video_dir_path: str, video_title: str) -> dict:
     """
-    Download a batch of videos in parallel using threads.
+    Create yt-dlp options with proper authentication and format settings
+    """
+    ydl_opts = {
+        'format': 'bestaudio/best',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+        'outtmpl': f'{video_dir_path}/{video_title}.%(ext)s',
+        # Add authentication and network options
+        'quiet': False,
+        'no_warnings': False,
+        'retries': 10,
+        'fragment_retries': 10,
+        'concurrent_fragments': 5,
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'referer': 'https://www.youtube.com/',
+        'extractor_args': {'youtube': {'player_client': ['web', 'android']}},
+    }
+
+    # Check for cookies file
+    cookies_paths = [
+        'src/data_ingestion_youtube/load/youtube_cookies.txt',
+        'youtube_cookies.txt',
+        os.path.join(root_directory(), '/src/data_ingestion_youtube/load/youtube_cookies.txt'),
+        os.environ.get('YOUTUBE_COOKIES_FILE', '')
+    ]
+
+    for cookie_path in cookies_paths:
+        if cookie_path and os.path.exists(cookie_path):
+            ydl_opts['cookiefile'] = cookie_path
+            logging.info(f"Using cookies file: {cookie_path}")
+            break
+    else:
+        logging.warning("No cookies file found. Some videos may fail to download.")
+
+    return ydl_opts
+
+def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
+    """
+    Download a single video with retry logic
+    """
+    for attempt in range(retries):
+        try:
+            with ydlp.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([url])
+                logging.info(f"Successfully downloaded: {url}")
+                return True
+        except Exception as e:
+            if "429" in str(e) or "rate" in str(e).lower():
+                wait_time = (attempt + 1) * 10
+                logging.warning(f"Rate limited. Waiting {wait_time} seconds...")
+                time.sleep(wait_time)
+            logging.warning(f"Attempt {attempt + 1} failed for {url}: {e}")
+
+    logging.error(f"Failed to download after {retries} attempts: {url}")
+    return False
+
+
+async def download_audio_batch(video_infos: List[dict], base_dir: str):
+    """
+    Download a batch of videos in parallel
     """
     loop = asyncio.get_event_loop()
-    futures = [
-        loop.run_in_executor(executor, download_video, info['url'], ydl_opts)
-        for info in video_infos
-    ]
-    for future in futures:
-        try:
-            await future  # Use await to get the result of the future
-        except Exception as e:
-            # Handle exceptions from within the thread
-            logging.error(f"An error occurred: {e}")
+    executor = ThreadPoolExecutor(max_workers=5)  # Reduced workers to avoid rate limits
 
+    futures = []
+
+    def sanitize_filename(filename):
+        """Remove or replace characters that might cause filesystem issues"""
+        # Replace common problematic characters
+        replacements = {
+            ''': "'", ''': "'", '"': '', '"': '', '"': '',
+            '—': '-', '–': '-', '…': '...',
+            '：': '-', '|': '-', '\\': '-', '/': '-',
+            '<': '', '>': '', '*': '', '?': ''
+        }
+        for old, new in replacements.items():
+            filename = filename.replace(old, new)
+
+        # Remove any remaining non-ASCII characters
+        filename = unicodedata.normalize('NFKD', filename)
+        filename = ''.join(c for c in filename if ord(c) < 128)
+
+        return filename.strip()
+
+    for info in video_infos:
+        # Create individual directories and options for each video
+        video_title = sanitize_filename(info['title']).replace('/', '_')
+        published_at = info.get('published_date', '')[:10]  # yyyy-mm-dd format
+        video_title_with_date = f"{published_at}_{video_title}" if published_at else video_title
+
+        video_dir_path = os.path.join(base_dir, video_title_with_date)
+        os.makedirs(video_dir_path, exist_ok=True)
+
+        ydl_opts = get_ydl_opts(video_dir_path, video_title_with_date)
+
+        future = loop.run_in_executor(
+            executor,
+            download_video,
+            info['url'],
+            ydl_opts
+        )
+        futures.append(future)
+
+    results = await asyncio.gather(*futures, return_exceptions=True)
+
+    success_count = sum(1 for r in results if r is True)
+    logging.info(f"Batch complete: {success_count}/{len(video_infos)} downloaded successfully")
 
 def filter_videos_in_dataframe(video_info_list, youtube_videos_df):
     # Normalize titles in the dataframe
@@ -147,39 +260,37 @@ async def prepare_download_info(video_info, dir_path, video_title):
     return ydl_opts, audio_file_path
 
 
-async def process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df, batch_size=50):
-    video_batches = list(chunked_iterable(video_info_list, batch_size))
-    # TODO 2023-10-31: fix somehow the addition of spaces before colons : e.g. for DVT and for Defi panel
-    #  The different pipes somehow. Check the match method in utils.py
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-        'outtmpl': f'{dir_path}/%(title)s.%(ext)s',
-    }
+async def process_video_batches(channel_name: str, video_info_list: List[dict],
+                                dir_path: str, youtube_videos_df, batch_size: int = 10):
+    """
+    Process videos in smaller batches to avoid rate limiting
+    """
+    # Filter and validate videos (keep your existing logic)
+    filtered_videos = filter_videos_in_dataframe(video_info_list, youtube_videos_df)
 
-    tasks = []
-    for batch_info in video_batches:
-        filtered_videos = filter_videos_in_dataframe(batch_info, youtube_videos_df)
-        valid_videos = []
-        for index, row in filtered_videos.iterrows():
-            video_dict = row.to_dict()
-            is_video_Valid = await video_valid_for_processing(channel_name, video_dict['title'], dir_path)
-            if is_video_Valid:
-                valid_videos.append(video_dict)
-        if len(valid_videos) > 1:
-            logging.info(f"[{channel_name}] valid videos: {valid_videos}")
+    valid_videos = []
+    for index, row in filtered_videos.iterrows():
+        video_dict = row.to_dict()
+        is_valid = await video_valid_for_processing(channel_name, video_dict['title'], dir_path)
+        if is_valid:
+            valid_videos.append(video_dict)
 
-        if valid_videos:
-            # Since download_audio_batch is now an async function, we directly add it to the task list
-            task = asyncio.create_task(download_audio_batch(valid_videos, ydl_opts))
-            tasks.append(task)
+    if not valid_videos:
+        logging.info(f"[{channel_name}] No new videos to download")
+        return
 
-    # Now we run the download tasks concurrently.
-    await asyncio.gather(*tasks)
+    logging.info(f"[{channel_name}] Downloading {len(valid_videos)} videos")
+
+    # Process in smaller batches with delays
+    for i in range(0, len(valid_videos), batch_size):
+        batch = valid_videos[i:i + batch_size]
+        logging.info(f"[{channel_name}] Processing batch {i // batch_size + 1}")
+
+        await download_audio_batch(batch, dir_path)
+
+        # Add delay between batches to avoid rate limiting
+        if i + batch_size < len(valid_videos):
+            await asyncio.sleep(5)
 
 
 async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df):
@@ -193,7 +304,7 @@ async def process_video_batches_async(channel_id, channel_name, credentials, you
         os.makedirs(dir_path)
 
     # Create a subdirectory for the current channel if it does not exist
-    dir_path += f'{channel_name}'
+    dir_path = os.path.join(dir_path, channel_name)
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
@@ -222,7 +333,7 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
 
     # Create a dictionary with channel IDs as keys and channel names as values
     # Define the path for storing the mapping between channel names and their IDs
-    channel_mapping_filepath = f"{root_directory()}/datasets/evaluation_data/channel_handle_to_id_mapping.json"
+    channel_mapping_filepath = f"{root_directory()}/data/links/channel_handle_to_id_mapping.json"
 
     # Load existing mappings if the file exists, or initialize an empty dictionary
     channel_name_to_id = {}  # Initialize regardless
@@ -232,7 +343,7 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
 
     yt_id_name = {get_channel_id(credentials=credentials, api_key=api_key, channel_name=name, channel_name_to_id=channel_name_to_id): name for name in yt_channels}
 
-    videos_path = f"{root_directory()}/datasets/evaluation_data/youtube_videos.csv"
+    videos_path = f"{root_directory()}/data/links/youtube/youtube_videos.csv"
     youtube_videos_df = pd.read_csv(videos_path)
 
     # Iterate through the dictionary of channel IDs and channel names
@@ -265,7 +376,7 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
 
 
 def clean_mp3s():
-    directory = f"{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2023-10-06"
+    directory = f"{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2025-09-22"
     clean_fullwidth_characters(directory)
     move_remaining_mp3_to_their_subdirs()
     merge_directories(directory)
@@ -279,6 +390,7 @@ def get_youtube_channels_from_file(file_path):
 
 
 def main():
+    setup_cookies()
     copy_and_verify_files()  # make sure to copy files to get the latest youtube_csv
     parser = argparse.ArgumentParser(description='Fetch YouTube video transcripts.')
     parser.add_argument('--api_key', type=str, help='YouTube Data API key')  # to be moved back to main() to use CLI arguments
@@ -291,7 +403,7 @@ def main():
     # if not api_key:
     #     raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
 
-    yt_channels_file = os.path.join(root_directory(), 'datasets/evaluation_data/youtube_channel_handles.txt')
+    yt_channels_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
 
     # Fetch the yt_channels from the file
     yt_channels = get_youtube_channels_from_file(yt_channels_file)
