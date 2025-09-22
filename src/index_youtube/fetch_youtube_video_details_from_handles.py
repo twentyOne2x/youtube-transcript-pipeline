@@ -12,7 +12,6 @@ from datetime import datetime
 import logging
 import csv
 import asyncio
-from aiohttp import ClientSession
 
 from src.index_youtube.constants import KEYWORDS_TO_INCLUDE, KEYWORDS_TO_EXCLUDE, YOUTUBE_VIDEOS_CSV_FILE_PATH, AUTHORS, FIRMS
 from src.index_youtube.utils import root_directory, authenticate_service_account, get_videos_from_playlist, get_channel_id, get_channel_name
@@ -435,10 +434,10 @@ def get_youtube_channels_from_file(file_path):
 def run():
     fetch_videos = True
 
-    PASSTHROUGH = ['Tim Roughgarden Lectures', 'Scraping Bits', 'just a block', 'Bell Curve', 'Good Game Podcast','blocmates', '1000x Podcast', 'Steady Lads Podcast', 'Empire', 'Galaxy', 'a16z crypto', 'Delphi Digital', 'Solana', 'Paradigm']  # do not apply any filtering to these channels
+    PASSTHROUGH = ['Tim Roughgarden Lectures', 'Solana', ]  # do not apply any filtering to these channels
     # Define the channel-specific filters which are applied after the first keyword selection
     channel_specific_filters = {
-        "Bankless": ["MEV", "maximal extractable value", "How They Solved Ethereum's Critical Flaw", "zk"] + AUTHORS + FIRMS,
+        "": [] + AUTHORS + FIRMS,
     }
 
     if not fetch_videos:
