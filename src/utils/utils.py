@@ -767,36 +767,6 @@ def compute_new_entries(latest_df: pd.DataFrame, current_df: pd.DataFrame, left_
     return new_entries_df
 
 
-def save_metadata_to_pipeline_dir(all_metadata, root_dir, dir='pipeline_storage/docs.csv', drop_key='pdf_link', headers=None):
-    try:
-        # Convert metadata to DataFrame
-        df = pd.DataFrame(all_metadata)
-
-        # Filter columns based on headers if provided
-        if headers is not None:
-            df = df[headers]
-
-        csv_path = os.path.join(root_dir, dir)
-
-        # Ensure the directory exists
-        os.makedirs(os.path.dirname(csv_path), exist_ok=True)
-
-        # Check if the CSV file already exists
-        if os.path.exists(csv_path):
-            # Read existing data and combine with new data
-            existing_df = pd.read_csv(csv_path)
-            combined_df = pd.concat([existing_df, df]).drop_duplicates(subset=[drop_key])
-        else:
-            # Use the new data as is if file doesn't exist
-            combined_df = df
-
-        # Save the combined data to CSV
-        combined_df.to_csv(csv_path, index=False)
-        logging.info(f"Metadata with # of unique entries [{combined_df.shape[0]}] saved to [{csv_path}]")
-    except Exception as e:
-        logging.error(f"Failed to save metadata to [{dir}]. Error: {e}")
-
-
 if __name__ == '__main__':
     pass
     copy_and_verify_files()
