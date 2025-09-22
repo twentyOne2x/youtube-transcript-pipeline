@@ -19,6 +19,7 @@ from src.utils.utils import authenticate_service_account, move_remaining_mp3_to_
 
 from concurrent.futures import ThreadPoolExecutor
 
+load_dotenv()
 # executor = ThreadPoolExecutor(max_workers=os.cpu_count())
 executor = ThreadPoolExecutor(max_workers=15)
 api_key = os.environ.get('YOUTUBE_API_KEY')

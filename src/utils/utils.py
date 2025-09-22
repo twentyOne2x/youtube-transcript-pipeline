@@ -14,18 +14,12 @@ from google.oauth2.service_account import Credentials as ServiceAccountCredentia
 
 import subprocess
 
-from langchain.embeddings import OpenAIEmbeddings
-from llama_index.legacy import OpenAIEmbedding
-from llama_index.legacy.embeddings import HuggingFaceEmbedding
 
 from llama_index.legacy.core.llms.types import ChatMessage, MessageRole
 
 
 import os
 import subprocess
-
-from llama_index.vector_stores.pinecone import PineconeVectorStore
-from pinecone import Pinecone
 
 
 def root_directory() -> str:
@@ -180,57 +174,8 @@ def authenticate_service_account(service_account_file: str) -> Credentials:
     return credentials
 
 
-def get_last_index_embedding_params():
-    index_dir = f"{root_directory()}/.storage/research_pdf/"
-    index = sorted(os.listdir(index_dir))[-1].split('_')
-    index_date = index[0]
-    embedding_model_name = index[1]
-    embedding_model_chunk_size = int(index[2])
-    chunk_overlap = int(index[3])
-    vector_space_distance_metric = 'cosine'  # TODO 2023-11-02: save vector_space_distance_metric in index name
-    return embedding_model_name, embedding_model_chunk_size, chunk_overlap, vector_space_distance_metric
-
-
-import os
 import fnmatch
 import re
-
-def find_matching_files(directory: str):
-    mp3_files = []
-    json_txt_files = []
-
-    # 1. Recursively walk through the directory and collect paths to all .mp3, .json, and .txt files
-    for dirpath, _, filenames in os.walk(directory):
-        for filename in fnmatch.filter(filenames, "*.mp3"):
-            mp3_files.append(os.path.join(dirpath, filename))
-        for filename in fnmatch.filter(filenames, "*.json"):
-            json_txt_files.append(os.path.join(dirpath, filename))
-        for filename in fnmatch.filter(filenames, "*.txt"):
-            json_txt_files.append(os.path.join(dirpath, filename))
-
-    matched_tuples = []
-
-    for mp3_file in mp3_files:
-        mp3_basename = os.path.basename(mp3_file).rsplit('.', 1)[0]
-        for jt_file in json_txt_files:
-            jt_basename = os.path.basename(jt_file).rsplit('.', 1)[0]
-
-            # Remove prefix date if it exists
-            jt_basename = re.sub(r'^\d{4}-\d{2}-\d{2}_', '', jt_basename)
-
-            # Remove various suffixes
-            jt_basename = re.sub(r'(_diarized_content(_processed_diarized)?)$', '', jt_basename)
-
-            if mp3_basename == jt_basename:
-                matched_tuples.append((mp3_file, jt_file))
-
-    # 3. For each match, print the tuple and then later delete the .mp3 file
-    for mp3_file, jt_file in matched_tuples:
-        print((mp3_file, jt_file))
-        if os.path.exists(mp3_file):
-            os.remove(mp3_file)
-            print(f"Deleting {mp3_file}")
-
 
 import pandas as pd
 
@@ -557,193 +502,11 @@ def delete_mp3_if_text_or_json_exists(base_path):
                         # print(f".mp3 file without .txt or .json: {mp3_file} in directory {subdir_path}")
 
 
-def print_frontend_content():
-    import os
-
-    # Define the list of relative paths of the files you want to print
-    file_paths = [
-        # f"{root_directory()}/../rag_app_vercel/app/app/api/auth/[...nextauth]/route.ts",
-        f"{root_directory()}/../rag_app_vercel/app/app/actions.ts",
-        f"{root_directory()}/../rag_app_vercel/app/app/api/chat/route.ts",
-        # f"{root_directory()}/../rag_app_vercel/app/chat/[id]/server-logic.ts",
-        f"{root_directory()}/../rag_app_vercel/app/app/api/chat/[id]/page.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/pages/chat.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/pages/index.tsx",
-        f"{root_directory()}/../rag_app_vercel/app/auth.ts",
-        # f"{root_directory()}/../rag_app_vercel/app/components/chat.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/components/chat-list.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/components/chat-message.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/components/chat-panel.tsx",
-        # f"{root_directory()}/../rag_app_vercel/app/lib/hooks/use-chat-service.tsx",
-    ]
-
-    # file_path = 'app.py'
-    # print("Here is the content of the app.py backend:")
-    # with open(file_path, 'r') as file:
-    #     content = file.read()
-    #     print(f"{file_path}\n```\n{content}```\n")
-
-    print("\n\nHere is the content of the frontend files:")
-    # Iterate through the list, printing the content of each file
-    for file_path in file_paths:
-        if os.path.isfile(file_path):
-            with open(file_path, 'r') as file:
-                content = file.read()
-                print(f"`{file_path.replace('/home/user/PycharmProjects/rag/../rag_app_vercel/','')}`\n```\n{content}\n```\n\n")
-        else:
-            print(f"{file_path}\n```File not found```")
 
 
-import os
-import zipfile
-
-def save_data_into_zip ():
-    def zip_files(directory, file_extension, zip_file):
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                if file.endswith(file_extension):
-                    zip_file.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), directory))
 
 
-    zip_filename = "collected_documents.zip"
-
-    # Create a zip file
-    with zipfile.ZipFile(zip_filename, 'w') as zipf:
-        # Add all .pdf files from baseline_evaluation_research_papers_2023-10-05
-        zip_files(f'{root_directory()}/datasets/evaluation_data/baseline_evaluation_research_papers_2023-10-05', '.pdf', zipf)
-
-        # Add all .txt files from nested directories in diarized_youtube_content_2023-10-06
-        zip_files(f'{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2023-10-06', '.txt', zipf)
-
-    print(f"Files zipped into {zip_filename}")
-
-
-def copy_txt_files_to_transcripts(rootdir=root_directory()):
-    source_dir = os.path.join(rootdir, 'datasets', 'evaluation_data', 'diarized_youtube_content_2023-10-06')
-    target_dir = os.path.join(rootdir, 'datasets', 'evaluation_data', 'transcripts')
-
-    # Create the target directory if it doesn't exist
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
-
-    # Copy all .txt files from nested subdirectories
-    for root, dirs, files in os.walk(source_dir):
-        for file in files:
-            if file.endswith('.txt'):
-                source_file = os.path.join(root, file)
-                shutil.copy(source_file, target_dir)
-
-    print(f"All .txt files copied to {target_dir}")
-
-
-def process_messages(data):
-    try:
-        messages = data["chat_history"]
-    except KeyError:
-        # Handle the absence of chat_history key more gracefully
-        return None
-    chat_messages = []
-
-    for message in messages:
-        # Create a ChatMessage object for each message
-        chat_message = ChatMessage(
-            role=MessageRole(message.get("role", "user").lower()),  # Convert the role to Enum
-            content=message.get("content", ""),
-            additional_kwargs=message.get("additional_kwargs", {})  # Assuming additional_kwargs is part of your message structure
-        )
-        chat_messages.append(chat_message)
-
-    return chat_messages
-
-
-def delete_redundant_directories(root_path):
-    # Create a list to collect directories to be deleted
-    directories_to_delete = []
-
-    # Walk through the directory
-    for subdir, dirs, files in os.walk(root_path, topdown=False):  # Note the 'topdown=False' parameter
-        for dir in dirs:
-            # Construct the path to the current directory
-            current_dir_path = os.path.join(subdir, dir)
-            # Check if directory name ends with the specified suffixes
-            if dir.endswith('_diarized_content') or dir.endswith('_diarized_content_processed_diarized'):
-                # Construct the file names that should exist in the parent directory
-                json_file = dir.split('_', 1)[-1] + '_diarized_content.json'
-                txt_file = dir.split('_', 1)[-1] + '_diarized_content_processed_diarized.txt'
-                # Construct the paths to the files that should exist
-                json_file_path = os.path.join(subdir, json_file)
-                txt_file_path = os.path.join(subdir, txt_file)
-                # Check if both files exist
-                if os.path.exists(json_file_path) and os.path.exists(txt_file_path):
-                    # If both files exist, add the redundant directory to the list
-                    print(f"{current_dir_path} is to be deleted")
-                    directories_to_delete.append(current_dir_path)
-
-    # Delete the collected directories
-    for dir_path in directories_to_delete:
-        shutil.rmtree(dir_path)
-        print(f"Deleted redundant directory: {dir_path}")
-
-def clean_mp3_dirs(directory):
-    clean_fullwidth_characters(directory)
-    move_remaining_mp3_to_their_subdirs()
-    merge_directories(directory)
-    delete_mp3_if_text_or_json_exists(directory)
-
-
-import os
 import shutil
-
-
-def del_wrong_subdirs(root_dir):
-    # Define the expected maximum directory depth
-    expected_max_depth = 10  # Based on home/user/PycharmProjects/rag/datasets/evaluation_data/diarized_youtube_content_2023-10-06/<channel_name>/<release_date>_<video_title>/
-
-    for subdir, dirs, files in os.walk(root_dir, topdown=False):
-        # Split the path to evaluate its depth
-        path_parts = subdir.split(os.sep)
-
-        # Check if the directory name contains '_diarized_content' or '_diarized_content_processed_diarized'
-        if '_diarized_content' in subdir or '_diarized_content_processed_diarized' in subdir:
-            # Delete the directory and its content
-            # print(f"Removed directory and its content: {subdir}")
-            shutil.rmtree(subdir)
-        elif len(path_parts) > expected_max_depth:
-            # Delete the directory and its content if it exceeds the maximum depth
-            print(f"Removed directory and its content: {subdir}")
-            shutil.rmtree(subdir)
-
-
-def merge_csv_files_remove_duplicates_and_save(csv_directory=f"{root_directory()}/../mev.fyi//data/links/articles", output_csv_path=f"{root_directory()}/../mev.fyi/data/links/merged_articles.csv"):
-    """
-    Concatenates all CSV files in the given directory, removes duplicates based on the 'Link' column,
-    and saves the resulting DataFrame to the specified output path.
-
-    Args:
-        csv_directory (str): Directory containing CSV files to merge.
-        output_csv_path (str): Path to save the merged and deduplicated CSV file.
-    """
-    # List all CSV files in the directory
-    csv_files = [os.path.join(csv_directory, f) for f in os.listdir(csv_directory) if f.endswith('.csv')]
-    df_list = []
-
-    # Load and concatenate all CSV files
-    for csv_file in csv_files:
-        df = pd.read_csv(csv_file)
-        df_list.append(df)
-
-    if df_list:
-        merged_df = pd.concat(df_list, ignore_index=True)
-
-        # Remove duplicates based on 'Link' column
-        deduplicated_df = merged_df.drop_duplicates(subset=['Link'])
-
-        # Save the resulting DataFrame to CSV
-        deduplicated_df.to_csv(output_csv_path, index=False)
-        logging.info(f"Merged and deduplicated CSV saved to: {output_csv_path}")
-    else:
-        logging.warning("No CSV files found in the provided directory.")
-
 
 def clean_and_save_config(source_file_path, destination_file_path):
     # Regular expressions to match imports and function definitions
@@ -845,45 +608,18 @@ def copy_and_verify_files():
 
     # Define the source directories
     csv_source_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/")
-    articles_pdf_source_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/articles_pdf_download/")
-    articles_pdf_discourse_dir = os.path.join(articles_pdf_source_dir, "all_discourse_topics/")
-    articles_thumbnails_source_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/article_thumbnails/")
-    research_paper_thumbnails_source_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/research_papers_pdf_thumbnails/")
-    papers_pdf_source_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/papers_pdf_downloads/")
-    ethglobal_docs_dir = os.path.join(pycharm_projects_dir, "mev.fyi/data/ethglobal_hackathon/")
 
     # Define the destination directories
     csv_destination_dir = os.path.join(pycharm_projects_dir, "rag/datasets/evaluation_data/")
-    articles_pdf_destination_dir = os.path.join(pycharm_projects_dir, "rag/datasets/evaluation_data/articles_2023-12-05/")
-    articles_discourse_destination_dir = os.path.join(pycharm_projects_dir, "rag/datasets/evaluation_data/articles_discourse_2024_03_01/")
-    articles_thumbnails_destination_dir = os.path.join(pycharm_projects_dir, "rag_app_vercel/app/public/research_paper_thumbnails/")
-    papers_pdf_thumbnails_destination_dir = os.path.join(pycharm_projects_dir, "rag_app_vercel/app/public/research_paper_thumbnails/")
-    papers_pdf_destination_dir = os.path.join(pycharm_projects_dir, "rag/datasets/evaluation_data/baseline_evaluation_research_papers_2023-11-21/")
-    ethglobal_docs_destination_dir = os.path.join(pycharm_projects_dir, "rag/datasets/evaluation_data/ethglobal_docs_2024-03-16/")
 
     # List of CSV files to copy
     csv_files_to_copy_from_mevfyi_to_rag = [
-        "paper_details.csv",
-        "links/articles_updated.csv",
-        "links/merged_articles.csv",
         "links/youtube/youtube_videos.csv",
         "links/youtube/youtube_channel_handles.txt",
-        "docs_details.csv",
-    ]
-
-    clean_and_save_config(source_file_path=f"{csv_source_dir}../src/populate_csv_files/get_article_content/ethglobal_hackathon/site_configs.py",
-                                 destination_file_path=f"{csv_destination_dir}site_configs.py")
-
-    csv_files_to_copy_from_rag_to_mevfyi = [
-        # "docs_details.csv",
     ]
 
     # Create the destination directories if they do not exist
     os.makedirs(csv_destination_dir, exist_ok=True)
-    os.makedirs(articles_pdf_destination_dir, exist_ok=True)
-    os.makedirs(papers_pdf_destination_dir, exist_ok=True)
-    os.makedirs(articles_thumbnails_destination_dir, exist_ok=True)
-    os.makedirs(articles_discourse_destination_dir, exist_ok=True)  # Ensure the discourse articles destination directory exists
 
     # Copy and verify CSV files
     for file_name in csv_files_to_copy_from_mevfyi_to_rag:  # from mev.fyi data repo to rag repo
@@ -891,38 +627,6 @@ def copy_and_verify_files():
         destination_file = os.path.join(csv_destination_dir, file_name.split('/')[-1])  # Get the last part if there's a path included
         copy_and_verify(source_file, destination_file)
 
-    for file_name in csv_files_to_copy_from_rag_to_mevfyi:  # from RAG repo to mevfyi data repo, quite hacky
-        source_file = os.path.join(csv_destination_dir, file_name)
-        destination_file = os.path.join(csv_source_dir, file_name.split('/')[-1])  # Get the last part if there's a path included
-        copy_and_verify(source_file, destination_file)
-
-    # Copy PDF files without size verification
-    copy_all_files(articles_pdf_source_dir, articles_pdf_destination_dir)
-    copy_all_files(papers_pdf_source_dir, papers_pdf_destination_dir)
-    process_and_copy_csv(csv_source_dir, f"{root_directory()}/../rag_app_vercel/app/public/")
-    copy_files_with_tree(articles_thumbnails_source_dir, articles_thumbnails_destination_dir, file_extension='.png')
-    copy_files_with_tree(research_paper_thumbnails_source_dir, papers_pdf_thumbnails_destination_dir, file_extension='.png')
-
-    # New: Copy and rename articles from discourse subdirectories
-    for subdir, dirs, files in os.walk(articles_pdf_discourse_dir):
-        for file_name in files:
-            if file_name.lower().endswith('.pdf'):
-                source_file = os.path.join(subdir, file_name)
-                destination_file = os.path.join(articles_discourse_destination_dir, file_name)
-                try:
-                    shutil.copy(source_file, destination_file)
-                    print(f"Copied: {source_file} to {destination_file}")
-                except Exception as e:
-                    print(f"Error copying {file_name} from discourse topics: {e}")
-
-    # Copy ethglobal docs in rag
-    if os.path.exists(ethglobal_docs_destination_dir):
-        shutil.rmtree(ethglobal_docs_destination_dir)  # Removes the entire directory tree
-
-    # Now use copytree to copy everything from the source to the destination directory.
-    shutil.copytree(ethglobal_docs_dir, ethglobal_docs_destination_dir)
-
-    copy_and_rename_website_docs_pdfs()
     print("File copying completed.")
 
 
@@ -1030,19 +734,6 @@ def save_successful_load_to_csv(documents_details, csv_filename='docs.csv', fiel
         writer.writerow(filtered_documents_details)
 
 
-def get_embedding_model(embedding_model_name):
-    if embedding_model_name == "text-embedding-ada-002":
-        # embedding_model = OpenAIEmbedding(disallowed_special=())
-        embedding_model = OpenAIEmbedding()  # https://github.com/langchain-ai/langchain/issues/923 encountered the same issue (2023-11-22)
-    else:
-        embedding_model = HuggingFaceEmbedding(
-            model_name=embedding_model_name,
-            # device='cuda'
-        )
-    # else:
-    #     assert False, f"The embedding model is not supported: [{embedding_model_name}]"
-    return embedding_model
-
 
 def load_csv_data(file_path):
     if os.path.exists(file_path):
@@ -1074,42 +765,6 @@ def compute_new_entries(latest_df: pd.DataFrame, current_df: pd.DataFrame, left_
         new_entries_df = latest_df[~latest_df[left_key].isin(current_df[right_key])]
         logging.info(f"New to be added to the database found: [{len(new_entries_df)}]")
     return new_entries_df
-
-
-def load_vector_store_from_pinecone_database(delete_old_index=False, new_index=False, index_name=os.environ.get("PINECONE_INDEX_NAME", "mevfyi-cosine")):
-    pc = Pinecone(
-        api_key=os.environ.get("PINECONE_API_KEY")
-    )
-    if new_index:
-        # pass
-        if delete_old_index:
-            logging.warning(f"Are you sure you want to delete the old index with name [{index_name}]?")
-            pc.delete_index(index_name)
-        # Dimensions are for text-embedding-ada-002
-        from pinecone import ServerlessSpec
-        pc.create_index(
-            name=index_name,
-            dimension=1536,
-            metric="cosine",
-            spec=ServerlessSpec(cloud="aws", region="us-west-2"),
-        )
-
-    pinecone_index = pc.Index(index_name)
-    vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
-    return vector_store
-
-
-def load_vector_store_from_pinecone_database_legacy(index_name=os.environ.get("PINECONE_INDEX_NAME", "mevfyi-cosine")):
-    pc = Pinecone(
-        api_key=os.environ.get("PINECONE_API_KEY")
-    )
-
-    pinecone_index = pc.Index(index_name)
-    # from llama_index.legacy.vector_stores import PineconeVectorStore
-    import llama_index.legacy.vector_stores as legacy_vector_stores
-
-    vector_store = legacy_vector_stores.PineconeVectorStore(pinecone_index=pinecone_index)
-    return vector_store
 
 
 def save_metadata_to_pipeline_dir(all_metadata, root_dir, dir='pipeline_storage/docs.csv', drop_key='pdf_link', headers=None):
