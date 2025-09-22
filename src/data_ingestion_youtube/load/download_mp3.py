@@ -391,7 +391,6 @@ def get_youtube_channels_from_file(file_path):
 
 def main():
     setup_cookies()
-    copy_and_verify_files()  # make sure to copy files to get the latest youtube_csv
     parser = argparse.ArgumentParser(description='Fetch YouTube video transcripts.')
     parser.add_argument('--api_key', type=str, help='YouTube Data API key')  # to be moved back to main() to use CLI arguments
     parser.add_argument('--channels', nargs='+', type=str, help='YouTube channel names or IDs')
