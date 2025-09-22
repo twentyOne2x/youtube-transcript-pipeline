@@ -376,7 +376,7 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
 
 
 def clean_mp3s():
-    directory = f"{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2025-09-22"
+    directory = f"{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2023-10-06"
     clean_fullwidth_characters(directory)
     move_remaining_mp3_to_their_subdirs()
     merge_directories(directory)
