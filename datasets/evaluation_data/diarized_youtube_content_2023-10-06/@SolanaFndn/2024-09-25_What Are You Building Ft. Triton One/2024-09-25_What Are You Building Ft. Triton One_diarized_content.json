@@ -1,0 +1,940 @@
+[
+    {
+        "text": "We are building transaction delivery. That doesn't suck. Brian, what are you building?",
+        "start": 240,
+        "end": 4800,
+        "confidence": 0.98172075,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "We",
+                "start": 240,
+                "end": 400,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "are",
+                "start": 400,
+                "end": 600,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "building",
+                "start": 600,
+                "end": 880,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "transaction",
+                "start": 960,
+                "end": 1680,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "delivery.",
+                "start": 1680,
+                "end": 2120,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "That",
+                "start": 2120,
+                "end": 2280,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "doesn't",
+                "start": 2280,
+                "end": 2640,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "suck.",
+                "start": 2640,
+                "end": 3040,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Brian,",
+                "start": 3120,
+                "end": 3600,
+                "confidence": 0.7668457,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "what",
+                "start": 4000,
+                "end": 4280,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "are",
+                "start": 4280,
+                "end": 4400,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "you",
+                "start": 4400,
+                "end": 4520,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "building?",
+                "start": 4520,
+                "end": 4800,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "I mean, as you know, and everybody would know, working on Solana the last.",
+        "start": 4960,
+        "end": 8520,
+        "confidence": 0.97780937,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "I",
+                "start": 4960,
+                "end": 5200,
+                "confidence": 0.8901367,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "mean,",
+                "start": 5200,
+                "end": 5360,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "as",
+                "start": 5360,
+                "end": 5560,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "you",
+                "start": 5560,
+                "end": 5720,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "know,",
+                "start": 5720,
+                "end": 5920,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "and",
+                "start": 5920,
+                "end": 6240,
+                "confidence": 0.98339844,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "everybody",
+                "start": 6240,
+                "end": 6720,
+                "confidence": 0.9532471,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "would",
+                "start": 6720,
+                "end": 6920,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "know,",
+                "start": 6920,
+                "end": 7200,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "working",
+                "start": 7200,
+                "end": 7520,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "on",
+                "start": 7520,
+                "end": 7720,
+                "confidence": 0.9946289,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "Solana",
+                "start": 7720,
+                "end": 8160,
+                "confidence": 0.99731445,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "the",
+                "start": 8160,
+                "end": 8360,
+                "confidence": 0.8798828,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "last.",
+                "start": 8360,
+                "end": 8520,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "Six months has not been easy.",
+        "start": 8520,
+        "end": 10000,
+        "confidence": 0.9975179,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Six",
+                "start": 8520,
+                "end": 8720,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "months",
+                "start": 8720,
+                "end": 8960,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "has",
+                "start": 8960,
+                "end": 9160,
+                "confidence": 0.9863281,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "not",
+                "start": 9160,
+                "end": 9320,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "been",
+                "start": 9320,
+                "end": 9520,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "easy.",
+                "start": 9520,
+                "end": 10000,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "The stake weighted.",
+        "start": 10000,
+        "end": 11200,
+        "confidence": 0.9486491,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "The",
+                "start": 10000,
+                "end": 10280,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "stake",
+                "start": 10280,
+                "end": 10640,
+                "confidence": 0.8547363,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "weighted.",
+                "start": 10640,
+                "end": 11200,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "Quality of service feature on Solana hasn't worked the way it was supposed to work.",
+        "start": 11200,
+        "end": 16480,
+        "confidence": 0.9986735,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Quality",
+                "start": 11200,
+                "end": 11600,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 11600,
+                "end": 11840,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "service",
+                "start": 11840,
+                "end": 12160,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "feature",
+                "start": 12960,
+                "end": 13440,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 13440,
+                "end": 13760,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Solana",
+                "start": 13760,
+                "end": 14320,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "hasn't",
+                "start": 14320,
+                "end": 14680,
+                "confidence": 0.9996338,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "worked",
+                "start": 14680,
+                "end": 15120,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 15120,
+                "end": 15360,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "way",
+                "start": 15360,
+                "end": 15480,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "it",
+                "start": 15480,
+                "end": 15600,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "was",
+                "start": 15600,
+                "end": 15720,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "supposed",
+                "start": 15720,
+                "end": 16040,
+                "confidence": 0.9880371,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 16040,
+                "end": 16239,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work.",
+                "start": 16239,
+                "end": 16480,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "So we decided to.",
+        "start": 16560,
+        "end": 17400,
+        "confidence": 0.9992676,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "So",
+                "start": 16560,
+                "end": 16800,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "we",
+                "start": 16800,
+                "end": 16920,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "decided",
+                "start": 16920,
+                "end": 17240,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "to.",
+                "start": 17240,
+                "end": 17400,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "Roll our own packet delivery network.",
+        "start": 17400,
+        "end": 19040,
+        "confidence": 0.998447,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Roll",
+                "start": 17400,
+                "end": 17720,
+                "confidence": 0.99886066,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "our",
+                "start": 17720,
+                "end": 17840,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "own",
+                "start": 17840,
+                "end": 18000,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "packet",
+                "start": 18000,
+                "end": 18440,
+                "confidence": 0.9923096,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "delivery",
+                "start": 18440,
+                "end": 18800,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "network.",
+                "start": 18800,
+                "end": 19040,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "We're delivering transactions.",
+        "start": 19280,
+        "end": 20640,
+        "confidence": 0.9960124,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "We're",
+                "start": 19280,
+                "end": 19600,
+                "confidence": 0.9967448,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "delivering",
+                "start": 19600,
+                "end": 19960,
+                "confidence": 0.9914551,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "transactions.",
+                "start": 19960,
+                "end": 20640,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "On a special network flowing from RPC.",
+        "start": 20640,
+        "end": 23520,
+        "confidence": 0.9670294,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "On",
+                "start": 20640,
+                "end": 20840,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 20840,
+                "end": 21000,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "special",
+                "start": 21000,
+                "end": 21240,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "network",
+                "start": 21240,
+                "end": 21600,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "flowing",
+                "start": 22320,
+                "end": 22720,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "from",
+                "start": 22720,
+                "end": 22880,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "RPC.",
+                "start": 22880,
+                "end": 23520,
+                "confidence": 0.7701823,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "All the way out.",
+        "start": 23520,
+        "end": 24280,
+        "confidence": 0.8861084,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "All",
+                "start": 23520,
+                "end": 23800,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "the",
+                "start": 23800,
+                "end": 23960,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "way",
+                "start": 23960,
+                "end": 24120,
+                "confidence": 0.5463867,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "out.",
+                "start": 24120,
+                "end": 24280,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "To the validators and then of course, getting landed.",
+        "start": 24280,
+        "end": 27580,
+        "confidence": 0.9312518,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "To",
+                "start": 24280,
+                "end": 24440,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 24440,
+                "end": 24560,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "validators",
+                "start": 24560,
+                "end": 25120,
+                "confidence": 0.88346356,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 25200,
+                "end": 25480,
+                "confidence": 0.5620117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "then",
+                "start": 25480,
+                "end": 25720,
+                "confidence": 0.9946289,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 25720,
+                "end": 25960,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "course,",
+                "start": 25960,
+                "end": 26240,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "getting",
+                "start": 26900,
+                "end": 27100,
+                "confidence": 0.94921875,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "landed.",
+                "start": 27100,
+                "end": 27580,
+                "confidence": 0.998291,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    },
+    {
+        "text": "Www.triton.1 is where we have the information on our website about transaction delivery.",
+        "start": 27580,
+        "end": 33540,
+        "confidence": 0.9934411,
+        "channel": null,
+        "speaker": "B",
+        "words": [
+            {
+                "text": "Www.triton.1",
+                "start": 27580,
+                "end": 29460,
+                "confidence": 0.94338,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "is",
+                "start": 29860,
+                "end": 30140,
+                "confidence": 0.98779297,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "where",
+                "start": 30140,
+                "end": 30340,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "we",
+                "start": 30340,
+                "end": 30540,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "have",
+                "start": 30540,
+                "end": 30820,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "the",
+                "start": 30980,
+                "end": 31260,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "information",
+                "start": 31260,
+                "end": 31540,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "on",
+                "start": 31540,
+                "end": 31780,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "our",
+                "start": 31780,
+                "end": 31900,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "website",
+                "start": 31900,
+                "end": 32140,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "about",
+                "start": 32140,
+                "end": 32420,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "transaction",
+                "start": 32420,
+                "end": 33020,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "B"
+            },
+            {
+                "text": "delivery.",
+                "start": 33020,
+                "end": 33540,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "B"
+            }
+        ]
+    },
+    {
+        "text": "Called Cascade Cascade Network.",
+        "start": 33860,
+        "end": 35940,
+        "confidence": 0.9873047,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Called",
+                "start": 33860,
+                "end": 34220,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Cascade",
+                "start": 34220,
+                "end": 34980,
+                "confidence": 0.9851888,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Cascade",
+                "start": 34980,
+                "end": 35620,
+                "confidence": 0.9708659,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Network.",
+                "start": 35620,
+                "end": 35940,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    }
+]
