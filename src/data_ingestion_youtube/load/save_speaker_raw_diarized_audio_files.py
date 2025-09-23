@@ -28,20 +28,44 @@ CACHE_FILE = os.path.join(YOUTUBE_VIDEO_DIRECTORY, '.diarization_cache.pkl')
 MAX_CONCURRENT_TRANSCRIPTIONS = 5
 
 
+def extract_video_id_from_path(file_path):
+    """Extract video ID from file path - video ID comes after date"""
+    filename = os.path.basename(file_path)
+    # New format: {date}_{video_id}_{title}.mp3
+    # Date is YYYY-MM-DD (10 chars) + underscore, then video ID
+    if len(filename) >= 22:  # At least date + _ + video_id
+        potential_id = filename[11:22]  # Skip date and underscore, get 11-char ID
+        if re.match(r'^[a-zA-Z0-9_-]{11}$', potential_id):
+            return potential_id
+    return None
+
 class DiarizationCache:
-    """Simple cache to track processed files"""
+    """Simple cache to track processed files by video ID"""
 
     def __init__(self, cache_file=CACHE_FILE):
         self.cache_file = cache_file
-        self.processed_files = self.load_cache()
+        self.processed_video_ids = self.load_cache()
 
     def load_cache(self):
-        """Load cache from disk"""
+        """Load cache from disk - now stores video IDs instead of full paths"""
         if os.path.exists(self.cache_file):
             try:
                 with open(self.cache_file, 'rb') as f:
                     cache_data = pickle.load(f)
-                    logging.info(f"Loaded cache with {len(cache_data)} processed files")
+                    # Handle both old format (full paths) and new format (video IDs)
+                    if cache_data and isinstance(next(iter(cache_data), ""), str):
+                        # Check if it's old format (full paths) or new format (video IDs)
+                        sample = next(iter(cache_data), "")
+                        if "/" in sample or "\\" in sample:  # Old format with paths
+                            logging.info("Migrating cache from paths to video IDs...")
+                            video_ids = set()
+                            for path in cache_data:
+                                video_id = extract_video_id_from_path(path)
+                                if video_id:
+                                    video_ids.add(video_id)
+                            logging.info(f"Migrated {len(video_ids)} video IDs from {len(cache_data)} paths")
+                            return video_ids
+                    logging.info(f"Loaded cache with {len(cache_data)} processed video IDs")
                     return cache_data
             except Exception as e:
                 logging.warning(f"Could not load cache: {e}. Starting fresh.")
@@ -52,21 +76,41 @@ class DiarizationCache:
         """Save cache to disk"""
         try:
             with open(self.cache_file, 'wb') as f:
-                pickle.dump(self.processed_files, f)
-            logging.debug(f"Cache saved with {len(self.processed_files)} entries")
+                pickle.dump(self.processed_video_ids, f)
+            logging.debug(f"Cache saved with {len(self.processed_video_ids)} video IDs")
         except Exception as e:
             logging.error(f"Could not save cache: {e}")
 
     def is_processed(self, file_path):
-        """Check if file has been processed"""
-        # Also check if the actual JSON file exists
+        """Check if file has been processed by video ID"""
+        video_id = extract_video_id_from_path(file_path)
+        if not video_id:
+            # Fallback to checking if JSON file exists
+            transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
+            return os.path.exists(transcript_file)
+
+        # Check if video ID is in cache
+        if video_id in self.processed_video_ids:
+            return True
+
+        # Also check if the actual JSON file exists (belt and suspenders)
         transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
-        return file_path in self.processed_files or os.path.exists(transcript_file)
+        if os.path.exists(transcript_file):
+            # Add to cache if found but not in cache
+            self.processed_video_ids.add(video_id)
+            self.save_cache()
+            return True
+
+        return False
 
     def mark_processed(self, file_path):
-        """Mark file as processed"""
-        self.processed_files.add(file_path)
-        self.save_cache()
+        """Mark file as processed by video ID"""
+        video_id = extract_video_id_from_path(file_path)
+        if video_id:
+            self.processed_video_ids.add(video_id)
+            self.save_cache()
+        else:
+            logging.warning(f"Could not extract video ID from {file_path}")
 
     def get_unprocessed_files(self, file_list):
         """Filter list to only unprocessed files"""
@@ -79,19 +123,27 @@ class DiarizationCache:
         return unprocessed
 
     def rebuild_from_disk(self):
-        """Rebuild cache by scanning for existing JSON files"""
+        """Rebuild cache by scanning for existing JSON files and extracting video IDs"""
         logging.info("Rebuilding cache from existing diarized files...")
-        self.processed_files = set()
+        self.processed_video_ids = set()
 
         for root, _, files in os.walk(YOUTUBE_VIDEO_DIRECTORY):
             for file in files:
                 if file.endswith("_diarized_content.json"):
-                    # Reconstruct the original mp3 path
-                    mp3_path = os.path.join(root, file.replace("_diarized_content.json", ".mp3"))
-                    self.processed_files.add(mp3_path)
+                    # Extract video ID from the JSON filename
+                    # Format: {video_id}_{date}_{title}_diarized_content.json
+                    video_id = extract_video_id_from_path(file)
+                    if video_id:
+                        self.processed_video_ids.add(video_id)
+                    else:
+                        # Try to get from the corresponding mp3 file
+                        mp3_file = file.replace("_diarized_content.json", ".mp3")
+                        video_id = extract_video_id_from_path(mp3_file)
+                        if video_id:
+                            self.processed_video_ids.add(video_id)
 
         self.save_cache()
-        logging.info(f"Cache rebuilt with {len(self.processed_files)} processed files")
+        logging.info(f"Cache rebuilt with {len(self.processed_video_ids)} video IDs")
 
 
 class ProcessSafeCache:
@@ -102,29 +154,52 @@ class ProcessSafeCache:
         self._lock = threading.Lock()
 
     def is_processed(self, file_path):
-        """Check if file has been processed by checking the filesystem"""
-        transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
-        return os.path.exists(transcript_file)
+        """Check if file has been processed by checking video ID and filesystem"""
+        video_id = extract_video_id_from_path(file_path)
 
-    def mark_processed(self, file_path):
-        """Mark file as processed by updating the cache file"""
+        # First check if transcript file exists
+        transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
+        if os.path.exists(transcript_file):
+            return True
+
+        if not video_id:
+            return False
+
+        # Check cache for video ID
         with self._lock:
-            # Load current cache
-            processed_files = set()
             if os.path.exists(self.cache_file):
                 try:
                     with open(self.cache_file, 'rb') as f:
-                        processed_files = pickle.load(f)
+                        processed_video_ids = pickle.load(f)
+                        return video_id in processed_video_ids
+                except:
+                    pass
+        return False
+
+    def mark_processed(self, file_path):
+        """Mark file as processed by updating the cache with video ID"""
+        video_id = extract_video_id_from_path(file_path)
+        if not video_id:
+            logging.warning(f"Could not extract video ID from {file_path}")
+            return
+
+        with self._lock:
+            # Load current cache
+            processed_video_ids = set()
+            if os.path.exists(self.cache_file):
+                try:
+                    with open(self.cache_file, 'rb') as f:
+                        processed_video_ids = pickle.load(f)
                 except:
                     pass
 
-            # Add new file
-            processed_files.add(file_path)
+            # Add new video ID
+            processed_video_ids.add(video_id)
 
             # Save updated cache
             try:
                 with open(self.cache_file, 'wb') as f:
-                    pickle.dump(processed_files, f)
+                    pickle.dump(processed_video_ids, f)
             except Exception as e:
                 logging.error(f"Could not update cache: {e}")
 
@@ -169,7 +244,10 @@ def random_sleep(min_seconds=0.5, max_seconds=2.5):
 
 
 def is_valid_filename(filename):
-    return re.match(r'^\d{4}-\d{2}-\d{2}_', filename)
+    """Check if filename starts with video ID pattern"""
+    # Updated to check for video ID at the start after the date
+    # Video IDs are 11 characters of alphanumeric, dash, underscore
+    return re.match(r'^\d{4}-\d{2}-\d{2}_[a-zA-Z0-9_-]{11}_', filename) is not None
 
 
 def utterance_to_dict(utterance) -> dict:
@@ -197,7 +275,8 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         transcript_file_path = os.path.splitext(file_path)[0] + "_diarized_content.json"
 
         if cache.is_processed(file_path):
-            logger.debug(f"Already processed: {os.path.basename(file_path)}")
+            video_id = extract_video_id_from_path(file_path)
+            logger.debug(f"Already processed: {video_id or os.path.basename(file_path)}")
             return {"status": "SKIPPED", "file": file_path}
 
         if not os.path.exists(file_path):
@@ -207,8 +286,9 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         path_segments = file_path.split(os.sep)
         channel_name = path_segments[-3] if len(path_segments) >= 3 else "unknown"
         file_name = path_segments[-1]
+        video_id = extract_video_id_from_path(file_path)
 
-        logger.info(f"Starting diarization: [{channel_name}/{file_name}]")
+        logger.info(f"Starting diarization: [{channel_name}/{video_id or file_name}]")
 
         import assemblyai as aai
         config = aai.TranscriptionConfig(speaker_labels=True)
@@ -219,19 +299,19 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         duration = time.time() - start_time
 
         if transcript is None:
-            logger.error(f"Transcription returned None for: [{channel_name}/{file_name}]")
+            logger.error(f"Transcription returned None for: [{channel_name}/{video_id or file_name}]")
             return {"status": "FAILED", "file": file_path, "reason": "transcript_none"}
 
         status = getattr(transcript, "status", None)
         error_msg = getattr(transcript, "error", None)
         if status == "error" or error_msg:
-            logger.error(f"AssemblyAI error for [{channel_name}/{file_name}]: {error_msg or status}")
+            logger.error(f"AssemblyAI error for [{channel_name}/{video_id or file_name}]: {error_msg or status}")
             return {"status": "FAILED", "file": file_path, "reason": error_msg or status}
 
         utterances = getattr(transcript, "utterances", None)
 
         if not utterances:
-            logger.warning(f"No utterances returned for [{channel_name}/{file_name}] "
+            logger.warning(f"No utterances returned for [{channel_name}/{video_id or file_name}] "
                            f"(diarization may have failed or found no speech).")
             text = getattr(transcript, "text", "") or ""
             fallback = [{
@@ -246,7 +326,7 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             with open(transcript_file_path, 'w') as f:
                 json.dump(fallback, f, indent=4)
             cache.mark_processed(file_path)
-            logger.info(f"FALLBACK [{channel_name}/{file_name}] in {duration:.1f}s")
+            logger.info(f"FALLBACK [{channel_name}/{video_id or file_name}] in {duration:.1f}s")
             return {"status": "FALLBACK", "file": file_path, "duration": duration, "reason": "no_utterances"}
 
         def safe_utterance_to_dict(u):
@@ -273,7 +353,7 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             json.dump(utterances_dicts, f, indent=4)
 
         cache.mark_processed(file_path)
-        logger.info(f"SUCCESS [{channel_name}/{file_name}] in {duration:.1f}s")
+        logger.info(f"SUCCESS [{channel_name}/{video_id or file_name}] in {duration:.1f}s")
         return {"status": "SUCCESS", "file": file_path, "duration": duration}
 
     except Exception as e:
@@ -316,9 +396,10 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
                 # Extract file info for logging
                 path_segments = file_path.split('/')
                 channel_name = path_segments[-3] if len(path_segments) >= 3 else "unknown"
+                video_id = extract_video_id_from_path(file_path)
                 file_name = path_segments[-1]
 
-                logger.debug(f"Submitting: [{channel_name}/{file_name}]")
+                logger.debug(f"Submitting: [{channel_name}/{video_id or file_name}]")
 
                 future = executor.submit(
                     transcribe_single_file,
@@ -354,8 +435,9 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
                 logger.info(f"Waiting {wait_time:.1f}s before next batch...")
                 time.sleep(wait_time)
 
-    logger.info(f"Worker completed! Processed {completed + failed} files "
-                f"(Success: {completed}, Failed: {failed})")
+    logger.info(f"Worker completed! Processed {sum(completed.values())} files "
+                f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
+                f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})")
 
 
 def main():
@@ -367,7 +449,7 @@ def main():
 
     data_path = YOUTUBE_VIDEO_DIRECTORY
 
-    # Get all MP3 files
+    # Get all MP3 files with the new naming pattern
     all_mp3_files = [
         os.path.join(root, file)
         for root, _, files in os.walk(data_path)
@@ -393,6 +475,12 @@ def main():
     logging.info(f"Skipping {len(all_mp3_files) - len(mp3_files)} already processed files")
     logging.info(
         f"Using {len(api_keys)} API keys with max {MAX_CONCURRENT_TRANSCRIPTIONS} concurrent transcriptions each")
+
+    # Log some sample video IDs being processed
+    sample_size = min(5, len(mp3_files))
+    for i in range(sample_size):
+        video_id = extract_video_id_from_path(mp3_files[i])
+        logging.info(f"Sample file {i + 1}: Video ID = {video_id}, Path = {os.path.basename(mp3_files[i])}")
 
     # Shuffle files for better distribution
     random.shuffle(mp3_files)

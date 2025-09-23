@@ -62,6 +62,7 @@ def ensure_utf8_stdio():
     os.environ.setdefault("LC_ALL", "en_US.UTF-8")
     os.environ.setdefault("LANG", "en_US.UTF-8")
 
+
 ensure_utf8_stdio()
 
 load_dotenv()
@@ -79,6 +80,7 @@ os.environ['PYTHONIOENCODING'] = 'utf-8'
 
 # Load environment variables from the .env file
 DOWNLOAD_AUDIO = os.environ.get('DOWNLOAD_AUDIO', 'True').lower() == 'true'
+
 
 def start_logging(name: str, level=logging.INFO, log_dir="logs"):
     os.makedirs(log_dir, exist_ok=True)
@@ -117,9 +119,11 @@ def start_logging(name: str, level=logging.INFO, log_dir="logs"):
     logging.getLogger("googleapiclient.discovery_cache").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
 
+
 # Now start logging (this will set up its own handlers)
 start_logging(f"download_mp3s")
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.WARNING)
+
 
 def sanitize_filename(filename):
     """Remove or replace characters that might cause filesystem issues"""
@@ -138,6 +142,17 @@ def sanitize_filename(filename):
     filename = ''.join(c for c in filename if ord(c) < 128)
 
     return filename.strip()
+
+
+def extract_video_id(url):
+    """Extract video ID from YouTube URL"""
+    if 'v=' in url:
+        return url.split('v=')[1].split('&')[0]
+    elif 'youtu.be/' in url:
+        return url.split('youtu.be/')[1].split('?')[0]
+    elif 'youtube.com/watch/' in url:
+        return url.split('watch/')[1].split('?')[0]
+    return None
 
 
 def setup_cookies():
@@ -190,7 +205,7 @@ def chunked_iterable(iterable, size):
         yield chunk
 
 
-def get_ydl_opts(video_dir_path: str, video_title: str, cookie_file: str | None = None) -> dict:
+def get_ydl_opts(video_dir_path: str, video_filename: str, cookie_file: str | None = None) -> dict:
     use_cookies_file = bool(cookie_file and os.path.exists(cookie_file))
 
     player_clients = ['web'] if use_cookies_file else ['android', 'web']
@@ -202,7 +217,7 @@ def get_ydl_opts(video_dir_path: str, video_title: str, cookie_file: str | None 
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': f'{video_dir_path}/{video_title}.%(ext)s',
+        'outtmpl': f'{video_dir_path}/{video_filename}.%(ext)s',
         'quiet': False,
         'no_warnings': False,
         'retries': 10,
@@ -222,8 +237,10 @@ def get_ydl_opts(video_dir_path: str, video_title: str, cookie_file: str | None 
     # remove None keys to avoid confusing yt-dlp
     ydl_opts = {k: v for k, v in ydl_opts.items() if v is not None}
 
-    logging.debug(f"yt-dlp options configured. Cookie file: {cookie_file if use_cookies_file else 'none'}; clients={player_clients}")
+    logging.debug(
+        f"yt-dlp options configured. Cookie file: {cookie_file if use_cookies_file else 'none'}; clients={player_clients}")
     return ydl_opts
+
 
 def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
     for attempt in range(retries):
@@ -238,6 +255,18 @@ def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
 
                 # Download
                 ydl.download([url])
+                # Log per-file success
+                try:
+                    # Recreate the expected filename and map to .mp3
+                    info = ydl.extract_info(url, download=False)
+                    filename = ydl.prepare_filename(info)
+                    mp3 = filename.replace('.webm', '.mp3').replace('.m4a', '.mp3')
+                    if os.path.exists(mp3):
+                        logging.info(f"Downloaded MP3: {mp3}")
+                    else:
+                        logging.info(f"Downloaded audio for {url} (final file not found yet)")
+                except Exception:
+                    logging.info(f"Downloaded audio for {url}")
                 return True
 
         except DownloadError as e:
@@ -253,6 +282,7 @@ def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
 
     return False
 
+
 async def download_audio_batch(video_infos: List[dict], base_dir: str, cookie_file: str = None):
     """
     Download a batch of videos in parallel
@@ -262,18 +292,26 @@ async def download_audio_batch(video_infos: List[dict], base_dir: str, cookie_fi
 
     futures = []
 
-
-
     for info in video_infos:
-        # Create individual directories and options for each video
+        # Extract video ID from URL
+        video_id = extract_video_id(info['url'])
+        if not video_id:
+            published_at = info.get('published_date', 'unknown-date')[:10]
+            logging.error(f"Could not extract video ID from URL [{published_at}]: {info['url']}")
+            continue
+
+        # Create filename with video ID at the beginning
         video_title = sanitize_filename(info['title']).replace('/', '_')
         published_at = info.get('published_date', '')[:10]  # yyyy-mm-dd format
-        video_title_with_date = f"{published_at}_{video_title}" if published_at else video_title
 
-        video_dir_path = os.path.join(base_dir, video_title_with_date)
+        # Video ID comes FIRST in the filename for easy matching
+        video_filename_with_id = f"{published_at}_{video_id}_{video_title}" if published_at else f"{video_id}_{video_title}"
+
+        # Create directory using the same naming convention
+        video_dir_path = os.path.join(base_dir, video_filename_with_id)
         os.makedirs(video_dir_path, exist_ok=True)
 
-        ydl_opts = get_ydl_opts(video_dir_path, video_title_with_date, cookie_file)
+        ydl_opts = get_ydl_opts(video_dir_path, video_filename_with_id, cookie_file)
 
         future = loop.run_in_executor(
             executor,
@@ -288,9 +326,11 @@ async def download_audio_batch(video_infos: List[dict], base_dir: str, cookie_fi
     success_count = sum(1 for r in results if r is True)
     logging.info(f"Batch complete: {success_count}/{len(video_infos)} downloaded successfully")
 
+
 def filter_videos_in_dataframe(video_info_list, youtube_videos_df):
     # Normalize titles in the dataframe
-    youtube_videos_df['title'] = youtube_videos_df['title'].str.replace(' +', ' ', regex=True).str.replace('"', '', regex=False)
+    youtube_videos_df['title'] = youtube_videos_df['title'].str.replace(' +', ' ', regex=True).str.replace('"', '',
+                                                                                                           regex=False)
 
     # Extract titles from the video info list
     titles = [video['title'] for video in video_info_list]
@@ -305,49 +345,83 @@ def filter_videos_in_dataframe(video_info_list, youtube_videos_df):
     return titles_in_df
 
 
-async def video_valid_for_processing(channel_name, video_title, dir_path):
+async def video_valid_for_processing(channel_name, video_info, dir_path):
+    """
+    Check if video needs processing by looking for video ID in existing files
+    """
     try:
-        normalized_video_title = video_title.replace('/', '_')
+        # Extract video ID from URL
+        video_id = extract_video_id(video_info.get('url', ''))
+        if not video_id:
+            logging.warning(f"Could not extract video ID for video: {video_info.get('title', 'Unknown')}")
+            return False
+
+        video_title = video_info.get('title', '')
+
+        # Check for livestreams
         titles_to_avoid = ['livestream', 'live stream', 'live']
         for title in titles_to_avoid:
-            if title in normalized_video_title.lower():
+            if title in video_title.lower():
                 return False
 
-        # Function to check for the title's existence in files
-        def title_exists_in_files(directory, suffix):
+        # Function to check if video ID exists in any file in the directory
+        def video_id_exists_in_files(directory):
             for filename in os.listdir(directory):
-                if normalized_video_title in filename and filename.endswith(suffix):
-                    return True
+                # Check if the video ID is at the beginning of the filename
+                if video_id in filename and (f"_{video_id}_" in filename or filename.endswith(f"_{video_id}")):
+                    # Also check for expected file extensions
+                    if (filename.endswith(".mp3") or
+                            filename.endswith("_diarized_content.json") or
+                            filename.endswith("_diarized_content_processed_diarized.txt") or
+                            filename.endswith("_content_processed_diarized.txt")):
+                        return True
             return False
 
         # Recursively check in dir_path and its subdirectories
         for root, dirs, files in os.walk(dir_path):
-            if (
-                    title_exists_in_files(root, ".mp3") or
-                    title_exists_in_files(root, "_diarized_content.json") or
-                    title_exists_in_files(root, "_diarized_content_processed_diarized.txt") or
-                    title_exists_in_files(root, "_content_processed_diarized.txt")
-            ):
-                # logging.info(f"video_valid_for_processing: {video_title} is already processed")
+            # Check if any directory starts with the video ID
+            for dir_name in dirs:
+                if video_id in dir_name and (f"_{video_id}_" in dir_name or dir_name.endswith(f"_{video_id}")):
+                    published_date = video_info.get('published_date', 'unknown-date')
+                    logging.info(f"[{channel_name}] Video [{published_date}] [{video_id}] already has a directory")
+                    return False
+
+            # Check files in current directory
+            if video_id_exists_in_files(root):
+                published_date = video_info.get('published_date', 'unknown-date')
+                logging.info(f"[{channel_name}] Video [{published_date}] [{video_id}] already processed")
                 return False
-        logging.info(f"[{channel_name}] video_valid_for_processing: [{sanitize_filename(video_title)}] is not processed yet, adding to the list!")
+
+        published_date = video_info.get('published_date', 'unknown-date')
+        logging.info(f"[{channel_name}] Video needs processing [{published_date}] [{video_id}] title: {sanitize_filename(video_title)}")
         return True
+
     except Exception as e:
         logging.warning(f"Exception in video_valid_for_processing: {e}")
         return False
 
 
-async def prepare_download_info(video_info, dir_path, video_title):
+async def prepare_download_info(video_info, dir_path):
+    """
+    Prepare download information with video ID as the primary identifier
+    """
+    video_id = extract_video_id(video_info.get('url', ''))
+    if not video_id:
+        return None, None
+
+    video_title = sanitize_filename(video_info.get('title', 'Unknown')).replace('/', '_')
     strlen = len("yyyy-mm-dd")
-    published_at = video_info['publishedAt'].replace(':', '-').replace('.', '-')[:strlen]
-    video_title = f"{published_at}_{video_title}"
+    published_at = video_info.get('publishedAt', '').replace(':', '-').replace('.', '-')[:strlen]
+
+    # Video ID comes FIRST in the filename
+    video_filename_with_id = f"{published_at}_{video_id}_{video_title}"
 
     # Create a specific directory for this video if it doesn't exist
-    video_dir_path = os.path.join(dir_path, video_title)
+    video_dir_path = os.path.join(dir_path, video_filename_with_id)
     if not os.path.exists(video_dir_path):
         os.makedirs(video_dir_path)
 
-    audio_file_path = os.path.join(video_dir_path, f'{video_title}.mp3')
+    audio_file_path = os.path.join(video_dir_path, f'{video_filename_with_id}.mp3')
     ydl_opts = {
         'format': 'bestaudio/best',
         'postprocessors': [{
@@ -355,7 +429,7 @@ async def prepare_download_info(video_info, dir_path, video_title):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': f'{video_dir_path}/{video_title}.%(ext)s',
+        'outtmpl': f'{video_dir_path}/{video_filename_with_id}.%(ext)s',
     }
     return ydl_opts, audio_file_path
 
@@ -371,7 +445,7 @@ async def process_video_batches(channel_name: str, video_info_list: List[dict],
     valid_videos = []
     for index, row in filtered_videos.iterrows():
         video_dict = row.to_dict()
-        is_valid = await video_valid_for_processing(channel_name, video_dict['title'], dir_path)
+        is_valid = await video_valid_for_processing(channel_name, video_dict, dir_path)
         if is_valid:
             valid_videos.append(video_dict)
 
@@ -393,7 +467,8 @@ async def process_video_batches(channel_name: str, video_info_list: List[dict],
             await asyncio.sleep(5)
 
 
-async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file: str = None):
+async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df,
+                                      cookie_file: str = None):
     logging.info(f"Processing channel: {channel_name}")
     dir_path = YOUTUBE_VIDEO_DIRECTORY
     # Get video information from the channel
@@ -411,7 +486,8 @@ async def process_video_batches_async(channel_id, channel_name, credentials, you
     await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df, cookie_file=cookie_file)
 
 
-async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlists: Optional[List[str]] = None, cookie_file: str = None):
+async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlists: Optional[List[str]] = None,
+              cookie_file: str = None):
     """
     Run function that takes a YouTube Data API key and a list of YouTube channel names, fetches video transcripts,
     and saves them as .txt files in a data directory.
@@ -427,7 +503,8 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
 
     if service_account_file:
         credentials = authenticate_service_account(service_account_file)
-        logging.info("Service account file found. Proceeding with public channels, playlists, or private videos if accessible via Google Service Account.")
+        logging.info(
+            "Service account file found. Proceeding with public channels, playlists, or private videos if accessible via Google Service Account.")
     else:
         logging.info("No service account file found. Proceeding with public channels or playlists.")
 
@@ -441,14 +518,16 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
         with open(channel_mapping_filepath, 'r', encoding='utf-8') as file:
             channel_name_to_id = json.load(file)
 
-    yt_id_name = {get_channel_id(credentials=credentials, api_key=api_key, channel_name=name, channel_name_to_id=channel_name_to_id): name for name in yt_channels}
+    yt_id_name = {get_channel_id(credentials=credentials, api_key=api_key, channel_name=name,
+                                 channel_name_to_id=channel_name_to_id): name for name in yt_channels}
 
     videos_path = f"{root_directory()}/data/links/youtube/youtube_videos.csv"
     youtube_videos_df = pd.read_csv(videos_path)
 
     # Iterate through the dictionary of channel IDs and channel names
-    await asyncio.gather(*(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file)
-                           for channel_id, channel_name in yt_id_name.items()))
+    await asyncio.gather(
+        *(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file)
+          for channel_id, channel_name in yt_id_name.items()))
 
     # Iterate through the dictionary of channel IDs and channel names
 
@@ -459,16 +538,16 @@ async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlist
     #         playlist_title = get_playlist_title(credentials, api_key, playlist_id)
     #         # Ensure the title is filesystem-friendly (replacing slashes, for example)
     #         playlist_title = playlist_title.replace('/', '_') if playlist_title else f"playlist_{playlist_id}"
-#
+    #
     #         video_info_list = get_videos_from_playlist(credentials, api_key, playlist_id)
-#
+    #
     #         if not os.path.exists(dir_path):
     #             os.makedirs(dir_path)
-#
+    #
     #         dir_path += f'/{playlist_title}'
     #         if not os.path.exists(dir_path):
     #             os.makedirs(dir_path)
-#
+    #
     #         await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df)
 
     # clean up because downloaded file names have full-width characters instead of ASCII
@@ -516,6 +595,6 @@ def main():
 
     asyncio.run(run(api_key, yt_channels, yt_playlists, cookie_file))
 
+
 if __name__ == '__main__':
     main()
-
