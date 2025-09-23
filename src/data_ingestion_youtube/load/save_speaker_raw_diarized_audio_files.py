@@ -288,7 +288,7 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         file_name = path_segments[-1]
         video_id = extract_video_id_from_path(file_path)
 
-        logger.info(f"Starting diarization: [{channel_name}/{video_id or file_name}]")
+        logger.info(f"Starting diarization: [{channel_name}/{file_name or video_id}]")
 
         import assemblyai as aai
         config = aai.TranscriptionConfig(speaker_labels=True)
@@ -299,19 +299,19 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         duration = time.time() - start_time
 
         if transcript is None:
-            logger.error(f"Transcription returned None for: [{channel_name}/{video_id or file_name}]")
+            logger.error(f"Transcription returned None for: [{channel_name}/{file_name or video_id}]")
             return {"status": "FAILED", "file": file_path, "reason": "transcript_none"}
 
         status = getattr(transcript, "status", None)
         error_msg = getattr(transcript, "error", None)
         if status == "error" or error_msg:
-            logger.error(f"AssemblyAI error for [{channel_name}/{video_id or file_name}]: {error_msg or status}")
+            logger.error(f"AssemblyAI error for [{channel_name}/{file_name or video_id}]: {error_msg or status}")
             return {"status": "FAILED", "file": file_path, "reason": error_msg or status}
 
         utterances = getattr(transcript, "utterances", None)
 
         if not utterances:
-            logger.warning(f"No utterances returned for [{channel_name}/{video_id or file_name}] "
+            logger.warning(f"No utterances returned for [{channel_name}/{file_name or video_id}] "
                            f"(diarization may have failed or found no speech).")
             text = getattr(transcript, "text", "") or ""
             fallback = [{
@@ -326,7 +326,7 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             with open(transcript_file_path, 'w') as f:
                 json.dump(fallback, f, indent=4)
             cache.mark_processed(file_path)
-            logger.info(f"FALLBACK [{channel_name}/{video_id or file_name}] in {duration:.1f}s")
+            logger.info(f"FALLBACK [{channel_name}/{file_name or video_id}] in {duration:.1f}s")
             return {"status": "FALLBACK", "file": file_path, "duration": duration, "reason": "no_utterances"}
 
         def safe_utterance_to_dict(u):
@@ -353,7 +353,7 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             json.dump(utterances_dicts, f, indent=4)
 
         cache.mark_processed(file_path)
-        logger.info(f"SUCCESS [{channel_name}/{video_id or file_name}] in {duration:.1f}s")
+        logger.info(f"SUCCESS [{channel_name}/{file_name or video_id}] in {duration:.1f}s")
         return {"status": "SUCCESS", "file": file_path, "duration": duration}
 
     except Exception as e:
@@ -399,7 +399,7 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
                 video_id = extract_video_id_from_path(file_path)
                 file_name = path_segments[-1]
 
-                logger.debug(f"Submitting: [{channel_name}/{video_id or file_name}]")
+                logger.debug(f"Submitting: [{channel_name}/{file_name or video_id}]")
 
                 future = executor.submit(
                     transcribe_single_file,
