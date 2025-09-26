@@ -1,5 +1,5 @@
 # choose where to put the cookies file
-COOKIES_PATH="$PWD/youtube_cookies.txt"
+COOKIES_PATH="$PWD/src/data_ingestion_youtube/load/logs/youtube_cookies.txt"
 
 # export from Brave's "Default" profile and WRITE to that file
 yt-dlp --cookies-from-browser brave:Default \
