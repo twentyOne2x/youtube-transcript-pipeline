@@ -344,29 +344,5 @@ def clean_fullwidth_characters(base_path):
                     print(f"Renamed {original_dir_path} to {new_dir_path}")
 
 
-def delete_mp3_if_text_or_json_exists(base_path):
-    for root, dirs, _ in os.walk(base_path):
-        for dir in dirs:
-            subdir_path = os.path.join(root, dir)
-            # Get a list of files in the current subdirectory
-            files = os.listdir(subdir_path)
-            # Filter out .mp3, .txt and .json files
-            mp3_files = [file for file in files if file.endswith('.mp3')]
-            txt_json_files = [file for file in files if file.endswith('.txt') or file.endswith('.json')]
-
-            if mp3_files:
-                # If there are both .mp3 and (.txt or .json) files, delete the .mp3 files
-                if txt_json_files:
-                    for mp3_file in mp3_files:
-                        mp3_file_path = os.path.join(subdir_path, mp3_file)
-                        print(f"Deleted .mp3 file: {mp3_file_path}")
-                        os.remove(mp3_file_path)
-                else:
-                    # If there are only .mp3 files, print their names and containing directory
-                    for mp3_file in mp3_files:
-                        pass
-                        # print(f".mp3 file without .txt or .json: {mp3_file} in directory {subdir_path}")
-
-
 if __name__ == '__main__':
     pass

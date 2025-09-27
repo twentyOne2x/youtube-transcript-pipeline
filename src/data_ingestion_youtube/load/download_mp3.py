@@ -4,27 +4,25 @@
 import sys
 import os
 
-# Fix encoding BEFORE any other imports
+# --- Force UTF-8 early (before other imports) ---
 if sys.version_info[0] >= 3:
-    # Force UTF-8 for Python 3
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8')
     if hasattr(sys.stderr, 'reconfigure'):
         sys.stderr.reconfigure(encoding='utf-8')
 
-# Set environment to UTF-8
 os.environ['PYTHONIOENCODING'] = 'utf-8'
 os.environ['LC_ALL'] = 'en_US.UTF-8'
 os.environ['LANG'] = 'en_US.UTF-8'
 
-# Now do other imports
+# --- Now the rest of imports ---
+import io
 import asyncio
-import subprocess
 import time
-import itertools
 import json
 import argparse
-from typing import List, Optional, Dict
+import random
+from typing import List, Optional, Dict, Tuple
 from dotenv import load_dotenv
 import pandas as pd
 import yt_dlp as ydlp
@@ -35,29 +33,24 @@ from concurrent.futures import ThreadPoolExecutor
 
 from src import root_directory, YOUTUBE_VIDEO_DIRECTORY
 from src.data_ingestion_youtube.load.utils import get_channel_id, get_video_info
-from src.utils.utils import authenticate_service_account, move_remaining_mp3_to_their_subdirs, \
-    clean_fullwidth_characters, merge_directories, delete_mp3_if_text_or_json_exists, start_logging
-
-import sys, os, io
+from src.utils.utils import authenticate_service_account
 
 
+# ---------------------------
+# UTF-8 I/O
+# ---------------------------
 def ensure_utf8_stdio():
-    # Best effort to make stdout/stderr UTF-8 even if locale is Latin-1
     for stream_name in ("stdout", "stderr"):
         s = getattr(sys, stream_name)
         try:
-            # Python 3.7+: reconfigure available on real text streams
             if hasattr(s, "reconfigure"):
                 s.reconfigure(encoding="utf-8", errors="replace")
             else:
-                # Fall back to wrapping the underlying buffer
                 wrapped = io.TextIOWrapper(getattr(s, "buffer", s), encoding="utf-8", errors="replace")
                 setattr(sys, stream_name, wrapped)
         except Exception:
-            # Last resort: leave it as-is
             pass
 
-    # Also hint to child processes and libraries
     os.environ.setdefault("PYTHONIOENCODING", "utf-8")
     os.environ.setdefault("LC_ALL", "en_US.UTF-8")
     os.environ.setdefault("LANG", "en_US.UTF-8")
@@ -65,36 +58,46 @@ def ensure_utf8_stdio():
 
 ensure_utf8_stdio()
 
+# ---------------------------
+# Config / env
+# ---------------------------
 load_dotenv()
 api_key = os.environ.get('YOUTUBE_API_KEY')
 if not api_key:
     raise ValueError("No API key provided. Please provide an API key via command line argument or .env file.")
 
-# Force UTF-8 encoding - simplified approach
-if hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
-    sys.stderr.reconfigure(encoding='utf-8')
-
-# Set environment variable for Python
-os.environ['PYTHONIOENCODING'] = 'utf-8'
-
-# Load environment variables from the .env file
 DOWNLOAD_AUDIO = os.environ.get('DOWNLOAD_AUDIO', 'True').lower() == 'true'
+MAX_PER_CHANNEL = int(os.environ.get('MAX_PER_CHANNEL', '50'))  # soft cap to avoid 2000+ reprocessing at once
+SKIP_IF_MP3_EXISTS = os.environ.get('SKIP_IF_MP3_EXISTS', 'True').lower() == 'true'
+BROWSER = os.environ.get("BROWSER", "brave")
+PROFILE = os.environ.get("PROFILE", "Default")
+
+# NEW: global concurrency limiter across all channels
+GLOBAL_MAX_DOWNLOADS = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "2"))
+_SEM: Optional[asyncio.Semaphore] = None  # created lazily when the loop exists
 
 
+def _get_global_sem() -> asyncio.Semaphore:
+    global _SEM
+    if _SEM is None:
+        _SEM = asyncio.Semaphore(GLOBAL_MAX_DOWNLOADS)
+        logging.info(f"Global concurrency set to {GLOBAL_MAX_DOWNLOADS} (GLOBAL_MAX_DOWNLOADS).")
+    return _SEM
+
+
+# ---------------------------
+# Logging
+# ---------------------------
 def start_logging(name: str, level=logging.INFO, log_dir="logs"):
     os.makedirs(log_dir, exist_ok=True)
 
-    # Build a clean root logger
     root = logging.getLogger()
     root.setLevel(level)
-    # Remove any pre-existing handlers (avoid duplicates on reload)
     for h in list(root.handlers):
         root.removeHandler(h)
 
     fmt = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
-    # Stream handler to stderr, force UTF-8 (with graceful fallback)
     try:
         sh = logging.StreamHandler(sys.stderr)
         if hasattr(sh.stream, "reconfigure"):
@@ -103,31 +106,31 @@ def start_logging(name: str, level=logging.INFO, log_dir="logs"):
         sh.setFormatter(fmt)
         root.addHandler(sh)
     except Exception:
-        # Ultimate fallback: write to stdout
         sh = logging.StreamHandler(sys.stdout)
         sh.setLevel(level)
         sh.setFormatter(fmt)
         root.addHandler(sh)
 
-    # File handler, explicit UTF-8
     fh = logging.FileHandler(os.path.join(log_dir, f"{name}.log"), encoding="utf-8")
     fh.setLevel(level)
     fh.setFormatter(fmt)
     root.addHandler(fh)
 
-    # Quiet down noisy libs if desired
     logging.getLogger("googleapiclient.discovery_cache").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
-# Now start logging (this will set up its own handlers)
-start_logging(f"download_mp3s")
-logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.WARNING)
+start_logging("download_mp3s")
+try:
+    logging.info(f"{sys.executable} yt-dlp {ydlp.version.__version__}")
+except Exception:
+    pass
 
 
-def sanitize_filename(filename):
-    """Remove or replace characters that might cause filesystem issues"""
-    # Replace common problematic characters
+# ---------------------------
+# Helpers
+# ---------------------------
+def sanitize_filename(filename: str) -> str:
     replacements = {
         ''': "'", ''': "'", '"': '', '"': '', '"': '',
         '—': '-', '–': '-', '…': '...',
@@ -136,464 +139,378 @@ def sanitize_filename(filename):
     }
     for old, new in replacements.items():
         filename = filename.replace(old, new)
-
-    # Remove any remaining non-ASCII characters
     filename = unicodedata.normalize('NFKD', filename)
     filename = ''.join(c for c in filename if ord(c) < 128)
-
     return filename.strip()
 
 
-def extract_video_id(url):
-    """Extract video ID from YouTube URL"""
+def extract_video_id(url: str) -> Optional[str]:
     if 'v=' in url:
         return url.split('v=')[1].split('&')[0]
-    elif 'youtu.be/' in url:
+    if 'youtu.be/' in url:
         return url.split('youtu.be/')[1].split('?')[0]
-    elif 'youtube.com/watch/' in url:
+    if 'youtube.com/watch/' in url:
         return url.split('watch/')[1].split('?')[0]
     return None
 
 
-def setup_cookies():
-    """Setup YouTube cookies for yt-dlp - REQUIRED for downloads"""
-    logging.info("Setting up YouTube cookies...")
-
-    # Define the exact path you want to use
-    cookie_paths = [
-        'src/data_ingestion_youtube/load/youtube_cookies.txt',
-        os.path.join(root_directory(), 'src/data_ingestion_youtube/load/youtube_cookies.txt'),
-        'youtube_cookies.txt',
-        os.path.join(root_directory(), 'youtube_cookies.txt'),
-    ]
-
-    # Check each path
-    for cookie_file in cookie_paths:
-        if os.path.exists(cookie_file):
-            logging.info(f"✓ Found cookie file at: {sanitize_filename(cookie_file)}")
-            # Verify it's not empty
-            if os.path.getsize(cookie_file) > 0:
-                return os.path.abspath(cookie_file)  # Return absolute path
-            else:
-                logging.error(f"Cookie file is empty: {cookie_file}")
-
-    # If we get here, no valid cookie file was found - CRASH
-    error_msg = f"""
-    ❌ CRITICAL ERROR: No valid YouTube cookie file found!
-
-    Searched in these locations:
-    {chr(10).join(f'  - {path}' for path in cookie_paths)}
-
-    To fix this:
-    1. Export cookies from your browser using a cookies.txt extension
-    2. Save the file as 'youtube_cookies.txt' 
-    3. Place it in: {cookie_paths[0]}
-
-    See: https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp
-    """
-    logging.error(error_msg)
-    raise FileNotFoundError(error_msg)
-
-
-def chunked_iterable(iterable, size):
-    """Splits an iterable into chunks of a specified size."""
-    iterator = iter(iterable)
-    while True:
-        chunk = list(itertools.islice(iterator, size))
-        if not chunk:
-            break
-        yield chunk
-
-
-def get_ydl_opts(video_dir_path: str, video_filename: str, cookie_file: str | None = None) -> dict:
-    use_cookies_file = bool(cookie_file and os.path.exists(cookie_file))
-
-    player_clients = ['web'] if use_cookies_file else ['android', 'web']
-
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-        'outtmpl': f'{video_dir_path}/{video_filename}.%(ext)s',
-        'quiet': False,
-        'no_warnings': False,
-        'retries': 10,
-        'fragment_retries': 10,
-        'concurrent_fragments': 5,
-        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'referer': 'https://www.youtube.com/',
-        'extractor_args': {'youtube': {'player_client': player_clients}},
-        # Prefer a cookies file; if you sometimes want to run without a file, add the fallback below
-        'cookiefile': cookie_file if use_cookies_file else None,
-        # Optional: fallback to Brave profile if no file (comment out if you don't want runtime browser access)
-        # 'cookiesfrombrowser': ('brave', 'Default', None) if not use_cookies_file else None,
-        'progress_with_newline': True,  # nicer logs
-        'noprogress': False,
-        # 'keepvideo': False,  # default; you already see it deleting the .mp4 after extracting audio
-    }
-    # remove None keys to avoid confusing yt-dlp
-    ydl_opts = {k: v for k, v in ydl_opts.items() if v is not None}
-
-    logging.debug(
-        f"yt-dlp options configured. Cookie file: {cookie_file if use_cookies_file else 'none'}; clients={player_clients}")
-    return ydl_opts
-
-
-def download_video(url: str, ydl_opts: dict, retries: int = 3) -> bool:
-    for attempt in range(retries):
-        try:
-            with ydlp.YoutubeDL(ydl_opts) as ydl:
-                # Check if already downloaded
-                info = ydl.extract_info(url, download=False)
-                filename = ydl.prepare_filename(info)
-                if os.path.exists(filename.replace('.webm', '.mp3').replace('.m4a', '.mp3')):
-                    logging.info(f"Already exists: {filename}")
-                    return True
-
-                # Download
-                ydl.download([url])
-                # Log per-file success
-                try:
-                    # Recreate the expected filename and map to .mp3
-                    info = ydl.extract_info(url, download=False)
-                    filename = ydl.prepare_filename(info)
-                    mp3 = filename.replace('.webm', '.mp3').replace('.m4a', '.mp3')
-                    if os.path.exists(mp3):
-                        logging.info(f"Downloaded MP3: {mp3}")
-                    else:
-                        logging.info(f"Downloaded audio for {url} (final file not found yet)")
-                except Exception:
-                    logging.info(f"Downloaded audio for {url}")
-                return True
-
-        except DownloadError as e:
-            if "Video unavailable" in str(e):
-                logging.error(f"Video unavailable: {url}")
-                return False
-            elif "429" in str(e):
-                wait_time = (attempt + 1) * 30
-                logging.warning(f"Rate limited. Waiting {wait_time}s...")
-                time.sleep(wait_time)
-            else:
-                logging.warning(f"Attempt {attempt + 1} failed: {e}")
-
-    return False
-
-
-async def download_audio_batch(video_infos: List[dict], base_dir: str, cookie_file: str = None):
-    """
-    Download a batch of videos in parallel
-    """
-    loop = asyncio.get_event_loop()
-    executor = ThreadPoolExecutor(max_workers=5)  # Reduced workers to avoid rate limits
-
-    futures = []
-
-    for info in video_infos:
-        # Extract video ID from URL
-        video_id = extract_video_id(info['url'])
-        if not video_id:
-            published_at = info.get('published_date', 'unknown-date')[:10]
-            logging.error(f"Could not extract video ID from URL [{published_at}]: {info['url']}")
-            continue
-
-        # Create filename with video ID at the beginning
-        video_title = sanitize_filename(info['title']).replace('/', '_')
-        published_at = info.get('published_date', '')[:10]  # yyyy-mm-dd format
-
-        # Video ID comes FIRST in the filename for easy matching
-        video_filename_with_id = f"{published_at}_{video_id}_{video_title}" if published_at else f"{video_id}_{video_title}"
-
-        # Create directory using the same naming convention
-        video_dir_path = os.path.join(base_dir, video_filename_with_id)
-        os.makedirs(video_dir_path, exist_ok=True)
-
-        ydl_opts = get_ydl_opts(video_dir_path, video_filename_with_id, cookie_file)
-
-        future = loop.run_in_executor(
-            executor,
-            download_video,
-            info['url'],
-            ydl_opts
-        )
-        futures.append(future)
-
-    results = await asyncio.gather(*futures, return_exceptions=True)
-
-    success_count = sum(1 for r in results if r is True)
-    logging.info(f"Batch complete: {success_count}/{len(video_infos)} downloaded successfully")
-
-
-def filter_videos_in_dataframe(video_info_list, youtube_videos_df):
-    # Normalize titles in the dataframe
-    youtube_videos_df['title'] = youtube_videos_df['title'].str.replace(' +', ' ', regex=True).str.replace('"', '',
-                                                                                                           regex=False)
-
-    # Extract titles from the video info list
-    titles = [video['title'] for video in video_info_list]
-
-    # Create a mask for videos that are in the DataFrame
-    mask = youtube_videos_df['title'].isin(titles)
-
-    # Get the titles present in the DataFrame
-    titles_in_df = youtube_videos_df[mask]
-
-    # Filter and return videos that are in DataFrame
-    return titles_in_df
-
-
-async def video_valid_for_processing(channel_name, video_info, dir_path):
-    """
-    Check if video needs processing by looking for video ID in existing files
-    """
+def netscape_cookiefile_looks_ok(path: str) -> bool:
     try:
-        # Extract video ID from URL
-        video_id = extract_video_id(video_info.get('url', ''))
-        if not video_id:
-            logging.warning(f"Could not extract video ID for video: {video_info.get('title', 'Unknown')}")
+        with open(path, 'r', encoding='utf-8') as f:
+            lines = f.read().splitlines()
+        if not lines or not lines[0].startswith('# Netscape HTTP Cookie File'):
             return False
-
-        video_title = video_info.get('title', '')
-
-        # Check for livestreams
-        titles_to_avoid = ['livestream', 'live stream', 'live']
-        for title in titles_to_avoid:
-            if title in video_title.lower():
+        for ln in lines[1:]:
+            if not ln or ln.startswith('#'):
+                continue
+            parts = ln.split('\t')
+            if len(parts) != 7:
                 return False
-
-        # Function to check if video ID exists in any file in the directory
-        def video_id_exists_in_files(directory):
-            for filename in os.listdir(directory):
-                # Check if the video ID is at the beginning of the filename
-                if video_id in filename and (f"_{video_id}_" in filename or filename.endswith(f"_{video_id}")):
-                    # Also check for expected file extensions
-                    if (filename.endswith(".mp3") or
-                            filename.endswith("_diarized_content.json") or
-                            filename.endswith("_diarized_content_processed_diarized.txt") or
-                            filename.endswith("_content_processed_diarized.txt")):
-                        return True
-            return False
-
-        # Recursively check in dir_path and its subdirectories
-        for root, dirs, files in os.walk(dir_path):
-            # Check if any directory starts with the video ID
-            for dir_name in dirs:
-                if video_id in dir_name and (f"_{video_id}_" in dir_name or dir_name.endswith(f"_{video_id}")):
-                    published_date = video_info.get('published_date', 'unknown-date')
-                    logging.info(f"[{channel_name}] Video [{published_date}] [{video_id}] already has a directory")
-                    return False
-
-            # Check files in current directory
-            if video_id_exists_in_files(root):
-                published_date = video_info.get('published_date', 'unknown-date')
-                logging.info(f"[{channel_name}] Video [{published_date}] [{video_id}] already processed")
+            exp = int(parts[4])
+            if not (exp == 0 or (1_000_000_000 <= exp < 4_102_444_800)):
                 return False
-
-        published_date = video_info.get('published_date', 'unknown-date')
-        logging.info(f"[{channel_name}] Video needs processing [{published_date}] [{video_id}] title: {sanitize_filename(video_title)}")
-        return True
-
-    except Exception as e:
-        logging.warning(f"Exception in video_valid_for_processing: {e}")
+            return True
+        return False
+    except Exception:
         return False
 
 
-async def prepare_download_info(video_info, dir_path):
+def setup_cookies() -> Optional[str]:
+    logging.info("Setting up YouTube cookies...")
+    candidates = [
+        os.path.join(root_directory(), 'src/data_ingestion_youtube/load/youtube_cookies.txt'),
+        'src/data_ingestion_youtube/load/youtube_cookies.txt',
+        os.path.join(root_directory(), 'youtube_cookies.txt'),
+        'youtube_cookies.txt',
+    ]
+    for p in candidates:
+        if os.path.exists(p) and os.path.getsize(p) > 0 and netscape_cookiefile_looks_ok(p):
+            abspath = os.path.abspath(p)
+            logging.info(f"✓ Using cookies file: {abspath}")
+            return abspath
+        elif os.path.exists(p):
+            logging.warning(f"Cookie file exists but is invalid: {os.path.abspath(p)}")
+    logging.warning("No valid cookies file found; will try reading cookies from Brave at runtime.")
+    return None
+
+
+def build_paths(base_dir: str, info: Dict) -> Tuple[str, str, str]:
     """
-    Prepare download information with video ID as the primary identifier
+    Returns (video_dir_path, base_filename, mp3_path)
     """
-    video_id = extract_video_id(video_info.get('url', ''))
-    if not video_id:
-        return None, None
+    video_id = extract_video_id(info['url']) or "unknown"
+    title = sanitize_filename(info['title']).replace('/', '_')
+    published_at = (info.get('published_date') or info.get('publishedAt') or '')[:10]  # yyyy-mm-dd
+    base_filename = f"{published_at}_{video_id}_{title}" if published_at else f"{video_id}_{title}"
 
-    video_title = sanitize_filename(video_info.get('title', 'Unknown')).replace('/', '_')
-    strlen = len("yyyy-mm-dd")
-    published_at = video_info.get('publishedAt', '').replace(':', '-').replace('.', '-')[:strlen]
+    video_dir_path = os.path.join(base_dir, base_filename)
+    os.makedirs(video_dir_path, exist_ok=True)
 
-    # Video ID comes FIRST in the filename
-    video_filename_with_id = f"{published_at}_{video_id}_{video_title}"
+    mp3_path = os.path.join(video_dir_path, f"{base_filename}.mp3")
+    return video_dir_path, base_filename, mp3_path
 
-    # Create a specific directory for this video if it doesn't exist
-    video_dir_path = os.path.join(dir_path, video_filename_with_id)
-    if not os.path.exists(video_dir_path):
-        os.makedirs(video_dir_path)
 
-    audio_file_path = os.path.join(video_dir_path, f'{video_filename_with_id}.mp3')
-    ydl_opts = {
-        'format': 'bestaudio/best',
-        'postprocessors': [{
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'mp3',
-            'preferredquality': '192',
-        }],
-        'outtmpl': f'{video_dir_path}/{video_filename_with_id}.%(ext)s',
+# ---------------------------
+# yt-dlp opts + client rotation
+# ---------------------------
+def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional[str]) -> dict:
+    # Prefer m4a first to avoid SABR'd webm/HLS; then webm, then anything
+    base_format = "140/bestaudio[ext=m4a]/251/bestaudio/best" if DOWNLOAD_AUDIO else "bestvideo*+bestaudio/best"
+
+    return {
+        "format": base_format,
+        "postprocessors": ([{
+            "key": "FFmpegExtractAudio",
+            "preferredcodec": "mp3",
+            "preferredquality": "192",
+        }] if DOWNLOAD_AUDIO else []),
+        "outtmpl": f"{video_dir_path}/{base_filename}.%(ext)s",
+
+        # stability
+        "sleep_interval_requests": 1.5,
+        "max_sleep_interval_requests": 3.0,
+        "retries": 10,
+        "fragment_retries": 10,
+        "concurrent_fragments": 1,
+        "noplaylist": True,
+        "progress_with_newline": True,
+
+        # stash for switching logic
+        "_fallback_cookie_file": cookie_file if cookie_file else None,
+        "_browser": BROWSER,
+        "_profile": PROFILE,
     }
-    return ydl_opts, audio_file_path
 
 
-async def process_video_batches(channel_name: str, video_info_list: List[dict],
-                                dir_path: str, youtube_videos_df, batch_size: int = 10, cookie_file: str = None):
+def download_one(url: str, ydl_opts: dict, target_mp3: Optional[str], retries: int = 4) -> bool:
+    def set_client(opts, client: str):
+        y = opts.setdefault("extractor_args", {}).setdefault("youtube", {})
+        # Use web_safari variant when "web"
+        if client == "web":
+            y["player_client"] = ["web_safari"]
+        else:
+            y["player_client"] = [client]
+        # cookies only for web
+        if client != "web":
+            opts.pop("cookiefile", None)
+            opts.pop("cookiesfrombrowser", None)
+
+    def use_web_with_cookies(opts, force_browser: bool = False):
+        cookie_file = None if force_browser else opts.get("_fallback_cookie_file")
+        set_client(opts, "web")
+        if cookie_file:
+            opts["cookiefile"] = cookie_file
+            opts.pop("cookiesfrombrowser", None)
+        else:
+            opts["cookiesfrombrowser"] = (
+                opts.get("_browser", "brave"),
+                opts.get("_profile", "Default"),
+                None,
+                True
+            )
+            opts.pop("cookiefile", None)
+
+    # NEW: Start with Android (then iOS → TV → Web)
+    rotation = ["android", "ios", "tv", "web"]
+    rot_idx = 0
+    set_client(ydl_opts, rotation[rot_idx])
+
+    for attempt in range(1, retries + 1):
+        try:
+            with ydlp.YoutubeDL(ydl_opts) as ydl:
+                info = ydl.extract_info(url, download=False)
+                if DOWNLOAD_AUDIO and target_mp3 and os.path.exists(target_mp3):
+                    logging.info(f"Already exists: {target_mp3}")
+                    return True
+                ydl.download([url])
+                return True
+
+        except DownloadError as e:
+            msg = str(e)
+
+            # SABR / 403 / missing url / nsig -> rotate among non-web first, then web
+            if ("Some web client https formats have been skipped" in msg) or \
+               ("missing a url" in msg) or ("HTTP Error 403" in msg) or \
+               ("Only images are available" in msg) or ("nsig extraction failed" in msg) or \
+               ("m3u8" in msg and "403" in msg):
+                if rotation[rot_idx] != "web":
+                    prev = rotation[rot_idx]
+                    rot_idx = (rot_idx + 1) % len(rotation)
+                    nxt = rotation[rot_idx]
+                    logging.warning(f"{prev} failed (SABR/403); trying {nxt}...")
+                    if nxt == "web":
+                        use_web_with_cookies(ydl_opts, force_browser=True)
+                    else:
+                        set_client(ydl_opts, nxt)
+                    continue
+
+            # Auth/rate limit -> go web with fresh browser cookies
+            if ("Sign in to confirm you’re not a bot" in msg) or ("HTTP Error 429" in msg):
+                wait_time = 45 if attempt == 1 else min(90, 15 * attempt)
+                logging.warning(f"Auth/429; waiting {wait_time}s then using web+cookies...")
+                time.sleep(wait_time)
+                use_web_with_cookies(ydl_opts, force_browser=True)
+                rot_idx = rotation.index("web")
+                continue
+
+            # Bad/empty cookies.txt on web
+            if ("does not look like a Netscape format cookies file" in msg) or ("cookies file is empty" in msg):
+                logging.warning("Invalid cookiefile; switching to cookies-from-browser (web).")
+                ydl_opts["_fallback_cookie_file"] = None
+                use_web_with_cookies(ydl_opts, force_browser=True)
+                rot_idx = rotation.index("web")
+                continue
+
+            # generic retry
+            wait_time = 5 * attempt
+            logging.warning(f"Attempt {attempt} failed: {msg}. Retrying in {wait_time}s...")
+            time.sleep(wait_time)
+
+    logging.error("Exhausted retries.")
+    return False
+
+
+# ---------------------------
+# Batch downloading
+# ---------------------------
+async def _guarded_download(loop, executor, url, ydl_opts, mp3_path):
+    # NEW: global semaphore to cap total parallel downloads across all channels
+    async with _get_global_sem():
+        return await loop.run_in_executor(executor, download_one, url, ydl_opts, mp3_path, 4)
+
+
+async def download_batch(video_infos: List[Dict], base_dir: str, cookie_file: Optional[str] = None):
     """
-    Process videos in smaller batches to avoid rate limiting
+    Low concurrency + jitter; optional skip-if-exists; pure batching (no deep FS scan).
     """
-    # Filter and validate videos (keep your existing logic)
-    filtered_videos = filter_videos_in_dataframe(video_info_list, youtube_videos_df)
+    loop = asyncio.get_event_loop()
+    executor = ThreadPoolExecutor(max_workers=2)  # gentle on YouTube anti-bot
+    tasks = []
 
-    valid_videos = []
-    for index, row in filtered_videos.iterrows():
-        video_dict = row.to_dict()
-        is_valid = await video_valid_for_processing(channel_name, video_dict, dir_path)
-        if is_valid:
-            valid_videos.append(video_dict)
+    for info in video_infos:
+        await asyncio.sleep(0.5 + random.random() * 0.75)  # tiny jitter
 
-    if not valid_videos:
-        logging.info(f"[{channel_name}] No new videos to download")
+        video_id = extract_video_id(info.get('url', ''))
+        if not video_id:
+            logging.error(f"Could not extract video ID from URL: {info.get('url')}")
+            continue
+
+        video_dir_path, base_filename, mp3_path = build_paths(base_dir, info)
+        if DOWNLOAD_AUDIO and SKIP_IF_MP3_EXISTS and os.path.exists(mp3_path):
+            logging.info(f"Skip (exists): {mp3_path}")
+            continue
+
+        ydl_opts = make_ydl_opts(video_dir_path, base_filename, cookie_file)
+
+        # NEW: use guarded task (global semaphore) instead of launching all at once
+        tasks.append(asyncio.create_task(_guarded_download(loop, executor, info['url'], ydl_opts, mp3_path)))
+
+    if not tasks:
+        logging.info("Nothing to download in this batch.")
         return
 
-    logging.info(f"[{channel_name}] Downloading {len(valid_videos)} videos")
-
-    # Process in smaller batches with delays
-    for i in range(0, len(valid_videos), batch_size):
-        batch = valid_videos[i:i + batch_size]
-        logging.info(f"[{channel_name}] Processing batch {i // batch_size + 1}")
-
-        await download_audio_batch(batch, dir_path, cookie_file)
-
-        # Add delay between batches to avoid rate limiting
-        if i + batch_size < len(valid_videos):
-            await asyncio.sleep(5)
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+    success_count = sum(1 for r in results if r is True)
+    logging.info(f"Batch complete: {success_count}/{len(results)} succeeded")
 
 
-async def process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df,
-                                      cookie_file: str = None):
+def pick_recent_subset(video_info_list: List[Dict], limit: int) -> List[Dict]:
+    """
+    Return at most `limit` newest-looking entries.
+    Assumes items have 'published_date' or 'publishedAt' in ISO-ish form.
+    If not, just take the last `limit` items as-is.
+    """
+    def key_dt(v):
+        date_str = (v.get('published_date') or v.get('publishedAt') or '')[:19]
+        return date_str
+
+    try:
+        sorted_list = sorted(video_info_list, key=key_dt, reverse=True)
+        return sorted_list[:max(0, limit)]
+    except Exception:
+        return video_info_list[-limit:]
+
+
+async def process_channel(channel_name: str, video_info_list: List[Dict],
+                          channel_dir: str, batch_size: int, cookie_file: Optional[str]):
+    # Keep only newest MAX_PER_CHANNEL to avoid scanning thousands at once
+    to_process = pick_recent_subset(video_info_list, MAX_PER_CHANNEL)
+    total = len(to_process)
+    if total == 0:
+        logging.info(f"[{channel_name}] No videos to process.")
+        return
+
+    logging.info(f"[{channel_name}] Downloading up to {total} videos (cap={MAX_PER_CHANNEL}, batch_size={batch_size})")
+
+    for i in range(0, total, batch_size):
+        batch = to_process[i:i + batch_size]
+        logging.info(f"[{channel_name}] Processing batch {i // batch_size + 1} ({len(batch)} items)")
+        await download_batch(batch, channel_dir, cookie_file)
+        if i + batch_size < total:
+            await asyncio.sleep(5 + random.random() * 2.0)
+
+
+# ---------------------------
+# Orchestration
+# ---------------------------
+async def process_channel_async(channel_id: str, channel_name: str,
+                                credentials, youtube_videos_df: pd.DataFrame,
+                                cookie_file: Optional[str] = None,
+                                batch_size: int = 10):
     logging.info(f"Processing channel: {channel_name}")
-    dir_path = YOUTUBE_VIDEO_DIRECTORY
-    # Get video information from the channel
+    base_dir = YOUTUBE_VIDEO_DIRECTORY
+    os.makedirs(base_dir, exist_ok=True)
+    channel_dir = os.path.join(base_dir, channel_name)
+    os.makedirs(channel_dir, exist_ok=True)
+
+    # Pull fresh list of videos for the channel
     video_info_list = get_video_info(credentials, api_key, channel_id)
 
-    # Create a 'data' directory if it does not exist
-    if not os.path.exists(dir_path):
-        os.makedirs(dir_path)
+    # Optionally intersect with your CSV (if that's your intended source of truth)
+    titles_in_csv = set(youtube_videos_df['title'].str.replace(' +', ' ', regex=True).str.replace('"', '', regex=False))
+    filtered = [v for v in video_info_list if v.get('title') in titles_in_csv]
 
-    # Create a subdirectory for the current channel if it does not exist
-    dir_path = os.path.join(dir_path, channel_name)
-    if not os.path.exists(dir_path):
-        os.makedirs(dir_path)
-
-    await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df, cookie_file=cookie_file)
+    videos = filtered if filtered else video_info_list
+    await process_channel(channel_name, videos, channel_dir, batch_size, cookie_file)
 
 
-async def run(api_key: str, yt_channels: Optional[List[str]] = None, yt_playlists: Optional[List[str]] = None,
-              cookie_file: str = None):
-    """
-    Run function that takes a YouTube Data API key and a list of YouTube channel names, fetches video transcripts,
-    and saves them as .txt files in a data directory.
-
-    Args:
-        yt_playlists:
-        api_key (str): Your YouTube Data API key.
-        yt_channels (List[str]): A list of YouTube channel names.
-    """
-    clean_mp3s()
+async def run(api_key: str,
+              yt_channels: Optional[List[str]] = None,
+              yt_playlists: Optional[List[str]] = None,
+              cookie_file: Optional[str] = None,
+              batch_size: int = 10):
     service_account_file = os.environ.get('SERVICE_ACCOUNT_FILE')
-    credentials = None
-
-    if service_account_file:
-        credentials = authenticate_service_account(service_account_file)
-        logging.info(
-            "Service account file found. Proceeding with public channels, playlists, or private videos if accessible via Google Service Account.")
+    credentials = authenticate_service_account(service_account_file) if service_account_file else None
+    if credentials:
+        logging.info("Service account file found. Proceeding with public channels, playlists, or private videos if accessible via Google Service Account.")
     else:
         logging.info("No service account file found. Proceeding with public channels or playlists.")
 
-    # Create a dictionary with channel IDs as keys and channel names as values
-    # Define the path for storing the mapping between channel names and their IDs
-    channel_mapping_filepath = f"{root_directory()}/data/links/channel_handle_to_id_mapping.json"
+    # Load channel handle -> id cache if present
+    mapping_path = f"{root_directory()}/data/links/channel_handle_to_id_mapping.json"
+    channel_name_to_id = {}
+    if os.path.exists(mapping_path):
+        with open(mapping_path, 'r', encoding='utf-8') as f:
+            channel_name_to_id = json.load(f)
 
-    # Load existing mappings if the file exists, or initialize an empty dictionary
-    channel_name_to_id = {}  # Initialize regardless
-    if os.path.exists(channel_mapping_filepath):
-        with open(channel_mapping_filepath, 'r', encoding='utf-8') as file:
-            channel_name_to_id = json.load(file)
+    # Resolve ids
+    yt_id_name = {
+        get_channel_id(credentials=credentials, api_key=api_key, channel_name=name,
+                       channel_name_to_id=channel_name_to_id): name
+        for name in (yt_channels or [])
+    }
 
-    yt_id_name = {get_channel_id(credentials=credentials, api_key=api_key, channel_name=name,
-                                 channel_name_to_id=channel_name_to_id): name for name in yt_channels}
+    videos_csv = f"{root_directory()}/data/links/youtube/youtube_videos.csv"
+    youtube_videos_df = pd.read_csv(videos_csv)
 
-    videos_path = f"{root_directory()}/data/links/youtube/youtube_videos.csv"
-    youtube_videos_df = pd.read_csv(videos_path)
-
-    # Iterate through the dictionary of channel IDs and channel names
     await asyncio.gather(
-        *(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df, cookie_file)
-          for channel_id, channel_name in yt_id_name.items()))
-
-    # Iterate through the dictionary of channel IDs and channel names
-
-    # if yt_playlists:
-    #     await asyncio.gather(*(process_video_batches_async(channel_id, channel_name, credentials, youtube_videos_df)
-    #                            for channel_id, channel_name in yt_id_name.items()))
-    #     for playlist_id in yt_playlists:
-    #         playlist_title = get_playlist_title(credentials, api_key, playlist_id)
-    #         # Ensure the title is filesystem-friendly (replacing slashes, for example)
-    #         playlist_title = playlist_title.replace('/', '_') if playlist_title else f"playlist_{playlist_id}"
-    #
-    #         video_info_list = get_videos_from_playlist(credentials, api_key, playlist_id)
-    #
-    #         if not os.path.exists(dir_path):
-    #             os.makedirs(dir_path)
-    #
-    #         dir_path += f'/{playlist_title}'
-    #         if not os.path.exists(dir_path):
-    #             os.makedirs(dir_path)
-    #
-    #         await process_video_batches(channel_name, video_info_list, dir_path, youtube_videos_df)
-
-    # clean up because downloaded file names have full-width characters instead of ASCII
-    clean_mp3s()
+        *(process_channel_async(cid, cname, credentials, youtube_videos_df, cookie_file, batch_size)
+          for cid, cname in yt_id_name.items())
+    )
 
 
-def clean_mp3s():
-    directory = f"{root_directory()}/datasets/evaluation_data/diarized_youtube_content_2023-10-06"
-    clean_fullwidth_characters(directory)
-    move_remaining_mp3_to_their_subdirs()
-    merge_directories(directory)
-    delete_mp3_if_text_or_json_exists(directory)
-
-
-def get_youtube_channels_from_file(file_path):
-    with open(file_path, 'r') as file:
-        channels = file.read().split(',')
-    return channels
+# ---------------------------
+# CLI
+# ---------------------------
+def get_youtube_channels_from_file(file_path: str) -> List[str]:
+    with open(file_path, 'r') as f:
+        return [c.strip() for c in f.read().split(',') if c.strip()]
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Fetch YouTube video transcripts.')
-    parser.add_argument('--api_key', type=str, help='YouTube Data API key')
+    parser = argparse.ArgumentParser(description='Batch download YouTube audio via yt-dlp with cookie/client rotation.')
+    parser.add_argument('--api_key', type=str, help='YouTube Data API key (overrides .env)')
     parser.add_argument('--channels', nargs='+', type=str, help='YouTube channel names or IDs')
-    parser.add_argument('--playlists', nargs='+', type=str, help='YouTube playlist IDs')
-
+    parser.add_argument('--playlists', nargs='+', type=str, help='YouTube playlist IDs (unused here)')
+    parser.add_argument('--batch_size', type=int, default=int(os.environ.get('BATCH_SIZE', '10')),
+                        help='Items per batch per channel')
     args = parser.parse_args()
 
-    # Setup cookies FIRST and crash if not found
+    # cookie source
     try:
         cookie_file = setup_cookies()
     except FileNotFoundError as e:
         print(str(e))
-        sys.exit(1)  # Exit with error code
+        sys.exit(1)
 
-    yt_channels_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
-    yt_channels = get_youtube_channels_from_file(yt_channels_file)
+    # channels source
+    yt_channels = args.channels
+    if not yt_channels:
+        handles_file = os.path.join(root_directory(), 'data/links/youtube/youtube_channel_handles.txt')
+        if os.path.exists(handles_file):
+            yt_channels = get_youtube_channels_from_file(handles_file)
 
     yt_playlists = args.playlists or os.environ.get('YOUTUBE_PLAYLISTS')
-    if yt_playlists:
-        yt_playlists = [playlist.strip() for playlist in yt_playlists.split(',')]
+    if yt_playlists and isinstance(yt_playlists, str):
+        yt_playlists = [p.strip() for p in yt_playlists.split(',') if p.strip()]
 
     if not yt_channels and not yt_playlists:
         raise ValueError("No channels or playlists provided.")
 
-    asyncio.run(run(api_key, yt_channels, yt_playlists, cookie_file))
+    # prefer CLI api_key if provided
+    key = args.api_key or api_key
+
+    asyncio.run(run(key, yt_channels, yt_playlists, cookie_file, batch_size=args.batch_size))
 
 
 if __name__ == '__main__':
