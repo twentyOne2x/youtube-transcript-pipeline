@@ -10,6 +10,8 @@ import pickle
 from datetime import datetime
 from queue import Queue
 import threading
+import concurrent.futures as cf
+
 
 from src import YOUTUBE_VIDEO_DIRECTORY
 
@@ -19,13 +21,29 @@ api_keys = os.environ.get('ASSEMBLY_AI_API_KEYS')
 if not api_keys:
     raise EnvironmentError("ASSEMBLY_AI_API_KEYS environment variable not found.")
 
-api_keys = api_keys.split(',')
+api_keys = [k.strip() for k in api_keys.split(',') if k.strip()]
 
 # Cache file path
 CACHE_FILE = os.path.join(YOUTUBE_VIDEO_DIRECTORY, '.diarization_cache.pkl')
 
-# Maximum concurrent transcriptions per API key
-MAX_CONCURRENT_TRANSCRIPTIONS = 5
+# =========================
+# Tunable runtime settings
+# =========================
+
+# Concurrency limits (uploads are the bottleneck)
+MAX_CONCURRENT_TRANSCRIPTIONS = int(os.getenv("AAI_MAX_CONCURRENT_TRANSCRIPTIONS", "5"))
+MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "1"))  # keep this low!
+
+# Timeouts / retries
+TRANSCRIBE_TIMEOUT_SEC = int(os.getenv("AAI_TRANSCRIBE_TIMEOUT_SEC", "1800"))  # 30 min
+UPLOAD_RETRY_MAX = int(os.getenv("AAI_UPLOAD_RETRY_MAX", "6"))
+BACKOFF_BASE = float(os.getenv("AAI_BACKOFF_BASE", "1.8"))
+BACKOFF_CAP = float(os.getenv("AAI_BACKOFF_CAP", "60"))  # max sleep between retries
+
+# Upload chunk size (bytes). 5–10MB is a sweet spot.
+AAI_UPLOAD_CHUNK_SIZE = int(os.getenv("AAI_UPLOAD_CHUNK_SIZE", str(5 * 1024 * 1024)))
+
+# =========================
 
 
 def extract_video_id_from_path(file_path):
@@ -38,6 +56,7 @@ def extract_video_id_from_path(file_path):
         if re.match(r'^[a-zA-Z0-9_-]{11}$', potential_id):
             return potential_id
     return None
+
 
 class DiarizationCache:
     """Simple cache to track processed files by video ID"""
@@ -131,7 +150,6 @@ class DiarizationCache:
             for file in files:
                 if file.endswith("_diarized_content.json"):
                     # Extract video ID from the JSON filename
-                    # Format: {video_id}_{date}_{title}_diarized_content.json
                     video_id = extract_video_id_from_path(file)
                     if video_id:
                         self.processed_video_ids.add(video_id)
@@ -269,7 +287,110 @@ def utterance_to_dict(utterance) -> dict:
     }
 
 
+# =========================
+# Upload throttling helpers
+# =========================
+
+class PerKeyLimiter:
+    def __init__(self, max_uploads: int):
+        self.sem = threading.Semaphore(max_uploads)
+
+    def acquire(self):
+        self.sem.acquire()
+
+    def release(self):
+        self.sem.release()
+
+
+def backoff_sleep(attempt, base=BACKOFF_BASE, cap=BACKOFF_CAP):
+    """Exponential backoff with full jitter"""
+    import random as _random
+    delay = min(cap, (base ** attempt))
+    time.sleep(_random.uniform(0, delay))
+
+
+def _stream_file(path, chunk_size):
+    with open(path, "rb") as f:
+        while True:
+            data = f.read(chunk_size)
+            if not data:
+                break
+            yield data
+
+
+def _raw_upload_with_requests(file_path, api_key, logger):
+    import requests
+    url = "https://api.assemblyai.com/v2/upload"
+    headers = {"authorization": api_key}
+    # streaming generator triggers chunked transfer; no Content-Length needed
+    resp = requests.post(
+        url,
+        headers=headers,
+        data=_stream_file(file_path, AAI_UPLOAD_CHUNK_SIZE),
+        timeout=300,
+    )
+    if 200 <= resp.status_code < 300:
+        js = {}
+        try:
+            js = resp.json()
+        except Exception:
+            pass
+        # SDK returns 'upload_url'; be liberal just in case
+        return js.get("upload_url") or js.get("url") or js.get("uploadUrl")
+    raise RuntimeError(f"Upload HTTP {resp.status_code}: {resp.text[:300]}")
+
+
+def upload_with_retries(file_path, logger, api_key):
+    """
+    Robust uploader that works across SDK versions:
+    - New SDKs: aai.files.upload
+    - Older SDKs: aai.upload_file
+    - Fallback: direct streaming to /v2/upload with requests
+    """
+    import assemblyai as aai
+    attempt = 0
+    last_err = None
+
+    # Detect SDK surface
+    has_files_upload = hasattr(aai, "files") and hasattr(getattr(aai, "files"), "upload")
+    has_upload_file = hasattr(aai, "upload_file")
+
+    while attempt < UPLOAD_RETRY_MAX:
+        try:
+            if has_files_upload:
+                # New SDK supports chunk_size
+                return aai.files.upload(file_path, chunk_size=AAI_UPLOAD_CHUNK_SIZE)
+            if has_upload_file:
+                # Older SDK; still chunked internally
+                return aai.upload_file(file_path)
+            # Fallback: direct HTTP
+            return _raw_upload_with_requests(file_path, api_key, logger)
+
+        except Exception as e:
+            msg = str(e) or e.__class__.__name__
+            last_err = e
+            # Errors we treat as transient (upload is the flaky step)
+            transient = any(s in msg for s in [
+                "502", "503", "504", "Bad Gateway", "Service Unavailable", "Gateway",
+                "timed out", "Timeout", "Temporary failure", "Connection reset",
+                "Upload failed", "Read timed out", "Connection aborted", "ECONNRESET",
+                "429", "Too Many Requests"
+            ])
+            code422 = ("422" in msg)  # treat 422 during upload as transient here
+            if transient or code422:
+                attempt += 1
+                logger.warning(
+                    f"Upload failed (attempt {attempt}/{UPLOAD_RETRY_MAX}) for {os.path.basename(file_path)}: {msg}"
+                )
+                backoff_sleep(attempt)
+                continue
+            # Non-transient: bail out immediately
+            raise
+    raise RuntimeError(f"Upload failed after {UPLOAD_RETRY_MAX} attempts: {last_err}")
+
+
 def transcribe_single_file(api_key, file_path, cache_file, logger):
+    """Transcribe one file with explicit upload + polling, guarded by per-key upload limiter."""
     cache = ProcessSafeCache(cache_file)
     try:
         transcript_file_path = os.path.splitext(file_path)[0] + "_diarized_content.json"
@@ -290,12 +411,49 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
 
         logger.info(f"Starting diarization: [{channel_name}/{file_name or video_id}]")
 
+        # ================
+        # Upload (limited)
+        # ================
         import assemblyai as aai
         config = aai.TranscriptionConfig(speaker_labels=True)
         transcriber = aai.Transcriber()
 
+        # Acquire an upload slot for this API key before pushing bytes
+        if not hasattr(transcribe_single_file, "_limiters"):
+            transcribe_single_file._limiters = {}
+        limiter = transcribe_single_file._limiters.setdefault(api_key, PerKeyLimiter(MAX_UPLOADS_PER_KEY))
+
+        limiter.acquire()
+        try:
+            upload_start = time.time()
+            audio_url = upload_with_retries(file_path, logger, api_key)
+            logger.debug(f"Uploaded in {time.time() - upload_start:.1f}s -> {audio_url}")
+        finally:
+            limiter.release()
+
+        # ======================
+        # Kick off + wait safely
+        # ======================
         start_time = time.time()
-        transcript = transcriber.transcribe(file_path, config=config)
+
+        # Newer SDKs: submit() returns a job handle; wait with a real timeout
+        job = transcriber.submit(audio_url, config=config)
+        try:
+            transcript = job.wait_for_completion_async().result(timeout=TRANSCRIBE_TIMEOUT_SEC)
+        except cf.TimeoutError:
+            logger.error(
+                f"Timed out after {TRANSCRIBE_TIMEOUT_SEC}s waiting for: "
+                f"[{channel_name}/{file_name or video_id}]"
+            )
+            # best-effort cleanup
+            try:
+                if getattr(job, "id", None):
+                    import assemblyai as aai
+                    aai.Transcript.delete_by_id(job.id)
+            except Exception:
+                pass
+            return {"status": "FAILED", "file": file_path, "reason": "timeout"}
+
         duration = time.time() - start_time
 
         if transcript is None:
@@ -311,8 +469,10 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         utterances = getattr(transcript, "utterances", None)
 
         if not utterances:
-            logger.warning(f"No utterances returned for [{channel_name}/{file_name or video_id}] "
-                           f"(diarization may have failed or found no speech).")
+            logger.warning(
+                f"No utterances returned for [{channel_name}/{file_name or video_id}] "
+                f"(diarization may have failed or found no speech)."
+            )
             text = getattr(transcript, "text", "") or ""
             fallback = [{
                 "text": text,
@@ -376,8 +536,8 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
     completed = {"SUCCESS": 0, "FALLBACK": 0, "SKIPPED": 0, "FAILED": 0}
     failed = 0
 
-    # Process files in batches
-    batch_size = MAX_CONCURRENT_TRANSCRIPTIONS
+    # Process files in smaller batches to avoid saturating upload endpoints
+    batch_size = min(MAX_CONCURRENT_TRANSCRIPTIONS, 3)  # safer default
 
     for i in range(0, total_files, batch_size):
         batch = file_paths[i:i + batch_size]
@@ -394,7 +554,7 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
                 random_sleep(0.1, 0.3)
 
                 # Extract file info for logging
-                path_segments = file_path.split('/')
+                path_segments = file_path.split(os.sep)
                 channel_name = path_segments[-3] if len(path_segments) >= 3 else "unknown"
                 video_id = extract_video_id_from_path(file_path)
                 file_name = path_segments[-1]
@@ -416,12 +576,27 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
 
             for future, file_path in futures:
                 try:
-                    result = future.result(timeout=600)
+                    # longer future timeout (transcription can legitimately take a while)
+                    result = future.result(timeout=TRANSCRIBE_TIMEOUT_SEC + 120)
                     status = (result or {}).get("status", "FAILED")
                     completed[status] = completed.get(status, 0) + 1
                 except Exception as e:
-                    logger.error(f"Batch processing error for {file_path}: {e}")
-                    completed["FAILED"] += 1
+                    msg = str(e)
+                    if "TimeoutError" in msg or "timeout" in msg.lower():
+                        logger.warning(
+                            f"Timeout waiting for {os.path.basename(file_path)}; retrying once synchronously"
+                        )
+                        # Retry once synchronously (no extra thread)
+                        try:
+                            result = transcribe_single_file(api_key, file_path, cache.cache_file, logger)
+                            status = (result or {}).get("status", "FAILED")
+                            completed[status] = completed.get(status, 0) + 1
+                        except Exception as e2:
+                            logger.error(f"Retry failed for {file_path}: {e2}")
+                            completed["FAILED"] += 1
+                    else:
+                        logger.error(f"Batch processing error for {file_path}: {e}")
+                        completed["FAILED"] += 1
 
             logger.info(
                 f"Batch complete. Total: {sum(completed.values())}/{total_files} "
@@ -474,7 +649,9 @@ def main():
     logging.info(f"Processing {len(mp3_files)} new files...")
     logging.info(f"Skipping {len(all_mp3_files) - len(mp3_files)} already processed files")
     logging.info(
-        f"Using {len(api_keys)} API keys with max {MAX_CONCURRENT_TRANSCRIPTIONS} concurrent transcriptions each")
+        f"Using {len(api_keys)} API keys with max {MAX_CONCURRENT_TRANSCRIPTIONS} concurrent transcriptions each; "
+        f"max uploads per key: {MAX_UPLOADS_PER_KEY}"
+    )
 
     # Log some sample video IDs being processed
     sample_size = min(5, len(mp3_files))
