@@ -41,7 +41,7 @@ def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional
 
 def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings: Settings, retries: int = 4) -> str:
     using_cookies = bool(ydl_opts.get("_fallback_cookie_file")) or ("_browser" in ydl_opts and "_profile" in ydl_opts)
-    rot = ClientRotator(using_cookies)
+    rot = ClientRotator(using_cookies, settings)
     set_client(ydl_opts, rot.current())
 
     for attempt in range(1, retries + 1):
@@ -60,6 +60,10 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 try:
                     with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id}) as ydl:
                         ydl.download([url])
+                    if target_path and os.path.exists(target_path):
+                        logging.info(f"Saved: {target_path}")
+                    else:
+                        logging.warning(f"Download reported success but file not found at expected path: {target_path}")
                     return DlStatus.OK
                 except DownloadError as fe:
                     logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
@@ -75,6 +79,10 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
             fallback = "bestaudio[ext=m4a]/bestaudio[acodec^=mp4a]/140/251/bestaudio"
             with ydlp.YoutubeDL({**ydl_opts, "format": fallback}) as ydl:
                 ydl.download([url])
+            if target_path and os.path.exists(target_path):
+                logging.info(f"Saved: {target_path}")
+            else:
+                logging.warning(f"Download reported success but file not found at expected path: {target_path}")
             return DlStatus.OK
 
         except DownloadError as e:

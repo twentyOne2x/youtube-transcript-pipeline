@@ -1,4 +1,8 @@
 from typing import List
+
+from .config import Settings
+
+
 def set_client(opts: dict, client: str):
     y = opts.setdefault("extractor_args", {}).setdefault("youtube", {})
     if client == "web":
@@ -29,9 +33,15 @@ def set_client(opts: dict, client: str):
         opts.pop("cookiesfrombrowser", None)
 
 class ClientRotator:
-    def __init__(self, using_cookies: bool):
-        self.order: List[str] = (["web_safari", "web_creator", "web_embedded", "android", "ios", "tv"]
-                                 if using_cookies else ["android", "ios", "tv", "web_safari"])
+    def __init__(self, using_cookies: bool, settings: Settings):
+        order: List[str] = (["web_safari", "web_creator", "web_embedded", "android", "ios", "tv"]
+                            if using_cookies else ["android", "ios", "tv", "web_safari"])
+        # honor DEFAULT_CLIENT if present
+        dc = (settings.default_client or "").strip()
+        if dc and dc in order:
+            order.remove(dc)
+            order.insert(0, dc)
+        self.order = order
         self.idx = 0
 
     def current(self) -> str:
@@ -42,7 +52,6 @@ class ClientRotator:
         return self.current()
 
     def force_web_with_cookies(self):
-        # reset to first web client
         if "web_safari" in self.order:
             self.idx = self.order.index("web_safari")
         else:

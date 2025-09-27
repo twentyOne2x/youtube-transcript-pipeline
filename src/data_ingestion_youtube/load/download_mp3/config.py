@@ -1,5 +1,5 @@
-from dataclasses import dataclass
 from enum import Enum
+from dataclasses import dataclass, field
 import os
 
 class DlStatus(str, Enum):
@@ -30,3 +30,8 @@ class Settings:
     debug_list_formats: bool = os.environ.get("DEBUG_LIST_FORMATS", "false").lower() == "true"
 
     use_browser_cookies: bool = os.environ.get("USE_BROWSER_COOKIES", "true").lower() == "true"
+
+    default_client: str = os.environ.get("DEFAULT_CLIENT", "").strip()
+    preferred_itags: list[str] = field(default_factory=lambda: [
+        s.strip() for s in os.environ.get("PREFERRED_ITAGS", "").split(",") if s.strip()
+    ])

@@ -28,7 +28,6 @@ def ranked_audio_format_ids(info: Dict, settings: Settings) -> List[str]:
         s = 0
         if f.get('url'): s += 1000
         if 'm3u8' not in proto: s += 300
-
         af = settings.audio_format
         if af == 'm4a':
             if ext == 'm4a' or 'mp4a' in ac: s += 150
@@ -37,10 +36,17 @@ def ranked_audio_format_ids(info: Dict, settings: Settings) -> List[str]:
         elif af == 'mp3':
             if ext == 'm4a' or 'mp4a' in ac: s += 150
             elif 'opus' in ac: s += 120
-
         s += abr
         return s
 
     candidates = [f for f in fmts if is_audio_only(f)]
     candidates.sort(key=score, reverse=True)
-    return [f.get('format_id') for f in candidates if f.get('format_id')]
+    ranked = [f.get('format_id') for f in candidates if f.get('format_id')]
+
+    # 🔽 prepend preferred itags if configured
+    if settings.preferred_itags:
+        front = [i for i in settings.preferred_itags if i in ranked]
+        tail = [i for i in ranked if i not in settings.preferred_itags]
+        ranked = front + tail
+
+    return ranked

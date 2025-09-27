@@ -1,31 +1,14 @@
 # run.py (top of file)
-import os, json, asyncio, logging, pandas as pd
-from typing import List, Optional
+import os, json, asyncio, logging
+import pandas as pd
+from typing import List, Optional, Dict, Tuple
 from dotenv import load_dotenv
 from src import root_directory, YOUTUBE_VIDEO_DIRECTORY
 from src.data_ingestion_youtube.load.utils import get_channel_id, get_video_info
 from src.utils.utils import authenticate_service_account
-# 🔽 change these two lines
+# 🔽 changed: import process_global instead of process_channel
 from src.data_ingestion_youtube.load.download_mp3.config import Settings
-from src.data_ingestion_youtube.load.download_mp3.batches import process_channel
-
-async def process_channel_async(channel_id: str, channel_name: str,
-                                credentials, youtube_videos_df: pd.DataFrame,
-                                settings: Settings, cookie_file: Optional[str],
-                                batch_size: int = 10):
-    logging.info(f"Processing channel: {channel_name}")
-    base_dir = YOUTUBE_VIDEO_DIRECTORY
-    os.makedirs(base_dir, exist_ok=True)
-    channel_dir = os.path.join(base_dir, channel_name)
-    os.makedirs(channel_dir, exist_ok=True)
-
-    video_info_list = get_video_info(credentials, os.environ.get("YOUTUBE_API_KEY"), channel_id)
-
-    titles_in_csv = set(youtube_videos_df['title'].str.replace(' +', ' ', regex=True).str.replace('"', '', regex=False))
-    filtered = [v for v in video_info_list if v.get('title') in titles_in_csv]
-    videos = filtered if filtered else video_info_list
-
-    await process_channel(channel_name, videos, channel_dir, batch_size, settings, cookie_file)
+from src.data_ingestion_youtube.load.download_mp3.batches import process_global
 
 async def run(api_key: str,
               settings: Settings,
@@ -42,7 +25,7 @@ async def run(api_key: str,
         logging.info("No service account file found. Proceeding with public channels or playlists.")
 
     mapping_path = f"{root_directory()}/data/links/channel_handle_to_id_mapping.json"
-    channel_name_to_id = {}
+    channel_name_to_id: Dict[str, str] = {}
     if os.path.exists(mapping_path):
         with open(mapping_path, 'r', encoding='utf-8') as f:
             channel_name_to_id = json.load(f)
@@ -55,11 +38,32 @@ async def run(api_key: str,
 
     videos_csv = f"{root_directory()}/data/links/youtube/youtube_videos.csv"
     youtube_videos_df = pd.read_csv(videos_csv)
-
-    await asyncio.gather(
-        *(process_channel_async(cid, cname, credentials, youtube_videos_df, settings, cookie_file, batch_size)
-          for cid, cname in yt_id_name.items())
+    titles_in_csv = set(
+        youtube_videos_df['title']
+        .str.replace(' +', ' ', regex=True)
+        .str.replace('"', '', regex=False)
     )
+
+    # Build global list of (channel_name, channel_dir, videos)
+    items: List[Tuple[str, str, List[Dict]]] = []
+    base_dir = YOUTUBE_VIDEO_DIRECTORY
+    os.makedirs(base_dir, exist_ok=True)
+
+    for cid, cname in yt_id_name.items():
+        logging.info(f"Collecting videos for channel: {cname}")
+        channel_dir = os.path.join(base_dir, cname)
+        os.makedirs(channel_dir, exist_ok=True)
+
+        video_info_list = get_video_info(credentials, os.environ.get("YOUTUBE_API_KEY"), cid)
+
+        # Keep your CSV filter
+        filtered = [v for v in video_info_list if v.get('title') in titles_in_csv]
+        videos = filtered if filtered else video_info_list
+
+        items.append((cname, channel_dir, videos))
+
+    # Global newest→oldest scheduler; wave_size uses batch_size
+    await process_global(items, settings=settings, cookie_file=cookie_file, wave_size=batch_size)
 
 
 if __name__ == "__main__":
@@ -70,7 +74,7 @@ if __name__ == "__main__":
     if __package__ is None:
         # add project root: <repo root>/ so `import src...` works
         here = Path(__file__).resolve()
-        project_root = here.parents[3]  # .../youtube-transcript-pipeline/
+        project_root = here.parents[4]  # .../youtube-transcript-pipeline/
         sys.path.insert(0, str(project_root))
 
     # --- absolute imports only (no leading dots) ---
