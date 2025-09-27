@@ -1,0 +1,32 @@
+from dataclasses import dataclass
+from enum import Enum
+import os
+
+class DlStatus(str, Enum):
+    OK = "ok"
+    RATE = "rate_limited"
+    SABR = "sabr"
+    NOAUDIO = "no_audio_only"
+    ERR = "error"
+
+@dataclass(frozen=True)
+class Settings:
+    audio_format: str = os.environ.get("AUDIO_FORMAT", "mp3").lower()  # m4a|opus|mp3|source
+    require_audio_only: bool = os.environ.get("REQUIRE_AUDIO_ONLY", "True").lower() == "true"
+    allow_sabr_fallback: bool = os.environ.get("ALLOW_SABR_FALLBACK", "False").lower() == "true"
+
+    adaptive_max_cap: int = int(os.environ.get("ADAPTIVE_MAX_CAP", "6"))
+    adaptive_min_cap: int = int(os.environ.get("ADAPTIVE_MIN_CAP", "2"))
+
+    download_audio: bool = os.environ.get("DOWNLOAD_AUDIO", "True").lower() == "true"
+    max_per_channel: int = int(os.environ.get("MAX_PER_CHANNEL", "50"))
+    skip_if_exists: bool = os.environ.get("SKIP_IF_MP3_EXISTS", "True").lower() == "true"
+
+    browser: str = os.environ.get("BROWSER", "brave")
+    profile: str = os.environ.get("PROFILE", "Default")
+
+    global_max_downloads: int = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "5"))
+
+    debug_list_formats: bool = os.environ.get("DEBUG_LIST_FORMATS", "false").lower() == "true"
+
+    use_browser_cookies: bool = os.environ.get("USE_BROWSER_COOKIES", "true").lower() == "true"
