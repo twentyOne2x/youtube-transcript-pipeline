@@ -36,6 +36,93 @@ from src.data_ingestion_youtube.load.utils import get_channel_id, get_video_info
 from src.utils.utils import authenticate_service_account
 
 
+AUDIO_FORMAT = os.environ.get('AUDIO_FORMAT', 'm4a')  # m4a|opus|mp3|source
+REQUIRE_AUDIO_ONLY = os.environ.get('REQUIRE_AUDIO_ONLY', 'True').lower() == 'true'
+ALLOW_SABR_FALLBACK = os.environ.get('ALLOW_SABR_FALLBACK', 'False').lower() == 'true'
+
+# --- Adaptive actor scaling ---
+ADAPTIVE_MAX_CAP = int(os.environ.get("ADAPTIVE_MAX_CAP", "6"))
+ADAPTIVE_MIN_CAP = int(os.environ.get("ADAPTIVE_MIN_CAP", "2"))
+
+# If reading cookies from a desktop browser is flaky on your box, force-disable it:
+USE_BROWSER_COOKIES = os.environ.get("USE_BROWSER_COOKIES", "true").lower() == "true"
+
+# Status constants
+DL_OK = "ok"
+DL_RATE = "rate_limited"
+DL_SABR = "sabr"
+DL_NOAUDIO = "no_audio_only"
+DL_ERR = "error"
+
+# env flag
+DEBUG_LIST_FORMATS = os.environ.get('DEBUG_LIST_FORMATS', 'false').lower() == 'true'
+
+def debug_log_formats(info: Dict, url: str):
+    if not DEBUG_LIST_FORMATS:
+        return
+    fmts = info.get('formats') or []
+    logging.info(f"--- Available formats for {url} ({len(fmts)}) ---")
+    for f in fmts:
+        logging.info(
+            "id=%s ext=%s vcodec=%s acodec=%s abr=%s tbr=%s asr=%s proto=%s has_url=%s note=%s",
+            f.get('format_id'),
+            f.get('ext'),
+            f.get('vcodec'),
+            f.get('acodec'),
+            f.get('abr'),
+            f.get('tbr'),
+            f.get('asr'),
+            f.get('protocol'),
+            bool(f.get('url')),
+            f.get('format_note')
+        )
+
+
+def ranked_audio_format_ids(info: Dict) -> List[str]:
+    fmts = info.get('formats') or []
+    out = []
+
+    def is_audio_only(f):
+        return (f.get('vcodec') in (None, 'none')) and (f.get('acodec') not in (None, 'none'))
+
+    def score(f):
+        ext = (f.get('ext') or '').lower()
+        ac = (f.get('acodec') or '').lower()
+        proto = (f.get('protocol') or '')
+        abr = int(f.get('abr') or 0)
+        s = 0
+        # Prefer direct URLs and non-HLS
+        if f.get('url'): s += 1000
+        if 'm3u8' not in proto: s += 300
+
+        af = AUDIO_FORMAT.lower()
+        if af == 'm4a':
+            if ext == 'm4a' or 'mp4a' in ac: s += 150
+        elif af == 'opus':
+            if ext in ('webm',) or 'opus' in ac: s += 150
+        elif af == 'mp3':
+            # for mp3 re-encode, m4a > opus
+            if ext == 'm4a' or 'mp4a' in ac: s += 150
+            elif 'opus' in ac: s += 120
+
+        s += abr
+        return s
+
+    candidates = [f for f in fmts if is_audio_only(f)]
+    candidates.sort(key=score, reverse=True)
+    out = [f.get('format_id') for f in candidates if f.get('format_id')]
+    return out
+
+
+def _rebuild_global_sem(new_limit: int):
+    global _SEM, GLOBAL_MAX_DOWNLOADS
+    new_limit = max(ADAPTIVE_MIN_CAP, min(ADAPTIVE_MAX_CAP, int(new_limit)))
+    if new_limit != GLOBAL_MAX_DOWNLOADS:
+        GLOBAL_MAX_DOWNLOADS = new_limit
+        _SEM = asyncio.Semaphore(GLOBAL_MAX_DOWNLOADS)
+        logging.info(f"Adjusted global concurrency → {GLOBAL_MAX_DOWNLOADS}")
+
+
 # ---------------------------
 # UTF-8 I/O
 # ---------------------------
@@ -73,8 +160,39 @@ BROWSER = os.environ.get("BROWSER", "brave")
 PROFILE = os.environ.get("PROFILE", "Default")
 
 # NEW: global concurrency limiter across all channels
-GLOBAL_MAX_DOWNLOADS = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "2"))
+GLOBAL_MAX_DOWNLOADS = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "5"))
 _SEM: Optional[asyncio.Semaphore] = None  # created lazily when the loop exists
+
+
+def set_client(opts, client: str):
+    y = opts.setdefault("extractor_args", {}).setdefault("youtube", {})
+    # Map generic web → concrete variants
+    if client == "web":
+        y["player_client"] = ["web_safari"]
+    elif client in ("web_safari", "web_creator", "web_embedded", "android", "ios", "tv"):
+        y["player_client"] = [client]
+    else:
+        y["player_client"] = ["web_safari"]  # sensible default
+
+    have_cookiefile = bool(opts.get("_fallback_cookie_file"))
+    have_browser_cookies = "_browser" in opts and "_profile" in opts
+    using_cookies = have_cookiefile or have_browser_cookies
+
+    if using_cookies and y["player_client"][0].startswith("web"):
+        if have_cookiefile:
+            opts["cookiefile"] = opts["_fallback_cookie_file"]
+            opts.pop("cookiesfrombrowser", None)
+        else:
+            opts["cookiesfrombrowser"] = (
+                opts.get("_browser", "brave"),
+                opts.get("_profile", "Default"),
+                None,
+                True
+            )
+            opts.pop("cookiefile", None)
+    else:
+        opts.pop("cookiefile", None)
+        opts.pop("cookiesfrombrowser", None)
 
 
 def _get_global_sem() -> asyncio.Semaphore:
@@ -195,183 +313,288 @@ def setup_cookies() -> Optional[str]:
 
 
 def build_paths(base_dir: str, info: Dict) -> Tuple[str, str, str]:
-    """
-    Returns (video_dir_path, base_filename, mp3_path)
-    """
     video_id = extract_video_id(info['url']) or "unknown"
     title = sanitize_filename(info['title']).replace('/', '_')
-    published_at = (info.get('published_date') or info.get('publishedAt') or '')[:10]  # yyyy-mm-dd
+    published_at = (info.get('published_date') or info.get('publishedAt') or '')[:10]
     base_filename = f"{published_at}_{video_id}_{title}" if published_at else f"{video_id}_{title}"
 
     video_dir_path = os.path.join(base_dir, base_filename)
     os.makedirs(video_dir_path, exist_ok=True)
 
-    mp3_path = os.path.join(video_dir_path, f"{base_filename}.mp3")
+    # expected extension
+    if AUDIO_FORMAT == 'mp3':
+        target_ext = 'mp3'
+    elif AUDIO_FORMAT == 'opus':
+        target_ext = 'webm'  # opus in webm
+    else:
+        target_ext = 'm4a'   # default; 140
+
+    mp3_path = os.path.join(video_dir_path, f"{base_filename}.{target_ext}")
     return video_dir_path, base_filename, mp3_path
+
+
+def pick_audio_only_itag(info: Dict) -> Optional[str]:
+    fmts = info.get('formats') or []
+    if not fmts:
+        return None
+
+    def is_audio_only(f):
+        return (f.get('vcodec') in (None, 'none')) and (f.get('acodec') not in (None, 'none'))
+
+    # split by has_url to prefer directly fetchable formats
+    with_url = [f for f in fmts if is_audio_only(f) and f.get('url')]
+    without_url = [f for f in fmts if is_audio_only(f) and not f.get('url')]
+
+    def score(f):
+        ext = (f.get('ext') or '').lower()
+        ac = (f.get('acodec') or '').lower()
+        s = 0
+        # prefer non-HLS protocols
+        proto = (f.get('protocol') or '')
+        if 'm3u8' not in proto:
+            s += 200
+        # prefer requested container/codec
+        if AUDIO_FORMAT.lower() == 'm4a':
+            if ext == 'm4a' or 'mp4a' in ac: s += 150
+        elif AUDIO_FORMAT.lower() == 'opus':
+            if ext in ('webm',) or 'opus' in ac: s += 150
+        elif AUDIO_FORMAT.lower() == 'mp3':
+            # for mp3 re-encode, prefer m4a source > opus
+            if ext == 'm4a' or 'mp4a' in ac: s += 150
+            elif 'opus' in ac: s += 120
+        # bitrate
+        s += int(f.get('abr') or 0)
+        return s
+
+    for pool in (with_url, without_url):
+        if pool:
+            best = max(pool, key=score)
+            return best.get('format_id')
+
+    return None
 
 
 # ---------------------------
 # yt-dlp opts + client rotation
 # ---------------------------
 def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional[str]) -> dict:
-    # Prefer m4a first to avoid SABR'd webm/HLS; then webm, then anything
-    base_format = "140/bestaudio[ext=m4a]/251/bestaudio/best" if DOWNLOAD_AUDIO else "bestvideo*+bestaudio/best"
+    # Prefer real audio-only streams to avoid HLS video fallbacks
+    audio_pref = "bestaudio[ext=m4a]/bestaudio[acodec^=mp4a]/140/251/bestaudio"
 
-    return {
-        "format": base_format,
-        "postprocessors": ([{
-            "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "192",
-        }] if DOWNLOAD_AUDIO else []),
+    ydl_opts = {
+        "format": audio_pref,
         "outtmpl": f"{video_dir_path}/{base_filename}.%(ext)s",
+        "noplaylist": True,
+        "progress_with_newline": True,
+        "quiet": False,
+        "no_warnings": False,
 
-        # stability
+        # gentle settings
         "sleep_interval_requests": 1.5,
         "max_sleep_interval_requests": 3.0,
         "retries": 10,
         "fragment_retries": 10,
         "concurrent_fragments": 1,
-        "noplaylist": True,
-        "progress_with_newline": True,
 
-        # stash for switching logic
+        # pass-through used by set_client()
         "_fallback_cookie_file": cookie_file if cookie_file else None,
         "_browser": BROWSER,
         "_profile": PROFILE,
+
+        "continuedl": True,     # resume if partial exists
+        "nopart": True,         # write directly to final file (no .part)
+
+        "restrictfilenames": True,  # ASCII-safe set; consistent temp & final names
+        # optional: "windowsfilenames": True,  # even stricter; removes ':' etc.
     }
 
+    # Only add a postprocessor if we truly need MP3
+    if AUDIO_FORMAT.lower() == "mp3":
+        ydl_opts["postprocessors"] = [{
+            "key": "FFmpegExtractAudio",
+            "preferredcodec": "mp3",
+            "preferredquality": "192",
+        }]
+        # Not strictly necessary, but keeps the extension consistent
+        ydl_opts["merge_output_format"] = "mp3"
 
-def download_one(url: str, ydl_opts: dict, target_mp3: Optional[str], retries: int = 4) -> bool:
-    def set_client(opts, client: str):
-        y = opts.setdefault("extractor_args", {}).setdefault("youtube", {})
-        # Use web_safari variant when "web"
-        if client == "web":
-            y["player_client"] = ["web_safari"]
-        else:
-            y["player_client"] = [client]
-        # cookies only for web
-        if client != "web":
-            opts.pop("cookiefile", None)
-            opts.pop("cookiesfrombrowser", None)
+    # For m4a/opus/source: NO postprocessors. We'll download the stream we want.
+    return ydl_opts
 
-    def use_web_with_cookies(opts, force_browser: bool = False):
-        cookie_file = None if force_browser else opts.get("_fallback_cookie_file")
-        set_client(opts, "web")
-        if cookie_file:
-            opts["cookiefile"] = cookie_file
-            opts.pop("cookiesfrombrowser", None)
-        else:
-            opts["cookiesfrombrowser"] = (
-                opts.get("_browser", "brave"),
-                opts.get("_profile", "Default"),
-                None,
-                True
-            )
-            opts.pop("cookiefile", None)
 
-    # NEW: Start with Android (then iOS → TV → Web)
-    rotation = ["android", "ios", "tv", "web"]
-    rot_idx = 0
-    set_client(ydl_opts, rotation[rot_idx])
+def download_one(url: str, ydl_opts: dict, target_path: Optional[str], retries: int = 4) -> str:
+    using_cookies = bool(ydl_opts.get("_fallback_cookie_file")) or ("_browser" in ydl_opts and "_profile" in ydl_opts)
+
+    # Prefer multiple web variants first (cookie-capable), then app clients
+    client_order = (["web_safari", "web_creator", "web_embedded", "android", "ios", "tv"]
+                    if using_cookies else ["android", "ios", "tv", "web_safari"])
+    client_idx = 0
+
+    def curr_client_name():
+        pc = (ydl_opts.get("extractor_args", {}).get("youtube", {}).get("player_client", ["?"]))
+        return pc[0] if isinstance(pc, list) and pc else str(pc)
+
+    def switch_to(idx: int):
+        set_client(ydl_opts, client_order[idx])
+
+    switch_to(client_idx)
 
     for attempt in range(1, retries + 1):
         try:
-            with ydlp.YoutubeDL(ydl_opts) as ydl:
+            # Probe
+            with ydlp.YoutubeDL({**ydl_opts, "format": "bestaudio/best"}) as ydl:
                 info = ydl.extract_info(url, download=False)
-                if DOWNLOAD_AUDIO and target_mp3 and os.path.exists(target_mp3):
-                    logging.info(f"Already exists: {target_mp3}")
-                    return True
-                ydl.download([url])
-                return True
+            debug_log_formats(info, url)
 
-        except DownloadError as e:
-            msg = str(e)
+            # Skip if already exists
+            if DOWNLOAD_AUDIO and target_path and os.path.exists(target_path):
+                logging.info(f"Already exists: {target_path}")
+                return DL_OK
 
-            # SABR / 403 / missing url / nsig -> rotate among non-web first, then web
-            if ("Some web client https formats have been skipped" in msg) or \
-               ("missing a url" in msg) or ("HTTP Error 403" in msg) or \
-               ("Only images are available" in msg) or ("nsig extraction failed" in msg) or \
-               ("m3u8" in msg and "403" in msg):
-                if rotation[rot_idx] != "web":
-                    prev = rotation[rot_idx]
-                    rot_idx = (rot_idx + 1) % len(rotation)
-                    nxt = rotation[rot_idx]
-                    logging.warning(f"{prev} failed (SABR/403); trying {nxt}...")
-                    if nxt == "web":
-                        use_web_with_cookies(ydl_opts, force_browser=True)
-                    else:
-                        set_client(ydl_opts, nxt)
+            # Try all viable audio-only formats in order
+            tried_any = False
+            for fmt_id in ranked_audio_format_ids(info):
+                tried_any = True
+                try:
+                    with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id}) as ydl:
+                        ydl.download([url])
+                    return DL_OK
+                except DownloadError as fe:
+                    logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
                     continue
 
-            # Auth/rate limit -> go web with fresh browser cookies
-            if ("Sign in to confirm you’re not a bot" in msg) or ("HTTP Error 429" in msg):
-                wait_time = 45 if attempt == 1 else min(90, 15 * attempt)
-                logging.warning(f"Auth/429; waiting {wait_time}s then using web+cookies...")
-                time.sleep(wait_time)
-                use_web_with_cookies(ydl_opts, force_browser=True)
-                rot_idx = rotation.index("web")
+            # If none worked (or none available), handle rotation/fallback
+            if attempt < retries:
+                prev = curr_client_name()
+                client_idx = (client_idx + 1) % len(client_order)
+                nxt = client_order[client_idx]
+                logging.warning(f"{'No viable audio formats' if tried_any else 'No audio-only formats'} for client={prev}. Rotating → {nxt}")
+                switch_to(client_idx)
                 continue
 
-            # Bad/empty cookies.txt on web
-            if ("does not look like a Netscape format cookies file" in msg) or ("cookies file is empty" in msg):
-                logging.warning("Invalid cookiefile; switching to cookies-from-browser (web).")
-                ydl_opts["_fallback_cookie_file"] = None
-                use_web_with_cookies(ydl_opts, force_browser=True)
-                rot_idx = rotation.index("web")
+            # Last-resort fallback
+            fallback = "bestaudio[ext=m4a]/bestaudio[acodec^=mp4a]/140/251/bestaudio"
+            with ydlp.YoutubeDL({**ydl_opts, "format": fallback}) as ydl:
+                ydl.download([url])
+            return DL_OK
+
+        except DownloadError as e:
+            s = str(e)
+
+            # If auth-gated and we have cookies, force a web client + cookies before rotating away
+            if ("Sign in to confirm" in s or "HTTP Error 429" in s) and using_cookies:
+                wait = 30 if attempt == 1 else min(90, 20 * attempt)
+                logging.warning(f"{s} — sleeping {wait}s; forcing web client with cookies and retrying")
+                time.sleep(wait)
+                # jump back to the first web client
+                client_idx = 0
+                switch_to(client_idx)
+                if attempt < retries:
+                    continue
+
+            # SABR / format/URL issues → rotate
+            if any(k in s for k in ("Requested format is not available",
+                                     "Only images are available",
+                                     "SABR", "missing a url", "nsig")) or ("m3u8" in s and "403" in s):
+                if attempt < retries:
+                    prev = curr_client_name()
+                    client_idx = (client_idx + 1) % len(client_order)
+                    nxt = client_order[client_idx]
+                    logging.warning(f"{s} — rotating client {prev} → {nxt}")
+                    switch_to(client_idx)
+                    continue
+                # classify terminal
+                if "Only images" in s or "SABR" in s:
+                    return DL_SABR
+                if "Requested format is not available" in s:
+                    return DL_NOAUDIO
+                return DL_ERR
+
+            # Other transient errors → backoff, then rotate
+            logging.warning(f"Attempt {attempt} failed: {s}. Backing off…")
+            time.sleep(5 * attempt)
+            if attempt < retries:
+                prev = curr_client_name()
+                client_idx = (client_idx + 1) % len(client_order)
+                nxt = client_order[client_idx]
+                logging.info(f"Switching client {prev} → {nxt}")
+                switch_to(client_idx)
                 continue
 
-            # generic retry
-            wait_time = 5 * attempt
-            logging.warning(f"Attempt {attempt} failed: {msg}. Retrying in {wait_time}s...")
-            time.sleep(wait_time)
+            # classify terminal
+            if "HTTP Error 429" in s:
+                return DL_RATE
+            return DL_ERR
 
-    logging.error("Exhausted retries.")
-    return False
+        except Exception as e:
+            logging.exception(f"Unexpected error on attempt {attempt}: {e}")
+            time.sleep(5 * attempt)
+            if attempt < retries:
+                prev = curr_client_name()
+                client_idx = (client_idx + 1) % len(client_order)
+                nxt = client_order[client_idx]
+                logging.info(f"Switching client {prev} → {nxt}")
+                switch_to(client_idx)
+                continue
+            return DL_ERR
+
+    return DL_ERR
 
 
 # ---------------------------
 # Batch downloading
 # ---------------------------
-async def _guarded_download(loop, executor, url, ydl_opts, mp3_path):
-    # NEW: global semaphore to cap total parallel downloads across all channels
+async def _guarded_download(loop, executor, url, ydl_opts, out_path):
     async with _get_global_sem():
-        return await loop.run_in_executor(executor, download_one, url, ydl_opts, mp3_path, 4)
+        return await loop.run_in_executor(executor, download_one, url, ydl_opts, out_path, 4)
 
 
 async def download_batch(video_infos: List[Dict], base_dir: str, cookie_file: Optional[str] = None):
-    """
-    Low concurrency + jitter; optional skip-if-exists; pure batching (no deep FS scan).
-    """
     loop = asyncio.get_event_loop()
-    executor = ThreadPoolExecutor(max_workers=2)  # gentle on YouTube anti-bot
+    # tie threads to current actor count but keep a small cap
+    executor = ThreadPoolExecutor(max_workers=min(max(2, GLOBAL_MAX_DOWNLOADS), 4))
     tasks = []
 
     for info in video_infos:
-        await asyncio.sleep(0.5 + random.random() * 0.75)  # tiny jitter
+        await asyncio.sleep(0.5 + random.random() * 0.75)  # jitter
 
         video_id = extract_video_id(info.get('url', ''))
         if not video_id:
             logging.error(f"Could not extract video ID from URL: {info.get('url')}")
             continue
 
-        video_dir_path, base_filename, mp3_path = build_paths(base_dir, info)
-        if DOWNLOAD_AUDIO and SKIP_IF_MP3_EXISTS and os.path.exists(mp3_path):
-            logging.info(f"Skip (exists): {mp3_path}")
+        video_dir_path, base_filename, out_path = build_paths(base_dir, info)
+        if DOWNLOAD_AUDIO and SKIP_IF_MP3_EXISTS and os.path.exists(out_path):
+            logging.info(f"Skip (exists): {out_path}")
             continue
 
         ydl_opts = make_ydl_opts(video_dir_path, base_filename, cookie_file)
-
-        # NEW: use guarded task (global semaphore) instead of launching all at once
-        tasks.append(asyncio.create_task(_guarded_download(loop, executor, info['url'], ydl_opts, mp3_path)))
+        tasks.append(asyncio.create_task(_guarded_download(loop, executor, info['url'], ydl_opts, out_path)))
 
     if not tasks:
         logging.info("Nothing to download in this batch.")
-        return
+        return []
 
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    success_count = sum(1 for r in results if r is True)
-    logging.info(f"Batch complete: {success_count}/{len(results)} succeeded")
+
+    # Normalize + log exceptions
+    statuses = []
+    for r in results:
+        if isinstance(r, Exception):
+            logging.exception("Task raised unhandled exception", exc_info=r)
+            statuses.append(DL_ERR)
+        elif isinstance(r, str):
+            statuses.append(r)
+        elif r is True:
+            statuses.append(DL_OK)
+        else:
+            statuses.append(DL_ERR)
+
+    ok = sum(1 for s in statuses if s == DL_OK)
+    logging.info(f"Batch complete: {ok}/{len(statuses)} succeeded "
+                 f"(rate={statuses.count(DL_RATE)}, sabr={statuses.count(DL_SABR)}, "
+                 f"no_audio={statuses.count(DL_NOAUDIO)}, err={statuses.count(DL_ERR)})")
+    return statuses
 
 
 def pick_recent_subset(video_info_list: List[Dict], limit: int) -> List[Dict]:
@@ -405,7 +628,21 @@ async def process_channel(channel_name: str, video_info_list: List[Dict],
     for i in range(0, total, batch_size):
         batch = to_process[i:i + batch_size]
         logging.info(f"[{channel_name}] Processing batch {i // batch_size + 1} ({len(batch)} items)")
-        await download_batch(batch, channel_dir, cookie_file)
+        statuses = await download_batch(batch, channel_dir, cookie_file)
+
+        if statuses:
+            ok = statuses.count(DL_OK)
+            rate = statuses.count(DL_RATE)
+            sabr = statuses.count(DL_SABR) + statuses.count(DL_NOAUDIO)
+            err = statuses.count(DL_ERR)
+            n = len(statuses)
+
+            # AIMD: Additive increase if clean; multiplicative decrease on trouble
+            if rate > 0 or err > n * 0.25 or sabr > n * 0.25:
+                _rebuild_global_sem(max(GLOBAL_MAX_DOWNLOADS // 2, ADAPTIVE_MIN_CAP))
+            elif ok == n:
+                _rebuild_global_sem(GLOBAL_MAX_DOWNLOADS + 1)
+
         if i + batch_size < total:
             await asyncio.sleep(5 + random.random() * 2.0)
 
