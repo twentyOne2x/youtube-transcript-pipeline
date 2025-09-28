@@ -71,7 +71,7 @@ async def download_batch(video_infos: List[Dict], base_dir: str, settings: Setti
                 continue
             video_dir_path, base_filename, out_path = build_paths(base_dir, info, settings.audio_format)
             if settings.download_audio and settings.skip_if_exists and os.path.exists(out_path):
-                logging.info(f"Skip (exists): {out_path}")
+                logging.debug(f"Skip (exists): {out_path}")  # was logging.info
                 continue
             ydl_opts = make_ydl_opts(video_dir_path, base_filename, cookie_file, settings)
             if sem is None:

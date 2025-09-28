@@ -194,6 +194,7 @@ def _print_plan_summary_table(plan_per_channel: Dict[str, List[Dict]]) -> None:
     """
     Pretty print a concise summary table:
       Channel | Missing | Top-3 most recent missing (YYYY-MM-DD — title)
+    Ordered by smallest Missing count first.
     """
     if not plan_per_channel:
         print("\nNo downloads needed. ✅\n")
@@ -210,9 +211,13 @@ def _print_plan_summary_table(plan_per_channel: Dict[str, List[Dict]]) -> None:
     print("-" * (ch_width + cnt_width + 2 + 64))
 
     total = 0
-    for channel, vids in sorted(plan_per_channel.items(), key=lambda kv: kv[0].lower()):
+    # ⬇️ sort by fewest videos missing; tie-break alphabetically
+    for channel, vids in sorted(
+        plan_per_channel.items(),
+        key=lambda kv: (len(kv[1]), kv[0].lower())
+    ):
         total += len(vids)
-        top3 = vids[:3]  # already sorted newest→oldest
+        top3 = vids[:3]  # already sorted newest→oldest elsewhere
         triples = []
         for v in top3:
             vid, title, date_iso, _ = _extract_video_fields(v)
@@ -365,6 +370,15 @@ async def run(api_key: str,
     # Print a concise, actionable summary table
     _print_plan_summary_table(plan_per_channel)
 
+    # Lazily set up cookies right before downloads so planning logs appear immediately.
+    if cookie_file is None:
+        try:
+            from .cookies import setup_cookies
+            cookie_file = setup_cookies()
+        except Exception as e:
+            LOG.warning("Cookie setup failed (%s); proceeding without cookies.", e)
+            cookie_file = None
+
     if not items_per_channel:
         LOG.info(
             "Global planner: %d candidate(s) across %d channel(s) → nothing to download. Exiting.",
@@ -496,7 +510,7 @@ if __name__ == "__main__":
     if args.api_key:
         os.environ["YOUTUBE_API_KEY"] = args.api_key
 
-    cookie_file = setup_cookies()
+    cookie_file=None
 
     asyncio.run(
         run(

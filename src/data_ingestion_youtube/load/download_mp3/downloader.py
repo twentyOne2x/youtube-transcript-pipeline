@@ -13,23 +13,37 @@ def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional
         "outtmpl": f"{video_dir_path}/{base_filename}.%(ext)s",
         "noplaylist": True,
         "progress_with_newline": True,
-        "quiet": False,
+
+        # Keep logs readable; yt-dlp will still print warnings/errors
+        "quiet": True,
         "no_warnings": False,
 
+        # Be gentle on network
         "sleep_interval_requests": 1.5,
         "max_sleep_interval_requests": 3.0,
         "retries": 10,
         "fragment_retries": 10,
         "concurrent_fragments": 1,
 
+        # ✅ Key changes to kill 416s and stale resumes
+        "continuedl": False,          # never resume — start clean
+        "overwrites": True,           # overwrite any partial from previous attempt
+        "nopart": True,               # write directly to final file
+
+        # Cookies
         "_fallback_cookie_file": cookie_file if cookie_file else None,
         "_browser": settings.browser,
         "_profile": settings.profile,
 
-        "continuedl": True,
-        "nopart": True,
         "restrictfilenames": True,
+        "prefer_ffmpeg": True,
     }
+
+    # Limit FFmpeg CPU threads (helps VM responsiveness)
+    ff_threads = int(os.environ.get("FFMPEG_THREADS", "1"))
+    if ff_threads > 0:
+        ydl_opts.setdefault("postprocessor_args", []).extend(["-threads", str(ff_threads)])
+
     if settings.audio_format == "mp3":
         ydl_opts["postprocessors"] = [{
             "key": "FFmpegExtractAudio",
@@ -109,6 +123,23 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                     return DlStatus.NOAUDIO
                 return DlStatus.ERR
 
+            if "HTTP Error 416" in s and target_path and os.path.exists(target_path):
+                try:
+                    os.remove(target_path)
+                except Exception:
+                    pass
+                logging.warning("416 on resume; removed existing file; retrying this format clean once…")
+                try:
+                    with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id, "continuedl": False, "overwrites": True}) as ydl:
+                        ydl.download([url])
+                    if target_path and os.path.exists(target_path):
+                        logging.info(f"Saved: {target_path}")
+                    return DlStatus.OK
+                except DownloadError:
+                    # fall through to try next candidate
+                    pass
+            logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
+            continue
             logging.warning(f"Attempt {attempt} failed: {s}. Backing off…")
             time.sleep(5 * attempt)
             if attempt < retries:

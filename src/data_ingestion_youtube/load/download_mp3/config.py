@@ -25,7 +25,7 @@ class Settings:
     browser: str = os.environ.get("BROWSER", "brave")
     profile: str = os.environ.get("PROFILE", "Default")
 
-    global_max_downloads: int = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "5"))
+    global_max_downloads: int = int(os.environ.get("GLOBAL_MAX_DOWNLOADS", "6"))
 
     debug_list_formats: bool = os.environ.get("DEBUG_LIST_FORMATS", "false").lower() == "true"
 
