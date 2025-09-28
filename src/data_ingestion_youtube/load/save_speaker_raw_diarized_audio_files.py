@@ -39,7 +39,7 @@ CACHE_FILE = os.path.join(YOUTUBE_VIDEO_DIRECTORY, '.diarization_cache.pkl')
 
 # Worker concurrency
 MAX_CONCURRENT_TRANSCRIPTIONS = int(os.getenv("AAI_MAX_CONCURRENT_TRANSCRIPTIONS", "5"))
-MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "1"))  # upload is the bottleneck
+MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "3"))  # upload is the bottleneck
 
 # Timeouts / retries
 TRANSCRIBE_TIMEOUT_SEC = int(os.getenv("AAI_TRANSCRIBE_TIMEOUT_SEC", "1800"))  # 30 min
@@ -163,16 +163,15 @@ class DiarizationCache:
             logging.error("Could not save cache: %s", e)
 
     def is_processed(self, file_path: str) -> bool:
-        vid = extract_video_id_from_path(file_path)
-        if vid and vid in self.processed_video_ids:
-            return True
-        # belt & suspenders: check json sidecar
-        transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
-        if os.path.exists(transcript_file):
-            if vid:
+        # Only consider processed if BOTH outputs are valid.
+        if _has_complete_outputs(file_path):
+            vid = extract_video_id_from_path(file_path)
+            if vid and vid not in self.processed_video_ids:
                 self.processed_video_ids.add(vid)
                 self.save_cache()
             return True
+
+        # Outputs missing or corrupt -> force re-diarization (ignore cache hits).
         return False
 
     def mark_processed(self, file_path: str):
@@ -205,17 +204,13 @@ class ProcessSafeCache:
                 return set()
         return set()
 
-    def is_processed(self, file_path):
-        # sidecar present?
-        transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
-        if os.path.exists(transcript_file):
+    def is_processed(self, file_path: str) -> bool:
+        # Only consider processed if BOTH outputs are valid.
+        if _has_complete_outputs(file_path):
             return True
-        vid = extract_video_id_from_path(file_path)
-        if not vid:
-            return False
-        with self._lock:
-            ids = self._load_ids()
-            return vid in ids
+
+        # Outputs missing or corrupt -> re-diarize.
+        return False
 
     def mark_processed(self, file_path):
         vid = extract_video_id_from_path(file_path)
@@ -348,7 +343,11 @@ def upload_with_retries(file_path, logger, api_key):
     while attempt < UPLOAD_RETRY_MAX:
         try:
             if has_files_upload:
-                return aai.files.upload(file_path, chunk_size=AAI_UPLOAD_CHUNK_SIZE)
+                try:
+                    return aai.files.upload(file_path, chunk_size=AAI_UPLOAD_CHUNK_SIZE)
+                except TypeError:
+                    # Older SDKs: no chunk_size parameter
+                    return aai.files.upload(file_path)
             if has_upload_file:
                 return aai.upload_file(file_path)
             return _raw_upload_with_requests(file_path, api_key, logger)
@@ -412,7 +411,11 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
 
         # Upload with per-key limiter
         import assemblyai as aai
-        config = aai.TranscriptionConfig(speaker_labels=True)
+        config = aai.TranscriptionConfig(
+            speaker_labels=True,
+            entity_detection=True,
+        )
+
         transcriber = aai.Transcriber()
 
         if not hasattr(transcribe_single_file, "_limiters"):
@@ -474,9 +477,26 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         with open(transcript_out, 'w') as f:
             json.dump(payload, f, indent=4)
 
+        # ------ Entities (requires entity_detection=True) ------
+        ents_raw = getattr(transcript, "entities", None) or []
+        entities = [entity_to_safe_dict(e) for e in ents_raw]
+        entities_with_speakers = attach_speakers_to_entities(entities, payload)
+        entities_out = os.path.splitext(file_path)[0] + "_entities.json"
+        with open(entities_out, "w") as f:
+            json.dump(
+                {
+                    "video_file": os.path.basename(file_path),
+                    "entities": entities,
+                    "entities_with_speakers": entities_with_speakers,
+                },
+                f,
+                indent=4,
+            )
+        logger.info(f"Saved {len(entities)} entities → {os.path.basename(entities_out)}")
+
         cache.mark_processed(file_path)
         logger.info(f"SUCCESS [{channel_name}/{fname}] in {duration:.1f}s")
-        return {"status": "SUCCESS", "file": file_path, "duration": duration}
+        return {"status": "SUCCESS", "file": file_path, "duration": duration, "entities": len(entities)}
 
     except Exception as e:
         logger.error(f"Error transcribing {file_path}: {e}")
@@ -638,7 +658,7 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
     for i in range(0, total, batch_size):
         batch = file_paths[i:i + batch_size]
         logger.info(f"Processing batch {i // batch_size + 1}: files {i + 1}-{i + len(batch)} of {total}")
-        logger.info(f"Queue status: Completed={completed}, Remaining={total - (i)}")
+        logger.info(f"Queue status: Completed={completed}, Remaining={total - (i + len(batch))}")
 
         with ThreadPoolExecutor(max_workers=batch_size) as executor:
             futures = []
@@ -676,6 +696,73 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
         f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
     )
 
+def entity_to_safe_dict(e) -> dict:
+    et = getattr(e, "entity_type", None)
+    # Enum -> string (e.g., "person")
+    if hasattr(et, "value"):
+        et = et.value
+    elif et is not None:
+        et = str(et)
+
+    return {
+        "text": getattr(e, "text", ""),
+        "entity_type": et,
+        "start": getattr(e, "start", None),
+        "end": getattr(e, "end", None),
+        "confidence": getattr(e, "confidence", None),
+    }
+
+def attach_speakers_to_entities(entities: List[dict], utterances: List[dict]) -> List[dict]:
+    """
+    For each entity, find the utterance spanning its start timestamp and attach that utterance's speaker.
+    """
+    # Pre-sort utterances by start time; skip ones without timing
+    spans = [
+        (u.get("start"), u.get("end"), u.get("speaker"))
+        for u in utterances
+        if u.get("start") is not None and u.get("end") is not None
+    ]
+    spans.sort(key=lambda x: x[0])
+
+    def speaker_at(ts: Optional[int]) -> Optional[int]:
+        if ts is None:
+            return None
+        # linear scan is fine for modest files; you can upgrade to bsearch later
+        for s, e, spk in spans:
+            if s <= ts < e:
+                return spk
+        return None
+
+    out = []
+    for ent in entities:
+        out.append({**ent, "speaker": speaker_at(ent.get("start"))})
+    return out
+
+def _sidecar_path(file_path: str) -> str:
+    return os.path.splitext(file_path)[0] + "_diarized_content.json"
+
+def _entities_path(file_path: str) -> str:
+    return os.path.splitext(file_path)[0] + "_entities.json"
+
+def _is_valid_json_file(path: str) -> bool:
+    try:
+        if not os.path.exists(path) or os.path.getsize(path) == 0:
+            return False
+        with open(path, "r") as f:
+            json.load(f)
+        return True
+    except Exception:
+        return False
+
+def _has_valid_sidecar(file_path: str) -> bool:
+    return _is_valid_json_file(_sidecar_path(file_path))
+
+def _has_valid_entities(file_path: str) -> bool:
+    return _is_valid_json_file(_entities_path(file_path))
+
+def _has_complete_outputs(file_path: str) -> bool:
+    """Require BOTH diarized_content and entities JSON to be present and valid."""
+    return _has_valid_sidecar(file_path) and _has_valid_entities(file_path)
 
 # =========================
 # Main
