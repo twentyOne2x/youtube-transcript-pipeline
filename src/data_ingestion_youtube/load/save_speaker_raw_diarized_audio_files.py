@@ -1,295 +1,268 @@
-import json
-import logging
+# src/data_ingestion_youtube/load/save_speaker_raw_diarized_audio_files.py
 import os
 import re
+import io
+import sys
+import json
 import time
-import random
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
-from dotenv import load_dotenv
+import math
 import pickle
-from datetime import datetime
-from queue import Queue
+import random
+import logging
 import threading
-import concurrent.futures as cf
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Tuple, Optional
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
 
+import requests
+from dotenv import load_dotenv
 
-from src import YOUTUBE_VIDEO_DIRECTORY
+from src import YOUTUBE_VIDEO_DIRECTORY, root_directory
 
 load_dotenv()
-api_keys = os.environ.get('ASSEMBLY_AI_API_KEYS')
 
-if not api_keys:
+# ---------------------------------------------------------------------
+# API keys (comma-separated)
+# ---------------------------------------------------------------------
+_api_keys = os.environ.get('ASSEMBLY_AI_API_KEYS')
+if not _api_keys:
     raise EnvironmentError("ASSEMBLY_AI_API_KEYS environment variable not found.")
+api_keys = [k.strip() for k in _api_keys.split(',') if k.strip()]
 
-api_keys = [k.strip() for k in api_keys.split(',') if k.strip()]
-
-# Cache file path
+# Cache file lives next to the audio dataset
 CACHE_FILE = os.path.join(YOUTUBE_VIDEO_DIRECTORY, '.diarization_cache.pkl')
 
 # =========================
 # Tunable runtime settings
 # =========================
 
-# Concurrency limits (uploads are the bottleneck)
+# Worker concurrency
 MAX_CONCURRENT_TRANSCRIPTIONS = int(os.getenv("AAI_MAX_CONCURRENT_TRANSCRIPTIONS", "5"))
-MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "1"))  # keep this low!
+MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "1"))  # upload is the bottleneck
 
 # Timeouts / retries
 TRANSCRIBE_TIMEOUT_SEC = int(os.getenv("AAI_TRANSCRIBE_TIMEOUT_SEC", "1800"))  # 30 min
 UPLOAD_RETRY_MAX = int(os.getenv("AAI_UPLOAD_RETRY_MAX", "6"))
 BACKOFF_BASE = float(os.getenv("AAI_BACKOFF_BASE", "1.8"))
-BACKOFF_CAP = float(os.getenv("AAI_BACKOFF_CAP", "60"))  # max sleep between retries
+BACKOFF_CAP = float(os.getenv("AAI_BACKOFF_CAP", "60"))
 
-# Upload chunk size (bytes). 5–10MB is a sweet spot.
+# Upload chunk size (bytes)
 AAI_UPLOAD_CHUNK_SIZE = int(os.getenv("AAI_UPLOAD_CHUNK_SIZE", str(5 * 1024 * 1024)))
 
+# Planning / prioritization
+PRIORITIZE_SMALL_CHANNELS = os.getenv("PRIORITIZE_SMALL_CHANNELS", "1") not in ("0", "false", "False")
+GROUP_BY_YEAR = os.getenv("GROUP_BY_YEAR", "0") in ("1", "true", "True")
+CHANNELS_PER_PASS = max(1, int(os.getenv("CHANNELS_PER_PASS", "1")))
+MAX_PER_CHANNEL = int(os.getenv("MAX_PER_CHANNEL", "0"))  # 0 = no cap
+
+# Plan CSV output
+PLAN_CSV = Path(root_directory()) / "data" / "links" / "youtube" / "planned_transcriptions_summary.csv"
+
+# =========================
+# Filename parsing helpers
 # =========================
 
+_ID_RE = re.compile(r'^[a-zA-Z0-9_-]{11}$')
+_DATE_RE = re.compile(r'^(\d{4})-(\d{2})-(\d{2})$')
 
-def extract_video_id_from_path(file_path):
-    """Extract video ID from file path - video ID comes after date"""
-    filename = os.path.basename(file_path)
-    # New format: {date}_{video_id}_{title}.mp3
-    # Date is YYYY-MM-DD (10 chars) + underscore, then video ID
-    if len(filename) >= 22:  # At least date + _ + video_id
-        potential_id = filename[11:22]  # Skip date and underscore, get 11-char ID
-        if re.match(r'^[a-zA-Z0-9_-]{11}$', potential_id):
-            return potential_id
+
+def extract_video_id_from_path(file_path: str) -> Optional[str]:
+    """Extract 11-char video ID from basename '{YYYY-MM-DD}_{ID}_{title}.ext'."""
+    base = os.path.basename(file_path)
+    name, _ext = os.path.splitext(base)
+    parts = name.split("_", 2)
+    if len(parts) < 2:
+        return None
+    vid = parts[1]
+    if _ID_RE.match(vid):
+        return vid
     return None
 
 
-class DiarizationCache:
-    """Simple cache to track processed files by video ID"""
+def parse_filename(file_path: str) -> Tuple[str, str, str]:
+    """
+    Return (date_iso, video_id, title) parsed from '{YYYY-MM-DD}_{ID}_{title}.ext'.
+    Unknowns returned as ('unknown-date', 'unknown-id', 'untitled').
+    """
+    base = os.path.basename(file_path)
+    name, _ext = os.path.splitext(base)
+    parts = name.split("_", 2)
+    if len(parts) < 3:
+        return "unknown-date", "unknown-id", name
+    date_iso, vid, title = parts[0], parts[1], parts[2]
+    if not _DATE_RE.match(date_iso):
+        date_iso = "unknown-date"
+    if not _ID_RE.match(vid):
+        vid = "unknown-id"
+    title = title.replace('"', "").strip() or "untitled"
+    return date_iso, vid, title
 
+
+def year_of(date_iso: str) -> str:
+    return date_iso[:4] if _DATE_RE.match(date_iso or "") else "unknown"
+
+
+def date_to_int(date_iso: str) -> int:
+    """YYYY-MM-DD -> yyyymmdd; unknown -> -1."""
+    m = _DATE_RE.match(date_iso or "")
+    if not m:
+        return -1
+    y, mm, dd = map(int, m.groups())
+    return y * 10000 + mm * 100 + dd
+
+
+def is_valid_filename(filename: str) -> bool:
+    """Verify expected new naming pattern."""
+    return re.match(r'^\d{4}-\d{2}-\d{2}_[a-zA-Z0-9_-]{11}_', filename) is not None
+
+
+def truncate(s: str, n: int = 90) -> str:
+    return s if len(s) <= n else s[: max(0, n - 1)] + "…"
+
+
+# =========================
+# Cache
+# =========================
+
+class DiarizationCache:
+    """Simple persistent set of processed video IDs."""
     def __init__(self, cache_file=CACHE_FILE):
         self.cache_file = cache_file
         self.processed_video_ids = self.load_cache()
 
     def load_cache(self):
-        """Load cache from disk - now stores video IDs instead of full paths"""
         if os.path.exists(self.cache_file):
             try:
                 with open(self.cache_file, 'rb') as f:
-                    cache_data = pickle.load(f)
-                    # Handle both old format (full paths) and new format (video IDs)
-                    if cache_data and isinstance(next(iter(cache_data), ""), str):
-                        # Check if it's old format (full paths) or new format (video IDs)
-                        sample = next(iter(cache_data), "")
-                        if "/" in sample or "\\" in sample:  # Old format with paths
-                            logging.info("Migrating cache from paths to video IDs...")
-                            video_ids = set()
-                            for path in cache_data:
-                                video_id = extract_video_id_from_path(path)
-                                if video_id:
-                                    video_ids.add(video_id)
-                            logging.info(f"Migrated {len(video_ids)} video IDs from {len(cache_data)} paths")
-                            return video_ids
-                    logging.info(f"Loaded cache with {len(cache_data)} processed video IDs")
-                    return cache_data
+                    data = pickle.load(f)
+                # Migrate old path-based caches
+                if data and isinstance(next(iter(data), ""), str):
+                    sample = next(iter(data), "")
+                    if "/" in sample or "\\" in sample:
+                        logging.info("Migrating cache from paths → video IDs…")
+                        vids = set()
+                        for p in data:
+                            vid = extract_video_id_from_path(p)
+                            if vid:
+                                vids.add(vid)
+                        logging.info("Migrated %d IDs from %d paths", len(vids), len(data))
+                        return vids
+                logging.info("Loaded cache with %d processed video IDs", len(data))
+                return data
             except Exception as e:
-                logging.warning(f"Could not load cache: {e}. Starting fresh.")
+                logging.warning("Could not load cache: %s. Starting fresh.", e)
                 return set()
         return set()
 
     def save_cache(self):
-        """Save cache to disk"""
         try:
             with open(self.cache_file, 'wb') as f:
                 pickle.dump(self.processed_video_ids, f)
-            logging.debug(f"Cache saved with {len(self.processed_video_ids)} video IDs")
         except Exception as e:
-            logging.error(f"Could not save cache: {e}")
+            logging.error("Could not save cache: %s", e)
 
-    def is_processed(self, file_path):
-        """Check if file has been processed by video ID"""
-        video_id = extract_video_id_from_path(file_path)
-        if not video_id:
-            # Fallback to checking if JSON file exists
-            transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
-            return os.path.exists(transcript_file)
-
-        # Check if video ID is in cache
-        if video_id in self.processed_video_ids:
+    def is_processed(self, file_path: str) -> bool:
+        vid = extract_video_id_from_path(file_path)
+        if vid and vid in self.processed_video_ids:
             return True
-
-        # Also check if the actual JSON file exists (belt and suspenders)
+        # belt & suspenders: check json sidecar
         transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
         if os.path.exists(transcript_file):
-            # Add to cache if found but not in cache
-            self.processed_video_ids.add(video_id)
-            self.save_cache()
+            if vid:
+                self.processed_video_ids.add(vid)
+                self.save_cache()
             return True
-
         return False
 
-    def mark_processed(self, file_path):
-        """Mark file as processed by video ID"""
-        video_id = extract_video_id_from_path(file_path)
-        if video_id:
-            self.processed_video_ids.add(video_id)
+    def mark_processed(self, file_path: str):
+        vid = extract_video_id_from_path(file_path)
+        if vid:
+            self.processed_video_ids.add(vid)
             self.save_cache()
-        else:
-            logging.warning(f"Could not extract video ID from {file_path}")
 
-    def get_unprocessed_files(self, file_list):
-        """Filter list to only unprocessed files"""
-        unprocessed = []
-        for file_path in file_list:
-            if not self.is_processed(file_path):
-                unprocessed.append(file_path)
-
-        logging.info(f"Found {len(unprocessed)} unprocessed files out of {len(file_list)} total")
-        return unprocessed
-
-    def rebuild_from_disk(self):
-        """Rebuild cache by scanning for existing JSON files and extracting video IDs"""
-        logging.info("Rebuilding cache from existing diarized files...")
-        self.processed_video_ids = set()
-
-        for root, _, files in os.walk(YOUTUBE_VIDEO_DIRECTORY):
-            for file in files:
-                if file.endswith("_diarized_content.json"):
-                    # Extract video ID from the JSON filename
-                    video_id = extract_video_id_from_path(file)
-                    if video_id:
-                        self.processed_video_ids.add(video_id)
-                    else:
-                        # Try to get from the corresponding mp3 file
-                        mp3_file = file.replace("_diarized_content.json", ".mp3")
-                        video_id = extract_video_id_from_path(mp3_file)
-                        if video_id:
-                            self.processed_video_ids.add(video_id)
-
-        self.save_cache()
-        logging.info(f"Cache rebuilt with {len(self.processed_video_ids)} video IDs")
+    def get_unprocessed_files(self, files: List[str]) -> List[str]:
+        out = []
+        for p in files:
+            if not self.is_processed(p):
+                out.append(p)
+        logging.info("Found %d unprocessed files out of %d total", len(out), len(files))
+        return out
 
 
 class ProcessSafeCache:
-    """Cache wrapper for use in worker processes"""
-
+    """Cache wrapper for worker processes (checks file or loads set on each call)."""
     def __init__(self, cache_file=CACHE_FILE):
         self.cache_file = cache_file
         self._lock = threading.Lock()
 
-    def is_processed(self, file_path):
-        """Check if file has been processed by checking video ID and filesystem"""
-        video_id = extract_video_id_from_path(file_path)
+    def _load_ids(self) -> set:
+        if os.path.exists(self.cache_file):
+            try:
+                with open(self.cache_file, 'rb') as f:
+                    return pickle.load(f)
+            except Exception:
+                return set()
+        return set()
 
-        # First check if transcript file exists
+    def is_processed(self, file_path):
+        # sidecar present?
         transcript_file = os.path.splitext(file_path)[0] + "_diarized_content.json"
         if os.path.exists(transcript_file):
             return True
-
-        if not video_id:
+        vid = extract_video_id_from_path(file_path)
+        if not vid:
             return False
-
-        # Check cache for video ID
         with self._lock:
-            if os.path.exists(self.cache_file):
-                try:
-                    with open(self.cache_file, 'rb') as f:
-                        processed_video_ids = pickle.load(f)
-                        return video_id in processed_video_ids
-                except:
-                    pass
-        return False
+            ids = self._load_ids()
+            return vid in ids
 
     def mark_processed(self, file_path):
-        """Mark file as processed by updating the cache with video ID"""
-        video_id = extract_video_id_from_path(file_path)
-        if not video_id:
-            logging.warning(f"Could not extract video ID from {file_path}")
+        vid = extract_video_id_from_path(file_path)
+        if not vid:
             return
-
         with self._lock:
-            # Load current cache
-            processed_video_ids = set()
-            if os.path.exists(self.cache_file):
-                try:
-                    with open(self.cache_file, 'rb') as f:
-                        processed_video_ids = pickle.load(f)
-                except:
-                    pass
-
-            # Add new video ID
-            processed_video_ids.add(video_id)
-
-            # Save updated cache
+            ids = self._load_ids()
+            ids.add(vid)
             try:
                 with open(self.cache_file, 'wb') as f:
-                    pickle.dump(processed_video_ids, f)
+                    pickle.dump(ids, f)
             except Exception as e:
-                logging.error(f"Could not update cache: {e}")
+                logging.error("Could not update cache: %s", e)
 
+
+# =========================
+# Logging helpers
+# =========================
 
 class No200HTTPFilter(logging.Filter):
     def filter(self, record):
-        if "HTTP/1.1 200 OK" in record.getMessage():
-            return False
-        return True
+        return "HTTP/1.1 200 OK" not in record.getMessage()
 
 
 class ThreadLogger:
-    """Helper class to create thread-specific loggers"""
-
     @staticmethod
-    def get_logger(api_key_index):
-        """Get a logger with thread-specific formatting"""
-        logger_name = f"Worker-{api_key_index}"
-        logger = logging.getLogger(logger_name)
-
-        # Only add handler if it doesn't exist
+    def get_logger(api_key_index: int) -> logging.Logger:
+        name = f"Worker-{api_key_index}"
+        logger = logging.getLogger(name)
         if not logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter(
-                f'%(asctime)s - [API-{api_key_index}] - %(levelname)s - %(message)s'
-            )
-            handler.setFormatter(formatter)
-            logger.addHandler(handler)
+            h = logging.StreamHandler()
+            fmt = logging.Formatter(f"%(asctime)s - [API-{api_key_index}] - %(levelname)s - %(message)s")
+            h.setFormatter(fmt)
+            logger.addHandler(h)
             logger.setLevel(logging.INFO)
             logger.propagate = False
-
         return logger
 
+
+# =========================
+# AssemblyAI upload + transcribe
+# =========================
 
 def set_api_key(api_key):
     import assemblyai as aai
     aai.settings.api_key = api_key
 
-
-def random_sleep(min_seconds=0.5, max_seconds=2.5):
-    time.sleep(random.uniform(min_seconds, max_seconds))
-
-
-def is_valid_filename(filename):
-    """Check if filename starts with video ID pattern"""
-    # Updated to check for video ID at the start after the date
-    # Video IDs are 11 characters of alphanumeric, dash, underscore
-    return re.match(r'^\d{4}-\d{2}-\d{2}_[a-zA-Z0-9_-]{11}_', filename) is not None
-
-
-def utterance_to_dict(utterance) -> dict:
-    return {
-        'text': utterance.text,
-        'start': utterance.start,
-        'end': utterance.end,
-        'confidence': utterance.confidence,
-        'channel': utterance.channel,
-        'speaker': utterance.speaker,
-        'words': [{
-            'text': word.text,
-            'start': word.start,
-            'end': word.end,
-            'confidence': word.confidence,
-            'channel': word.channel,
-            'speaker': word.speaker
-        } for word in utterance.words]
-    }
-
-
-# =========================
-# Upload throttling helpers
-# =========================
 
 class PerKeyLimiter:
     def __init__(self, max_uploads: int):
@@ -303,217 +276,206 @@ class PerKeyLimiter:
 
 
 def backoff_sleep(attempt, base=BACKOFF_BASE, cap=BACKOFF_CAP):
-    """Exponential backoff with full jitter"""
-    import random as _random
     delay = min(cap, (base ** attempt))
-    time.sleep(_random.uniform(0, delay))
+    time.sleep(random.uniform(0, delay))
 
 
 def _stream_file(path, chunk_size):
     with open(path, "rb") as f:
         while True:
-            data = f.read(chunk_size)
-            if not data:
+            buf = f.read(chunk_size)
+            if not buf:
                 break
-            yield data
+            yield buf
 
 
-def _raw_upload_with_requests(file_path, api_key, logger):
-    import requests
+def _requests_session_with_retry() -> requests.Session:
+    from urllib3.util.retry import Retry
+    from requests.adapters import HTTPAdapter
+    s = requests.Session()
+    retry = Retry(
+        total=5,
+        connect=5,
+        read=5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        backoff_factor=0.5,
+        allowed_methods=["HEAD", "GET", "POST", "PUT", "DELETE", "OPTIONS", "TRACE"],
+        raise_on_status=False,
+    )
+    s.mount("https://", HTTPAdapter(max_retries=retry))
+    s.mount("http://", HTTPAdapter(max_retries=retry))
+    return s
+
+
+def _raw_upload_with_requests(file_path: str, api_key: str, logger: logging.Logger) -> str:
+    """
+    Direct streaming upload to /v2/upload with chunked transfer.
+    Adds Content-Type header and uses a retriable requests session.
+    """
     url = "https://api.assemblyai.com/v2/upload"
-    headers = {"authorization": api_key}
-    # streaming generator triggers chunked transfer; no Content-Length needed
-    resp = requests.post(
+    headers = {
+        "authorization": api_key,
+        "Content-Type": "application/octet-stream",
+    }
+    sess = _requests_session_with_retry()
+    resp = sess.post(
         url,
         headers=headers,
         data=_stream_file(file_path, AAI_UPLOAD_CHUNK_SIZE),
-        timeout=300,
+        timeout=900,  # allow big files
     )
     if 200 <= resp.status_code < 300:
-        js = {}
         try:
             js = resp.json()
         except Exception:
-            pass
-        # SDK returns 'upload_url'; be liberal just in case
+            js = {}
         return js.get("upload_url") or js.get("url") or js.get("uploadUrl")
     raise RuntimeError(f"Upload HTTP {resp.status_code}: {resp.text[:300]}")
 
 
 def upload_with_retries(file_path, logger, api_key):
     """
-    Robust uploader that works across SDK versions:
-    - New SDKs: aai.files.upload
-    - Older SDKs: aai.upload_file
-    - Fallback: direct streaming to /v2/upload with requests
+    Robust uploader: try SDK surfaces; on failure, fallback to raw requests with retries.
+    Treat 422 during upload as transient (often momentary ingestion glitch).
     """
     import assemblyai as aai
     attempt = 0
     last_err = None
 
-    # Detect SDK surface
     has_files_upload = hasattr(aai, "files") and hasattr(getattr(aai, "files"), "upload")
     has_upload_file = hasattr(aai, "upload_file")
 
     while attempt < UPLOAD_RETRY_MAX:
         try:
             if has_files_upload:
-                # New SDK supports chunk_size
                 return aai.files.upload(file_path, chunk_size=AAI_UPLOAD_CHUNK_SIZE)
             if has_upload_file:
-                # Older SDK; still chunked internally
                 return aai.upload_file(file_path)
-            # Fallback: direct HTTP
             return _raw_upload_with_requests(file_path, api_key, logger)
-
         except Exception as e:
             msg = str(e) or e.__class__.__name__
             last_err = e
-            # Errors we treat as transient (upload is the flaky step)
-            transient = any(s in msg for s in [
-                "502", "503", "504", "Bad Gateway", "Service Unavailable", "Gateway",
-                "timed out", "Timeout", "Temporary failure", "Connection reset",
-                "Upload failed", "Read timed out", "Connection aborted", "ECONNRESET",
-                "429", "Too Many Requests"
-            ])
-            code422 = ("422" in msg)  # treat 422 during upload as transient here
-            if transient or code422:
+            transient_bits = ("502", "503", "504", "Bad Gateway", "Service Unavailable",
+                              "Gateway", "timed out", "Timeout", "Temporary failure",
+                              "Connection reset", "aborted", "ECONNRESET", "429",
+                              "SSLEOFError", "SSL", "EOF occurred", "ChunkedEncodingError")
+            is_422 = "422" in msg or "Upload HTTP 422" in msg
+            if is_422 or any(bit in msg for bit in transient_bits):
                 attempt += 1
-                logger.warning(
-                    f"Upload failed (attempt {attempt}/{UPLOAD_RETRY_MAX}) for {os.path.basename(file_path)}: {msg}"
-                )
+                logger.warning(f"Upload failed (attempt {attempt}/{UPLOAD_RETRY_MAX}) for {os.path.basename(file_path)}: {msg}")
                 backoff_sleep(attempt)
                 continue
-            # Non-transient: bail out immediately
             raise
     raise RuntimeError(f"Upload failed after {UPLOAD_RETRY_MAX} attempts: {last_err}")
 
 
+def utterance_to_safe_dict(u) -> dict:
+    words = getattr(u, "words", None) or []
+    return {
+        "text": getattr(u, "text", ""),
+        "start": getattr(u, "start", None),
+        "end": getattr(u, "end", None),
+        "confidence": getattr(u, "confidence", None),
+        "channel": getattr(u, "channel", None),
+        "speaker": getattr(u, "speaker", None),
+        "words": [{
+            "text": getattr(w, "text", ""),
+            "start": getattr(w, "start", None),
+            "end": getattr(w, "end", None),
+            "confidence": getattr(w, "confidence", None),
+            "channel": getattr(w, "channel", None),
+            "speaker": getattr(w, "speaker", None),
+        } for w in words]
+    }
+
+
 def transcribe_single_file(api_key, file_path, cache_file, logger):
-    """Transcribe one file with explicit upload + polling, guarded by per-key upload limiter."""
+    """Transcribe one file; guarded by per-key upload limiter."""
     cache = ProcessSafeCache(cache_file)
     try:
-        transcript_file_path = os.path.splitext(file_path)[0] + "_diarized_content.json"
+        transcript_out = os.path.splitext(file_path)[0] + "_diarized_content.json"
 
         if cache.is_processed(file_path):
-            video_id = extract_video_id_from_path(file_path)
-            logger.debug(f"Already processed: {video_id or os.path.basename(file_path)}")
+            logger.debug(f"Already processed: {os.path.basename(file_path)}")
             return {"status": "SKIPPED", "file": file_path}
 
         if not os.path.exists(file_path):
-            logger.warning(f"File {file_path} not found.")
+            logger.warning(f"Missing file: {file_path}")
             return {"status": "FAILED", "file": file_path, "reason": "missing_file"}
 
-        path_segments = file_path.split(os.sep)
-        channel_name = path_segments[-3] if len(path_segments) >= 3 else "unknown"
-        file_name = path_segments[-1]
-        video_id = extract_video_id_from_path(file_path)
+        # For logs
+        path_segs = file_path.split(os.sep)
+        channel_name = path_segs[-3] if len(path_segs) >= 3 else "unknown"
+        fname = path_segs[-1]
 
-        logger.info(f"Starting diarization: [{channel_name}/{file_name or video_id}]")
+        logger.info(f"Starting diarization: [{channel_name}/{fname}]")
 
-        # ================
-        # Upload (limited)
-        # ================
+        # Upload with per-key limiter
         import assemblyai as aai
         config = aai.TranscriptionConfig(speaker_labels=True)
         transcriber = aai.Transcriber()
 
-        # Acquire an upload slot for this API key before pushing bytes
         if not hasattr(transcribe_single_file, "_limiters"):
             transcribe_single_file._limiters = {}
         limiter = transcribe_single_file._limiters.setdefault(api_key, PerKeyLimiter(MAX_UPLOADS_PER_KEY))
 
         limiter.acquire()
         try:
-            upload_start = time.time()
+            up_start = time.time()
             audio_url = upload_with_retries(file_path, logger, api_key)
-            logger.debug(f"Uploaded in {time.time() - upload_start:.1f}s -> {audio_url}")
+            logger.debug(f"Uploaded in {time.time() - up_start:.1f}s -> {audio_url}")
         finally:
             limiter.release()
 
-        # ======================
-        # Kick off + wait safely
-        # ======================
+        # Kick and wait with a real timeout
         start_time = time.time()
-
-        # Newer SDKs: submit() returns a job handle; wait with a real timeout
         job = transcriber.submit(audio_url, config=config)
+
+        # New SDK uses futures underneath; give it a deadline
+        import concurrent.futures as _cf
         try:
             transcript = job.wait_for_completion_async().result(timeout=TRANSCRIBE_TIMEOUT_SEC)
-        except cf.TimeoutError:
-            logger.error(
-                f"Timed out after {TRANSCRIBE_TIMEOUT_SEC}s waiting for: "
-                f"[{channel_name}/{file_name or video_id}]"
-            )
-            # best-effort cleanup
+        except _cf.TimeoutError:
+            logger.error(f"Timed out after {TRANSCRIBE_TIMEOUT_SEC}s: [{channel_name}/{fname}]")
             try:
                 if getattr(job, "id", None):
-                    import assemblyai as aai
                     aai.Transcript.delete_by_id(job.id)
             except Exception:
                 pass
             return {"status": "FAILED", "file": file_path, "reason": "timeout"}
 
         duration = time.time() - start_time
-
         if transcript is None:
-            logger.error(f"Transcription returned None for: [{channel_name}/{file_name or video_id}]")
+            logger.error(f"Transcript was None: [{channel_name}/{fname}]")
             return {"status": "FAILED", "file": file_path, "reason": "transcript_none"}
 
         status = getattr(transcript, "status", None)
-        error_msg = getattr(transcript, "error", None)
-        if status == "error" or error_msg:
-            logger.error(f"AssemblyAI error for [{channel_name}/{file_name or video_id}]: {error_msg or status}")
-            return {"status": "FAILED", "file": file_path, "reason": error_msg or status}
+        err = getattr(transcript, "error", None)
+        if status == "error" or err:
+            logger.error(f"AssemblyAI error for [{channel_name}/{fname}]: {err or status}")
+            return {"status": "FAILED", "file": file_path, "reason": err or status}
 
         utterances = getattr(transcript, "utterances", None)
 
+        # Save
         if not utterances:
-            logger.warning(
-                f"No utterances returned for [{channel_name}/{file_name or video_id}] "
-                f"(diarization may have failed or found no speech)."
-            )
+            # Fallback single blob of text
             text = getattr(transcript, "text", "") or ""
-            fallback = [{
+            payload = [{
                 "text": text,
-                "start": None,
-                "end": None,
+                "start": None, "end": None,
                 "confidence": getattr(transcript, "confidence", None),
-                "channel": None,
-                "speaker": None,
+                "channel": None, "speaker": None,
                 "words": []
             }]
-            with open(transcript_file_path, 'w') as f:
-                json.dump(fallback, f, indent=4)
-            cache.mark_processed(file_path)
-            logger.info(f"FALLBACK [{channel_name}/{file_name or video_id}] in {duration:.1f}s")
-            return {"status": "FALLBACK", "file": file_path, "duration": duration, "reason": "no_utterances"}
+        else:
+            payload = [utterance_to_safe_dict(u) for u in utterances]
 
-        def safe_utterance_to_dict(u):
-            words = getattr(u, "words", None) or []
-            return {
-                "text": getattr(u, "text", ""),
-                "start": getattr(u, "start", None),
-                "end": getattr(u, "end", None),
-                "confidence": getattr(u, "confidence", None),
-                "channel": getattr(u, "channel", None),
-                "speaker": getattr(u, "speaker", None),
-                "words": [{
-                    "text": getattr(w, "text", ""),
-                    "start": getattr(w, "start", None),
-                    "end": getattr(w, "end", None),
-                    "confidence": getattr(w, "confidence", None),
-                    "channel": getattr(w, "channel", None),
-                    "speaker": getattr(w, "speaker", None),
-                } for w in words]
-            }
-
-        utterances_dicts = [safe_utterance_to_dict(u) for u in utterances]
-        with open(transcript_file_path, 'w') as f:
-            json.dump(utterances_dicts, f, indent=4)
+        with open(transcript_out, 'w') as f:
+            json.dump(payload, f, indent=4)
 
         cache.mark_processed(file_path)
-        logger.info(f"SUCCESS [{channel_name}/{file_name or video_id}] in {duration:.1f}s")
+        logger.info(f"SUCCESS [{channel_name}/{fname}] in {duration:.1f}s")
         return {"status": "SUCCESS", "file": file_path, "duration": duration}
 
     except Exception as e:
@@ -521,173 +483,258 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         return {"status": "FAILED", "file": file_path, "reason": str(e)}
 
 
+# =========================
+# Planning / summary table
+# =========================
+
+def scan_all_mp3() -> List[str]:
+    data_path = YOUTUBE_VIDEO_DIRECTORY
+    return [
+        os.path.join(root, f)
+        for root, _dirs, files in os.walk(data_path)
+        for f in files
+        if f.endswith(".mp3") and is_valid_filename(f)
+    ]
+
+
+def group_unprocessed_by_channel(unprocessed_files: List[str]) -> Dict[str, List[str]]:
+    buckets: Dict[str, List[str]] = {}
+    for p in unprocessed_files:
+        # path structure: .../<channel>/<YYYY-...>_<id>_<title>/<same>.mp3
+        parts = Path(p).parts
+        channel = parts[-3] if len(parts) >= 3 else "unknown"
+        buckets.setdefault(channel, []).append(p)
+    # sort each channel newest→oldest
+    for ch in list(buckets.keys()):
+        buckets[ch].sort(key=lambda path: date_to_int(parse_filename(path)[0]), reverse=True)
+        # cap per-channel if requested
+        if MAX_PER_CHANNEL > 0:
+            buckets[ch] = buckets[ch][:MAX_PER_CHANNEL]
+    return buckets
+
+
+def plan_order(buckets: Dict[str, List[str]]) -> List[str]:
+    """
+    Return global ordered list of files to process:
+    - order channels by FEWEST remaining first (tie: alphabetical)
+    - within channel: newest→oldest (already sorted)
+    - optional year grouping could be added here (kept off by default)
+    """
+    channels = list(buckets.keys())
+    if PRIORITIZE_SMALL_CHANNELS:
+        channels.sort(key=lambda c: (len(buckets[c]), c.lower()))
+    else:
+        channels.sort(key=lambda c: c.lower())
+
+    # Flatten in channel priority order
+    ordered: List[str] = []
+    if GROUP_BY_YEAR:
+        # collect all years
+        all_years = set()
+        per_ch_years: Dict[str, Dict[str, List[str]]] = {}
+        for c in channels:
+            ys: Dict[str, List[str]] = {}
+            for p in buckets[c]:
+                y = year_of(parse_filename(p)[0])
+                ys.setdefault(y, []).append(p)
+            # keep newest→oldest in each bucket
+            for yk in ys:
+                ys[yk].sort(key=lambda path: date_to_int(parse_filename(path)[0]), reverse=True)
+            per_ch_years[c] = ys
+            all_years.update(ys.keys())
+        years_sorted = sorted([y for y in all_years if y != "unknown"], reverse=True)
+        if "unknown" in all_years:
+            years_sorted.append("unknown")
+
+        for y in years_sorted:
+            ch_for_y = [c for c in channels if y in per_ch_years[c] and per_ch_years[c][y]]
+            if PRIORITIZE_SMALL_CHANNELS:
+                ch_for_y.sort(key=lambda c: (len(per_ch_years[c][y]), c.lower()))
+            for i in range(0, len(ch_for_y), CHANNELS_PER_PASS):
+                group = ch_for_y[i:i + CHANNELS_PER_PASS]
+                for c in group:
+                    ordered.extend(per_ch_years[c][y])
+    else:
+        for i in range(0, len(channels), CHANNELS_PER_PASS):
+            group = channels[i:i + CHANNELS_PER_PASS]
+            for c in group:
+                ordered.extend(buckets[c])
+
+    return ordered
+
+
+def print_plan_summary(buckets: Dict[str, List[str]]) -> None:
+    if not buckets:
+        print("\nNo transcriptions needed. ✅\n")
+        return
+
+    ch_width = 32
+    cnt_width = 8
+    top_width = 90
+
+    print("\n=== Transcription Plan Summary (newest → oldest within channel) ===")
+    print(f"{'Channel':{ch_width}} {'Missing':>{cnt_width}}  Top-3 most recent to transcribe")
+    print("-" * (ch_width + cnt_width + 2 + 64))
+
+    total = 0
+    # fewest missing first
+    ordered_items = sorted(buckets.items(), key=lambda kv: (len(kv[1]), kv[0].lower()))
+    rows_for_csv: List[Dict] = []
+
+    for channel, files in ordered_items:
+        total += len(files)
+        top3 = files[:3]
+        triples = []
+        for p in top3:
+            d, vid, title = parse_filename(p)
+            triples.append(f"{d} — {truncate(title, top_width)}")
+        top3_str = " | ".join(triples) if triples else "-"
+        print(f"{channel:{ch_width}} {len(files):>{cnt_width}}  {top3_str}")
+
+        # CSV rows
+        for p in files:
+            d, vid, title = parse_filename(p)
+            rows_for_csv.append({
+                "channel": channel,
+                "video_id": vid,
+                "date": d,
+                "year": year_of(d),
+                "title": title,
+                "path": p,
+            })
+
+    print("-" * (ch_width + cnt_width + 2 + 64))
+    print(f"TOTAL files to transcribe: {total}\n")
+
+    # Persist plan CSV
+    try:
+        import pandas as pd
+        PLAN_CSV.parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(rows_for_csv).to_csv(PLAN_CSV, index=False)
+        print(f"Saved detailed plan to: {PLAN_CSV}")
+    except Exception as e:
+        logging.debug("Could not write plan CSV: %s", e)
+
+
+# =========================
+# Workers
+# =========================
+
 def worker_with_backlog(api_key_index, api_key, file_paths, cache):
-    """Worker that processes files with a maximum backlog"""
     set_api_key(api_key)
     logger = ThreadLogger.get_logger(api_key_index)
 
-    total_files = len(file_paths)
-    logger.info(f"Starting worker with {total_files} files to process")
-
-    if total_files == 0:
+    total = len(file_paths)
+    logger.info(f"Starting worker with {total} files to process")
+    if total == 0:
         logger.info("No files assigned to this worker")
         return
 
     completed = {"SUCCESS": 0, "FALLBACK": 0, "SKIPPED": 0, "FAILED": 0}
-    failed = 0
 
-    # Process files in smaller batches to avoid saturating upload endpoints
-    batch_size = min(MAX_CONCURRENT_TRANSCRIPTIONS, 3)  # safer default
+    # Keep batches small; uploads are limited per key
+    batch_size = min(MAX_CONCURRENT_TRANSCRIPTIONS, 3)
 
-    for i in range(0, total_files, batch_size):
+    for i in range(0, total, batch_size):
         batch = file_paths[i:i + batch_size]
-        batch_end = min(i + batch_size, total_files)
-
-        logger.info(f"Processing batch {i // batch_size + 1}: files {i + 1}-{batch_end} of {total_files}")
-        logger.info(f"Queue status: Completed={completed}, Failed={failed}, Remaining={total_files - i}")
+        logger.info(f"Processing batch {i // batch_size + 1}: files {i + 1}-{i + len(batch)} of {total}")
+        logger.info(f"Queue status: Completed={completed}, Remaining={total - (i)}")
 
         with ThreadPoolExecutor(max_workers=batch_size) as executor:
             futures = []
-
             for file_path in batch:
-                # Add small random delay between submissions
-                random_sleep(0.1, 0.3)
+                # tiny jitter to avoid synchronized POSTs
+                time.sleep(random.uniform(0.1, 0.3))
+                futures.append(executor.submit(
+                    transcribe_single_file, api_key, file_path, cache.cache_file, logger
+                ))
 
-                # Extract file info for logging
-                path_segments = file_path.split(os.sep)
-                channel_name = path_segments[-3] if len(path_segments) >= 3 else "unknown"
-                video_id = extract_video_id_from_path(file_path)
-                file_name = path_segments[-1]
-
-                logger.debug(f"Submitting: [{channel_name}/{file_name or video_id}]")
-
-                future = executor.submit(
-                    transcribe_single_file,
-                    api_key,
-                    file_path,
-                    cache.cache_file,  # pass a path, not the object
-                    logger
-                )
-
-                futures.append((future, file_path))
-
-            # Wait for batch to complete
-            logger.info(f"Waiting for batch of {len(futures)} transcriptions to complete...")
-
-            for future, file_path in futures:
+            # Wait for batch
+            for fut in futures:
                 try:
-                    # longer future timeout (transcription can legitimately take a while)
-                    result = future.result(timeout=TRANSCRIBE_TIMEOUT_SEC + 120)
+                    result = fut.result(timeout=TRANSCRIBE_TIMEOUT_SEC + 180)
                     status = (result or {}).get("status", "FAILED")
                     completed[status] = completed.get(status, 0) + 1
                 except Exception as e:
-                    msg = str(e)
-                    if "TimeoutError" in msg or "timeout" in msg.lower():
-                        logger.warning(
-                            f"Timeout waiting for {os.path.basename(file_path)}; retrying once synchronously"
-                        )
-                        # Retry once synchronously (no extra thread)
-                        try:
-                            result = transcribe_single_file(api_key, file_path, cache.cache_file, logger)
-                            status = (result or {}).get("status", "FAILED")
-                            completed[status] = completed.get(status, 0) + 1
-                        except Exception as e2:
-                            logger.error(f"Retry failed for {file_path}: {e2}")
-                            completed["FAILED"] += 1
-                    else:
-                        logger.error(f"Batch processing error for {file_path}: {e}")
-                        completed["FAILED"] += 1
+                    logger.error(f"Batch processing error: {e}")
+                    completed["FAILED"] += 1
 
-            logger.info(
-                f"Batch complete. Total: {sum(completed.values())}/{total_files} "
-                f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
-                f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
-            )
+        logger.info(
+            f"Batch complete. Total done: {sum(completed.values())}/{total} "
+            f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
+            f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
+        )
 
-            # Add delay between batches to avoid overwhelming the API
-            if i + batch_size < total_files:
-                wait_time = random.uniform(2, 5)
-                logger.info(f"Waiting {wait_time:.1f}s before next batch...")
-                time.sleep(wait_time)
+        if i + batch_size < total:
+            sleep_s = random.uniform(2, 5)
+            logger.info(f"Waiting {sleep_s:.1f}s before next batch…")
+            time.sleep(sleep_s)
 
-    logger.info(f"Worker completed! Processed {sum(completed.values())} files "
-                f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
-                f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})")
+    logger.info(
+        f"Worker completed! Processed {sum(completed.values())} files "
+        f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
+        f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
+    )
 
+
+# =========================
+# Main
+# =========================
 
 def main():
-    # Initialize cache
+    # Main logger
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - [MAIN] - %(levelname)s - %(message)s')
+    logging.getLogger().addFilter(No200HTTPFilter())
+
     cache = DiarizationCache()
 
-    # Optional: Rebuild cache from disk if needed
-    # cache.rebuild_from_disk()
-
-    data_path = YOUTUBE_VIDEO_DIRECTORY
-
-    # Get all MP3 files with the new naming pattern
-    all_mp3_files = [
-        os.path.join(root, file)
-        for root, _, files in os.walk(data_path)
-        for file in files
-        if file.endswith(".mp3") and is_valid_filename(file)
-    ]
-
+    # Discover audio
+    all_mp3_files = scan_all_mp3()
     if not all_mp3_files:
         logging.warning("No MP3 files found to transcribe.")
         return
 
     logging.info(f"Found {len(all_mp3_files)} total MP3 files")
 
-    # Filter to only unprocessed files using cache
+    # Filter unprocessed
     mp3_files = cache.get_unprocessed_files(all_mp3_files)
-
     if not mp3_files:
         logging.info("All files have been processed. Nothing to do.")
         return
 
-    # Show some stats
-    logging.info(f"Processing {len(mp3_files)} new files...")
-    logging.info(f"Skipping {len(all_mp3_files) - len(mp3_files)} already processed files")
-    logging.info(
-        f"Using {len(api_keys)} API keys with max {MAX_CONCURRENT_TRANSCRIPTIONS} concurrent transcriptions each; "
-        f"max uploads per key: {MAX_UPLOADS_PER_KEY}"
-    )
+    # Group by channel & sort
+    buckets = group_unprocessed_by_channel(mp3_files)
 
-    # Log some sample video IDs being processed
-    sample_size = min(5, len(mp3_files))
-    for i in range(sample_size):
-        video_id = extract_video_id_from_path(mp3_files[i])
-        logging.info(f"Sample file {i + 1}: Video ID = {video_id}, Path = {os.path.basename(mp3_files[i])}")
+    # Print concise plan and save CSV
+    print_plan_summary(buckets)
 
-    # Shuffle files for better distribution
-    random.shuffle(mp3_files)
+    # Build global ordered list from plan
+    ordered_files = plan_order(buckets)
 
-    # Split files evenly among API keys
-    files_per_key = len(mp3_files) // len(api_keys)
-    remainder = len(mp3_files) % len(api_keys)
+    # Log a few samples (global order)
+    sample_sz = min(5, len(ordered_files))
+    for i in range(sample_sz):
+        d, vid, title = parse_filename(ordered_files[i])
+        logging.info(f"Sample {i+1}: {d} {vid} — {title}")
 
-    file_chunks = []
-    start_idx = 0
+    # Distribute ordered files across API keys round-robin (preserves priority)
+    nkeys = len(api_keys)
+    chunks: List[List[str]] = [[] for _ in range(nkeys)]
+    for idx, path in enumerate(ordered_files):
+        chunks[idx % nkeys].append(path)
 
-    for i in range(len(api_keys)):
-        # Add one extra file to the first 'remainder' workers
-        chunk_size = files_per_key + (1 if i < remainder else 0)
-        file_chunks.append(mp3_files[start_idx:start_idx + chunk_size])
-        start_idx += chunk_size
-
-    # Log distribution
-    for i, chunk in enumerate(file_chunks):
+    for i, chunk in enumerate(chunks):
         logging.info(f"API Key {i}: {len(chunk)} files assigned")
 
-    with ProcessPoolExecutor(max_workers=len(api_keys)) as executor:
+    # Launch workers
+    with ProcessPoolExecutor(max_workers=nkeys) as executor:
         futures = [
-            executor.submit(worker_with_backlog, i, api_key, file_chunks[i], cache)
+            executor.submit(worker_with_backlog, i, api_key, chunks[i], cache)
             for i, api_key in enumerate(api_keys)
         ]
-
-        for future in as_completed(futures):
+        for fut in as_completed(futures):
             try:
-                future.result()
+                fut.result()
             except Exception as e:
                 logging.error(f"Worker process failed: {e}")
 
@@ -695,12 +742,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # Set up main logger
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - [MAIN] - %(levelname)s - %(message)s'
-    )
-    logger = logging.getLogger()
-    logger.addFilter(No200HTTPFilter())
-
     main()
