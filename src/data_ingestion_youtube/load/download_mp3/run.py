@@ -512,6 +512,18 @@ if __name__ == "__main__":
 
     cookie_file=None
 
+    # near the top of your entrypoint, before planning/downloading
+    import subprocess, sys
+    from pathlib import Path
+    from src import YOUTUBE_VIDEO_DIRECTORY
+
+    subprocess.run([
+        sys.executable, "-m",
+        "src.data_ingestion_youtube.load.download_mp3.cleanup",
+        "--root", str(Path(YOUTUBE_VIDEO_DIRECTORY)),
+        "--no-dry-run"
+    ], check=True)
+
     asyncio.run(
         run(
             api_key=os.environ.get("YOUTUBE_API_KEY", ""),
