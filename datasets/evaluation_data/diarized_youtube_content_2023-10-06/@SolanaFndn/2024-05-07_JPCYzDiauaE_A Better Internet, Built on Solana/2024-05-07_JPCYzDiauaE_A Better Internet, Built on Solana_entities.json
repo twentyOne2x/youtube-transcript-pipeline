@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-05-07_JPCYzDiauaE_A Better Internet, Built on Solana.mp3",
+    "entities": [
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 24480,
+            "end": 25200,
+            "confidence": null
+        },
+        {
+            "text": "Helium",
+            "entity_type": "organization",
+            "start": 32720,
+            "end": 33520,
+            "confidence": null
+        },
+        {
+            "text": "Helium",
+            "entity_type": "organization",
+            "start": 35080,
+            "end": 35440,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 24480,
+            "end": 25200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Helium",
+            "entity_type": "organization",
+            "start": 32720,
+            "end": 33520,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Helium",
+            "entity_type": "organization",
+            "start": 35080,
+            "end": 35440,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

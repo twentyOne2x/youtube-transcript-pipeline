@@ -1,0 +1,412 @@
+{
+    "video_file": "2024-09-05_clEs_xYEzMM_Solana Changelog Sep 4 - Rust Wallet Adapter, Optimized Entrypoint, and Anchor improvements.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6040,
+            "end": 6480,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 7320,
+            "end": 7520,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 8240,
+            "end": 8560,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9000,
+            "end": 9520,
+            "confidence": null
+        },
+        {
+            "text": "Radar",
+            "entity_type": "event",
+            "start": 14400,
+            "end": 14960,
+            "confidence": null
+        },
+        {
+            "text": "Coliseum team",
+            "entity_type": "organization",
+            "start": 16880,
+            "end": 17920,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 19840,
+            "end": 20320,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 22040,
+            "end": 22360,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 44380,
+            "end": 44700,
+            "confidence": null
+        },
+        {
+            "text": "John Jinque",
+            "entity_type": "person_name",
+            "start": 76620,
+            "end": 77460,
+            "confidence": null
+        },
+        {
+            "text": "Noah",
+            "entity_type": "person_name",
+            "start": 116170,
+            "end": 116690,
+            "confidence": null
+        },
+        {
+            "text": "Noah",
+            "entity_type": "person_name",
+            "start": 144020,
+            "end": 144420,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 147660,
+            "end": 148020,
+            "confidence": null
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "organization",
+            "start": 149180,
+            "end": 149660,
+            "confidence": null
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 150780,
+            "end": 151380,
+            "confidence": null
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 153300,
+            "end": 153820,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 173430,
+            "end": 174070,
+            "confidence": null
+        },
+        {
+            "text": "Hardhat Chad",
+            "entity_type": "person_name",
+            "start": 175190,
+            "end": 176110,
+            "confidence": null
+        },
+        {
+            "text": "Rust developer",
+            "entity_type": "occupation",
+            "start": 186030,
+            "end": 186670,
+            "confidence": null
+        },
+        {
+            "text": "front end developer",
+            "entity_type": "occupation",
+            "start": 194240,
+            "end": 195040,
+            "confidence": null
+        },
+        {
+            "text": "Russ",
+            "entity_type": "person_name",
+            "start": 221890,
+            "end": 222170,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange league",
+            "entity_type": "organization",
+            "start": 240490,
+            "end": 241850,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 243610,
+            "end": 243970,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 244090,
+            "end": 244330,
+            "confidence": null
+        },
+        {
+            "text": "Mitch",
+            "entity_type": "person_name",
+            "start": 247610,
+            "end": 248090,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 261070,
+            "end": 261550,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 264270,
+            "end": 265190,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6040,
+            "end": 6480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 7320,
+            "end": 7520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 8240,
+            "end": 8560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9000,
+            "end": 9520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Radar",
+            "entity_type": "event",
+            "start": 14400,
+            "end": 14960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coliseum team",
+            "entity_type": "organization",
+            "start": 16880,
+            "end": 17920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 19840,
+            "end": 20320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 22040,
+            "end": 22360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 44380,
+            "end": 44700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John Jinque",
+            "entity_type": "person_name",
+            "start": 76620,
+            "end": 77460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Noah",
+            "entity_type": "person_name",
+            "start": 116170,
+            "end": 116690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Noah",
+            "entity_type": "person_name",
+            "start": 144020,
+            "end": 144420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 147660,
+            "end": 148020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "organization",
+            "start": 149180,
+            "end": 149660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 150780,
+            "end": 151380,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 153300,
+            "end": 153820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 173430,
+            "end": 174070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Hardhat Chad",
+            "entity_type": "person_name",
+            "start": 175190,
+            "end": 176110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Rust developer",
+            "entity_type": "occupation",
+            "start": 186030,
+            "end": 186670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "front end developer",
+            "entity_type": "occupation",
+            "start": 194240,
+            "end": 195040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Russ",
+            "entity_type": "person_name",
+            "start": 221890,
+            "end": 222170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange league",
+            "entity_type": "organization",
+            "start": 240490,
+            "end": 241850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 243610,
+            "end": 243970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 244090,
+            "end": 244330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mitch",
+            "entity_type": "person_name",
+            "start": 247610,
+            "end": 248090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 261070,
+            "end": 261550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 264270,
+            "end": 265190,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

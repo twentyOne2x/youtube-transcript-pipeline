@@ -1,0 +1,352 @@
+{
+    "video_file": "2016-01-13_0hI89H39USg_A Second Course in Algorithms (Lecture 3: The Push-Relabel Algorithm for Maximum Flow).mp3",
+    "entities": [
+        {
+            "text": "Ford",
+            "entity_type": "person_name",
+            "start": 25240,
+            "end": 25520,
+            "confidence": null
+        },
+        {
+            "text": "Edmonds Karp",
+            "entity_type": "person_name",
+            "start": 37610,
+            "end": 38530,
+            "confidence": null
+        },
+        {
+            "text": "Ford",
+            "entity_type": "person_name",
+            "start": 39770,
+            "end": 40050,
+            "confidence": null
+        },
+        {
+            "text": "kerson",
+            "entity_type": "person_name",
+            "start": 40050,
+            "end": 40610,
+            "confidence": null
+        },
+        {
+            "text": "Dinoch",
+            "entity_type": "person_name",
+            "start": 54050,
+            "end": 54610,
+            "confidence": null
+        },
+        {
+            "text": "Ford Fulkerson",
+            "entity_type": "person_name",
+            "start": 160920,
+            "end": 161920,
+            "confidence": null
+        },
+        {
+            "text": "Ford Ferguson",
+            "entity_type": "person_name",
+            "start": 181250,
+            "end": 182130,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 999120,
+            "end": 999480,
+            "confidence": null
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 1416430,
+            "end": 1416950,
+            "confidence": null
+        },
+        {
+            "text": "50s",
+            "entity_type": "date_interval",
+            "start": 1419270,
+            "end": 1419670,
+            "confidence": null
+        },
+        {
+            "text": "60s",
+            "entity_type": "date_interval",
+            "start": 1419910,
+            "end": 1420230,
+            "confidence": null
+        },
+        {
+            "text": "early 70s",
+            "entity_type": "date_interval",
+            "start": 1420390,
+            "end": 1421110,
+            "confidence": null
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 2103500,
+            "end": 2103860,
+            "confidence": null
+        },
+        {
+            "text": "coder",
+            "entity_type": "occupation",
+            "start": 2113920,
+            "end": 2114280,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "location",
+            "start": 2436840,
+            "end": 2437120,
+            "confidence": null
+        },
+        {
+            "text": "W",
+            "entity_type": "location",
+            "start": 2442560,
+            "end": 2442880,
+            "confidence": null
+        },
+        {
+            "text": "Forkerson",
+            "entity_type": "person_name",
+            "start": 2994520,
+            "end": 2995240,
+            "confidence": null
+        },
+        {
+            "text": "50s",
+            "entity_type": "date_interval",
+            "start": 3034540,
+            "end": 3034940,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 3155400,
+            "end": 3155760,
+            "confidence": null
+        },
+        {
+            "text": "Goldberg",
+            "entity_type": "person_name",
+            "start": 3218210,
+            "end": 3218530,
+            "confidence": null
+        },
+        {
+            "text": "Tarjan",
+            "entity_type": "person_name",
+            "start": 3218610,
+            "end": 3219130,
+            "confidence": null
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 3219930,
+            "end": 3220610,
+            "confidence": null
+        },
+        {
+            "text": "Gobertarjan",
+            "entity_type": "person_name",
+            "start": 4260350,
+            "end": 4261070,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Ford",
+            "entity_type": "person_name",
+            "start": 25240,
+            "end": 25520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Edmonds Karp",
+            "entity_type": "person_name",
+            "start": 37610,
+            "end": 38530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ford",
+            "entity_type": "person_name",
+            "start": 39770,
+            "end": 40050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "kerson",
+            "entity_type": "person_name",
+            "start": 40050,
+            "end": 40610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dinoch",
+            "entity_type": "person_name",
+            "start": 54050,
+            "end": 54610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ford Fulkerson",
+            "entity_type": "person_name",
+            "start": 160920,
+            "end": 161920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ford Ferguson",
+            "entity_type": "person_name",
+            "start": 181250,
+            "end": 182130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 999120,
+            "end": 999480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 1416430,
+            "end": 1416950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "50s",
+            "entity_type": "date_interval",
+            "start": 1419270,
+            "end": 1419670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "60s",
+            "entity_type": "date_interval",
+            "start": 1419910,
+            "end": 1420230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 70s",
+            "entity_type": "date_interval",
+            "start": 1420390,
+            "end": 1421110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 2103500,
+            "end": 2103860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coder",
+            "entity_type": "occupation",
+            "start": 2113920,
+            "end": 2114280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "location",
+            "start": 2436840,
+            "end": 2437120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "W",
+            "entity_type": "location",
+            "start": 2442560,
+            "end": 2442880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Forkerson",
+            "entity_type": "person_name",
+            "start": 2994520,
+            "end": 2995240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "50s",
+            "entity_type": "date_interval",
+            "start": 3034540,
+            "end": 3034940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 3155400,
+            "end": 3155760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Goldberg",
+            "entity_type": "person_name",
+            "start": 3218210,
+            "end": 3218530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tarjan",
+            "entity_type": "person_name",
+            "start": 3218610,
+            "end": 3219130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 3219930,
+            "end": 3220610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Gobertarjan",
+            "entity_type": "person_name",
+            "start": 4260350,
+            "end": 4261070,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

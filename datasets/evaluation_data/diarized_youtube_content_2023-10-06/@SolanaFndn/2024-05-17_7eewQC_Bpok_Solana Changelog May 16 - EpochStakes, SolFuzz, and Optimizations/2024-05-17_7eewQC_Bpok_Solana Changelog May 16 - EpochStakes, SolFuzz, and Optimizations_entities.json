@@ -1,0 +1,592 @@
+{
+    "video_file": "2024-05-17_7eewQC_Bpok_Solana Changelog May 16 - EpochStakes, SolFuzz, and Optimizations.mp3",
+    "entities": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6640,
+            "end": 6840,
+            "confidence": null
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 7040,
+            "end": 8520,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9160,
+            "end": 9480,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10120,
+            "end": 10560,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 31290,
+            "end": 31810,
+            "confidence": null
+        },
+        {
+            "text": "Tao",
+            "entity_type": "person_name",
+            "start": 42530,
+            "end": 42889,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 53530,
+            "end": 54050,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 80460,
+            "end": 81060,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 104380,
+            "end": 104900,
+            "confidence": null
+        },
+        {
+            "text": "10 hours",
+            "entity_type": "duration",
+            "start": 166260,
+            "end": 166700,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 172380,
+            "end": 172860,
+            "confidence": null
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 175020,
+            "end": 175820,
+            "confidence": null
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 195070,
+            "end": 195870,
+            "confidence": null
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 206630,
+            "end": 207430,
+            "confidence": null
+        },
+        {
+            "text": "CO",
+            "entity_type": "medical_condition",
+            "start": 223450,
+            "end": 223650,
+            "confidence": null
+        },
+        {
+            "text": "Richie",
+            "entity_type": "person_name",
+            "start": 264020,
+            "end": 264540,
+            "confidence": null
+        },
+        {
+            "text": "Fire Dancer",
+            "entity_type": "organization",
+            "start": 265220,
+            "end": 265940,
+            "confidence": null
+        },
+        {
+            "text": "Richie",
+            "entity_type": "person_name",
+            "start": 287310,
+            "end": 288150,
+            "confidence": null
+        },
+        {
+            "text": "Fire",
+            "entity_type": "organization",
+            "start": 291310,
+            "end": 291950,
+            "confidence": null
+        },
+        {
+            "text": "Richard",
+            "entity_type": "person_name",
+            "start": 306780,
+            "end": 307420,
+            "confidence": null
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 307980,
+            "end": 308900,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 353960,
+            "end": 354360,
+            "confidence": null
+        },
+        {
+            "text": "BMAN",
+            "entity_type": "organization",
+            "start": 357000,
+            "end": 357400,
+            "confidence": null
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 379329,
+            "end": 380130,
+            "confidence": null
+        },
+        {
+            "text": "Anchor team",
+            "entity_type": "organization",
+            "start": 380810,
+            "end": 381330,
+            "confidence": null
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 396310,
+            "end": 396990,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 412990,
+            "end": 413710,
+            "confidence": null
+        },
+        {
+            "text": "Anchorage",
+            "entity_type": "organization",
+            "start": 415190,
+            "end": 415760,
+            "confidence": null
+        },
+        {
+            "text": "Triton",
+            "entity_type": "organization",
+            "start": 421310,
+            "end": 421990,
+            "confidence": null
+        },
+        {
+            "text": "Brian Long",
+            "entity_type": "person_name",
+            "start": 422350,
+            "end": 422990,
+            "confidence": null
+        },
+        {
+            "text": "Dean McLiddal",
+            "entity_type": "person_name",
+            "start": 465510,
+            "end": 466790,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 496460,
+            "end": 497380,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 497940,
+            "end": 498980,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 502820,
+            "end": 503380,
+            "confidence": null
+        },
+        {
+            "text": "Dhruv",
+            "entity_type": "person_name",
+            "start": 506660,
+            "end": 507220,
+            "confidence": null
+        },
+        {
+            "text": "Tiny Dancer team",
+            "entity_type": "organization",
+            "start": 508380,
+            "end": 509460,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 510500,
+            "end": 510900,
+            "confidence": null
+        },
+        {
+            "text": "Stevie",
+            "entity_type": "person_name",
+            "start": 511020,
+            "end": 511420,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 518420,
+            "end": 518860,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6640,
+            "end": 6840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 7040,
+            "end": 8520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9160,
+            "end": 9480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10120,
+            "end": 10560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 31290,
+            "end": 31810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tao",
+            "entity_type": "person_name",
+            "start": 42530,
+            "end": 42889,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 53530,
+            "end": 54050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 80460,
+            "end": 81060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 104380,
+            "end": 104900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "10 hours",
+            "entity_type": "duration",
+            "start": 166260,
+            "end": 166700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 172380,
+            "end": 172860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 175020,
+            "end": 175820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 195070,
+            "end": 195870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alessandro",
+            "entity_type": "person_name",
+            "start": 206630,
+            "end": 207430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CO",
+            "entity_type": "medical_condition",
+            "start": 223450,
+            "end": 223650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Richie",
+            "entity_type": "person_name",
+            "start": 264020,
+            "end": 264540,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Fire Dancer",
+            "entity_type": "organization",
+            "start": 265220,
+            "end": 265940,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Richie",
+            "entity_type": "person_name",
+            "start": 287310,
+            "end": 288150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Fire",
+            "entity_type": "organization",
+            "start": 291310,
+            "end": 291950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Richard",
+            "entity_type": "person_name",
+            "start": 306780,
+            "end": 307420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 307980,
+            "end": 308900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 353960,
+            "end": 354360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "BMAN",
+            "entity_type": "organization",
+            "start": 357000,
+            "end": 357400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 379329,
+            "end": 380130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anchor team",
+            "entity_type": "organization",
+            "start": 380810,
+            "end": 381330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 396310,
+            "end": 396990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 412990,
+            "end": 413710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anchorage",
+            "entity_type": "organization",
+            "start": 415190,
+            "end": 415760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Triton",
+            "entity_type": "organization",
+            "start": 421310,
+            "end": 421990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Brian Long",
+            "entity_type": "person_name",
+            "start": 422350,
+            "end": 422990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Dean McLiddal",
+            "entity_type": "person_name",
+            "start": 465510,
+            "end": 466790,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 496460,
+            "end": 497380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 497940,
+            "end": 498980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 502820,
+            "end": 503380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dhruv",
+            "entity_type": "person_name",
+            "start": 506660,
+            "end": 507220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tiny Dancer team",
+            "entity_type": "organization",
+            "start": 508380,
+            "end": 509460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 510500,
+            "end": 510900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stevie",
+            "entity_type": "person_name",
+            "start": 511020,
+            "end": 511420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 518420,
+            "end": 518860,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

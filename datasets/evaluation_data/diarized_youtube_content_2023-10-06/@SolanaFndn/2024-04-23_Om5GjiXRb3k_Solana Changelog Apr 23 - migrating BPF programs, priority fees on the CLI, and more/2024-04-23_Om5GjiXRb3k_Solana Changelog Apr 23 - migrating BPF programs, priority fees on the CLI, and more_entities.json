@@ -1,0 +1,352 @@
+{
+    "video_file": "2024-04-23_Om5GjiXRb3k_Solana Changelog Apr 23 - migrating BPF programs, priority fees on the CLI, and more.mp3",
+    "entities": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6000,
+            "end": 6200,
+            "confidence": null
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 6400,
+            "end": 7800,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 8760,
+            "end": 9160,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9560,
+            "end": 10080,
+            "confidence": null
+        },
+        {
+            "text": "Paris Blockchain week",
+            "entity_type": "event",
+            "start": 13320,
+            "end": 14280,
+            "confidence": null
+        },
+        {
+            "text": "Radiance Dao",
+            "entity_type": "person_name",
+            "start": 20920,
+            "end": 21720,
+            "confidence": null
+        },
+        {
+            "text": "Radiance Dao",
+            "entity_type": "organization",
+            "start": 21720,
+            "end": 22400,
+            "confidence": null
+        },
+        {
+            "text": "bonk a thon",
+            "entity_type": "event",
+            "start": 23440,
+            "end": 24320,
+            "confidence": null
+        },
+        {
+            "text": "a couple of weeks",
+            "entity_type": "duration",
+            "start": 26520,
+            "end": 27120,
+            "confidence": null
+        },
+        {
+            "text": "April 29th",
+            "entity_type": "date",
+            "start": 27560,
+            "end": 28480,
+            "confidence": null
+        },
+        {
+            "text": "Coliseum",
+            "entity_type": "location",
+            "start": 38570,
+            "end": 39090,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 43570,
+            "end": 44490,
+            "confidence": null
+        },
+        {
+            "text": "Coliseum hackathon",
+            "entity_type": "event",
+            "start": 46770,
+            "end": 47930,
+            "confidence": null
+        },
+        {
+            "text": "Bonkathon hackathon",
+            "entity_type": "event",
+            "start": 52090,
+            "end": 53370,
+            "confidence": null
+        },
+        {
+            "text": "Coliseum hackathon",
+            "entity_type": "event",
+            "start": 58950,
+            "end": 60270,
+            "confidence": null
+        },
+        {
+            "text": "bunkathon",
+            "entity_type": "event",
+            "start": 63070,
+            "end": 63790,
+            "confidence": null
+        },
+        {
+            "text": "John Shinkway",
+            "entity_type": "person_name",
+            "start": 146900,
+            "end": 147620,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 184840,
+            "end": 185360,
+            "confidence": null
+        },
+        {
+            "text": "Expo",
+            "entity_type": "event",
+            "start": 201030,
+            "end": 201670,
+            "confidence": null
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 266450,
+            "end": 266850,
+            "confidence": null
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 268090,
+            "end": 268690,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 279130,
+            "end": 279530,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 283050,
+            "end": 283650,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6000,
+            "end": 6200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 6400,
+            "end": 7800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 8760,
+            "end": 9160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9560,
+            "end": 10080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Paris Blockchain week",
+            "entity_type": "event",
+            "start": 13320,
+            "end": 14280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Radiance Dao",
+            "entity_type": "person_name",
+            "start": 20920,
+            "end": 21720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Radiance Dao",
+            "entity_type": "organization",
+            "start": 21720,
+            "end": 22400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bonk a thon",
+            "entity_type": "event",
+            "start": 23440,
+            "end": 24320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a couple of weeks",
+            "entity_type": "duration",
+            "start": 26520,
+            "end": 27120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "April 29th",
+            "entity_type": "date",
+            "start": 27560,
+            "end": 28480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coliseum",
+            "entity_type": "location",
+            "start": 38570,
+            "end": 39090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 43570,
+            "end": 44490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coliseum hackathon",
+            "entity_type": "event",
+            "start": 46770,
+            "end": 47930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bonkathon hackathon",
+            "entity_type": "event",
+            "start": 52090,
+            "end": 53370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coliseum hackathon",
+            "entity_type": "event",
+            "start": 58950,
+            "end": 60270,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "bunkathon",
+            "entity_type": "event",
+            "start": 63070,
+            "end": 63790,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "John Shinkway",
+            "entity_type": "person_name",
+            "start": 146900,
+            "end": 147620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 184840,
+            "end": 185360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Expo",
+            "entity_type": "event",
+            "start": 201030,
+            "end": 201670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 266450,
+            "end": 266850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Acheron",
+            "entity_type": "person_name",
+            "start": 268090,
+            "end": 268690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 279130,
+            "end": 279530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 283050,
+            "end": 283650,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

@@ -1,0 +1,127 @@
+{
+    "video_file": "2023-12-13_X3sB7A38iJk_Avian Labs CEO Mike Hudack explains the advantages of their web3 payments app built on Solana, Sling.mp3",
+    "entities": [
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 920,
+            "end": 2000,
+            "confidence": null
+        },
+        {
+            "text": "London",
+            "entity_type": "location",
+            "start": 2360,
+            "end": 2960,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3680,
+            "end": 4560,
+            "confidence": null
+        },
+        {
+            "text": "penny",
+            "entity_type": "money_amount",
+            "start": 9400,
+            "end": 9760,
+            "confidence": null
+        },
+        {
+            "text": "100 bucks",
+            "entity_type": "money_amount",
+            "start": 27760,
+            "end": 28400,
+            "confidence": null
+        },
+        {
+            "text": "PayPal",
+            "entity_type": "organization",
+            "start": 42980,
+            "end": 43540,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 51060,
+            "end": 51780,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 52300,
+            "end": 53060,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 920,
+            "end": 2000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "London",
+            "entity_type": "location",
+            "start": 2360,
+            "end": 2960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3680,
+            "end": 4560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "penny",
+            "entity_type": "money_amount",
+            "start": 9400,
+            "end": 9760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "100 bucks",
+            "entity_type": "money_amount",
+            "start": 27760,
+            "end": 28400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PayPal",
+            "entity_type": "organization",
+            "start": 42980,
+            "end": 43540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 51060,
+            "end": 51780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 52300,
+            "end": 53060,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

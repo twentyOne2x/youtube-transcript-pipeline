@@ -1,0 +1,262 @@
+{
+    "video_file": "2020-05-13_VtaSw0gUfKs_Algorithms for NP-Hard Problems (Section 21.4: Mixed Integer Programming Solvers).mp3",
+    "entities": [
+        {
+            "text": "size of 5",
+            "entity_type": "physical_attribute",
+            "start": 280590,
+            "end": 281350,
+            "confidence": null
+        },
+        {
+            "text": "size 4",
+            "entity_type": "physical_attribute",
+            "start": 290050,
+            "end": 290850,
+            "confidence": null
+        },
+        {
+            "text": "size 3",
+            "entity_type": "physical_attribute",
+            "start": 292530,
+            "end": 293250,
+            "confidence": null
+        },
+        {
+            "text": "size 2",
+            "entity_type": "physical_attribute",
+            "start": 295610,
+            "end": 296290,
+            "confidence": null
+        },
+        {
+            "text": "size 1",
+            "entity_type": "physical_attribute",
+            "start": 299170,
+            "end": 299970,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 354490,
+            "end": 354890,
+            "confidence": null
+        },
+        {
+            "text": "robi",
+            "entity_type": "organization",
+            "start": 358490,
+            "end": 359050,
+            "confidence": null
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 435890,
+            "end": 436290,
+            "confidence": null
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 444370,
+            "end": 444730,
+            "confidence": null
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 481390,
+            "end": 482190,
+            "confidence": null
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 486150,
+            "end": 486670,
+            "confidence": null
+        },
+        {
+            "text": "dynamic programming",
+            "entity_type": "occupation",
+            "start": 772920,
+            "end": 773560,
+            "confidence": null
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 811780,
+            "end": 812180,
+            "confidence": null
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 824460,
+            "end": 824900,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 883440,
+            "end": 884160,
+            "confidence": null
+        },
+        {
+            "text": "Gurobi",
+            "entity_type": "organization",
+            "start": 897350,
+            "end": 898070,
+            "confidence": null
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 917230,
+            "end": 917670,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "size of 5",
+            "entity_type": "physical_attribute",
+            "start": 280590,
+            "end": 281350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "size 4",
+            "entity_type": "physical_attribute",
+            "start": 290050,
+            "end": 290850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "size 3",
+            "entity_type": "physical_attribute",
+            "start": 292530,
+            "end": 293250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "size 2",
+            "entity_type": "physical_attribute",
+            "start": 295610,
+            "end": 296290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "size 1",
+            "entity_type": "physical_attribute",
+            "start": 299170,
+            "end": 299970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 354490,
+            "end": 354890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "robi",
+            "entity_type": "organization",
+            "start": 358490,
+            "end": 359050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 435890,
+            "end": 436290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 444370,
+            "end": 444730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 481390,
+            "end": 482190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 486150,
+            "end": 486670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "dynamic programming",
+            "entity_type": "occupation",
+            "start": 772920,
+            "end": 773560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 811780,
+            "end": 812180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 824460,
+            "end": 824900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 883440,
+            "end": 884160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Gurobi",
+            "entity_type": "organization",
+            "start": 897350,
+            "end": 898070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 917230,
+            "end": 917670,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

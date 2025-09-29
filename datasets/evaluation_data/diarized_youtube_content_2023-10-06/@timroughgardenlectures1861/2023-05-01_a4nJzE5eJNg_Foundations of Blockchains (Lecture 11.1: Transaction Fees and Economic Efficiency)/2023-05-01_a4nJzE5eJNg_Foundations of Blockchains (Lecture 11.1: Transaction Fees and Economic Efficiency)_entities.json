@@ -1,0 +1,907 @@
+{
+    "video_file": "2023-05-01_a4nJzE5eJNg_Foundations of Blockchains (Lecture 11.1: Transaction Fees and Economic Efficiency).mp3",
+    "entities": [
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 36290,
+            "end": 37090,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 38130,
+            "end": 38530,
+            "confidence": null
+        },
+        {
+            "text": "penny",
+            "entity_type": "money_amount",
+            "start": 195900,
+            "end": 196220,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 234570,
+            "end": 234930,
+            "confidence": null
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 237050,
+            "end": 237810,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 245170,
+            "end": 245610,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin Cash",
+            "entity_type": "money_amount",
+            "start": 245970,
+            "end": 246810,
+            "confidence": null
+        },
+        {
+            "text": "many years",
+            "entity_type": "duration",
+            "start": 248120,
+            "end": 248560,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 255360,
+            "end": 255760,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 264840,
+            "end": 265280,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 271880,
+            "end": 272560,
+            "confidence": null
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 274600,
+            "end": 275480,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 279580,
+            "end": 279980,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 280260,
+            "end": 280820,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 281380,
+            "end": 281780,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoins",
+            "entity_type": "money_amount",
+            "start": 283740,
+            "end": 284180,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 286140,
+            "end": 286540,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 304180,
+            "end": 304580,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 306300,
+            "end": 306740,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 329820,
+            "end": 330260,
+            "confidence": null
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 333940,
+            "end": 334740,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 335460,
+            "end": 335780,
+            "confidence": null
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 340900,
+            "end": 341420,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 346980,
+            "end": 347340,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 347340,
+            "end": 347740,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 351019,
+            "end": 351380,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 353780,
+            "end": 354100,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 354260,
+            "end": 354900,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 356620,
+            "end": 356900,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 373900,
+            "end": 374260,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 374380,
+            "end": 374900,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 406179,
+            "end": 406780,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 409460,
+            "end": 409940,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 419360,
+            "end": 419680,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 419800,
+            "end": 420320,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 423440,
+            "end": 423720,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 434720,
+            "end": 435120,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 456070,
+            "end": 456550,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 456670,
+            "end": 457190,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 529910,
+            "end": 530390,
+            "confidence": null
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 531470,
+            "end": 532270,
+            "confidence": null
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 538290,
+            "end": 539090,
+            "confidence": null
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 539810,
+            "end": 540450,
+            "confidence": null
+        },
+        {
+            "text": "12, 13 years",
+            "entity_type": "duration",
+            "start": 566560,
+            "end": 567440,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 568440,
+            "end": 568880,
+            "confidence": null
+        },
+        {
+            "text": "six years",
+            "entity_type": "duration",
+            "start": 569480,
+            "end": 569920,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 571560,
+            "end": 572160,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 599210,
+            "end": 599530,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 614250,
+            "end": 614730,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 614850,
+            "end": 615290,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 627090,
+            "end": 627290,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 629370,
+            "end": 629730,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 632490,
+            "end": 632769,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 634490,
+            "end": 635050,
+            "confidence": null
+        },
+        {
+            "text": "s",
+            "entity_type": "occupation",
+            "start": 652120,
+            "end": 652520,
+            "confidence": null
+        },
+        {
+            "text": "creators",
+            "entity_type": "occupation",
+            "start": 712330,
+            "end": 712850,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 751630,
+            "end": 752310,
+            "confidence": null
+        },
+        {
+            "text": "bitcoins",
+            "entity_type": "money_amount",
+            "start": 776090,
+            "end": 776610,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 779730,
+            "end": 780290,
+            "confidence": null
+        },
+        {
+            "text": "August 2021",
+            "entity_type": "date_interval",
+            "start": 781010,
+            "end": 782690,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 36290,
+            "end": 37090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 38130,
+            "end": 38530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "penny",
+            "entity_type": "money_amount",
+            "start": 195900,
+            "end": 196220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 234570,
+            "end": 234930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 237050,
+            "end": 237810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 245170,
+            "end": 245610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin Cash",
+            "entity_type": "money_amount",
+            "start": 245970,
+            "end": 246810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "many years",
+            "entity_type": "duration",
+            "start": 248120,
+            "end": 248560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 255360,
+            "end": 255760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 264840,
+            "end": 265280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 271880,
+            "end": 272560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 274600,
+            "end": 275480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 279580,
+            "end": 279980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 280260,
+            "end": 280820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 281380,
+            "end": 281780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoins",
+            "entity_type": "money_amount",
+            "start": 283740,
+            "end": 284180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 286140,
+            "end": 286540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 304180,
+            "end": 304580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 306300,
+            "end": 306740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 329820,
+            "end": 330260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 333940,
+            "end": 334740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 335460,
+            "end": 335780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 340900,
+            "end": 341420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 346980,
+            "end": 347340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 347340,
+            "end": 347740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 351019,
+            "end": 351380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 353780,
+            "end": 354100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 354260,
+            "end": 354900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 356620,
+            "end": 356900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 373900,
+            "end": 374260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 374380,
+            "end": 374900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 406179,
+            "end": 406780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 409460,
+            "end": 409940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 419360,
+            "end": 419680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 419800,
+            "end": 420320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 423440,
+            "end": 423720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 434720,
+            "end": 435120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 456070,
+            "end": 456550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 456670,
+            "end": 457190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 529910,
+            "end": 530390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 531470,
+            "end": 532270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 538290,
+            "end": 539090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "13 seconds",
+            "entity_type": "duration",
+            "start": 539810,
+            "end": 540450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12, 13 years",
+            "entity_type": "duration",
+            "start": 566560,
+            "end": 567440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 568440,
+            "end": 568880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "six years",
+            "entity_type": "duration",
+            "start": 569480,
+            "end": 569920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 571560,
+            "end": 572160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 599210,
+            "end": 599530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 614250,
+            "end": 614730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 614850,
+            "end": 615290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 627090,
+            "end": 627290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 629370,
+            "end": 629730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 632490,
+            "end": 632769,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 634490,
+            "end": 635050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "s",
+            "entity_type": "occupation",
+            "start": 652120,
+            "end": 652520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "creators",
+            "entity_type": "occupation",
+            "start": 712330,
+            "end": 712850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 751630,
+            "end": 752310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoins",
+            "entity_type": "money_amount",
+            "start": 776090,
+            "end": 776610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 779730,
+            "end": 780290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "August 2021",
+            "entity_type": "date_interval",
+            "start": 781010,
+            "end": 782690,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

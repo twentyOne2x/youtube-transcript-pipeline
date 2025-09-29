@@ -1,0 +1,997 @@
+{
+    "video_file": "2023-11-02_kmQujVTNURE_Breakpoint 2023: Reviving DeFi on Solana with Composability and Asset Backed Perpetuals.mp3",
+    "entities": [
+        {
+            "text": "Zohai",
+            "entity_type": "person_name",
+            "start": 3120,
+            "end": 3720,
+            "confidence": null
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 3960,
+            "end": 4640,
+            "confidence": null
+        },
+        {
+            "text": "Defi",
+            "entity_type": "organization",
+            "start": 7640,
+            "end": 8320,
+            "confidence": null
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 11040,
+            "end": 11760,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 21080,
+            "end": 21760,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 22120,
+            "end": 22560,
+            "confidence": null
+        },
+        {
+            "text": "Investin",
+            "entity_type": "organization",
+            "start": 28940,
+            "end": 29580,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 43340,
+            "end": 43980,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 122940,
+            "end": 123540,
+            "confidence": null
+        },
+        {
+            "text": "early 2021",
+            "entity_type": "date_interval",
+            "start": 190740,
+            "end": 192020,
+            "confidence": null
+        },
+        {
+            "text": "radium",
+            "entity_type": "organization",
+            "start": 193540,
+            "end": 193900,
+            "confidence": null
+        },
+        {
+            "text": "Orca",
+            "entity_type": "organization",
+            "start": 194060,
+            "end": 194500,
+            "confidence": null
+        },
+        {
+            "text": "DEXA",
+            "entity_type": "organization",
+            "start": 194700,
+            "end": 195100,
+            "confidence": null
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 202700,
+            "end": 203140,
+            "confidence": null
+        },
+        {
+            "text": "market makers",
+            "entity_type": "occupation",
+            "start": 203699,
+            "end": 204580,
+            "confidence": null
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 207980,
+            "end": 208380,
+            "confidence": null
+        },
+        {
+            "text": "$100 million",
+            "entity_type": "money_amount",
+            "start": 217780,
+            "end": 218420,
+            "confidence": null
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 219740,
+            "end": 220220,
+            "confidence": null
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 231420,
+            "end": 231900,
+            "confidence": null
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 232340,
+            "end": 232859,
+            "confidence": null
+        },
+        {
+            "text": "early 2022",
+            "entity_type": "date_interval",
+            "start": 248070,
+            "end": 249270,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 274200,
+            "end": 274480,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 311389,
+            "end": 311950,
+            "confidence": null
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "organization",
+            "start": 312910,
+            "end": 313270,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 335560,
+            "end": 336080,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 359890,
+            "end": 360410,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 378310,
+            "end": 378870,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 420320,
+            "end": 420920,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 425160,
+            "end": 425680,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 509280,
+            "end": 509880,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 556380,
+            "end": 557020,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 564470,
+            "end": 564910,
+            "confidence": null
+        },
+        {
+            "text": "AAVE",
+            "entity_type": "organization",
+            "start": 604270,
+            "end": 604670,
+            "confidence": null
+        },
+        {
+            "text": "Compound",
+            "entity_type": "organization",
+            "start": 604870,
+            "end": 605309,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 607790,
+            "end": 608390,
+            "confidence": null
+        },
+        {
+            "text": "Solend",
+            "entity_type": "organization",
+            "start": 608990,
+            "end": 609510,
+            "confidence": null
+        },
+        {
+            "text": "marginfi",
+            "entity_type": "organization",
+            "start": 609670,
+            "end": 610390,
+            "confidence": null
+        },
+        {
+            "text": "lenders",
+            "entity_type": "occupation",
+            "start": 619540,
+            "end": 620260,
+            "confidence": null
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 635860,
+            "end": 636540,
+            "confidence": null
+        },
+        {
+            "text": "Mango Market",
+            "entity_type": "organization",
+            "start": 658110,
+            "end": 659030,
+            "confidence": null
+        },
+        {
+            "text": "gmx",
+            "entity_type": "organization",
+            "start": 735110,
+            "end": 735790,
+            "confidence": null
+        },
+        {
+            "text": "GMX",
+            "entity_type": "organization",
+            "start": 737550,
+            "end": 738110,
+            "confidence": null
+        },
+        {
+            "text": "gmx",
+            "entity_type": "organization",
+            "start": 746590,
+            "end": 747190,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 759389,
+            "end": 759910,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 776040,
+            "end": 776600,
+            "confidence": null
+        },
+        {
+            "text": "400 millisecond",
+            "entity_type": "duration",
+            "start": 784560,
+            "end": 785560,
+            "confidence": null
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 789440,
+            "end": 790040,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 845550,
+            "end": 846030,
+            "confidence": null
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 846270,
+            "end": 846750,
+            "confidence": null
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 852560,
+            "end": 853000,
+            "confidence": null
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 853760,
+            "end": 854160,
+            "confidence": null
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "organization",
+            "start": 860680,
+            "end": 861232,
+            "confidence": null
+        },
+        {
+            "text": "NFTs",
+            "entity_type": "money_amount",
+            "start": 861968,
+            "end": 862520,
+            "confidence": null
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 862760,
+            "end": 863400,
+            "confidence": null
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 865960,
+            "end": 866280,
+            "confidence": null
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 875810,
+            "end": 876290,
+            "confidence": null
+        },
+        {
+            "text": "degen trader",
+            "entity_type": "occupation",
+            "start": 891610,
+            "end": 892690,
+            "confidence": null
+        },
+        {
+            "text": "devnet",
+            "entity_type": "organization",
+            "start": 973370,
+            "end": 974130,
+            "confidence": null
+        },
+        {
+            "text": "sol",
+            "entity_type": "money_amount",
+            "start": 1025160,
+            "end": 1025520,
+            "confidence": null
+        },
+        {
+            "text": "BTC",
+            "entity_type": "money_amount",
+            "start": 1025520,
+            "end": 1026200,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1026480,
+            "end": 1026960,
+            "confidence": null
+        },
+        {
+            "text": "euro",
+            "entity_type": "money_amount",
+            "start": 1066100,
+            "end": 1066620,
+            "confidence": null
+        },
+        {
+            "text": "euro",
+            "entity_type": "money_amount",
+            "start": 1068180,
+            "end": 1068660,
+            "confidence": null
+        },
+        {
+            "text": "Flashrad",
+            "entity_type": "organization",
+            "start": 1077420,
+            "end": 1077980,
+            "confidence": null
+        },
+        {
+            "text": "miss an eyelid",
+            "entity_type": "injury",
+            "start": 1150410,
+            "end": 1152250,
+            "confidence": null
+        },
+        {
+            "text": "Flashrade",
+            "entity_type": "organization",
+            "start": 1163170,
+            "end": 1163810,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Zohai",
+            "entity_type": "person_name",
+            "start": 3120,
+            "end": 3720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 3960,
+            "end": 4640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Defi",
+            "entity_type": "organization",
+            "start": 7640,
+            "end": 8320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 11040,
+            "end": 11760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 21080,
+            "end": 21760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 22120,
+            "end": 22560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Investin",
+            "entity_type": "organization",
+            "start": 28940,
+            "end": 29580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 43340,
+            "end": 43980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 122940,
+            "end": 123540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 2021",
+            "entity_type": "date_interval",
+            "start": 190740,
+            "end": 192020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "radium",
+            "entity_type": "organization",
+            "start": 193540,
+            "end": 193900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Orca",
+            "entity_type": "organization",
+            "start": 194060,
+            "end": 194500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEXA",
+            "entity_type": "organization",
+            "start": 194700,
+            "end": 195100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 202700,
+            "end": 203140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "market makers",
+            "entity_type": "occupation",
+            "start": 203699,
+            "end": 204580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 207980,
+            "end": 208380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$100 million",
+            "entity_type": "money_amount",
+            "start": 217780,
+            "end": 218420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mango",
+            "entity_type": "organization",
+            "start": 219740,
+            "end": 220220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 231420,
+            "end": 231900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 232340,
+            "end": 232859,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 2022",
+            "entity_type": "date_interval",
+            "start": 248070,
+            "end": 249270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 274200,
+            "end": 274480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 311389,
+            "end": 311950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "organization",
+            "start": 312910,
+            "end": 313270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 335560,
+            "end": 336080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 359890,
+            "end": 360410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 378310,
+            "end": 378870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 420320,
+            "end": 420920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 425160,
+            "end": 425680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 509280,
+            "end": 509880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 556380,
+            "end": 557020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 564470,
+            "end": 564910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "AAVE",
+            "entity_type": "organization",
+            "start": 604270,
+            "end": 604670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Compound",
+            "entity_type": "organization",
+            "start": 604870,
+            "end": 605309,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 607790,
+            "end": 608390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solend",
+            "entity_type": "organization",
+            "start": 608990,
+            "end": 609510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "marginfi",
+            "entity_type": "organization",
+            "start": 609670,
+            "end": 610390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "lenders",
+            "entity_type": "occupation",
+            "start": 619540,
+            "end": 620260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 635860,
+            "end": 636540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mango Market",
+            "entity_type": "organization",
+            "start": 658110,
+            "end": 659030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "gmx",
+            "entity_type": "organization",
+            "start": 735110,
+            "end": 735790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "GMX",
+            "entity_type": "organization",
+            "start": 737550,
+            "end": 738110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "gmx",
+            "entity_type": "organization",
+            "start": 746590,
+            "end": 747190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 759389,
+            "end": 759910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 776040,
+            "end": 776600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "400 millisecond",
+            "entity_type": "duration",
+            "start": 784560,
+            "end": 785560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 789440,
+            "end": 790040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 845550,
+            "end": 846030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 846270,
+            "end": 846750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 852560,
+            "end": 853000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 853760,
+            "end": 854160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "organization",
+            "start": 860680,
+            "end": 861232,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NFTs",
+            "entity_type": "money_amount",
+            "start": 861968,
+            "end": 862520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Flash Trade",
+            "entity_type": "organization",
+            "start": 862760,
+            "end": 863400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 865960,
+            "end": 866280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 875810,
+            "end": 876290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "degen trader",
+            "entity_type": "occupation",
+            "start": 891610,
+            "end": 892690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devnet",
+            "entity_type": "organization",
+            "start": 973370,
+            "end": 974130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sol",
+            "entity_type": "money_amount",
+            "start": 1025160,
+            "end": 1025520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "BTC",
+            "entity_type": "money_amount",
+            "start": 1025520,
+            "end": 1026200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1026480,
+            "end": 1026960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "euro",
+            "entity_type": "money_amount",
+            "start": 1066100,
+            "end": 1066620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "euro",
+            "entity_type": "money_amount",
+            "start": 1068180,
+            "end": 1068660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Flashrad",
+            "entity_type": "organization",
+            "start": 1077420,
+            "end": 1077980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miss an eyelid",
+            "entity_type": "injury",
+            "start": 1150410,
+            "end": 1152250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Flashrade",
+            "entity_type": "organization",
+            "start": 1163170,
+            "end": 1163810,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

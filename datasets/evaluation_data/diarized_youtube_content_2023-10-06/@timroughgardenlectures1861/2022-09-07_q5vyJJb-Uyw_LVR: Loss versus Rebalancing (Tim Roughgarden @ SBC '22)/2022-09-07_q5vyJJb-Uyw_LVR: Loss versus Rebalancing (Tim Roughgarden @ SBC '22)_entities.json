@@ -1,0 +1,1852 @@
+{
+    "video_file": "2022-09-07_q5vyJJb-Uyw_LVR: Loss versus Rebalancing (Tim Roughgarden @ SBC '22).mp3",
+    "entities": [
+        {
+            "text": "co authors",
+            "entity_type": "occupation",
+            "start": 10680,
+            "end": 11280,
+            "confidence": null
+        },
+        {
+            "text": "Jason Milonis",
+            "entity_type": "person_name",
+            "start": 12320,
+            "end": 13320,
+            "confidence": null
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 13880,
+            "end": 14120,
+            "confidence": null
+        },
+        {
+            "text": "Columbia",
+            "entity_type": "organization",
+            "start": 14280,
+            "end": 14760,
+            "confidence": null
+        },
+        {
+            "text": "C. Mac Moalemi",
+            "entity_type": "person_name",
+            "start": 14760,
+            "end": 15840,
+            "confidence": null
+        },
+        {
+            "text": "professor",
+            "entity_type": "occupation",
+            "start": 16119,
+            "end": 16400,
+            "confidence": null
+        },
+        {
+            "text": "business school",
+            "entity_type": "organization",
+            "start": 16560,
+            "end": 16920,
+            "confidence": null
+        },
+        {
+            "text": "Columbia",
+            "entity_type": "organization",
+            "start": 17080,
+            "end": 17600,
+            "confidence": null
+        },
+        {
+            "text": "Anthony Lee Zhang",
+            "entity_type": "person_name",
+            "start": 17960,
+            "end": 18840,
+            "confidence": null
+        },
+        {
+            "text": "professor",
+            "entity_type": "occupation",
+            "start": 19120,
+            "end": 19360,
+            "confidence": null
+        },
+        {
+            "text": "business school",
+            "entity_type": "organization",
+            "start": 19560,
+            "end": 20160,
+            "confidence": null
+        },
+        {
+            "text": "University of Chicago",
+            "entity_type": "organization",
+            "start": 20840,
+            "end": 22400,
+            "confidence": null
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 30030,
+            "end": 30910,
+            "confidence": null
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 32350,
+            "end": 32870,
+            "confidence": null
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 36190,
+            "end": 36830,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 39350,
+            "end": 39790,
+            "confidence": null
+        },
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 41950,
+            "end": 42829,
+            "confidence": null
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 120340,
+            "end": 120780,
+            "confidence": null
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 121620,
+            "end": 121980,
+            "confidence": null
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 142510,
+            "end": 143030,
+            "confidence": null
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 189240,
+            "end": 189840,
+            "confidence": null
+        },
+        {
+            "text": "Ethan",
+            "entity_type": "money_amount",
+            "start": 192880,
+            "end": 193280,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 193280,
+            "end": 193840,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 203440,
+            "end": 203880,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 207960,
+            "end": 208280,
+            "confidence": null
+        },
+        {
+            "text": "day",
+            "entity_type": "duration",
+            "start": 223620,
+            "end": 223980,
+            "confidence": null
+        },
+        {
+            "text": "a month",
+            "entity_type": "duration",
+            "start": 285230,
+            "end": 285590,
+            "confidence": null
+        },
+        {
+            "text": "a month",
+            "entity_type": "duration",
+            "start": 306300,
+            "end": 306580,
+            "confidence": null
+        },
+        {
+            "text": "1 ETH",
+            "entity_type": "money_amount",
+            "start": 315180,
+            "end": 315660,
+            "confidence": null
+        },
+        {
+            "text": "1000 USDC",
+            "entity_type": "money_amount",
+            "start": 315820,
+            "end": 317019,
+            "confidence": null
+        },
+        {
+            "text": "A month",
+            "entity_type": "duration",
+            "start": 318420,
+            "end": 318900,
+            "confidence": null
+        },
+        {
+            "text": "0.5 eth",
+            "entity_type": "money_amount",
+            "start": 324540,
+            "end": 325300,
+            "confidence": null
+        },
+        {
+            "text": "2000 USDC",
+            "entity_type": "money_amount",
+            "start": 325500,
+            "end": 326500,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 331850,
+            "end": 332250,
+            "confidence": null
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 334970,
+            "end": 335250,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 335250,
+            "end": 335610,
+            "confidence": null
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 336210,
+            "end": 336650,
+            "confidence": null
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 338610,
+            "end": 338810,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 339010,
+            "end": 339290,
+            "confidence": null
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 339850,
+            "end": 339970,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 340690,
+            "end": 341290,
+            "confidence": null
+        },
+        {
+            "text": "$2,000",
+            "entity_type": "money_amount",
+            "start": 345290,
+            "end": 346170,
+            "confidence": null
+        },
+        {
+            "text": "$4,000",
+            "entity_type": "money_amount",
+            "start": 349410,
+            "end": 350330,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 362680,
+            "end": 362960,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 367920,
+            "end": 368320,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 377560,
+            "end": 378080,
+            "confidence": null
+        },
+        {
+            "text": "one ETH",
+            "entity_type": "money_amount",
+            "start": 415590,
+            "end": 416110,
+            "confidence": null
+        },
+        {
+            "text": "US$1,000",
+            "entity_type": "money_amount",
+            "start": 416390,
+            "end": 417590,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 418750,
+            "end": 418990,
+            "confidence": null
+        },
+        {
+            "text": "5,000",
+            "entity_type": "money_amount",
+            "start": 420430,
+            "end": 421030,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 425550,
+            "end": 426150,
+            "confidence": null
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 427190,
+            "end": 427670,
+            "confidence": null
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 427950,
+            "end": 428390,
+            "confidence": null
+        },
+        {
+            "text": "$1,000",
+            "entity_type": "money_amount",
+            "start": 456410,
+            "end": 457290,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 481200,
+            "end": 481520,
+            "confidence": null
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 485090,
+            "end": 485490,
+            "confidence": null
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 486010,
+            "end": 486530,
+            "confidence": null
+        },
+        {
+            "text": "one eth",
+            "entity_type": "money_amount",
+            "start": 513370,
+            "end": 513770,
+            "confidence": null
+        },
+        {
+            "text": "1,000 USDC",
+            "entity_type": "money_amount",
+            "start": 513930,
+            "end": 515450,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 560820,
+            "end": 561620,
+            "confidence": null
+        },
+        {
+            "text": "Price arbitrageurs",
+            "entity_type": "occupation",
+            "start": 565240,
+            "end": 566880,
+            "confidence": null
+        },
+        {
+            "text": "arbitragers",
+            "entity_type": "occupation",
+            "start": 575520,
+            "end": 576280,
+            "confidence": null
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 584240,
+            "end": 584560,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 584680,
+            "end": 585360,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 588080,
+            "end": 588760,
+            "confidence": null
+        },
+        {
+            "text": "a whole",
+            "entity_type": "duration",
+            "start": 600950,
+            "end": 601270,
+            "confidence": null
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 652530,
+            "end": 653290,
+            "confidence": null
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 682520,
+            "end": 683160,
+            "confidence": null
+        },
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 684400,
+            "end": 685160,
+            "confidence": null
+        },
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 686960,
+            "end": 687680,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 687800,
+            "end": 688040,
+            "confidence": null
+        },
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 702260,
+            "end": 702900,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 703620,
+            "end": 704020,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 706220,
+            "end": 706540,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 708140,
+            "end": 708460,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 736210,
+            "end": 736529,
+            "confidence": null
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 736970,
+            "end": 737410,
+            "confidence": null
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 737690,
+            "end": 738170,
+            "confidence": null
+        },
+        {
+            "text": "1 ETH",
+            "entity_type": "money_amount",
+            "start": 739810,
+            "end": 740290,
+            "confidence": null
+        },
+        {
+            "text": "1000 USD",
+            "entity_type": "money_amount",
+            "start": 740490,
+            "end": 741450,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 745010,
+            "end": 745290,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 745690,
+            "end": 746170,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 747370,
+            "end": 747770,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 750080,
+            "end": 750720,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 752000,
+            "end": 752360,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 756600,
+            "end": 757120,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 760160,
+            "end": 761040,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 761520,
+            "end": 762480,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 764400,
+            "end": 764720,
+            "confidence": null
+        },
+        {
+            "text": "$2,000",
+            "entity_type": "money_amount",
+            "start": 766360,
+            "end": 767360,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 771360,
+            "end": 772000,
+            "confidence": null
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 786290,
+            "end": 786650,
+            "confidence": null
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 786850,
+            "end": 787250,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 789090,
+            "end": 790090,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 791370,
+            "end": 792210,
+            "confidence": null
+        },
+        {
+            "text": "ance",
+            "entity_type": "organization",
+            "start": 799050,
+            "end": 799610,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 801460,
+            "end": 802300,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 803700,
+            "end": 804380,
+            "confidence": null
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 808340,
+            "end": 808980,
+            "confidence": null
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 813260,
+            "end": 813660,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "money_amount",
+            "start": 814180,
+            "end": 814660,
+            "confidence": null
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 815460,
+            "end": 815940,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 840010,
+            "end": 840330,
+            "confidence": null
+        },
+        {
+            "text": "4",
+            "entity_type": "money_amount",
+            "start": 841730,
+            "end": 842370,
+            "confidence": null
+        },
+        {
+            "text": "0.5 eth",
+            "entity_type": "money_amount",
+            "start": 854960,
+            "end": 855760,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 856480,
+            "end": 856800,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "money_amount",
+            "start": 857160,
+            "end": 857600,
+            "confidence": null
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 865160,
+            "end": 866160,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "money_amount",
+            "start": 869160,
+            "end": 869839,
+            "confidence": null
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 872280,
+            "end": 872720,
+            "confidence": null
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 916090,
+            "end": 916450,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 948510,
+            "end": 948910,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 1011970,
+            "end": 1012690,
+            "confidence": null
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 1026670,
+            "end": 1027390,
+            "confidence": null
+        },
+        {
+            "text": "arbitrager",
+            "entity_type": "occupation",
+            "start": 1030790,
+            "end": 1031590,
+            "confidence": null
+        },
+        {
+            "text": "forensics",
+            "entity_type": "occupation",
+            "start": 1056200,
+            "end": 1057000,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1253710,
+            "end": 1254070,
+            "confidence": null
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 1254630,
+            "end": 1255030,
+            "confidence": null
+        },
+        {
+            "text": "1001",
+            "entity_type": "money_amount",
+            "start": 1255230,
+            "end": 1256070,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 1260790,
+            "end": 1261180,
+            "confidence": null
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1263770,
+            "end": 1264210,
+            "confidence": null
+        },
+        {
+            "text": "iswap",
+            "entity_type": "organization",
+            "start": 1339100,
+            "end": 1339620,
+            "confidence": null
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 1345710,
+            "end": 1345990,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "co authors",
+            "entity_type": "occupation",
+            "start": 10680,
+            "end": 11280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jason Milonis",
+            "entity_type": "person_name",
+            "start": 12320,
+            "end": 13320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 13880,
+            "end": 14120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Columbia",
+            "entity_type": "organization",
+            "start": 14280,
+            "end": 14760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "C. Mac Moalemi",
+            "entity_type": "person_name",
+            "start": 14760,
+            "end": 15840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "professor",
+            "entity_type": "occupation",
+            "start": 16119,
+            "end": 16400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "business school",
+            "entity_type": "organization",
+            "start": 16560,
+            "end": 16920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Columbia",
+            "entity_type": "organization",
+            "start": 17080,
+            "end": 17600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anthony Lee Zhang",
+            "entity_type": "person_name",
+            "start": 17960,
+            "end": 18840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "professor",
+            "entity_type": "occupation",
+            "start": 19120,
+            "end": 19360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "business school",
+            "entity_type": "organization",
+            "start": 19560,
+            "end": 20160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "University of Chicago",
+            "entity_type": "organization",
+            "start": 20840,
+            "end": 22400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 30030,
+            "end": 30910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 32350,
+            "end": 32870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 36190,
+            "end": 36830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 39350,
+            "end": 39790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 41950,
+            "end": 42829,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 120340,
+            "end": 120780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 121620,
+            "end": 121980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 142510,
+            "end": 143030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 189240,
+            "end": 189840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethan",
+            "entity_type": "money_amount",
+            "start": 192880,
+            "end": 193280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 193280,
+            "end": 193840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 203440,
+            "end": 203880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 207960,
+            "end": 208280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "day",
+            "entity_type": "duration",
+            "start": 223620,
+            "end": 223980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a month",
+            "entity_type": "duration",
+            "start": 285230,
+            "end": 285590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a month",
+            "entity_type": "duration",
+            "start": 306300,
+            "end": 306580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1 ETH",
+            "entity_type": "money_amount",
+            "start": 315180,
+            "end": 315660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000 USDC",
+            "entity_type": "money_amount",
+            "start": 315820,
+            "end": 317019,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "A month",
+            "entity_type": "duration",
+            "start": 318420,
+            "end": 318900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 eth",
+            "entity_type": "money_amount",
+            "start": 324540,
+            "end": 325300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2000 USDC",
+            "entity_type": "money_amount",
+            "start": 325500,
+            "end": 326500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 331850,
+            "end": 332250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 334970,
+            "end": 335250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 335250,
+            "end": 335610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 336210,
+            "end": 336650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 338610,
+            "end": 338810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 339010,
+            "end": 339290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 339850,
+            "end": 339970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 340690,
+            "end": 341290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$2,000",
+            "entity_type": "money_amount",
+            "start": 345290,
+            "end": 346170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$4,000",
+            "entity_type": "money_amount",
+            "start": 349410,
+            "end": 350330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 362680,
+            "end": 362960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 367920,
+            "end": 368320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 377560,
+            "end": 378080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one ETH",
+            "entity_type": "money_amount",
+            "start": 415590,
+            "end": 416110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "US$1,000",
+            "entity_type": "money_amount",
+            "start": 416390,
+            "end": 417590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 418750,
+            "end": 418990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "5,000",
+            "entity_type": "money_amount",
+            "start": 420430,
+            "end": 421030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 425550,
+            "end": 426150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 427190,
+            "end": 427670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 427950,
+            "end": 428390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$1,000",
+            "entity_type": "money_amount",
+            "start": 456410,
+            "end": 457290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 481200,
+            "end": 481520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 485090,
+            "end": 485490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 486010,
+            "end": 486530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one eth",
+            "entity_type": "money_amount",
+            "start": 513370,
+            "end": 513770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1,000 USDC",
+            "entity_type": "money_amount",
+            "start": 513930,
+            "end": 515450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 560820,
+            "end": 561620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Price arbitrageurs",
+            "entity_type": "occupation",
+            "start": 565240,
+            "end": 566880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitragers",
+            "entity_type": "occupation",
+            "start": 575520,
+            "end": 576280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "traders",
+            "entity_type": "occupation",
+            "start": 584240,
+            "end": 584560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 584680,
+            "end": 585360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 588080,
+            "end": 588760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a whole",
+            "entity_type": "duration",
+            "start": 600950,
+            "end": 601270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Uniswap",
+            "entity_type": "organization",
+            "start": 652530,
+            "end": 653290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 682520,
+            "end": 683160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 684400,
+            "end": 685160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$10,000",
+            "entity_type": "money_amount",
+            "start": 686960,
+            "end": 687680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 687800,
+            "end": 688040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "usdc",
+            "entity_type": "money_amount",
+            "start": 702260,
+            "end": 702900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 703620,
+            "end": 704020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 706220,
+            "end": 706540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 708140,
+            "end": 708460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 736210,
+            "end": 736529,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 736970,
+            "end": 737410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 737690,
+            "end": 738170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1 ETH",
+            "entity_type": "money_amount",
+            "start": 739810,
+            "end": 740290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000 USD",
+            "entity_type": "money_amount",
+            "start": 740490,
+            "end": 741450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 745010,
+            "end": 745290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 745690,
+            "end": 746170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 747370,
+            "end": 747770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 750080,
+            "end": 750720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 752000,
+            "end": 752360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 756600,
+            "end": 757120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 760160,
+            "end": 761040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 761520,
+            "end": 762480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 764400,
+            "end": 764720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$2,000",
+            "entity_type": "money_amount",
+            "start": 766360,
+            "end": 767360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 771360,
+            "end": 772000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 786290,
+            "end": 786650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 786850,
+            "end": 787250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 789090,
+            "end": 790090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 791370,
+            "end": 792210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ance",
+            "entity_type": "organization",
+            "start": 799050,
+            "end": 799610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 801460,
+            "end": 802300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 803700,
+            "end": 804380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4,000",
+            "entity_type": "money_amount",
+            "start": 808340,
+            "end": 808980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4000",
+            "entity_type": "money_amount",
+            "start": 813260,
+            "end": 813660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2000",
+            "entity_type": "money_amount",
+            "start": 814180,
+            "end": 814660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 815460,
+            "end": 815940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 840010,
+            "end": 840330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "4",
+            "entity_type": "money_amount",
+            "start": 841730,
+            "end": 842370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 eth",
+            "entity_type": "money_amount",
+            "start": 854960,
+            "end": 855760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 856480,
+            "end": 856800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2000",
+            "entity_type": "money_amount",
+            "start": 857160,
+            "end": 857600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.5 ETH",
+            "entity_type": "money_amount",
+            "start": 865160,
+            "end": 866160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "money_amount",
+            "start": 869160,
+            "end": 869839,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1,000",
+            "entity_type": "money_amount",
+            "start": 872280,
+            "end": 872720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 916090,
+            "end": 916450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 948510,
+            "end": 948910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 1011970,
+            "end": 1012690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrageurs",
+            "entity_type": "occupation",
+            "start": 1026670,
+            "end": 1027390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "arbitrager",
+            "entity_type": "occupation",
+            "start": 1030790,
+            "end": 1031590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "forensics",
+            "entity_type": "occupation",
+            "start": 1056200,
+            "end": 1057000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1253710,
+            "end": 1254070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000",
+            "entity_type": "money_amount",
+            "start": 1254630,
+            "end": 1255030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1001",
+            "entity_type": "money_amount",
+            "start": 1255230,
+            "end": 1256070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 1260790,
+            "end": 1261180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ETH",
+            "entity_type": "money_amount",
+            "start": 1263770,
+            "end": 1264210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "iswap",
+            "entity_type": "organization",
+            "start": 1339100,
+            "end": 1339620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eth",
+            "entity_type": "money_amount",
+            "start": 1345710,
+            "end": 1345990,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

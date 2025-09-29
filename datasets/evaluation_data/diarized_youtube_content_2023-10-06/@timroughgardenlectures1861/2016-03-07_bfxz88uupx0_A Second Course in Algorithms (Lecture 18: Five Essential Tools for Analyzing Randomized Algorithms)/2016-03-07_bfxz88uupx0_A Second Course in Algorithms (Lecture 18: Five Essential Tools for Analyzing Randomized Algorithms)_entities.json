@@ -1,0 +1,907 @@
+{
+    "video_file": "2016-03-07_bfxz88uupx0_A Second Course in Algorithms (Lecture 18: Five Essential Tools for Analyzing Randomized Algorithms).mp3",
+    "entities": [
+        {
+            "text": "learning",
+            "entity_type": "occupation",
+            "start": 52150,
+            "end": 52390,
+            "confidence": null
+        },
+        {
+            "text": "buck",
+            "entity_type": "money_amount",
+            "start": 308260,
+            "end": 308580,
+            "confidence": null
+        },
+        {
+            "text": "McLauses",
+            "entity_type": "person_name",
+            "start": 436690,
+            "end": 437730,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 665760,
+            "end": 666080,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 682760,
+            "end": 683280,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 687720,
+            "end": 688160,
+            "confidence": null
+        },
+        {
+            "text": "Monday, March 14",
+            "entity_type": "date",
+            "start": 1057490,
+            "end": 1059662,
+            "confidence": null
+        },
+        {
+            "text": "3:30pm",
+            "entity_type": "time",
+            "start": 1059798,
+            "end": 1060410,
+            "confidence": null
+        },
+        {
+            "text": "300",
+            "entity_type": "time",
+            "start": 1062530,
+            "end": 1063754,
+            "confidence": null
+        },
+        {
+            "text": "301",
+            "entity_type": "time",
+            "start": 1064026,
+            "end": 1065250,
+            "confidence": null
+        },
+        {
+            "text": "three hour",
+            "entity_type": "duration",
+            "start": 1084700,
+            "end": 1085020,
+            "confidence": null
+        },
+        {
+            "text": "Taylor",
+            "entity_type": "person_name",
+            "start": 1223680,
+            "end": 1224160,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1647840,
+            "end": 1648360,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1708380,
+            "end": 1708900,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1890700,
+            "end": 1891260,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2129070,
+            "end": 2129550,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2145480,
+            "end": 2146280,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2153920,
+            "end": 2154440,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2159760,
+            "end": 2160440,
+            "confidence": null
+        },
+        {
+            "text": "Markham",
+            "entity_type": "person_name",
+            "start": 2246230,
+            "end": 2246750,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2274520,
+            "end": 2275160,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2283440,
+            "end": 2284120,
+            "confidence": null
+        },
+        {
+            "text": "Ber",
+            "entity_type": "person_name",
+            "start": 2404860,
+            "end": 2405380,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2625910,
+            "end": 2626630,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2643750,
+            "end": 2644430,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2672280,
+            "end": 2673000,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2722880,
+            "end": 2723480,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2768470,
+            "end": 2769150,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2775000,
+            "end": 2775720,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2777400,
+            "end": 2777960,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2788000,
+            "end": 2788560,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2862940,
+            "end": 2863540,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2871060,
+            "end": 2871460,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2881700,
+            "end": 2882260,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2887180,
+            "end": 2887740,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2890100,
+            "end": 2890620,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2898300,
+            "end": 2898940,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2918910,
+            "end": 2919390,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2924550,
+            "end": 2925070,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2974650,
+            "end": 2975090,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3093450,
+            "end": 3093930,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3094370,
+            "end": 3094970,
+            "confidence": null
+        },
+        {
+            "text": "20 minutes",
+            "entity_type": "duration",
+            "start": 3165820,
+            "end": 3166300,
+            "confidence": null
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 3172520,
+            "end": 3172920,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3173440,
+            "end": 3173960,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3194120,
+            "end": 3194680,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3242380,
+            "end": 3242940,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3245660,
+            "end": 3246140,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3397750,
+            "end": 3398350,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3398430,
+            "end": 3398990,
+            "confidence": null
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3522050,
+            "end": 3522490,
+            "confidence": null
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3522610,
+            "end": 3523170,
+            "confidence": null
+        },
+        {
+            "text": "ng",
+            "entity_type": "occupation",
+            "start": 4038210,
+            "end": 4038610,
+            "confidence": null
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 4589820,
+            "end": 4590420,
+            "confidence": null
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 4592460,
+            "end": 4592780,
+            "confidence": null
+        },
+        {
+            "text": "Raghavan",
+            "entity_type": "person_name",
+            "start": 4592780,
+            "end": 4593300,
+            "confidence": null
+        },
+        {
+            "text": "Thomson",
+            "entity_type": "person_name",
+            "start": 4593420,
+            "end": 4593660,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4643500,
+            "end": 4644060,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4645700,
+            "end": 4646140,
+            "confidence": null
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4693850,
+            "end": 4694410,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "learning",
+            "entity_type": "occupation",
+            "start": 52150,
+            "end": 52390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "buck",
+            "entity_type": "money_amount",
+            "start": 308260,
+            "end": 308580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "McLauses",
+            "entity_type": "person_name",
+            "start": 436690,
+            "end": 437730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 665760,
+            "end": 666080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 682760,
+            "end": 683280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 687720,
+            "end": 688160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Monday, March 14",
+            "entity_type": "date",
+            "start": 1057490,
+            "end": 1059662,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "3:30pm",
+            "entity_type": "time",
+            "start": 1059798,
+            "end": 1060410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "300",
+            "entity_type": "time",
+            "start": 1062530,
+            "end": 1063754,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "301",
+            "entity_type": "time",
+            "start": 1064026,
+            "end": 1065250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three hour",
+            "entity_type": "duration",
+            "start": 1084700,
+            "end": 1085020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Taylor",
+            "entity_type": "person_name",
+            "start": 1223680,
+            "end": 1224160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1647840,
+            "end": 1648360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1708380,
+            "end": 1708900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 1890700,
+            "end": 1891260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2129070,
+            "end": 2129550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2145480,
+            "end": 2146280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2153920,
+            "end": 2154440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2159760,
+            "end": 2160440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markham",
+            "entity_type": "person_name",
+            "start": 2246230,
+            "end": 2246750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2274520,
+            "end": 2275160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2283440,
+            "end": 2284120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ber",
+            "entity_type": "person_name",
+            "start": 2404860,
+            "end": 2405380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2625910,
+            "end": 2626630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2643750,
+            "end": 2644430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2672280,
+            "end": 2673000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2722880,
+            "end": 2723480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2768470,
+            "end": 2769150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2775000,
+            "end": 2775720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2777400,
+            "end": 2777960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2788000,
+            "end": 2788560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2862940,
+            "end": 2863540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2871060,
+            "end": 2871460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2881700,
+            "end": 2882260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 2887180,
+            "end": 2887740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 2890100,
+            "end": 2890620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2898300,
+            "end": 2898940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2918910,
+            "end": 2919390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2924550,
+            "end": 2925070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 2974650,
+            "end": 2975090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3093450,
+            "end": 3093930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3094370,
+            "end": 3094970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "20 minutes",
+            "entity_type": "duration",
+            "start": 3165820,
+            "end": 3166300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 3172520,
+            "end": 3172920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3173440,
+            "end": 3173960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3194120,
+            "end": 3194680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3242380,
+            "end": 3242940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 3245660,
+            "end": 3246140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3397750,
+            "end": 3398350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3398430,
+            "end": 3398990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Markov",
+            "entity_type": "person_name",
+            "start": 3522050,
+            "end": 3522490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chebyshev",
+            "entity_type": "person_name",
+            "start": 3522610,
+            "end": 3523170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ng",
+            "entity_type": "occupation",
+            "start": 4038210,
+            "end": 4038610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mid-80s",
+            "entity_type": "date_interval",
+            "start": 4589820,
+            "end": 4590420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "authors",
+            "entity_type": "occupation",
+            "start": 4592460,
+            "end": 4592780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Raghavan",
+            "entity_type": "person_name",
+            "start": 4592780,
+            "end": 4593300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Thomson",
+            "entity_type": "person_name",
+            "start": 4593420,
+            "end": 4593660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4643500,
+            "end": 4644060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4645700,
+            "end": 4646140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernoff",
+            "entity_type": "person_name",
+            "start": 4693850,
+            "end": 4694410,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

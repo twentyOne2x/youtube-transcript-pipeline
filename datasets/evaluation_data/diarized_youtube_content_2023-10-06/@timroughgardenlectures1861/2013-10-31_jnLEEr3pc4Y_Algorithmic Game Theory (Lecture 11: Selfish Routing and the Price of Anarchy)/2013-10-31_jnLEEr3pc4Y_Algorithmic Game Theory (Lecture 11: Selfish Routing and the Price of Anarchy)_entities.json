@@ -1,0 +1,982 @@
+{
+    "video_file": "2013-10-31_jnLEEr3pc4Y_Algorithmic Game Theory (Lecture 11: Selfish Routing and the Price of Anarchy).mp3",
+    "entities": [
+        {
+            "text": "Nash",
+            "entity_type": "person_name",
+            "start": 113870,
+            "end": 114190,
+            "confidence": null
+        },
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 152530,
+            "end": 153050,
+            "confidence": null
+        },
+        {
+            "text": "Bayes",
+            "entity_type": "person_name",
+            "start": 203240,
+            "end": 203520,
+            "confidence": null
+        },
+        {
+            "text": "sh",
+            "entity_type": "person_name",
+            "start": 203520,
+            "end": 203840,
+            "confidence": null
+        },
+        {
+            "text": "Myerson",
+            "entity_type": "person_name",
+            "start": 219040,
+            "end": 219800,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 223900,
+            "end": 224580,
+            "confidence": null
+        },
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 237820,
+            "end": 238340,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 239380,
+            "end": 239980,
+            "confidence": null
+        },
+        {
+            "text": "Kutsupius",
+            "entity_type": "person_name",
+            "start": 243820,
+            "end": 244540,
+            "confidence": null
+        },
+        {
+            "text": "Pap Dimitriou",
+            "entity_type": "person_name",
+            "start": 244620,
+            "end": 245580,
+            "confidence": null
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 245900,
+            "end": 246780,
+            "confidence": null
+        },
+        {
+            "text": "1999",
+            "entity_type": "date_interval",
+            "start": 247580,
+            "end": 248420,
+            "confidence": null
+        },
+        {
+            "text": "PhD advisor",
+            "entity_type": "occupation",
+            "start": 251140,
+            "end": 251900,
+            "confidence": null
+        },
+        {
+            "text": "Eva Tardos",
+            "entity_type": "person_name",
+            "start": 251900,
+            "end": 252780,
+            "confidence": null
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 273470,
+            "end": 274230,
+            "confidence": null
+        },
+        {
+            "text": "transportation scientists",
+            "entity_type": "occupation",
+            "start": 279230,
+            "end": 280430,
+            "confidence": null
+        },
+        {
+            "text": "8:00am",
+            "entity_type": "time",
+            "start": 284170,
+            "end": 284610,
+            "confidence": null
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 289010,
+            "end": 289450,
+            "confidence": null
+        },
+        {
+            "text": "driver",
+            "entity_type": "occupation",
+            "start": 301610,
+            "end": 301890,
+            "confidence": null
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 302650,
+            "end": 303010,
+            "confidence": null
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 339560,
+            "end": 339960,
+            "confidence": null
+        },
+        {
+            "text": "90 minutes",
+            "entity_type": "duration",
+            "start": 384010,
+            "end": 384690,
+            "confidence": null
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 425210,
+            "end": 425570,
+            "confidence": null
+        },
+        {
+            "text": "90 minutes",
+            "entity_type": "duration",
+            "start": 488010,
+            "end": 488810,
+            "confidence": null
+        },
+        {
+            "text": "1968",
+            "entity_type": "date_interval",
+            "start": 546900,
+            "end": 547780,
+            "confidence": null
+        },
+        {
+            "text": "1920",
+            "entity_type": "date_interval",
+            "start": 551180,
+            "end": 551900,
+            "confidence": null
+        },
+        {
+            "text": "A.C. pigou",
+            "entity_type": "person_name",
+            "start": 559390,
+            "end": 560270,
+            "confidence": null
+        },
+        {
+            "text": "Highway 101",
+            "entity_type": "location",
+            "start": 567870,
+            "end": 568870,
+            "confidence": null
+        },
+        {
+            "text": "Highway 280",
+            "entity_type": "location",
+            "start": 569030,
+            "end": 569750,
+            "confidence": null
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "location",
+            "start": 570230,
+            "end": 570550,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 570710,
+            "end": 571470,
+            "confidence": null
+        },
+        {
+            "text": "driver",
+            "entity_type": "occupation",
+            "start": 592430,
+            "end": 592750,
+            "confidence": null
+        },
+        {
+            "text": "dictator",
+            "entity_type": "occupation",
+            "start": 618040,
+            "end": 618360,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 643450,
+            "end": 643770,
+            "confidence": null
+        },
+        {
+            "text": "half an hour",
+            "entity_type": "duration",
+            "start": 644370,
+            "end": 644930,
+            "confidence": null
+        },
+        {
+            "text": "45 minutes",
+            "entity_type": "duration",
+            "start": 645930,
+            "end": 646690,
+            "confidence": null
+        },
+        {
+            "text": "Pygu",
+            "entity_type": "person_name",
+            "start": 706790,
+            "end": 707350,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 754250,
+            "end": 754650,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 784450,
+            "end": 784810,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 833950,
+            "end": 834350,
+            "confidence": null
+        },
+        {
+            "text": "analysts",
+            "entity_type": "occupation",
+            "start": 930210,
+            "end": 930850,
+            "confidence": null
+        },
+        {
+            "text": "Braes",
+            "entity_type": "person_name",
+            "start": 976690,
+            "end": 977090,
+            "confidence": null
+        },
+        {
+            "text": "Picu",
+            "entity_type": "person_name",
+            "start": 981940,
+            "end": 982620,
+            "confidence": null
+        },
+        {
+            "text": "Brace",
+            "entity_type": "person_name",
+            "start": 1030310,
+            "end": 1030710,
+            "confidence": null
+        },
+        {
+            "text": "Pig",
+            "entity_type": "person_name",
+            "start": 1031150,
+            "end": 1031510,
+            "confidence": null
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 1151430,
+            "end": 1152310,
+            "confidence": null
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 1154390,
+            "end": 1155190,
+            "confidence": null
+        },
+        {
+            "text": "Picus",
+            "entity_type": "organization",
+            "start": 1260080,
+            "end": 1260560,
+            "confidence": null
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1409010,
+            "end": 1409490,
+            "confidence": null
+        },
+        {
+            "text": "Piggoo",
+            "entity_type": "person_name",
+            "start": 1457770,
+            "end": 1458330,
+            "confidence": null
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1542830,
+            "end": 1543310,
+            "confidence": null
+        },
+        {
+            "text": "researchers",
+            "entity_type": "occupation",
+            "start": 1597020,
+            "end": 1597540,
+            "confidence": null
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1702290,
+            "end": 1702810,
+            "confidence": null
+        },
+        {
+            "text": "Piggo",
+            "entity_type": "person_name",
+            "start": 1840290,
+            "end": 1840730,
+            "confidence": null
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1955870,
+            "end": 1956470,
+            "confidence": null
+        },
+        {
+            "text": "cop",
+            "entity_type": "occupation",
+            "start": 2091910,
+            "end": 2092190,
+            "confidence": null
+        },
+        {
+            "text": "pigou",
+            "entity_type": "person_name",
+            "start": 2186210,
+            "end": 2186690,
+            "confidence": null
+        },
+        {
+            "text": "pigu",
+            "entity_type": "person_name",
+            "start": 2392070,
+            "end": 2392670,
+            "confidence": null
+        },
+        {
+            "text": "Pig",
+            "entity_type": "person_name",
+            "start": 2635930,
+            "end": 2636410,
+            "confidence": null
+        },
+        {
+            "text": "ou",
+            "entity_type": "person_name",
+            "start": 2661150,
+            "end": 2661550,
+            "confidence": null
+        },
+        {
+            "text": "ou",
+            "entity_type": "person_name",
+            "start": 2662670,
+            "end": 2663190,
+            "confidence": null
+        },
+        {
+            "text": "Amir Ronan",
+            "entity_type": "person_name",
+            "start": 2831730,
+            "end": 2832650,
+            "confidence": null
+        },
+        {
+            "text": "Korea Scholz",
+            "entity_type": "person_name",
+            "start": 2834370,
+            "end": 2835610,
+            "confidence": null
+        },
+        {
+            "text": "Steer Moses",
+            "entity_type": "person_name",
+            "start": 2835690,
+            "end": 2836570,
+            "confidence": null
+        },
+        {
+            "text": "Piggu",
+            "entity_type": "person_name",
+            "start": 4151310,
+            "end": 4151790,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Nash",
+            "entity_type": "person_name",
+            "start": 113870,
+            "end": 114190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 152530,
+            "end": 153050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bayes",
+            "entity_type": "person_name",
+            "start": 203240,
+            "end": 203520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sh",
+            "entity_type": "person_name",
+            "start": 203520,
+            "end": 203840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Myerson",
+            "entity_type": "person_name",
+            "start": 219040,
+            "end": 219800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 223900,
+            "end": 224580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 237820,
+            "end": 238340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 239380,
+            "end": 239980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kutsupius",
+            "entity_type": "person_name",
+            "start": 243820,
+            "end": 244540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pap Dimitriou",
+            "entity_type": "person_name",
+            "start": 244620,
+            "end": 245580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 245900,
+            "end": 246780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1999",
+            "entity_type": "date_interval",
+            "start": 247580,
+            "end": 248420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PhD advisor",
+            "entity_type": "occupation",
+            "start": 251140,
+            "end": 251900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Eva Tardos",
+            "entity_type": "person_name",
+            "start": 251900,
+            "end": 252780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 273470,
+            "end": 274230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "transportation scientists",
+            "entity_type": "occupation",
+            "start": 279230,
+            "end": 280430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "8:00am",
+            "entity_type": "time",
+            "start": 284170,
+            "end": 284610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 289010,
+            "end": 289450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "driver",
+            "entity_type": "occupation",
+            "start": 301610,
+            "end": 301890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 302650,
+            "end": 303010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 339560,
+            "end": 339960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "90 minutes",
+            "entity_type": "duration",
+            "start": 384010,
+            "end": 384690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "drivers",
+            "entity_type": "occupation",
+            "start": 425210,
+            "end": 425570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "90 minutes",
+            "entity_type": "duration",
+            "start": 488010,
+            "end": 488810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1968",
+            "entity_type": "date_interval",
+            "start": 546900,
+            "end": 547780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1920",
+            "entity_type": "date_interval",
+            "start": 551180,
+            "end": 551900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "A.C. pigou",
+            "entity_type": "person_name",
+            "start": 559390,
+            "end": 560270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Highway 101",
+            "entity_type": "location",
+            "start": 567870,
+            "end": 568870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Highway 280",
+            "entity_type": "location",
+            "start": 569030,
+            "end": 569750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "location",
+            "start": 570230,
+            "end": 570550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 570710,
+            "end": 571470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "driver",
+            "entity_type": "occupation",
+            "start": 592430,
+            "end": 592750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "dictator",
+            "entity_type": "occupation",
+            "start": 618040,
+            "end": 618360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 643450,
+            "end": 643770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "half an hour",
+            "entity_type": "duration",
+            "start": 644370,
+            "end": 644930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "45 minutes",
+            "entity_type": "duration",
+            "start": 645930,
+            "end": 646690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pygu",
+            "entity_type": "person_name",
+            "start": 706790,
+            "end": 707350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 754250,
+            "end": 754650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 784450,
+            "end": 784810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 833950,
+            "end": 834350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "analysts",
+            "entity_type": "occupation",
+            "start": 930210,
+            "end": 930850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Braes",
+            "entity_type": "person_name",
+            "start": 976690,
+            "end": 977090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Picu",
+            "entity_type": "person_name",
+            "start": 981940,
+            "end": 982620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Brace",
+            "entity_type": "person_name",
+            "start": 1030310,
+            "end": 1030710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pig",
+            "entity_type": "person_name",
+            "start": 1031150,
+            "end": 1031510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 1151430,
+            "end": 1152310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "30 minutes",
+            "entity_type": "duration",
+            "start": 1154390,
+            "end": 1155190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Picus",
+            "entity_type": "organization",
+            "start": 1260080,
+            "end": 1260560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1409010,
+            "end": 1409490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Piggoo",
+            "entity_type": "person_name",
+            "start": 1457770,
+            "end": 1458330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1542830,
+            "end": 1543310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "researchers",
+            "entity_type": "occupation",
+            "start": 1597020,
+            "end": 1597540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1702290,
+            "end": 1702810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Piggo",
+            "entity_type": "person_name",
+            "start": 1840290,
+            "end": 1840730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pigou",
+            "entity_type": "person_name",
+            "start": 1955870,
+            "end": 1956470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "cop",
+            "entity_type": "occupation",
+            "start": 2091910,
+            "end": 2092190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pigou",
+            "entity_type": "person_name",
+            "start": 2186210,
+            "end": 2186690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pigu",
+            "entity_type": "person_name",
+            "start": 2392070,
+            "end": 2392670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pig",
+            "entity_type": "person_name",
+            "start": 2635930,
+            "end": 2636410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ou",
+            "entity_type": "person_name",
+            "start": 2661150,
+            "end": 2661550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ou",
+            "entity_type": "person_name",
+            "start": 2662670,
+            "end": 2663190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Amir Ronan",
+            "entity_type": "person_name",
+            "start": 2831730,
+            "end": 2832650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Korea Scholz",
+            "entity_type": "person_name",
+            "start": 2834370,
+            "end": 2835610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Steer Moses",
+            "entity_type": "person_name",
+            "start": 2835690,
+            "end": 2836570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Piggu",
+            "entity_type": "person_name",
+            "start": 4151310,
+            "end": 4151790,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

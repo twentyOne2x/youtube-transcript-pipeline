@@ -1,0 +1,787 @@
+{
+    "video_file": "2023-05-13_ZSqxGdsmLHs_Foundations of Blockchains (Lecture 12.1: Overview of Lecture 12).mp3",
+    "entities": [
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 48220,
+            "end": 48660,
+            "confidence": null
+        },
+        {
+            "text": "Don Knuth",
+            "entity_type": "person_name",
+            "start": 50660,
+            "end": 51540,
+            "confidence": null
+        },
+        {
+            "text": "early 2023",
+            "entity_type": "date_interval",
+            "start": 85180,
+            "end": 86780,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 87620,
+            "end": 88220,
+            "confidence": null
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 92780,
+            "end": 93220,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 104700,
+            "end": 105460,
+            "confidence": null
+        },
+        {
+            "text": "academic researcher",
+            "entity_type": "occupation",
+            "start": 108420,
+            "end": 109260,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 116410,
+            "end": 117050,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 119530,
+            "end": 120210,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 123530,
+            "end": 124250,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 128010,
+            "end": 128410,
+            "confidence": null
+        },
+        {
+            "text": "14 years",
+            "entity_type": "duration",
+            "start": 135170,
+            "end": 135970,
+            "confidence": null
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 158880,
+            "end": 159360,
+            "confidence": null
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 171910,
+            "end": 172350,
+            "confidence": null
+        },
+        {
+            "text": "several years",
+            "entity_type": "duration",
+            "start": 197070,
+            "end": 197670,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 224730,
+            "end": 225370,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 233740,
+            "end": 234180,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 236380,
+            "end": 237060,
+            "confidence": null
+        },
+        {
+            "text": "10 hours",
+            "entity_type": "duration",
+            "start": 303780,
+            "end": 304180,
+            "confidence": null
+        },
+        {
+            "text": "20 hours",
+            "entity_type": "duration",
+            "start": 306900,
+            "end": 307340,
+            "confidence": null
+        },
+        {
+            "text": "one hour",
+            "entity_type": "duration",
+            "start": 365300,
+            "end": 365940,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 459830,
+            "end": 460510,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 478310,
+            "end": 478910,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 569440,
+            "end": 570000,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 597740,
+            "end": 598140,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 632240,
+            "end": 632920,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 663580,
+            "end": 664260,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 691880,
+            "end": 692440,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 758800,
+            "end": 759240,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 839150,
+            "end": 839710,
+            "confidence": null
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 864300,
+            "end": 864860,
+            "confidence": null
+        },
+        {
+            "text": "oracle",
+            "entity_type": "organization",
+            "start": 915370,
+            "end": 915690,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 994250,
+            "end": 994930,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1008020,
+            "end": 1008580,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto consensus",
+            "entity_type": "organization",
+            "start": 1147720,
+            "end": 1148760,
+            "confidence": null
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 1149320,
+            "end": 1149760,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto Consensus",
+            "entity_type": "organization",
+            "start": 1150240,
+            "end": 1151080,
+            "confidence": null
+        },
+        {
+            "text": "two to three years",
+            "entity_type": "duration",
+            "start": 1345480,
+            "end": 1346320,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1720660,
+            "end": 1721420,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1729940,
+            "end": 1730500,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1731900,
+            "end": 1732340,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1737660,
+            "end": 1738140,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1738740,
+            "end": 1739300,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1741540,
+            "end": 1742020,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1772190,
+            "end": 1772790,
+            "confidence": null
+        },
+        {
+            "text": "Byzantine",
+            "entity_type": "nationality",
+            "start": 1786580,
+            "end": 1787220,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 1913380,
+            "end": 1913780,
+            "confidence": null
+        },
+        {
+            "text": "an hour and 15 minutes",
+            "entity_type": "duration",
+            "start": 1919740,
+            "end": 1920940,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1960770,
+            "end": 1961490,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 2065280,
+            "end": 2065960,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "location",
+            "start": 2123650,
+            "end": 2124410,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "location",
+            "start": 2148480,
+            "end": 2149120,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "15 years",
+            "entity_type": "duration",
+            "start": 48220,
+            "end": 48660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Don Knuth",
+            "entity_type": "person_name",
+            "start": 50660,
+            "end": 51540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 2023",
+            "entity_type": "date_interval",
+            "start": 85180,
+            "end": 86780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 87620,
+            "end": 88220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 92780,
+            "end": 93220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 104700,
+            "end": 105460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "academic researcher",
+            "entity_type": "occupation",
+            "start": 108420,
+            "end": 109260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 116410,
+            "end": 117050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 119530,
+            "end": 120210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 123530,
+            "end": 124250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 128010,
+            "end": 128410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "14 years",
+            "entity_type": "duration",
+            "start": 135170,
+            "end": 135970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 158880,
+            "end": 159360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 171910,
+            "end": 172350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "several years",
+            "entity_type": "duration",
+            "start": 197070,
+            "end": 197670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 224730,
+            "end": 225370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 233740,
+            "end": 234180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 236380,
+            "end": 237060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 hours",
+            "entity_type": "duration",
+            "start": 303780,
+            "end": 304180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "20 hours",
+            "entity_type": "duration",
+            "start": 306900,
+            "end": 307340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one hour",
+            "entity_type": "duration",
+            "start": 365300,
+            "end": 365940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 459830,
+            "end": 460510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 478310,
+            "end": 478910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 569440,
+            "end": 570000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 597740,
+            "end": 598140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 632240,
+            "end": 632920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 663580,
+            "end": 664260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 691880,
+            "end": 692440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 758800,
+            "end": 759240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 839150,
+            "end": 839710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 864300,
+            "end": 864860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "oracle",
+            "entity_type": "organization",
+            "start": 915370,
+            "end": 915690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 994250,
+            "end": 994930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1008020,
+            "end": 1008580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto consensus",
+            "entity_type": "organization",
+            "start": 1147720,
+            "end": 1148760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 1149320,
+            "end": 1149760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto Consensus",
+            "entity_type": "organization",
+            "start": 1150240,
+            "end": 1151080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two to three years",
+            "entity_type": "duration",
+            "start": 1345480,
+            "end": 1346320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1720660,
+            "end": 1721420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1729940,
+            "end": 1730500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1731900,
+            "end": 1732340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1737660,
+            "end": 1738140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1738740,
+            "end": 1739300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 1741540,
+            "end": 1742020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1772190,
+            "end": 1772790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Byzantine",
+            "entity_type": "nationality",
+            "start": 1786580,
+            "end": 1787220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 1913380,
+            "end": 1913780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "an hour and 15 minutes",
+            "entity_type": "duration",
+            "start": 1919740,
+            "end": 1920940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 1960770,
+            "end": 1961490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 2065280,
+            "end": 2065960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "location",
+            "start": 2123650,
+            "end": 2124410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "location",
+            "start": 2148480,
+            "end": 2149120,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

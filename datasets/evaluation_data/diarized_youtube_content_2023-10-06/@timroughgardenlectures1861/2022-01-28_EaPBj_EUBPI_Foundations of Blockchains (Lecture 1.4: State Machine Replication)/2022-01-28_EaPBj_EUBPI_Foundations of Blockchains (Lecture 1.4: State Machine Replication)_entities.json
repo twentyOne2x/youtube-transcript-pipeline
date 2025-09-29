@@ -1,0 +1,307 @@
+{
+    "video_file": "2022-01-28_EaPBj_EUBPI_Foundations of Blockchains (Lecture 1.4: State Machine Replication).mp3",
+    "entities": [
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 39370,
+            "end": 40330,
+            "confidence": null
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 44410,
+            "end": 45170,
+            "confidence": null
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 45370,
+            "end": 45850,
+            "confidence": null
+        },
+        {
+            "text": "25 plus years",
+            "entity_type": "duration",
+            "start": 56370,
+            "end": 57290,
+            "confidence": null
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 109180,
+            "end": 109740,
+            "confidence": null
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 182780,
+            "end": 183300,
+            "confidence": null
+        },
+        {
+            "text": "IBM",
+            "entity_type": "organization",
+            "start": 189780,
+            "end": 190180,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 369710,
+            "end": 370070,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 370190,
+            "end": 370710,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 531270,
+            "end": 531510,
+            "confidence": null
+        },
+        {
+            "text": "Alice",
+            "entity_type": "person_name",
+            "start": 532270,
+            "end": 532710,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 534390,
+            "end": 534750,
+            "confidence": null
+        },
+        {
+            "text": "Bob",
+            "entity_type": "person_name",
+            "start": 534990,
+            "end": 535350,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 542670,
+            "end": 543030,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 545750,
+            "end": 546030,
+            "confidence": null
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 691380,
+            "end": 691980,
+            "confidence": null
+        },
+        {
+            "text": "Siberia",
+            "entity_type": "location",
+            "start": 785310,
+            "end": 785950,
+            "confidence": null
+        },
+        {
+            "text": "early 1980s",
+            "entity_type": "date_interval",
+            "start": 1039340,
+            "end": 1040100,
+            "confidence": null
+        },
+        {
+            "text": "Dolev",
+            "entity_type": "person_name",
+            "start": 1040300,
+            "end": 1040820,
+            "confidence": null
+        },
+        {
+            "text": "Strong",
+            "entity_type": "person_name",
+            "start": 1040980,
+            "end": 1041260,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 39370,
+            "end": 40330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer scientists",
+            "entity_type": "occupation",
+            "start": 44410,
+            "end": 45170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 45370,
+            "end": 45850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "25 plus years",
+            "entity_type": "duration",
+            "start": 56370,
+            "end": 57290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 109180,
+            "end": 109740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1980s",
+            "entity_type": "date_interval",
+            "start": 182780,
+            "end": 183300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "IBM",
+            "entity_type": "organization",
+            "start": 189780,
+            "end": 190180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 369710,
+            "end": 370070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 370190,
+            "end": 370710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 531270,
+            "end": 531510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alice",
+            "entity_type": "person_name",
+            "start": 532270,
+            "end": 532710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 534390,
+            "end": 534750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bob",
+            "entity_type": "person_name",
+            "start": 534990,
+            "end": 535350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 542670,
+            "end": 543030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 545750,
+            "end": 546030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 691380,
+            "end": 691980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Siberia",
+            "entity_type": "location",
+            "start": 785310,
+            "end": 785950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 1980s",
+            "entity_type": "date_interval",
+            "start": 1039340,
+            "end": 1040100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dolev",
+            "entity_type": "person_name",
+            "start": 1040300,
+            "end": 1040820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Strong",
+            "entity_type": "person_name",
+            "start": 1040980,
+            "end": 1041260,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

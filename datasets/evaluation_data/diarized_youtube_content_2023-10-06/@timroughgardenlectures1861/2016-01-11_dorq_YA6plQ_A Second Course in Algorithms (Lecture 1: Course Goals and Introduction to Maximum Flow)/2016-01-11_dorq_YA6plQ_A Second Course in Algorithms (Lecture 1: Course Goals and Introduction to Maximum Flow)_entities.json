@@ -1,0 +1,592 @@
+{
+    "video_file": "2016-01-11_dorq_YA6plQ_A Second Course in Algorithms (Lecture 1: Course Goals and Introduction to Maximum Flow).mp3",
+    "entities": [
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 101350,
+            "end": 102070,
+            "confidence": null
+        },
+        {
+            "text": "Bellman Ford",
+            "entity_type": "person_name",
+            "start": 102590,
+            "end": 103230,
+            "confidence": null
+        },
+        {
+            "text": "five weeks",
+            "entity_type": "duration",
+            "start": 194720,
+            "end": 195440,
+            "confidence": null
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 213210,
+            "end": 214210,
+            "confidence": null
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 335120,
+            "end": 335880,
+            "confidence": null
+        },
+        {
+            "text": "10 weeks",
+            "entity_type": "duration",
+            "start": 411390,
+            "end": 411830,
+            "confidence": null
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "organization",
+            "start": 453240,
+            "end": 453680,
+            "confidence": null
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "organization",
+            "start": 485040,
+            "end": 485400,
+            "confidence": null
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 509990,
+            "end": 510310,
+            "confidence": null
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 519670,
+            "end": 519950,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 523270,
+            "end": 523710,
+            "confidence": null
+        },
+        {
+            "text": "computer sciences",
+            "entity_type": "occupation",
+            "start": 527150,
+            "end": 527710,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 540770,
+            "end": 541090,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 542890,
+            "end": 543330,
+            "confidence": null
+        },
+        {
+            "text": "PhD students",
+            "entity_type": "occupation",
+            "start": 548450,
+            "end": 549330,
+            "confidence": null
+        },
+        {
+            "text": "undergraduate master students",
+            "entity_type": "occupation",
+            "start": 549890,
+            "end": 551130,
+            "confidence": null
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 557010,
+            "end": 557410,
+            "confidence": null
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 568420,
+            "end": 568900,
+            "confidence": null
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 691300,
+            "end": 691620,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 713260,
+            "end": 713580,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 717220,
+            "end": 717540,
+            "confidence": null
+        },
+        {
+            "text": "CS261 Stanford. Edu",
+            "entity_type": "url",
+            "start": 733340,
+            "end": 735420,
+            "confidence": null
+        },
+        {
+            "text": "three hour",
+            "entity_type": "duration",
+            "start": 746370,
+            "end": 746850,
+            "confidence": null
+        },
+        {
+            "text": "registrar",
+            "entity_type": "occupation",
+            "start": 749370,
+            "end": 749970,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 758850,
+            "end": 759170,
+            "confidence": null
+        },
+        {
+            "text": "Maxwell",
+            "entity_type": "person_name",
+            "start": 928270,
+            "end": 928830,
+            "confidence": null
+        },
+        {
+            "text": "edge five",
+            "entity_type": "location",
+            "start": 958840,
+            "end": 960600,
+            "confidence": null
+        },
+        {
+            "text": "Spanish",
+            "entity_type": "language",
+            "start": 1185000,
+            "end": 1185190,
+            "confidence": null
+        },
+        {
+            "text": "Dexter",
+            "entity_type": "organization",
+            "start": 1670950,
+            "end": 1671550,
+            "confidence": null
+        },
+        {
+            "text": "Dexter",
+            "entity_type": "organization",
+            "start": 1672710,
+            "end": 1673270,
+            "confidence": null
+        },
+        {
+            "text": "Fulkerson",
+            "entity_type": "person_name",
+            "start": 2611630,
+            "end": 2612270,
+            "confidence": null
+        },
+        {
+            "text": "mid-50s",
+            "entity_type": "date_interval",
+            "start": 2618340,
+            "end": 2619140,
+            "confidence": null
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2855250,
+            "end": 2855810,
+            "confidence": null
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2904670,
+            "end": 2905310,
+            "confidence": null
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2982600,
+            "end": 2983120,
+            "confidence": null
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 3736050,
+            "end": 3736690,
+            "confidence": null
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 3740130,
+            "end": 3740770,
+            "confidence": null
+        },
+        {
+            "text": "Max Flowman",
+            "entity_type": "person_name",
+            "start": 3994360,
+            "end": 3994960,
+            "confidence": null
+        },
+        {
+            "text": "Max Flowman",
+            "entity_type": "person_name",
+            "start": 4083980,
+            "end": 4084660,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 101350,
+            "end": 102070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bellman Ford",
+            "entity_type": "person_name",
+            "start": 102590,
+            "end": 103230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five weeks",
+            "entity_type": "duration",
+            "start": 194720,
+            "end": 195440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 213210,
+            "end": 214210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "linear programming",
+            "entity_type": "occupation",
+            "start": 335120,
+            "end": 335880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 weeks",
+            "entity_type": "duration",
+            "start": 411390,
+            "end": 411830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "organization",
+            "start": 453240,
+            "end": 453680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stanford",
+            "entity_type": "organization",
+            "start": 485040,
+            "end": 485400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 509990,
+            "end": 510310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 519670,
+            "end": 519950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 523270,
+            "end": 523710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer sciences",
+            "entity_type": "occupation",
+            "start": 527150,
+            "end": 527710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 540770,
+            "end": 541090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 542890,
+            "end": 543330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PhD students",
+            "entity_type": "occupation",
+            "start": 548450,
+            "end": 549330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "undergraduate master students",
+            "entity_type": "occupation",
+            "start": 549890,
+            "end": 551130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 557010,
+            "end": 557410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 568420,
+            "end": 568900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 691300,
+            "end": 691620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 713260,
+            "end": 713580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 717220,
+            "end": 717540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CS261 Stanford. Edu",
+            "entity_type": "url",
+            "start": 733340,
+            "end": 735420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three hour",
+            "entity_type": "duration",
+            "start": 746370,
+            "end": 746850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "registrar",
+            "entity_type": "occupation",
+            "start": 749370,
+            "end": 749970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 758850,
+            "end": 759170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Maxwell",
+            "entity_type": "person_name",
+            "start": 928270,
+            "end": 928830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "edge five",
+            "entity_type": "location",
+            "start": 958840,
+            "end": 960600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Spanish",
+            "entity_type": "language",
+            "start": 1185000,
+            "end": 1185190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dexter",
+            "entity_type": "organization",
+            "start": 1670950,
+            "end": 1671550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dexter",
+            "entity_type": "organization",
+            "start": 1672710,
+            "end": 1673270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Fulkerson",
+            "entity_type": "person_name",
+            "start": 2611630,
+            "end": 2612270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mid-50s",
+            "entity_type": "date_interval",
+            "start": 2618340,
+            "end": 2619140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2855250,
+            "end": 2855810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2904670,
+            "end": 2905310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ferguson",
+            "entity_type": "person_name",
+            "start": 2982600,
+            "end": 2983120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 3736050,
+            "end": 3736690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 3740130,
+            "end": 3740770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Max Flowman",
+            "entity_type": "person_name",
+            "start": 3994360,
+            "end": 3994960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Max Flowman",
+            "entity_type": "person_name",
+            "start": 4083980,
+            "end": 4084660,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,937 @@
+{
+    "video_file": "2023-05-26_e86kJqRe4oA_Foundations of Blockchains (Lecture 12.10: VRFs: Challenges and Mitigations).mp3",
+    "entities": [
+        {
+            "text": "oracle",
+            "entity_type": "organization",
+            "start": 188460,
+            "end": 188820,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 370490,
+            "end": 370730,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 376130,
+            "end": 376330,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 379890,
+            "end": 380170,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 387350,
+            "end": 387590,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 390990,
+            "end": 391270,
+            "confidence": null
+        },
+        {
+            "text": "byzantine",
+            "entity_type": "nationality",
+            "start": 485930,
+            "end": 486410,
+            "confidence": null
+        },
+        {
+            "text": "leaders",
+            "entity_type": "occupation",
+            "start": 514110,
+            "end": 514430,
+            "confidence": null
+        },
+        {
+            "text": "single secret leader election",
+            "entity_type": "event",
+            "start": 571410,
+            "end": 573009,
+            "confidence": null
+        },
+        {
+            "text": "ssle",
+            "entity_type": "event",
+            "start": 573330,
+            "end": 574210,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 585450,
+            "end": 586050,
+            "confidence": null
+        },
+        {
+            "text": "Bonnet",
+            "entity_type": "person_name",
+            "start": 586930,
+            "end": 587570,
+            "confidence": null
+        },
+        {
+            "text": "Eskandarian",
+            "entity_type": "person_name",
+            "start": 587880,
+            "end": 588800,
+            "confidence": null
+        },
+        {
+            "text": "Hanslick",
+            "entity_type": "person_name",
+            "start": 588800,
+            "end": 589640,
+            "confidence": null
+        },
+        {
+            "text": "Greco",
+            "entity_type": "person_name",
+            "start": 589880,
+            "end": 590440,
+            "confidence": null
+        },
+        {
+            "text": "early 2023",
+            "entity_type": "date_interval",
+            "start": 599440,
+            "end": 600840,
+            "confidence": null
+        },
+        {
+            "text": "2023, 24, 25",
+            "entity_type": "date_interval",
+            "start": 624200,
+            "end": 625960,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 652810,
+            "end": 653090,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 704970,
+            "end": 705570,
+            "confidence": null
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 715730,
+            "end": 716210,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 940290,
+            "end": 940930,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 970530,
+            "end": 970930,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 974490,
+            "end": 974850,
+            "confidence": null
+        },
+        {
+            "text": "satoshi",
+            "entity_type": "money_amount",
+            "start": 977250,
+            "end": 977930,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1130360,
+            "end": 1130760,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1134560,
+            "end": 1135000,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1148170,
+            "end": 1148850,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1161170,
+            "end": 1161650,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 1164770,
+            "end": 1165130,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1201560,
+            "end": 1202280,
+            "confidence": null
+        },
+        {
+            "text": "Sybils",
+            "entity_type": "person_name",
+            "start": 1209600,
+            "end": 1210400,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1219000,
+            "end": 1219520,
+            "confidence": null
+        },
+        {
+            "text": "1 coin",
+            "entity_type": "money_amount",
+            "start": 1222170,
+            "end": 1222650,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1236530,
+            "end": 1237010,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1250780,
+            "end": 1251380,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1274140,
+            "end": 1274660,
+            "confidence": null
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 1299140,
+            "end": 1299460,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1377810,
+            "end": 1378250,
+            "confidence": null
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 1386130,
+            "end": 1386490,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1463160,
+            "end": 1463640,
+            "confidence": null
+        },
+        {
+            "text": "sybils",
+            "entity_type": "money_amount",
+            "start": 1465960,
+            "end": 1466600,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1669610,
+            "end": 1670050,
+            "confidence": null
+        },
+        {
+            "text": "12 coins",
+            "entity_type": "money_amount",
+            "start": 1670450,
+            "end": 1671090,
+            "confidence": null
+        },
+        {
+            "text": "five",
+            "entity_type": "money_amount",
+            "start": 1678450,
+            "end": 1678650,
+            "confidence": null
+        },
+        {
+            "text": "seven coins",
+            "entity_type": "money_amount",
+            "start": 1744400,
+            "end": 1744800,
+            "confidence": null
+        },
+        {
+            "text": "five coins",
+            "entity_type": "money_amount",
+            "start": 1745400,
+            "end": 1746000,
+            "confidence": null
+        },
+        {
+            "text": "sybil",
+            "entity_type": "person_name",
+            "start": 1761760,
+            "end": 1762160,
+            "confidence": null
+        },
+        {
+            "text": "seven coins",
+            "entity_type": "money_amount",
+            "start": 1762280,
+            "end": 1762920,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1845480,
+            "end": 1845880,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1848440,
+            "end": 1848920,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1887400,
+            "end": 1887800,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1908730,
+            "end": 1909130,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1912610,
+            "end": 1913250,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1952590,
+            "end": 1953030,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1973730,
+            "end": 1974130,
+            "confidence": null
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1986820,
+            "end": 1987420,
+            "confidence": null
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 2006780,
+            "end": 2007340,
+            "confidence": null
+        },
+        {
+            "text": "s",
+            "entity_type": "money_amount",
+            "start": 2013980,
+            "end": 2014500,
+            "confidence": null
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 2037100,
+            "end": 2037420,
+            "confidence": null
+        },
+        {
+            "text": "12 coins",
+            "entity_type": "money_amount",
+            "start": 2044060,
+            "end": 2044540,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 2057180,
+            "end": 2057540,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 2059980,
+            "end": 2060260,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "oracle",
+            "entity_type": "organization",
+            "start": 188460,
+            "end": 188820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 370490,
+            "end": 370730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 376130,
+            "end": 376330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 379890,
+            "end": 380170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 387350,
+            "end": 387590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 390990,
+            "end": 391270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "byzantine",
+            "entity_type": "nationality",
+            "start": 485930,
+            "end": 486410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leaders",
+            "entity_type": "occupation",
+            "start": 514110,
+            "end": 514430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "single secret leader election",
+            "entity_type": "event",
+            "start": 571410,
+            "end": 573009,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ssle",
+            "entity_type": "event",
+            "start": 573330,
+            "end": 574210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 585450,
+            "end": 586050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bonnet",
+            "entity_type": "person_name",
+            "start": 586930,
+            "end": 587570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Eskandarian",
+            "entity_type": "person_name",
+            "start": 587880,
+            "end": 588800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Hanslick",
+            "entity_type": "person_name",
+            "start": 588800,
+            "end": 589640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Greco",
+            "entity_type": "person_name",
+            "start": 589880,
+            "end": 590440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 2023",
+            "entity_type": "date_interval",
+            "start": 599440,
+            "end": 600840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2023, 24, 25",
+            "entity_type": "date_interval",
+            "start": 624200,
+            "end": 625960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 652810,
+            "end": 653090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 704970,
+            "end": 705570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nakamoto",
+            "entity_type": "person_name",
+            "start": 715730,
+            "end": 716210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 940290,
+            "end": 940930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 970530,
+            "end": 970930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 974490,
+            "end": 974850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "satoshi",
+            "entity_type": "money_amount",
+            "start": 977250,
+            "end": 977930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1130360,
+            "end": 1130760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1134560,
+            "end": 1135000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1148170,
+            "end": 1148850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1161170,
+            "end": 1161650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 1164770,
+            "end": 1165130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1201560,
+            "end": 1202280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sybils",
+            "entity_type": "person_name",
+            "start": 1209600,
+            "end": 1210400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1219000,
+            "end": 1219520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1 coin",
+            "entity_type": "money_amount",
+            "start": 1222170,
+            "end": 1222650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1236530,
+            "end": 1237010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1250780,
+            "end": 1251380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1274140,
+            "end": 1274660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 1299140,
+            "end": 1299460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1377810,
+            "end": 1378250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coin",
+            "entity_type": "money_amount",
+            "start": 1386130,
+            "end": 1386490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1463160,
+            "end": 1463640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sybils",
+            "entity_type": "money_amount",
+            "start": 1465960,
+            "end": 1466600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1669610,
+            "end": 1670050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12 coins",
+            "entity_type": "money_amount",
+            "start": 1670450,
+            "end": 1671090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five",
+            "entity_type": "money_amount",
+            "start": 1678450,
+            "end": 1678650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "seven coins",
+            "entity_type": "money_amount",
+            "start": 1744400,
+            "end": 1744800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five coins",
+            "entity_type": "money_amount",
+            "start": 1745400,
+            "end": 1746000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sybil",
+            "entity_type": "person_name",
+            "start": 1761760,
+            "end": 1762160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "seven coins",
+            "entity_type": "money_amount",
+            "start": 1762280,
+            "end": 1762920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1845480,
+            "end": 1845880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1848440,
+            "end": 1848920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1887400,
+            "end": 1887800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1908730,
+            "end": 1909130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1912610,
+            "end": 1913250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1952590,
+            "end": 1953030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 1973730,
+            "end": 1974130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one coin",
+            "entity_type": "money_amount",
+            "start": 1986820,
+            "end": 1987420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 2006780,
+            "end": 2007340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "s",
+            "entity_type": "money_amount",
+            "start": 2013980,
+            "end": 2014500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sybil",
+            "entity_type": "person_name",
+            "start": 2037100,
+            "end": 2037420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12 coins",
+            "entity_type": "money_amount",
+            "start": 2044060,
+            "end": 2044540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 2057180,
+            "end": 2057540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 2059980,
+            "end": 2060260,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

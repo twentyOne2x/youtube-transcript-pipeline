@@ -1,0 +1,52 @@
+{
+    "video_file": "2025-01-08_yIRlaExT2ro_FaZe Banks calls his friend after he missed $1,000,000 memecoin.mp3",
+    "entities": [
+        {
+            "text": "all year",
+            "entity_type": "duration",
+            "start": 13000,
+            "end": 13600,
+            "confidence": null
+        },
+        {
+            "text": "60 mil",
+            "entity_type": "money_amount",
+            "start": 18920,
+            "end": 19320,
+            "confidence": null
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 28680,
+            "end": 29000,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "all year",
+            "entity_type": "duration",
+            "start": 13000,
+            "end": 13600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "60 mil",
+            "entity_type": "money_amount",
+            "start": 18920,
+            "end": 19320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 28680,
+            "end": 29000,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

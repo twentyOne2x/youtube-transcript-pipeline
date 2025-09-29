@@ -1,0 +1,952 @@
+{
+    "video_file": "2025-05-22_KOGxEm2yEuw_Ship or Die at Accelerate 2025: Fireside Chat (Jeremy Allaire, Anatoly Yakovenko, Dan Albert).mp3",
+    "entities": [
+        {
+            "text": "2025",
+            "entity_type": "date_interval",
+            "start": 13000,
+            "end": 13840,
+            "confidence": null
+        },
+        {
+            "text": "Solana Network",
+            "entity_type": "organization",
+            "start": 15120,
+            "end": 16080,
+            "confidence": null
+        },
+        {
+            "text": "early 2020",
+            "entity_type": "date_interval",
+            "start": 17800,
+            "end": 18880,
+            "confidence": null
+        },
+        {
+            "text": "Circle",
+            "entity_type": "organization",
+            "start": 21680,
+            "end": 22360,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 23360,
+            "end": 24120,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 24400,
+            "end": 24960,
+            "confidence": null
+        },
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 29680,
+            "end": 30560,
+            "confidence": null
+        },
+        {
+            "text": "Circle",
+            "entity_type": "organization",
+            "start": 34520,
+            "end": 34920,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 35800,
+            "end": 36400,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 37000,
+            "end": 37600,
+            "confidence": null
+        },
+        {
+            "text": "1.2 seconds",
+            "entity_type": "duration",
+            "start": 57850,
+            "end": 59130,
+            "confidence": null
+        },
+        {
+            "text": "one penny",
+            "entity_type": "money_amount",
+            "start": 63290,
+            "end": 64090,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 65690,
+            "end": 66330,
+            "confidence": null
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 67770,
+            "end": 68210,
+            "confidence": null
+        },
+        {
+            "text": "minutes",
+            "entity_type": "duration",
+            "start": 70330,
+            "end": 70810,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 81360,
+            "end": 82080,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 95160,
+            "end": 95840,
+            "confidence": null
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 122300,
+            "end": 122780,
+            "confidence": null
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 138720,
+            "end": 139080,
+            "confidence": null
+        },
+        {
+            "text": "cent",
+            "entity_type": "money_amount",
+            "start": 155320,
+            "end": 155600,
+            "confidence": null
+        },
+        {
+            "text": "multibillion dollar",
+            "entity_type": "money_amount",
+            "start": 157120,
+            "end": 158240,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 183870,
+            "end": 184510,
+            "confidence": null
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 205410,
+            "end": 205890,
+            "confidence": null
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 211450,
+            "end": 211810,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 213010,
+            "end": 213530,
+            "confidence": null
+        },
+        {
+            "text": "Circle",
+            "entity_type": "money_amount",
+            "start": 214450,
+            "end": 214970,
+            "confidence": null
+        },
+        {
+            "text": "stablecoins",
+            "entity_type": "money_amount",
+            "start": 218880,
+            "end": 219480,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 220120,
+            "end": 220560,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 304330,
+            "end": 304930,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 318810,
+            "end": 319490,
+            "confidence": null
+        },
+        {
+            "text": "90 trillion",
+            "entity_type": "money_amount",
+            "start": 344670,
+            "end": 345310,
+            "confidence": null
+        },
+        {
+            "text": "the United States",
+            "entity_type": "location",
+            "start": 348550,
+            "end": 349310,
+            "confidence": null
+        },
+        {
+            "text": "Jeremy",
+            "entity_type": "person_name",
+            "start": 371170,
+            "end": 371730,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 382730,
+            "end": 383210,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 390530,
+            "end": 391250,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 394650,
+            "end": 395130,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 409650,
+            "end": 410370,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 414200,
+            "end": 414720,
+            "confidence": null
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 449120,
+            "end": 449520,
+            "confidence": null
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 465680,
+            "end": 466080,
+            "confidence": null
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 467560,
+            "end": 467920,
+            "confidence": null
+        },
+        {
+            "text": "uscc",
+            "entity_type": "organization",
+            "start": 484390,
+            "end": 484990,
+            "confidence": null
+        },
+        {
+            "text": "$5",
+            "entity_type": "money_amount",
+            "start": 492990,
+            "end": 493390,
+            "confidence": null
+        },
+        {
+            "text": "$5",
+            "entity_type": "money_amount",
+            "start": 494190,
+            "end": 494590,
+            "confidence": null
+        },
+        {
+            "text": "$10 billion",
+            "entity_type": "money_amount",
+            "start": 508740,
+            "end": 509340,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 524870,
+            "end": 525390,
+            "confidence": null
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 529070,
+            "end": 529750,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 548310,
+            "end": 548750,
+            "confidence": null
+        },
+        {
+            "text": "Jeremy",
+            "entity_type": "person_name",
+            "start": 565899,
+            "end": 566500,
+            "confidence": null
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 569620,
+            "end": 570340,
+            "confidence": null
+        },
+        {
+            "text": "10 years",
+            "entity_type": "duration",
+            "start": 570660,
+            "end": 571180,
+            "confidence": null
+        },
+        {
+            "text": "stablecoins",
+            "entity_type": "money_amount",
+            "start": 572660,
+            "end": 573180,
+            "confidence": null
+        },
+        {
+            "text": "USYC",
+            "entity_type": "organization",
+            "start": 628210,
+            "end": 628930,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 629130,
+            "end": 629810,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 654820,
+            "end": 655580,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 658380,
+            "end": 658940,
+            "confidence": null
+        },
+        {
+            "text": "North Star",
+            "entity_type": "organization",
+            "start": 692720,
+            "end": 693480,
+            "confidence": null
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 696080,
+            "end": 696640,
+            "confidence": null
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 717170,
+            "end": 717570,
+            "confidence": null
+        },
+        {
+            "text": "18 months",
+            "entity_type": "duration",
+            "start": 738930,
+            "end": 739450,
+            "confidence": null
+        },
+        {
+            "text": "intermediaries",
+            "entity_type": "occupation",
+            "start": 744040,
+            "end": 744760,
+            "confidence": null
+        },
+        {
+            "text": "$25 million",
+            "entity_type": "money_amount",
+            "start": 753320,
+            "end": 754040,
+            "confidence": null
+        },
+        {
+            "text": "founders",
+            "entity_type": "occupation",
+            "start": 776690,
+            "end": 777090,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "2025",
+            "entity_type": "date_interval",
+            "start": 13000,
+            "end": 13840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Network",
+            "entity_type": "organization",
+            "start": 15120,
+            "end": 16080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "early 2020",
+            "entity_type": "date_interval",
+            "start": 17800,
+            "end": 18880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Circle",
+            "entity_type": "organization",
+            "start": 21680,
+            "end": 22360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 23360,
+            "end": 24120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 24400,
+            "end": 24960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 29680,
+            "end": 30560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Circle",
+            "entity_type": "organization",
+            "start": 34520,
+            "end": 34920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 35800,
+            "end": 36400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 37000,
+            "end": 37600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1.2 seconds",
+            "entity_type": "duration",
+            "start": 57850,
+            "end": 59130,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "one penny",
+            "entity_type": "money_amount",
+            "start": 63290,
+            "end": 64090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 65690,
+            "end": 66330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 67770,
+            "end": 68210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "minutes",
+            "entity_type": "duration",
+            "start": 70330,
+            "end": 70810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 81360,
+            "end": 82080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 95160,
+            "end": 95840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 122300,
+            "end": 122780,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "dollars",
+            "entity_type": "money_amount",
+            "start": 138720,
+            "end": 139080,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "cent",
+            "entity_type": "money_amount",
+            "start": 155320,
+            "end": 155600,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "multibillion dollar",
+            "entity_type": "money_amount",
+            "start": 157120,
+            "end": 158240,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 183870,
+            "end": 184510,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 205410,
+            "end": 205890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 211450,
+            "end": 211810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 213010,
+            "end": 213530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Circle",
+            "entity_type": "money_amount",
+            "start": 214450,
+            "end": 214970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoins",
+            "entity_type": "money_amount",
+            "start": 218880,
+            "end": 219480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 220120,
+            "end": 220560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 304330,
+            "end": 304930,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 318810,
+            "end": 319490,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "90 trillion",
+            "entity_type": "money_amount",
+            "start": 344670,
+            "end": 345310,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "the United States",
+            "entity_type": "location",
+            "start": 348550,
+            "end": 349310,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Jeremy",
+            "entity_type": "person_name",
+            "start": 371170,
+            "end": 371730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 382730,
+            "end": 383210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 390530,
+            "end": 391250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 394650,
+            "end": 395130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 409650,
+            "end": 410370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 414200,
+            "end": 414720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "trader",
+            "entity_type": "occupation",
+            "start": 449120,
+            "end": 449520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 465680,
+            "end": 466080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 467560,
+            "end": 467920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "uscc",
+            "entity_type": "organization",
+            "start": 484390,
+            "end": 484990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$5",
+            "entity_type": "money_amount",
+            "start": 492990,
+            "end": 493390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$5",
+            "entity_type": "money_amount",
+            "start": 494190,
+            "end": 494590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$10 billion",
+            "entity_type": "money_amount",
+            "start": 508740,
+            "end": 509340,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 524870,
+            "end": 525390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 529070,
+            "end": 529750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 548310,
+            "end": 548750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jeremy",
+            "entity_type": "person_name",
+            "start": 565899,
+            "end": 566500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five years",
+            "entity_type": "duration",
+            "start": 569620,
+            "end": 570340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 years",
+            "entity_type": "duration",
+            "start": 570660,
+            "end": 571180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "stablecoins",
+            "entity_type": "money_amount",
+            "start": 572660,
+            "end": 573180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USYC",
+            "entity_type": "organization",
+            "start": 628210,
+            "end": 628930,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 629130,
+            "end": 629810,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 654820,
+            "end": 655580,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 658380,
+            "end": 658940,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "North Star",
+            "entity_type": "organization",
+            "start": 692720,
+            "end": 693480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 696080,
+            "end": 696640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 717170,
+            "end": 717570,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "18 months",
+            "entity_type": "duration",
+            "start": 738930,
+            "end": 739450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "intermediaries",
+            "entity_type": "occupation",
+            "start": 744040,
+            "end": 744760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$25 million",
+            "entity_type": "money_amount",
+            "start": 753320,
+            "end": 754040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "founders",
+            "entity_type": "occupation",
+            "start": 776690,
+            "end": 777090,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

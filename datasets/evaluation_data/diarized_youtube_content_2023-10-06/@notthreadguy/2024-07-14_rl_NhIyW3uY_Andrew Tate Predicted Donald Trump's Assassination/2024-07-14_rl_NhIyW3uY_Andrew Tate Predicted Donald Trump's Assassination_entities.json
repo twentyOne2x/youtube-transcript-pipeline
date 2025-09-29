@@ -1,0 +1,82 @@
+{
+    "video_file": "2024-07-14_rl_NhIyW3uY_Andrew Tate Predicted Donald Trump's Assassination.mp3",
+    "entities": [
+        {
+            "text": "Trump",
+            "entity_type": "person_name",
+            "start": 800,
+            "end": 960,
+            "confidence": null
+        },
+        {
+            "text": "President",
+            "entity_type": "occupation",
+            "start": 5560,
+            "end": 5800,
+            "confidence": null
+        },
+        {
+            "text": "Hillary",
+            "entity_type": "person_name",
+            "start": 16640,
+            "end": 17120,
+            "confidence": null
+        },
+        {
+            "text": "Biden",
+            "entity_type": "person_name",
+            "start": 35060,
+            "end": 35420,
+            "confidence": null
+        },
+        {
+            "text": "American empire",
+            "entity_type": "organization",
+            "start": 38260,
+            "end": 39060,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Trump",
+            "entity_type": "person_name",
+            "start": 800,
+            "end": 960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "President",
+            "entity_type": "occupation",
+            "start": 5560,
+            "end": 5800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hillary",
+            "entity_type": "person_name",
+            "start": 16640,
+            "end": 17120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Biden",
+            "entity_type": "person_name",
+            "start": 35060,
+            "end": 35420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American empire",
+            "entity_type": "organization",
+            "start": 38260,
+            "end": 39060,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

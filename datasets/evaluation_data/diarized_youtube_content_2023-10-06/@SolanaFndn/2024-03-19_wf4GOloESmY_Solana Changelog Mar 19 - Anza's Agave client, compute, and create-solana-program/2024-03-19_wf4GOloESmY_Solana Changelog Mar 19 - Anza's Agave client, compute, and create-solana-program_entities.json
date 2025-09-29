@@ -1,0 +1,772 @@
+{
+    "video_file": "2024-03-19_wf4GOloESmY_Solana Changelog Mar 19 - Anza's Agave client, compute, and create-solana-program.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6040,
+            "end": 6480,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7680,
+            "end": 8080,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8880,
+            "end": 9280,
+            "confidence": null
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 16800,
+            "end": 17440,
+            "confidence": null
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 21000,
+            "end": 21520,
+            "confidence": null
+        },
+        {
+            "text": "Solana Lab",
+            "entity_type": "organization",
+            "start": 26430,
+            "end": 27510,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 27510,
+            "end": 28230,
+            "confidence": null
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 31910,
+            "end": 32670,
+            "confidence": null
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 33070,
+            "end": 33670,
+            "confidence": null
+        },
+        {
+            "text": "protocol developers",
+            "entity_type": "occupation",
+            "start": 34470,
+            "end": 35510,
+            "confidence": null
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 35910,
+            "end": 36630,
+            "confidence": null
+        },
+        {
+            "text": "core protocol engineers",
+            "entity_type": "occupation",
+            "start": 47510,
+            "end": 48710,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 63490,
+            "end": 64010,
+            "confidence": null
+        },
+        {
+            "text": "Tolle",
+            "entity_type": "person_name",
+            "start": 110130,
+            "end": 110730,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 118520,
+            "end": 118920,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 289180,
+            "end": 289820,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 326150,
+            "end": 326630,
+            "confidence": null
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 331870,
+            "end": 332670,
+            "confidence": null
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 361130,
+            "end": 361690,
+            "confidence": null
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 362690,
+            "end": 363170,
+            "confidence": null
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 396430,
+            "end": 397070,
+            "confidence": null
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 415070,
+            "end": 415670,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 418120,
+            "end": 418280,
+            "confidence": null
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 430000,
+            "end": 430520,
+            "confidence": null
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 430960,
+            "end": 431560,
+            "confidence": null
+        },
+        {
+            "text": "Loris",
+            "entity_type": "organization",
+            "start": 455860,
+            "end": 456420,
+            "confidence": null
+        },
+        {
+            "text": "Loris",
+            "entity_type": "organization",
+            "start": 471020,
+            "end": 471620,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 504000,
+            "end": 504360,
+            "confidence": null
+        },
+        {
+            "text": "Anzo team",
+            "entity_type": "organization",
+            "start": 540260,
+            "end": 540820,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 556740,
+            "end": 557180,
+            "confidence": null
+        },
+        {
+            "text": "GitHub organization",
+            "entity_type": "organization",
+            "start": 560940,
+            "end": 561820,
+            "confidence": null
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 563340,
+            "end": 563860,
+            "confidence": null
+        },
+        {
+            "text": "Hannah",
+            "entity_type": "person_name",
+            "start": 564140,
+            "end": 564620,
+            "confidence": null
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 566940,
+            "end": 567380,
+            "confidence": null
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 568340,
+            "end": 569100,
+            "confidence": null
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 590520,
+            "end": 591280,
+            "confidence": null
+        },
+        {
+            "text": "itHub",
+            "entity_type": "organization",
+            "start": 591280,
+            "end": 591640,
+            "confidence": null
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 592640,
+            "end": 593440,
+            "confidence": null
+        },
+        {
+            "text": "Solana Labs ONSA",
+            "entity_type": "organization",
+            "start": 596160,
+            "end": 597440,
+            "confidence": null
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 598240,
+            "end": 599040,
+            "confidence": null
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 634480,
+            "end": 635000,
+            "confidence": null
+        },
+        {
+            "text": "fire dancers",
+            "entity_type": "occupation",
+            "start": 644720,
+            "end": 645520,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 670740,
+            "end": 670900,
+            "confidence": null
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 671100,
+            "end": 671660,
+            "confidence": null
+        },
+        {
+            "text": "Breezewang",
+            "entity_type": "person_name",
+            "start": 671820,
+            "end": 672580,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 681540,
+            "end": 682100,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 685300,
+            "end": 685780,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 688180,
+            "end": 688900,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 697140,
+            "end": 697700,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 716610,
+            "end": 716970,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 729590,
+            "end": 730310,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6040,
+            "end": 6480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7680,
+            "end": 8080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8880,
+            "end": 9280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 16800,
+            "end": 17440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 21000,
+            "end": 21520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Lab",
+            "entity_type": "organization",
+            "start": 26430,
+            "end": 27510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 27510,
+            "end": 28230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 31910,
+            "end": 32670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 33070,
+            "end": 33670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "protocol developers",
+            "entity_type": "occupation",
+            "start": 34470,
+            "end": 35510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 35910,
+            "end": 36630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "core protocol engineers",
+            "entity_type": "occupation",
+            "start": 47510,
+            "end": 48710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 63490,
+            "end": 64010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tolle",
+            "entity_type": "person_name",
+            "start": 110130,
+            "end": 110730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 118520,
+            "end": 118920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 289180,
+            "end": 289820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 326150,
+            "end": 326630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 331870,
+            "end": 332670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 361130,
+            "end": 361690,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 362690,
+            "end": 363170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Agave",
+            "entity_type": "organization",
+            "start": 396430,
+            "end": 397070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 415070,
+            "end": 415670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 418120,
+            "end": 418280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 430000,
+            "end": 430520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anza",
+            "entity_type": "organization",
+            "start": 430960,
+            "end": 431560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Loris",
+            "entity_type": "organization",
+            "start": 455860,
+            "end": 456420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Loris",
+            "entity_type": "organization",
+            "start": 471020,
+            "end": 471620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 504000,
+            "end": 504360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anzo team",
+            "entity_type": "organization",
+            "start": 540260,
+            "end": 540820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 556740,
+            "end": 557180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "GitHub organization",
+            "entity_type": "organization",
+            "start": 560940,
+            "end": 561820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Loris",
+            "entity_type": "person_name",
+            "start": 563340,
+            "end": 563860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hannah",
+            "entity_type": "person_name",
+            "start": 564140,
+            "end": 564620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 566940,
+            "end": 567380,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anza team",
+            "entity_type": "organization",
+            "start": 568340,
+            "end": 569100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 590520,
+            "end": 591280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "itHub",
+            "entity_type": "organization",
+            "start": 591280,
+            "end": 591640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 592640,
+            "end": 593440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Labs ONSA",
+            "entity_type": "organization",
+            "start": 596160,
+            "end": 597440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 598240,
+            "end": 599040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 634480,
+            "end": 635000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "fire dancers",
+            "entity_type": "occupation",
+            "start": 644720,
+            "end": 645520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 670740,
+            "end": 670900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 671100,
+            "end": 671660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Breezewang",
+            "entity_type": "person_name",
+            "start": 671820,
+            "end": 672580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 681540,
+            "end": 682100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 685300,
+            "end": 685780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 688180,
+            "end": 688900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 697140,
+            "end": 697700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 716610,
+            "end": 716970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 729590,
+            "end": 730310,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

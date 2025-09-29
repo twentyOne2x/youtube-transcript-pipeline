@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-09-28_wlO5jOpLJY0_What Are You Building Ft. AllDomains.mp3",
+    "entities": [
+        {
+            "text": "Claudio",
+            "entity_type": "person_name",
+            "start": 4840,
+            "end": 5400,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 12360,
+            "end": 12880,
+            "confidence": null
+        },
+        {
+            "text": "Solana fm",
+            "entity_type": "organization",
+            "start": 34930,
+            "end": 35850,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Claudio",
+            "entity_type": "person_name",
+            "start": 4840,
+            "end": 5400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 12360,
+            "end": 12880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana fm",
+            "entity_type": "organization",
+            "start": 34930,
+            "end": 35850,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

@@ -1,0 +1,802 @@
+{
+    "video_file": "2024-09-21_aLXXL3tOvtQ_Breakpoint 2024: Fireside: WTF Is MEV and Why Should We Care (Zano Sherwani, Ben Coverston).mp3",
+    "entities": [
+        {
+            "text": "Zano",
+            "entity_type": "person_name",
+            "start": 14840,
+            "end": 15440,
+            "confidence": null
+        },
+        {
+            "text": "jito",
+            "entity_type": "organization",
+            "start": 15800,
+            "end": 16480,
+            "confidence": null
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 18440,
+            "end": 18880,
+            "confidence": null
+        },
+        {
+            "text": "a couple years",
+            "entity_type": "duration",
+            "start": 19080,
+            "end": 19640,
+            "confidence": null
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 30610,
+            "end": 31010,
+            "confidence": null
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 31370,
+            "end": 31850,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 38530,
+            "end": 39130,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 46290,
+            "end": 46650,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 49450,
+            "end": 50330,
+            "confidence": null
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 50730,
+            "end": 51530,
+            "confidence": null
+        },
+        {
+            "text": "high performance computing",
+            "entity_type": "occupation",
+            "start": 51820,
+            "end": 52660,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 54260,
+            "end": 54460,
+            "confidence": null
+        },
+        {
+            "text": "CS",
+            "entity_type": "occupation",
+            "start": 54580,
+            "end": 54900,
+            "confidence": null
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 55660,
+            "end": 56220,
+            "confidence": null
+        },
+        {
+            "text": "Interned",
+            "entity_type": "occupation",
+            "start": 56620,
+            "end": 57300,
+            "confidence": null
+        },
+        {
+            "text": "Acuna Capital",
+            "entity_type": "organization",
+            "start": 59340,
+            "end": 60300,
+            "confidence": null
+        },
+        {
+            "text": "Citadel Securities",
+            "entity_type": "organization",
+            "start": 60940,
+            "end": 62060,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 97830,
+            "end": 98190,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 112670,
+            "end": 113230,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 113430,
+            "end": 113950,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 139410,
+            "end": 139850,
+            "confidence": null
+        },
+        {
+            "text": "half a billion dollars",
+            "entity_type": "money_amount",
+            "start": 242340,
+            "end": 243340,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 245260,
+            "end": 245860,
+            "confidence": null
+        },
+        {
+            "text": "multi billion dollar",
+            "entity_type": "money_amount",
+            "start": 252300,
+            "end": 253300,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 257100,
+            "end": 257460,
+            "confidence": null
+        },
+        {
+            "text": "half a billion",
+            "entity_type": "money_amount",
+            "start": 257980,
+            "end": 258540,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 260500,
+            "end": 260900,
+            "confidence": null
+        },
+        {
+            "text": "500 million",
+            "entity_type": "money_amount",
+            "start": 265660,
+            "end": 266420,
+            "confidence": null
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 271700,
+            "end": 272260,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 278500,
+            "end": 278979,
+            "confidence": null
+        },
+        {
+            "text": "Validators",
+            "entity_type": "occupation",
+            "start": 316780,
+            "end": 317260,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 327140,
+            "end": 327580,
+            "confidence": null
+        },
+        {
+            "text": "staker",
+            "entity_type": "occupation",
+            "start": 394130,
+            "end": 394690,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 423440,
+            "end": 423960,
+            "confidence": null
+        },
+        {
+            "text": "Samani",
+            "entity_type": "person_name",
+            "start": 436110,
+            "end": 436830,
+            "confidence": null
+        },
+        {
+            "text": "cryptography",
+            "entity_type": "occupation",
+            "start": 527840,
+            "end": 528720,
+            "confidence": null
+        },
+        {
+            "text": "staker",
+            "entity_type": "occupation",
+            "start": 544540,
+            "end": 545020,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 611420,
+            "end": 612020,
+            "confidence": null
+        },
+        {
+            "text": "retail trader",
+            "entity_type": "occupation",
+            "start": 655600,
+            "end": 656160,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 658280,
+            "end": 658800,
+            "confidence": null
+        },
+        {
+            "text": "valida",
+            "entity_type": "occupation",
+            "start": 673360,
+            "end": 673960,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 674520,
+            "end": 674919,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 694020,
+            "end": 694460,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 694460,
+            "end": 694900,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 766900,
+            "end": 767580,
+            "confidence": null
+        },
+        {
+            "text": "validator operators",
+            "entity_type": "occupation",
+            "start": 768540,
+            "end": 769580,
+            "confidence": null
+        },
+        {
+            "text": "Europe",
+            "entity_type": "location",
+            "start": 791580,
+            "end": 791860,
+            "confidence": null
+        },
+        {
+            "text": "5am their time",
+            "entity_type": "time",
+            "start": 792580,
+            "end": 793580,
+            "confidence": null
+        },
+        {
+            "text": "the U.S",
+            "entity_type": "location",
+            "start": 793940,
+            "end": 794340,
+            "confidence": null
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 930640,
+            "end": 931480,
+            "confidence": null
+        },
+        {
+            "text": "20 milliseconds",
+            "entity_type": "duration",
+            "start": 936160,
+            "end": 937120,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 959850,
+            "end": 960290,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 970770,
+            "end": 971210,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Zano",
+            "entity_type": "person_name",
+            "start": 14840,
+            "end": 15440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "jito",
+            "entity_type": "organization",
+            "start": 15800,
+            "end": 16480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "engineer",
+            "entity_type": "occupation",
+            "start": 18440,
+            "end": 18880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a couple years",
+            "entity_type": "duration",
+            "start": 19080,
+            "end": 19640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 30610,
+            "end": 31010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 31370,
+            "end": 31850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 38530,
+            "end": 39130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 46290,
+            "end": 46650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 49450,
+            "end": 50330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 50730,
+            "end": 51530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "high performance computing",
+            "entity_type": "occupation",
+            "start": 51820,
+            "end": 52660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 54260,
+            "end": 54460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "CS",
+            "entity_type": "occupation",
+            "start": 54580,
+            "end": 54900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 55660,
+            "end": 56220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Interned",
+            "entity_type": "occupation",
+            "start": 56620,
+            "end": 57300,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Acuna Capital",
+            "entity_type": "organization",
+            "start": 59340,
+            "end": 60300,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Citadel Securities",
+            "entity_type": "organization",
+            "start": 60940,
+            "end": 62060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 97830,
+            "end": 98190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 112670,
+            "end": 113230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 113430,
+            "end": 113950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 139410,
+            "end": 139850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "half a billion dollars",
+            "entity_type": "money_amount",
+            "start": 242340,
+            "end": 243340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 245260,
+            "end": 245860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "multi billion dollar",
+            "entity_type": "money_amount",
+            "start": 252300,
+            "end": 253300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 257100,
+            "end": 257460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "half a billion",
+            "entity_type": "money_amount",
+            "start": 257980,
+            "end": 258540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 260500,
+            "end": 260900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "500 million",
+            "entity_type": "money_amount",
+            "start": 265660,
+            "end": 266420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 271700,
+            "end": 272260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 278500,
+            "end": 278979,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Validators",
+            "entity_type": "occupation",
+            "start": 316780,
+            "end": 317260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 327140,
+            "end": 327580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "staker",
+            "entity_type": "occupation",
+            "start": 394130,
+            "end": 394690,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 423440,
+            "end": 423960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Samani",
+            "entity_type": "person_name",
+            "start": 436110,
+            "end": 436830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "cryptography",
+            "entity_type": "occupation",
+            "start": 527840,
+            "end": 528720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "staker",
+            "entity_type": "occupation",
+            "start": 544540,
+            "end": 545020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 611420,
+            "end": 612020,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "retail trader",
+            "entity_type": "occupation",
+            "start": 655600,
+            "end": 656160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 658280,
+            "end": 658800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "valida",
+            "entity_type": "occupation",
+            "start": 673360,
+            "end": 673960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 674520,
+            "end": 674919,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 694020,
+            "end": 694460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 694460,
+            "end": 694900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 766900,
+            "end": 767580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "validator operators",
+            "entity_type": "occupation",
+            "start": 768540,
+            "end": 769580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Europe",
+            "entity_type": "location",
+            "start": 791580,
+            "end": 791860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "5am their time",
+            "entity_type": "time",
+            "start": 792580,
+            "end": 793580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the U.S",
+            "entity_type": "location",
+            "start": 793940,
+            "end": 794340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 930640,
+            "end": 931480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "20 milliseconds",
+            "entity_type": "duration",
+            "start": 936160,
+            "end": 937120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 959850,
+            "end": 960290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 970770,
+            "end": 971210,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

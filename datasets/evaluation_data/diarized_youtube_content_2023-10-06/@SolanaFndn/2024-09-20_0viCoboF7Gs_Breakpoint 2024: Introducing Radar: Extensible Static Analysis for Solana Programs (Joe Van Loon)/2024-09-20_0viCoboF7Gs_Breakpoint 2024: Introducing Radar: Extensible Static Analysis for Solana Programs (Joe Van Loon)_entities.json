@@ -1,0 +1,337 @@
+{
+    "video_file": "2024-09-20_0viCoboF7Gs_Breakpoint 2024: Introducing Radar: Extensible Static Analysis for Solana Programs (Joe Van Loon).mp3",
+    "entities": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 5880,
+            "end": 6320,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 7440,
+            "end": 7760,
+            "confidence": null
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 8040,
+            "end": 8400,
+            "confidence": null
+        },
+        {
+            "text": "Audit Wizard",
+            "entity_type": "organization",
+            "start": 8560,
+            "end": 9440,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 17600,
+            "end": 18120,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 31600,
+            "end": 32040,
+            "confidence": null
+        },
+        {
+            "text": "auditor",
+            "entity_type": "occupation",
+            "start": 32040,
+            "end": 32560,
+            "confidence": null
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 40840,
+            "end": 41280,
+            "confidence": null
+        },
+        {
+            "text": "security engineer",
+            "entity_type": "occupation",
+            "start": 43480,
+            "end": 44360,
+            "confidence": null
+        },
+        {
+            "text": "eight years",
+            "entity_type": "duration",
+            "start": 45760,
+            "end": 46240,
+            "confidence": null
+        },
+        {
+            "text": "Amazon",
+            "entity_type": "organization",
+            "start": 49440,
+            "end": 49920,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 50120,
+            "end": 50560,
+            "confidence": null
+        },
+        {
+            "text": "cryptography team",
+            "entity_type": "organization",
+            "start": 53610,
+            "end": 54610,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 54770,
+            "end": 55210,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 66010,
+            "end": 66530,
+            "confidence": null
+        },
+        {
+            "text": "Tomer Bar",
+            "entity_type": "person_name",
+            "start": 75050,
+            "end": 75770,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 109650,
+            "end": 110490,
+            "confidence": null
+        },
+        {
+            "text": "security expert",
+            "entity_type": "occupation",
+            "start": 578780,
+            "end": 579420,
+            "confidence": null
+        },
+        {
+            "text": "astronomy",
+            "entity_type": "occupation",
+            "start": 599900,
+            "end": 600550,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 677040,
+            "end": 677640,
+            "confidence": null
+        },
+        {
+            "text": "Autowizard",
+            "entity_type": "username",
+            "start": 744790,
+            "end": 746070,
+            "confidence": null
+        },
+        {
+            "text": "O",
+            "entity_type": "organization",
+            "start": 746070,
+            "end": 746510,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 5880,
+            "end": 6320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 7440,
+            "end": 7760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 8040,
+            "end": 8400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Audit Wizard",
+            "entity_type": "organization",
+            "start": 8560,
+            "end": 9440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 17600,
+            "end": 18120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 31600,
+            "end": 32040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auditor",
+            "entity_type": "occupation",
+            "start": 32040,
+            "end": 32560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 40840,
+            "end": 41280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "security engineer",
+            "entity_type": "occupation",
+            "start": 43480,
+            "end": 44360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "eight years",
+            "entity_type": "duration",
+            "start": 45760,
+            "end": 46240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Amazon",
+            "entity_type": "organization",
+            "start": 49440,
+            "end": 49920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 50120,
+            "end": 50560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "cryptography team",
+            "entity_type": "organization",
+            "start": 53610,
+            "end": 54610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 54770,
+            "end": 55210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 66010,
+            "end": 66530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tomer Bar",
+            "entity_type": "person_name",
+            "start": 75050,
+            "end": 75770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 109650,
+            "end": 110490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "security expert",
+            "entity_type": "occupation",
+            "start": 578780,
+            "end": 579420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "astronomy",
+            "entity_type": "occupation",
+            "start": 599900,
+            "end": 600550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 677040,
+            "end": 677640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Autowizard",
+            "entity_type": "username",
+            "start": 744790,
+            "end": 746070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "O",
+            "entity_type": "organization",
+            "start": 746070,
+            "end": 746510,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

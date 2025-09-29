@@ -1,0 +1,262 @@
+{
+    "video_file": "2023-05-19_2fy_3wJ8Nl8_Banks are failing, is Bitcoin the answer.mp3",
+    "entities": [
+        {
+            "text": "Traders",
+            "entity_type": "occupation",
+            "start": 240,
+            "end": 560,
+            "confidence": null
+        },
+        {
+            "text": "Wall street",
+            "entity_type": "location",
+            "start": 9840,
+            "end": 10480,
+            "confidence": null
+        },
+        {
+            "text": "crash of 1987",
+            "entity_type": "event",
+            "start": 11320,
+            "end": 12720,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 15240,
+            "end": 15720,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 15720,
+            "end": 16279,
+            "confidence": null
+        },
+        {
+            "text": "2008 financial crisis",
+            "entity_type": "event",
+            "start": 17640,
+            "end": 19000,
+            "confidence": null
+        },
+        {
+            "text": "Chancellor",
+            "entity_type": "occupation",
+            "start": 20480,
+            "end": 21080,
+            "confidence": null
+        },
+        {
+            "text": "beginning of March",
+            "entity_type": "date_interval",
+            "start": 24160,
+            "end": 24800,
+            "confidence": null
+        },
+        {
+            "text": "Signature Bank",
+            "entity_type": "organization",
+            "start": 26520,
+            "end": 27280,
+            "confidence": null
+        },
+        {
+            "text": "Silvergate bank",
+            "entity_type": "organization",
+            "start": 27360,
+            "end": 28280,
+            "confidence": null
+        },
+        {
+            "text": "Silicon Valley Bank",
+            "entity_type": "organization",
+            "start": 28520,
+            "end": 29320,
+            "confidence": null
+        },
+        {
+            "text": "Signature bank",
+            "entity_type": "organization",
+            "start": 29320,
+            "end": 30040,
+            "confidence": null
+        },
+        {
+            "text": "U.S",
+            "entity_type": "location",
+            "start": 32420,
+            "end": 32660,
+            "confidence": null
+        },
+        {
+            "text": "Fed",
+            "entity_type": "organization",
+            "start": 33820,
+            "end": 33980,
+            "confidence": null
+        },
+        {
+            "text": "A few days",
+            "entity_type": "duration",
+            "start": 35140,
+            "end": 35540,
+            "confidence": null
+        },
+        {
+            "text": "Americans",
+            "entity_type": "nationality",
+            "start": 35820,
+            "end": 36460,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 40580,
+            "end": 41060,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Traders",
+            "entity_type": "occupation",
+            "start": 240,
+            "end": 560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Wall street",
+            "entity_type": "location",
+            "start": 9840,
+            "end": 10480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "crash of 1987",
+            "entity_type": "event",
+            "start": 11320,
+            "end": 12720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 15240,
+            "end": 15720,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 15720,
+            "end": 16279,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "2008 financial crisis",
+            "entity_type": "event",
+            "start": 17640,
+            "end": 19000,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Chancellor",
+            "entity_type": "occupation",
+            "start": 20480,
+            "end": 21080,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "beginning of March",
+            "entity_type": "date_interval",
+            "start": 24160,
+            "end": 24800,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Signature Bank",
+            "entity_type": "organization",
+            "start": 26520,
+            "end": 27280,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Silvergate bank",
+            "entity_type": "organization",
+            "start": 27360,
+            "end": 28280,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Silicon Valley Bank",
+            "entity_type": "organization",
+            "start": 28520,
+            "end": 29320,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Signature bank",
+            "entity_type": "organization",
+            "start": 29320,
+            "end": 30040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "U.S",
+            "entity_type": "location",
+            "start": 32420,
+            "end": 32660,
+            "confidence": null,
+            "speaker": "D"
+        },
+        {
+            "text": "Fed",
+            "entity_type": "organization",
+            "start": 33820,
+            "end": 33980,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "A few days",
+            "entity_type": "duration",
+            "start": 35140,
+            "end": 35540,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Americans",
+            "entity_type": "nationality",
+            "start": 35820,
+            "end": 36460,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 40580,
+            "end": 41060,
+            "confidence": null,
+            "speaker": "C"
+        }
+    ]
+}

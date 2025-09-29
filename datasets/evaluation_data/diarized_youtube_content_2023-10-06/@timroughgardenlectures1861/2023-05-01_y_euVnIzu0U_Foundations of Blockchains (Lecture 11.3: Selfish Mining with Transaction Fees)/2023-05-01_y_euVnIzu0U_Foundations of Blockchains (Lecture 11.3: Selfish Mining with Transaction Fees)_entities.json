@@ -1,0 +1,922 @@
+{
+    "video_file": "2023-05-01_y_euVnIzu0U_Foundations of Blockchains (Lecture 11.3: Selfish Mining with Transaction Fees).mp3",
+    "entities": [
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 3920,
+            "end": 4840,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 9720,
+            "end": 10000,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 42130,
+            "end": 42610,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 59940,
+            "end": 60460,
+            "confidence": null
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 60460,
+            "end": 60940,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 65660,
+            "end": 66300,
+            "confidence": null
+        },
+        {
+            "text": "several years",
+            "entity_type": "duration",
+            "start": 68940,
+            "end": 69380,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 69540,
+            "end": 70100,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 87470,
+            "end": 87910,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 96830,
+            "end": 97270,
+            "confidence": null
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 99950,
+            "end": 100350,
+            "confidence": null
+        },
+        {
+            "text": "two ether",
+            "entity_type": "money_amount",
+            "start": 102830,
+            "end": 103390,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 114900,
+            "end": 115460,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 115700,
+            "end": 116220,
+            "confidence": null
+        },
+        {
+            "text": "2021",
+            "entity_type": "date_interval",
+            "start": 116420,
+            "end": 117180,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 121060,
+            "end": 121540,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 126140,
+            "end": 126540,
+            "confidence": null
+        },
+        {
+            "text": "ether",
+            "entity_type": "money_amount",
+            "start": 130590,
+            "end": 130950,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 136510,
+            "end": 136990,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 142350,
+            "end": 142830,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 152790,
+            "end": 153190,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 158600,
+            "end": 159000,
+            "confidence": null
+        },
+        {
+            "text": "6.25 bitcoins",
+            "entity_type": "money_amount",
+            "start": 159520,
+            "end": 160960,
+            "confidence": null
+        },
+        {
+            "text": "50 bitcoins",
+            "entity_type": "money_amount",
+            "start": 167160,
+            "end": 168000,
+            "confidence": null
+        },
+        {
+            "text": "25",
+            "entity_type": "money_amount",
+            "start": 169200,
+            "end": 169640,
+            "confidence": null
+        },
+        {
+            "text": "12 and a half",
+            "entity_type": "money_amount",
+            "start": 170040,
+            "end": 170640,
+            "confidence": null
+        },
+        {
+            "text": "six and a quarter",
+            "entity_type": "money_amount",
+            "start": 171040,
+            "end": 171680,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 177520,
+            "end": 177920,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 184530,
+            "end": 184970,
+            "confidence": null
+        },
+        {
+            "text": "2140",
+            "entity_type": "date_interval",
+            "start": 186770,
+            "end": 187650,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 194490,
+            "end": 194970,
+            "confidence": null
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 234100,
+            "end": 234620,
+            "confidence": null
+        },
+        {
+            "text": "Carlston",
+            "entity_type": "person_name",
+            "start": 235620,
+            "end": 236380,
+            "confidence": null
+        },
+        {
+            "text": "Kolodner",
+            "entity_type": "person_name",
+            "start": 236860,
+            "end": 237740,
+            "confidence": null
+        },
+        {
+            "text": "Weinberg",
+            "entity_type": "person_name",
+            "start": 237740,
+            "end": 238420,
+            "confidence": null
+        },
+        {
+            "text": "Narayanan",
+            "entity_type": "person_name",
+            "start": 238580,
+            "end": 239500,
+            "confidence": null
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 348610,
+            "end": 349130,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 386440,
+            "end": 386800,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 386800,
+            "end": 387240,
+            "confidence": null
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 413450,
+            "end": 413770,
+            "confidence": null
+        },
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 626950,
+            "end": 627750,
+            "confidence": null
+        },
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 631990,
+            "end": 632750,
+            "confidence": null
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 641150,
+            "end": 641550,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 647790,
+            "end": 648390,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 660110,
+            "end": 660710,
+            "confidence": null
+        },
+        {
+            "text": "B3",
+            "entity_type": "money_amount",
+            "start": 671340,
+            "end": 671860,
+            "confidence": null
+        },
+        {
+            "text": "B4",
+            "entity_type": "money_amount",
+            "start": 679900,
+            "end": 680420,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 690940,
+            "end": 691260,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 695720,
+            "end": 696240,
+            "confidence": null
+        },
+        {
+            "text": "BTC",
+            "entity_type": "money_amount",
+            "start": 698640,
+            "end": 699240,
+            "confidence": null
+        },
+        {
+            "text": "four years",
+            "entity_type": "duration",
+            "start": 702080,
+            "end": 702560,
+            "confidence": null
+        },
+        {
+            "text": "21, 40",
+            "entity_type": "date_interval",
+            "start": 704760,
+            "end": 705520,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 713360,
+            "end": 713800,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 713960,
+            "end": 714480,
+            "confidence": null
+        },
+        {
+            "text": "2140",
+            "entity_type": "date_interval",
+            "start": 715000,
+            "end": 715760,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 720930,
+            "end": 721530,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 732090,
+            "end": 732610,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 746330,
+            "end": 746930,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 757570,
+            "end": 758090,
+            "confidence": null
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 772970,
+            "end": 773290,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 782110,
+            "end": 782590,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 3920,
+            "end": 4840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 9720,
+            "end": 10000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 42130,
+            "end": 42610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 59940,
+            "end": 60460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 60460,
+            "end": 60940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 65660,
+            "end": 66300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "several years",
+            "entity_type": "duration",
+            "start": 68940,
+            "end": 69380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 69540,
+            "end": 70100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 87470,
+            "end": 87910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 96830,
+            "end": 97270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 99950,
+            "end": 100350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two ether",
+            "entity_type": "money_amount",
+            "start": 102830,
+            "end": 103390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 114900,
+            "end": 115460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 115700,
+            "end": 116220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2021",
+            "entity_type": "date_interval",
+            "start": 116420,
+            "end": 117180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 121060,
+            "end": 121540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 126140,
+            "end": 126540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ether",
+            "entity_type": "money_amount",
+            "start": 130590,
+            "end": 130950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 136510,
+            "end": 136990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 142350,
+            "end": 142830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 152790,
+            "end": 153190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 158600,
+            "end": 159000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "6.25 bitcoins",
+            "entity_type": "money_amount",
+            "start": 159520,
+            "end": 160960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "50 bitcoins",
+            "entity_type": "money_amount",
+            "start": 167160,
+            "end": 168000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "25",
+            "entity_type": "money_amount",
+            "start": 169200,
+            "end": 169640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12 and a half",
+            "entity_type": "money_amount",
+            "start": 170040,
+            "end": 170640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "six and a quarter",
+            "entity_type": "money_amount",
+            "start": 171040,
+            "end": 171680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 177520,
+            "end": 177920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 184530,
+            "end": 184970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2140",
+            "entity_type": "date_interval",
+            "start": 186770,
+            "end": 187650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 194490,
+            "end": 194970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 234100,
+            "end": 234620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Carlston",
+            "entity_type": "person_name",
+            "start": 235620,
+            "end": 236380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kolodner",
+            "entity_type": "person_name",
+            "start": 236860,
+            "end": 237740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Weinberg",
+            "entity_type": "person_name",
+            "start": 237740,
+            "end": 238420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Narayanan",
+            "entity_type": "person_name",
+            "start": 238580,
+            "end": 239500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 348610,
+            "end": 349130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 386440,
+            "end": 386800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 386800,
+            "end": 387240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 413450,
+            "end": 413770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 626950,
+            "end": 627750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "block producers",
+            "entity_type": "occupation",
+            "start": 631990,
+            "end": 632750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 641150,
+            "end": 641550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 647790,
+            "end": 648390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 660110,
+            "end": 660710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "B3",
+            "entity_type": "money_amount",
+            "start": 671340,
+            "end": 671860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "B4",
+            "entity_type": "money_amount",
+            "start": 679900,
+            "end": 680420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 690940,
+            "end": 691260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 695720,
+            "end": 696240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "BTC",
+            "entity_type": "money_amount",
+            "start": 698640,
+            "end": 699240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "four years",
+            "entity_type": "duration",
+            "start": 702080,
+            "end": 702560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "21, 40",
+            "entity_type": "date_interval",
+            "start": 704760,
+            "end": 705520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 713360,
+            "end": 713800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 713960,
+            "end": 714480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2140",
+            "entity_type": "date_interval",
+            "start": 715000,
+            "end": 715760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 720930,
+            "end": 721530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 732090,
+            "end": 732610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 746330,
+            "end": 746930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 757570,
+            "end": 758090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miner",
+            "entity_type": "occupation",
+            "start": 772970,
+            "end": 773290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 782110,
+            "end": 782590,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

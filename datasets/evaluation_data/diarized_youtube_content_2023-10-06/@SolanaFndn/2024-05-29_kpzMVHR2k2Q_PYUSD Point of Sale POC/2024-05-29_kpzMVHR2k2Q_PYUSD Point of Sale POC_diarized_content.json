@@ -1,0 +1,692 @@
+[
+    {
+        "text": "Here we have a basic demo for a point of sale checkout using PyUSD. To the left we have the point of sale checkout, and to the right we have a mobile Solana wallet. So the merchant would simply enter the checkout amount and generate a Solana Pay transaction request. The mobile wallet would then scan the QR code, which prompts the user to confirm a transaction. Once the customer confirms the transaction, the payment is sent from the customer's wallet to the merchant account.",
+        "start": 1760,
+        "end": 30830,
+        "confidence": 0.9754404,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Here",
+                "start": 1760,
+                "end": 1880,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 1880,
+                "end": 2040,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "have",
+                "start": 2040,
+                "end": 2160,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 2160,
+                "end": 2280,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "basic",
+                "start": 2280,
+                "end": 2600,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "demo",
+                "start": 2600,
+                "end": 2960,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "for",
+                "start": 2960,
+                "end": 3160,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 3160,
+                "end": 3360,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "point",
+                "start": 3360,
+                "end": 3560,
+                "confidence": 0.93896484,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 3560,
+                "end": 3680,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sale",
+                "start": 3680,
+                "end": 3880,
+                "confidence": 0.9968262,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "checkout",
+                "start": 3880,
+                "end": 4280,
+                "confidence": 0.9991862,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "using",
+                "start": 4280,
+                "end": 4560,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "PyUSD.",
+                "start": 4560,
+                "end": 5760,
+                "confidence": 0.96594,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "To",
+                "start": 5920,
+                "end": 6200,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 6200,
+                "end": 6320,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "left",
+                "start": 6320,
+                "end": 6520,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 6520,
+                "end": 6760,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "have",
+                "start": 6760,
+                "end": 6920,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 6920,
+                "end": 7120,
+                "confidence": 0.9921875,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "point",
+                "start": 7120,
+                "end": 7320,
+                "confidence": 0.9746094,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 7320,
+                "end": 7480,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sale",
+                "start": 7480,
+                "end": 7680,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "checkout,",
+                "start": 7680,
+                "end": 8160,
+                "confidence": 0.99820966,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 8240,
+                "end": 8520,
+                "confidence": 0.93847656,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 8520,
+                "end": 8680,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 8680,
+                "end": 8800,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "right",
+                "start": 8800,
+                "end": 8960,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 8960,
+                "end": 9160,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "have",
+                "start": 9160,
+                "end": 9360,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 9360,
+                "end": 9600,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "mobile",
+                "start": 9600,
+                "end": 10000,
+                "confidence": 0.9991862,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Solana",
+                "start": 10000,
+                "end": 10480,
+                "confidence": 0.998291,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "wallet.",
+                "start": 10480,
+                "end": 10960,
+                "confidence": 0.9921875,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "So",
+                "start": 11920,
+                "end": 12160,
+                "confidence": 0.8515625,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 12160,
+                "end": 12280,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "merchant",
+                "start": 12280,
+                "end": 12680,
+                "confidence": 0.96191406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "would",
+                "start": 12680,
+                "end": 12880,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "simply",
+                "start": 12880,
+                "end": 13320,
+                "confidence": 0.9934082,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "enter",
+                "start": 13320,
+                "end": 13640,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 13640,
+                "end": 13880,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "checkout",
+                "start": 13880,
+                "end": 14320,
+                "confidence": 0.9295247,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "amount",
+                "start": 14320,
+                "end": 14680,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 14680,
+                "end": 15000,
+                "confidence": 0.62158203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "generate",
+                "start": 15000,
+                "end": 15400,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 15400,
+                "end": 15600,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Solana",
+                "start": 15600,
+                "end": 16080,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Pay",
+                "start": 16080,
+                "end": 16319,
+                "confidence": 0.55615234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "transaction",
+                "start": 16319,
+                "end": 16760,
+                "confidence": 0.9991862,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "request.",
+                "start": 16760,
+                "end": 17200,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "The",
+                "start": 17600,
+                "end": 17880,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "mobile",
+                "start": 17880,
+                "end": 18200,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "wallet",
+                "start": 18200,
+                "end": 18520,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "would",
+                "start": 18520,
+                "end": 18680,
+                "confidence": 0.90625,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "then",
+                "start": 18680,
+                "end": 18840,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "scan",
+                "start": 18840,
+                "end": 19080,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 19080,
+                "end": 19240,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "QR",
+                "start": 19240,
+                "end": 19560,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "code,",
+                "start": 19560,
+                "end": 19920,
+                "confidence": 0.9873047,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "which",
+                "start": 21360,
+                "end": 21720,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "prompts",
+                "start": 21720,
+                "end": 22080,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 22080,
+                "end": 22240,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "user",
+                "start": 22240,
+                "end": 22640,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 22640,
+                "end": 22920,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "confirm",
+                "start": 22920,
+                "end": 23360,
+                "confidence": 0.96191406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 23360,
+                "end": 23560,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "transaction.",
+                "start": 23560,
+                "end": 24080,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Once",
+                "start": 25120,
+                "end": 25440,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 25440,
+                "end": 25600,
+                "confidence": 0.8925781,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "customer",
+                "start": 25600,
+                "end": 26000,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "confirms",
+                "start": 26000,
+                "end": 26320,
+                "confidence": 0.99487305,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 26320,
+                "end": 26520,
+                "confidence": 0.6928711,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "transaction,",
+                "start": 26520,
+                "end": 27040,
+                "confidence": 0.99934894,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 27310,
+                "end": 27430,
+                "confidence": 0.9824219,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "payment",
+                "start": 27430,
+                "end": 27710,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 27710,
+                "end": 27910,
+                "confidence": 0.94433594,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sent",
+                "start": 27910,
+                "end": 28190,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "from",
+                "start": 28190,
+                "end": 28510,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 28510,
+                "end": 28750,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "customer's",
+                "start": 28750,
+                "end": 29350,
+                "confidence": 0.9852295,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "wallet",
+                "start": 29350,
+                "end": 29710,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 29710,
+                "end": 29910,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 29910,
+                "end": 30110,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "merchant",
+                "start": 30110,
+                "end": 30550,
+                "confidence": 0.93725586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "account.",
+                "start": 30550,
+                "end": 30830,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    }
+]

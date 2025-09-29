@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-04-12_R4ddg3JkyL8_What Are You Building: MagicBlock.mp3",
+    "entities": [
+        {
+            "text": "Andrea",
+            "entity_type": "person_name",
+            "start": 5080,
+            "end": 5600,
+            "confidence": null
+        },
+        {
+            "text": "MagicBlock",
+            "entity_type": "organization",
+            "start": 5760,
+            "end": 6440,
+            "confidence": null
+        },
+        {
+            "text": "game developers",
+            "entity_type": "occupation",
+            "start": 17200,
+            "end": 17880,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Andrea",
+            "entity_type": "person_name",
+            "start": 5080,
+            "end": 5600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "MagicBlock",
+            "entity_type": "organization",
+            "start": 5760,
+            "end": 6440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "game developers",
+            "entity_type": "occupation",
+            "start": 17200,
+            "end": 17880,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

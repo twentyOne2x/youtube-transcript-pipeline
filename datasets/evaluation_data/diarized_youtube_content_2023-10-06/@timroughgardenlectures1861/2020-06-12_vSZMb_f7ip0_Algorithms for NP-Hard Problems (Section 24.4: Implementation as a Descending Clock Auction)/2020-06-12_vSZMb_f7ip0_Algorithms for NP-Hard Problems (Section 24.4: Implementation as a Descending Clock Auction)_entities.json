@@ -1,0 +1,997 @@
+{
+    "video_file": "2020-06-12_vSZMb_f7ip0_Algorithms for NP-Hard Problems (Section 24.4: Implementation as a Descending Clock Auction).mp3",
+    "entities": [
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 22840,
+            "end": 24080,
+            "confidence": null
+        },
+        {
+            "text": "a",
+            "entity_type": "duration",
+            "start": 35490,
+            "end": 35650,
+            "confidence": null
+        },
+        {
+            "text": "a couple of days",
+            "entity_type": "duration",
+            "start": 39850,
+            "end": 40650,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 59060,
+            "end": 59380,
+            "confidence": null
+        },
+        {
+            "text": "auctioneer",
+            "entity_type": "occupation",
+            "start": 127810,
+            "end": 128570,
+            "confidence": null
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 136690,
+            "end": 137610,
+            "confidence": null
+        },
+        {
+            "text": "Roger Federer",
+            "entity_type": "person_name",
+            "start": 139950,
+            "end": 140990,
+            "confidence": null
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 146390,
+            "end": 146990,
+            "confidence": null
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 157630,
+            "end": 158110,
+            "confidence": null
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 162190,
+            "end": 162590,
+            "confidence": null
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 171030,
+            "end": 172550,
+            "confidence": null
+        },
+        {
+            "text": "auctioneer",
+            "entity_type": "occupation",
+            "start": 177270,
+            "end": 177990,
+            "confidence": null
+        },
+        {
+            "text": "the United States government",
+            "entity_type": "organization",
+            "start": 178910,
+            "end": 179990,
+            "confidence": null
+        },
+        {
+            "text": "$1,000,000",
+            "entity_type": "money_amount",
+            "start": 201380,
+            "end": 202500,
+            "confidence": null
+        },
+        {
+            "text": "million dollars",
+            "entity_type": "money_amount",
+            "start": 214620,
+            "end": 215300,
+            "confidence": null
+        },
+        {
+            "text": "million dollars",
+            "entity_type": "money_amount",
+            "start": 225780,
+            "end": 226420,
+            "confidence": null
+        },
+        {
+            "text": "million dollar",
+            "entity_type": "money_amount",
+            "start": 230140,
+            "end": 247240,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 276010,
+            "end": 276410,
+            "confidence": null
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 303340,
+            "end": 304660,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 309340,
+            "end": 309740,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 313340,
+            "end": 313740,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 385250,
+            "end": 385690,
+            "confidence": null
+        },
+        {
+            "text": "$5 million",
+            "entity_type": "money_amount",
+            "start": 457410,
+            "end": 457890,
+            "confidence": null
+        },
+        {
+            "text": "$4 million",
+            "entity_type": "money_amount",
+            "start": 477260,
+            "end": 477860,
+            "confidence": null
+        },
+        {
+            "text": "3",
+            "entity_type": "money_amount",
+            "start": 501510,
+            "end": 501870,
+            "confidence": null
+        },
+        {
+            "text": "3",
+            "entity_type": "money_amount",
+            "start": 502670,
+            "end": 503070,
+            "confidence": null
+        },
+        {
+            "text": "three",
+            "entity_type": "money_amount",
+            "start": 513230,
+            "end": 513550,
+            "confidence": null
+        },
+        {
+            "text": "$1,000,000",
+            "entity_type": "money_amount",
+            "start": 589420,
+            "end": 596000,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 697310,
+            "end": 697790,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 826000,
+            "end": 826440,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 832400,
+            "end": 832760,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 834760,
+            "end": 835320,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 955610,
+            "end": 955930,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 963050,
+            "end": 963450,
+            "confidence": null
+        },
+        {
+            "text": "capital S",
+            "entity_type": "organization",
+            "start": 967210,
+            "end": 968010,
+            "confidence": null
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1062670,
+            "end": 1062950,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1094260,
+            "end": 1094500,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1096340,
+            "end": 1096540,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1098060,
+            "end": 1098340,
+            "confidence": null
+        },
+        {
+            "text": "S",
+            "entity_type": "organization",
+            "start": 1099340,
+            "end": 1099660,
+            "confidence": null
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1107780,
+            "end": 1108140,
+            "confidence": null
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 1143860,
+            "end": 1145340,
+            "confidence": null
+        },
+        {
+            "text": "T",
+            "entity_type": "location",
+            "start": 1190730,
+            "end": 1191050,
+            "confidence": null
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1194250,
+            "end": 1194570,
+            "confidence": null
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1199970,
+            "end": 1200250,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1216270,
+            "end": 1216710,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1226550,
+            "end": 1226910,
+            "confidence": null
+        },
+        {
+            "text": "ction",
+            "entity_type": "event",
+            "start": 1227430,
+            "end": 1227910,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1290810,
+            "end": 1291290,
+            "confidence": null
+        },
+        {
+            "text": "millions",
+            "entity_type": "money_amount",
+            "start": 1346710,
+            "end": 1347070,
+            "confidence": null
+        },
+        {
+            "text": "tens of millions of dollars",
+            "entity_type": "money_amount",
+            "start": 1347390,
+            "end": 1348710,
+            "confidence": null
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 1371640,
+            "end": 1373200,
+            "confidence": null
+        },
+        {
+            "text": "wcbs",
+            "entity_type": "organization",
+            "start": 1387480,
+            "end": 1388240,
+            "confidence": null
+        },
+        {
+            "text": "CBS",
+            "entity_type": "organization",
+            "start": 1388960,
+            "end": 1389400,
+            "confidence": null
+        },
+        {
+            "text": "New York City",
+            "entity_type": "location",
+            "start": 1390760,
+            "end": 1391520,
+            "confidence": null
+        },
+        {
+            "text": "$900 million",
+            "entity_type": "money_amount",
+            "start": 1394320,
+            "end": 1395920,
+            "confidence": null
+        },
+        {
+            "text": "billion dollars",
+            "entity_type": "money_amount",
+            "start": 1396600,
+            "end": 1397240,
+            "confidence": null
+        },
+        {
+            "text": "$900 million",
+            "entity_type": "money_amount",
+            "start": 1414570,
+            "end": 1415290,
+            "confidence": null
+        },
+        {
+            "text": "New York",
+            "entity_type": "location",
+            "start": 1433180,
+            "end": 1433540,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1440020,
+            "end": 1440300,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1565490,
+            "end": 1565770,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1638910,
+            "end": 1639190,
+            "confidence": null
+        },
+        {
+            "text": "millions of dollars",
+            "entity_type": "money_amount",
+            "start": 1665630,
+            "end": 1666750,
+            "confidence": null
+        },
+        {
+            "text": "auction designers",
+            "entity_type": "occupation",
+            "start": 1690820,
+            "end": 1691820,
+            "confidence": null
+        },
+        {
+            "text": "20 plus years",
+            "entity_type": "duration",
+            "start": 1703150,
+            "end": 1704110,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1719630,
+            "end": 1719990,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 22840,
+            "end": 24080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a",
+            "entity_type": "duration",
+            "start": 35490,
+            "end": 35650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a couple of days",
+            "entity_type": "duration",
+            "start": 39850,
+            "end": 40650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 59060,
+            "end": 59380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auctioneer",
+            "entity_type": "occupation",
+            "start": 127810,
+            "end": 128570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 136690,
+            "end": 137610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Roger Federer",
+            "entity_type": "person_name",
+            "start": 139950,
+            "end": 140990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 146390,
+            "end": 146990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 157630,
+            "end": 158110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$100",
+            "entity_type": "money_amount",
+            "start": 162190,
+            "end": 162590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 171030,
+            "end": 172550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auctioneer",
+            "entity_type": "occupation",
+            "start": 177270,
+            "end": 177990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the United States government",
+            "entity_type": "organization",
+            "start": 178910,
+            "end": 179990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$1,000,000",
+            "entity_type": "money_amount",
+            "start": 201380,
+            "end": 202500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "million dollars",
+            "entity_type": "money_amount",
+            "start": 214620,
+            "end": 215300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "million dollars",
+            "entity_type": "money_amount",
+            "start": 225780,
+            "end": 226420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "million dollar",
+            "entity_type": "money_amount",
+            "start": 230140,
+            "end": 247240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 276010,
+            "end": 276410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 303340,
+            "end": 304660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 309340,
+            "end": 309740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 313340,
+            "end": 313740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 385250,
+            "end": 385690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$5 million",
+            "entity_type": "money_amount",
+            "start": 457410,
+            "end": 457890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$4 million",
+            "entity_type": "money_amount",
+            "start": 477260,
+            "end": 477860,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "3",
+            "entity_type": "money_amount",
+            "start": 501510,
+            "end": 501870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "3",
+            "entity_type": "money_amount",
+            "start": 502670,
+            "end": 503070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three",
+            "entity_type": "money_amount",
+            "start": 513230,
+            "end": 513550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$1,000,000",
+            "entity_type": "money_amount",
+            "start": 589420,
+            "end": 596000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 697310,
+            "end": 697790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 826000,
+            "end": 826440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 832400,
+            "end": 832760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 834760,
+            "end": 835320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 955610,
+            "end": 955930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 963050,
+            "end": 963450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "capital S",
+            "entity_type": "organization",
+            "start": 967210,
+            "end": 968010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1062670,
+            "end": 1062950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1094260,
+            "end": 1094500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1096340,
+            "end": 1096540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1098060,
+            "end": 1098340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "S",
+            "entity_type": "organization",
+            "start": 1099340,
+            "end": 1099660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "V",
+            "entity_type": "organization",
+            "start": 1107780,
+            "end": 1108140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 1143860,
+            "end": 1145340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "T",
+            "entity_type": "location",
+            "start": 1190730,
+            "end": 1191050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1194250,
+            "end": 1194570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "S",
+            "entity_type": "location",
+            "start": 1199970,
+            "end": 1200250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1216270,
+            "end": 1216710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1226550,
+            "end": 1226910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ction",
+            "entity_type": "event",
+            "start": 1227430,
+            "end": 1227910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1290810,
+            "end": 1291290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "millions",
+            "entity_type": "money_amount",
+            "start": 1346710,
+            "end": 1347070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "tens of millions of dollars",
+            "entity_type": "money_amount",
+            "start": 1347390,
+            "end": 1348710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC incentive auction",
+            "entity_type": "event",
+            "start": 1371640,
+            "end": 1373200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "wcbs",
+            "entity_type": "organization",
+            "start": 1387480,
+            "end": 1388240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CBS",
+            "entity_type": "organization",
+            "start": 1388960,
+            "end": 1389400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "New York City",
+            "entity_type": "location",
+            "start": 1390760,
+            "end": 1391520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$900 million",
+            "entity_type": "money_amount",
+            "start": 1394320,
+            "end": 1395920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "billion dollars",
+            "entity_type": "money_amount",
+            "start": 1396600,
+            "end": 1397240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$900 million",
+            "entity_type": "money_amount",
+            "start": 1414570,
+            "end": 1415290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "New York",
+            "entity_type": "location",
+            "start": 1433180,
+            "end": 1433540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1440020,
+            "end": 1440300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1565490,
+            "end": 1565770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1638910,
+            "end": 1639190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "millions of dollars",
+            "entity_type": "money_amount",
+            "start": 1665630,
+            "end": 1666750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auction designers",
+            "entity_type": "occupation",
+            "start": 1690820,
+            "end": 1691820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "20 plus years",
+            "entity_type": "duration",
+            "start": 1703150,
+            "end": 1704110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 1719630,
+            "end": 1719990,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

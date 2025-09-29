@@ -1,0 +1,487 @@
+{
+    "video_file": "2024-10-02_O2skwIBYFcw_Solana Changelog Oct 2 - Radar, Partitioned Rent, and Simulating Compute in CLI.mp3",
+    "entities": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 5640,
+            "end": 6000,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6720,
+            "end": 6920,
+            "confidence": null
+        },
+        {
+            "text": "Solana Foundation Dev Rel team",
+            "entity_type": "organization",
+            "start": 7160,
+            "end": 8600,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9200,
+            "end": 9560,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10360,
+            "end": 10800,
+            "confidence": null
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 14440,
+            "end": 15280,
+            "confidence": null
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 16159,
+            "end": 16840,
+            "confidence": null
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 20080,
+            "end": 20720,
+            "confidence": null
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 26000,
+            "end": 26720,
+            "confidence": null
+        },
+        {
+            "text": "February",
+            "entity_type": "date_interval",
+            "start": 26920,
+            "end": 27360,
+            "confidence": null
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 29220,
+            "end": 29820,
+            "confidence": null
+        },
+        {
+            "text": "Radar hackathon",
+            "entity_type": "event",
+            "start": 39540,
+            "end": 40420,
+            "confidence": null
+        },
+        {
+            "text": "Coliseum",
+            "entity_type": "organization",
+            "start": 40860,
+            "end": 41500,
+            "confidence": null
+        },
+        {
+            "text": "a couple of days",
+            "entity_type": "duration",
+            "start": 43220,
+            "end": 44100,
+            "confidence": null
+        },
+        {
+            "text": "couple of weeks",
+            "entity_type": "duration",
+            "start": 44100,
+            "end": 44780,
+            "confidence": null
+        },
+        {
+            "text": "October 8th",
+            "entity_type": "date",
+            "start": 45220,
+            "end": 46100,
+            "confidence": null
+        },
+        {
+            "text": "Radar hackathon",
+            "entity_type": "event",
+            "start": 49940,
+            "end": 51020,
+            "confidence": null
+        },
+        {
+            "text": "Colosseum",
+            "entity_type": "organization",
+            "start": 51980,
+            "end": 52580,
+            "confidence": null
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 55420,
+            "end": 56020,
+            "confidence": null
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 177150,
+            "end": 177870,
+            "confidence": null
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 181310,
+            "end": 182230,
+            "confidence": null
+        },
+        {
+            "text": "John Cinque",
+            "entity_type": "person_name",
+            "start": 200970,
+            "end": 202010,
+            "confidence": null
+        },
+        {
+            "text": "Hardhat",
+            "entity_type": "organization",
+            "start": 285880,
+            "end": 286400,
+            "confidence": null
+        },
+        {
+            "text": "Chad",
+            "entity_type": "person_name",
+            "start": 286400,
+            "end": 286760,
+            "confidence": null
+        },
+        {
+            "text": "Turbine team",
+            "entity_type": "organization",
+            "start": 320930,
+            "end": 321850,
+            "confidence": null
+        },
+        {
+            "text": "JavaScript TypeScript developers",
+            "entity_type": "occupation",
+            "start": 332650,
+            "end": 333890,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 357370,
+            "end": 358010,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 370610,
+            "end": 371610,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 372210,
+            "end": 373170,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 374370,
+            "end": 375010,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 375010,
+            "end": 375330,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 394220,
+            "end": 394580,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 5640,
+            "end": 6000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6720,
+            "end": 6920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Foundation Dev Rel team",
+            "entity_type": "organization",
+            "start": 7160,
+            "end": 8600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9200,
+            "end": 9560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10360,
+            "end": 10800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 14440,
+            "end": 15280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 16159,
+            "end": 16840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Breakpoint",
+            "entity_type": "event",
+            "start": 20080,
+            "end": 20720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 26000,
+            "end": 26720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "February",
+            "entity_type": "date_interval",
+            "start": 26920,
+            "end": 27360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 29220,
+            "end": 29820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Radar hackathon",
+            "entity_type": "event",
+            "start": 39540,
+            "end": 40420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coliseum",
+            "entity_type": "organization",
+            "start": 40860,
+            "end": 41500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a couple of days",
+            "entity_type": "duration",
+            "start": 43220,
+            "end": 44100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "couple of weeks",
+            "entity_type": "duration",
+            "start": 44100,
+            "end": 44780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "October 8th",
+            "entity_type": "date",
+            "start": 45220,
+            "end": 46100,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Radar hackathon",
+            "entity_type": "event",
+            "start": 49940,
+            "end": 51020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colosseum",
+            "entity_type": "organization",
+            "start": 51980,
+            "end": 52580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 55420,
+            "end": 56020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 177150,
+            "end": 177870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 181310,
+            "end": 182230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "John Cinque",
+            "entity_type": "person_name",
+            "start": 200970,
+            "end": 202010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hardhat",
+            "entity_type": "organization",
+            "start": 285880,
+            "end": 286400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chad",
+            "entity_type": "person_name",
+            "start": 286400,
+            "end": 286760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Turbine team",
+            "entity_type": "organization",
+            "start": 320930,
+            "end": 321850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "JavaScript TypeScript developers",
+            "entity_type": "occupation",
+            "start": 332650,
+            "end": 333890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 357370,
+            "end": 358010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 370610,
+            "end": 371610,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 372210,
+            "end": 373170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 374370,
+            "end": 375010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 375010,
+            "end": 375330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 394220,
+            "end": 394580,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

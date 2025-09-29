@@ -1,0 +1,412 @@
+{
+    "video_file": "2024-05-09_ggmZB58huCY_Solana Changelog May 8 - MoveStake, Core Concepts, and Bigtable Support.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5760,
+            "end": 6160,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7080,
+            "end": 7320,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8320,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 52370,
+            "end": 52890,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 57390,
+            "end": 57870,
+            "confidence": null
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 70590,
+            "end": 71190,
+            "confidence": null
+        },
+        {
+            "text": "John Shankui",
+            "entity_type": "person_name",
+            "start": 71390,
+            "end": 72110,
+            "confidence": null
+        },
+        {
+            "text": "Tierra",
+            "entity_type": "person_name",
+            "start": 133000,
+            "end": 133440,
+            "confidence": null
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 148480,
+            "end": 148920,
+            "confidence": null
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 150240,
+            "end": 150760,
+            "confidence": null
+        },
+        {
+            "text": "creator",
+            "entity_type": "occupation",
+            "start": 152040,
+            "end": 152440,
+            "confidence": null
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 156360,
+            "end": 156720,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 181220,
+            "end": 181620,
+            "confidence": null
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 184380,
+            "end": 184820,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 188060,
+            "end": 188340,
+            "confidence": null
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 193980,
+            "end": 195460,
+            "confidence": null
+        },
+        {
+            "text": "dev rel team",
+            "entity_type": "organization",
+            "start": 195940,
+            "end": 196580,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 196660,
+            "end": 197460,
+            "confidence": null
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 211000,
+            "end": 211920,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 254670,
+            "end": 255270,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 257680,
+            "end": 258360,
+            "confidence": null
+        },
+        {
+            "text": "Christian",
+            "entity_type": "person_name",
+            "start": 262600,
+            "end": 263160,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 267200,
+            "end": 267440,
+            "confidence": null
+        },
+        {
+            "text": "Chalda",
+            "entity_type": "person_name",
+            "start": 267760,
+            "end": 268440,
+            "confidence": null
+        },
+        {
+            "text": "White Seal, Mark, Jonas, Mike",
+            "entity_type": "person_name",
+            "start": 268680,
+            "end": 271240,
+            "confidence": null
+        },
+        {
+            "text": "Exchange",
+            "entity_type": "organization",
+            "start": 278120,
+            "end": 278560,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 279120,
+            "end": 279720,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5760,
+            "end": 6160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7080,
+            "end": 7320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 52370,
+            "end": 52890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 57390,
+            "end": 57870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 70590,
+            "end": 71190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "John Shankui",
+            "entity_type": "person_name",
+            "start": 71390,
+            "end": 72110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tierra",
+            "entity_type": "person_name",
+            "start": 133000,
+            "end": 133440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 148480,
+            "end": 148920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 150240,
+            "end": 150760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "creator",
+            "entity_type": "occupation",
+            "start": 152040,
+            "end": 152440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 156360,
+            "end": 156720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 181220,
+            "end": 181620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kevin",
+            "entity_type": "person_name",
+            "start": 184380,
+            "end": 184820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 188060,
+            "end": 188340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 193980,
+            "end": 195460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "dev rel team",
+            "entity_type": "organization",
+            "start": 195940,
+            "end": 196580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 196660,
+            "end": 197460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 211000,
+            "end": 211920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 254670,
+            "end": 255270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 257680,
+            "end": 258360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Christian",
+            "entity_type": "person_name",
+            "start": 262600,
+            "end": 263160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 267200,
+            "end": 267440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chalda",
+            "entity_type": "person_name",
+            "start": 267760,
+            "end": 268440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "White Seal, Mark, Jonas, Mike",
+            "entity_type": "person_name",
+            "start": 268680,
+            "end": 271240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Exchange",
+            "entity_type": "organization",
+            "start": 278120,
+            "end": 278560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 279120,
+            "end": 279720,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

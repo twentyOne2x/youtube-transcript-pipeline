@@ -1,0 +1,82 @@
+{
+    "video_file": "2024-10-10_79ziQD_Jy2g_What Are You Building Ft. Civic.mp3",
+    "entities": [
+        {
+            "text": "Titos",
+            "entity_type": "person_name",
+            "start": 240,
+            "end": 680,
+            "confidence": null
+        },
+        {
+            "text": "civvi.com",
+            "entity_type": "url",
+            "start": 21640,
+            "end": 22520,
+            "confidence": null
+        },
+        {
+            "text": "docs.civvi.com",
+            "entity_type": "url",
+            "start": 22920,
+            "end": 24120,
+            "confidence": null
+        },
+        {
+            "text": "Testnet",
+            "entity_type": "organization",
+            "start": 27480,
+            "end": 27960,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 30580,
+            "end": 31100,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Titos",
+            "entity_type": "person_name",
+            "start": 240,
+            "end": 680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "civvi.com",
+            "entity_type": "url",
+            "start": 21640,
+            "end": 22520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "docs.civvi.com",
+            "entity_type": "url",
+            "start": 22920,
+            "end": 24120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Testnet",
+            "entity_type": "organization",
+            "start": 27480,
+            "end": 27960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 30580,
+            "end": 31100,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

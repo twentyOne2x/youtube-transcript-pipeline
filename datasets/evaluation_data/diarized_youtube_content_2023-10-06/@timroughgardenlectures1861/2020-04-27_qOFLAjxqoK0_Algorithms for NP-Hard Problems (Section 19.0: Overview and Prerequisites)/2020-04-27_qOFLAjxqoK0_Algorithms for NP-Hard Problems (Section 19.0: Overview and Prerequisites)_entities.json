@@ -1,0 +1,337 @@
+{
+    "video_file": "2020-04-27_qOFLAjxqoK0_Algorithms for NP-Hard Problems (Section 19.0: Overview and Prerequisites).mp3",
+    "entities": [
+        {
+            "text": "Tim Roughgarden",
+            "entity_type": "person_name",
+            "start": 1800,
+            "end": 2760,
+            "confidence": null
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 55260,
+            "end": 55900,
+            "confidence": null
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 65000,
+            "end": 65400,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 67800,
+            "end": 68080,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 71040,
+            "end": 71320,
+            "confidence": null
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 162010,
+            "end": 162690,
+            "confidence": null
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 188930,
+            "end": 189370,
+            "confidence": null
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 243340,
+            "end": 243780,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 252630,
+            "end": 253070,
+            "confidence": null
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 254990,
+            "end": 255630,
+            "confidence": null
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 321020,
+            "end": 322060,
+            "confidence": null
+        },
+        {
+            "text": "ng",
+            "entity_type": "occupation",
+            "start": 408400,
+            "end": 408800,
+            "confidence": null
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 413320,
+            "end": 413760,
+            "confidence": null
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 471760,
+            "end": 472600,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 500200,
+            "end": 500560,
+            "confidence": null
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 507700,
+            "end": 508460,
+            "confidence": null
+        },
+        {
+            "text": "tens of billions of dollars",
+            "entity_type": "money_amount",
+            "start": 524460,
+            "end": 525900,
+            "confidence": null
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 529220,
+            "end": 529740,
+            "confidence": null
+        },
+        {
+            "text": "the United states",
+            "entity_type": "location",
+            "start": 530140,
+            "end": 530940,
+            "confidence": null
+        },
+        {
+            "text": "20",
+            "entity_type": "date_interval",
+            "start": 531540,
+            "end": 531900,
+            "confidence": null
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 533600,
+            "end": 534200,
+            "confidence": null
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 560840,
+            "end": 561400,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Tim Roughgarden",
+            "entity_type": "person_name",
+            "start": 1800,
+            "end": 2760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dijkstra",
+            "entity_type": "person_name",
+            "start": 55260,
+            "end": 55900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "programming",
+            "entity_type": "occupation",
+            "start": 65000,
+            "end": 65400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 67800,
+            "end": 68080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 71040,
+            "end": 71320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 162010,
+            "end": 162690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 188930,
+            "end": 189370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 243340,
+            "end": 243780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 252630,
+            "end": 253070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 254990,
+            "end": 255630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 321020,
+            "end": 322060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ng",
+            "entity_type": "occupation",
+            "start": 408400,
+            "end": 408800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "salesman",
+            "entity_type": "occupation",
+            "start": 413320,
+            "end": 413760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "algorithm designer",
+            "entity_type": "occupation",
+            "start": 471760,
+            "end": 472600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 500200,
+            "end": 500560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 507700,
+            "end": 508460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "tens of billions of dollars",
+            "entity_type": "money_amount",
+            "start": 524460,
+            "end": 525900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "FCC",
+            "entity_type": "organization",
+            "start": 529220,
+            "end": 529740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the United states",
+            "entity_type": "location",
+            "start": 530140,
+            "end": 530940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "20",
+            "entity_type": "date_interval",
+            "start": 531540,
+            "end": 531900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 533600,
+            "end": 534200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 560840,
+            "end": 561400,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}
