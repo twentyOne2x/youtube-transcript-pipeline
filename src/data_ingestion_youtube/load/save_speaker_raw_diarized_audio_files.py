@@ -38,8 +38,8 @@ CACHE_FILE = os.path.join(YOUTUBE_VIDEO_DIRECTORY, '.diarization_cache.pkl')
 # =========================
 
 # Worker concurrency
-MAX_CONCURRENT_TRANSCRIPTIONS = int(os.getenv("AAI_MAX_CONCURRENT_TRANSCRIPTIONS", "5"))
-MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "3"))  # upload is the bottleneck
+MAX_CONCURRENT_TRANSCRIPTIONS = int(os.getenv("AAI_MAX_CONCURRENT_TRANSCRIPTIONS", "10"))
+MAX_UPLOADS_PER_KEY = int(os.getenv("AAI_MAX_UPLOADS_PER_KEY", "4"))  # upload is the bottleneck
 
 # Timeouts / retries
 TRANSCRIBE_TIMEOUT_SEC = int(os.getenv("AAI_TRANSCRIBE_TIMEOUT_SEC", "1800"))  # 30 min
@@ -55,6 +55,11 @@ PRIORITIZE_SMALL_CHANNELS = os.getenv("PRIORITIZE_SMALL_CHANNELS", "1") not in (
 GROUP_BY_YEAR = os.getenv("GROUP_BY_YEAR", "0") in ("1", "true", "True")
 CHANNELS_PER_PASS = max(1, int(os.getenv("CHANNELS_PER_PASS", "1")))
 MAX_PER_CHANNEL = int(os.getenv("MAX_PER_CHANNEL", "0"))  # 0 = no cap
+
+AAI_ENABLE_ENTITIES = os.getenv("AAI_ENABLE_ENTITIES", "1") not in ("0","false","False")
+
+def needs_sidecar(p): return not _has_valid_sidecar(p)
+def needs_entities(p): return not _has_valid_entities(p)
 
 # Plan CSV output
 PLAN_CSV = Path(root_directory()) / "data" / "links" / "youtube" / "planned_transcriptions_summary.csv"
@@ -389,11 +394,12 @@ def utterance_to_safe_dict(u) -> dict:
 
 
 def transcribe_single_file(api_key, file_path, cache_file, logger):
-    """Transcribe one file; guarded by per-key upload limiter."""
+    """Transcribe one file; guarded by per-key upload limiter.
+       - If diarized sidecar exists but entities are missing → run entities-only backfill (no diarization).
+       - Else → run full diarization (+entities if AAI_ENABLE_ENTITIES != 0)."""
     cache = ProcessSafeCache(cache_file)
     try:
-        transcript_out = os.path.splitext(file_path)[0] + "_diarized_content.json"
-
+        # Fast skip if both outputs present/valid
         if cache.is_processed(file_path):
             logger.debug(f"Already processed: {os.path.basename(file_path)}")
             return {"status": "SKIPPED", "file": file_path}
@@ -402,22 +408,37 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             logger.warning(f"Missing file: {file_path}")
             return {"status": "FAILED", "file": file_path, "reason": "missing_file"}
 
+        # Paths & mode
+        sidecar_path = _sidecar_path(file_path)
+        entities_path = _entities_path(file_path)
+        have_sidecar = _has_valid_sidecar(file_path)
+        have_entities = _has_valid_entities(file_path)
+        entities_only = have_sidecar and not have_entities
+
         # For logs
         path_segs = file_path.split(os.sep)
         channel_name = path_segs[-3] if len(path_segs) >= 3 else "unknown"
         fname = path_segs[-1]
 
-        logger.info(f"Starting diarization: [{channel_name}/{fname}]")
-
-        # Upload with per-key limiter
+        # Config
         import assemblyai as aai
-        config = aai.TranscriptionConfig(
-            speaker_labels=True,
-            entity_detection=True,
-        )
+        enable_entities_full = os.getenv("AAI_ENABLE_ENTITIES", "1").lower() not in ("0", "false", "no")
+        if entities_only:
+            logger.info(f"Starting entities backfill: [{channel_name}/{fname}]")
+            config = aai.TranscriptionConfig(
+                speaker_labels=False,
+                entity_detection=True,
+            )
+        else:
+            logger.info(f"Starting diarization{' + entities' if enable_entities_full else ''}: [{channel_name}/{fname}]")
+            config = aai.TranscriptionConfig(
+                speaker_labels=True,
+                entity_detection=enable_entities_full,
+            )
 
         transcriber = aai.Transcriber()
 
+        # Upload (guarded per API key)
         if not hasattr(transcribe_single_file, "_limiters"):
             transcribe_single_file._limiters = {}
         limiter = transcribe_single_file._limiters.setdefault(api_key, PerKeyLimiter(MAX_UPLOADS_PER_KEY))
@@ -430,11 +451,10 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         finally:
             limiter.release()
 
-        # Kick and wait with a real timeout
+        # Kick and wait with real timeout
         start_time = time.time()
         job = transcriber.submit(audio_url, config=config)
 
-        # New SDK uses futures underneath; give it a deadline
         import concurrent.futures as _cf
         try:
             transcript = job.wait_for_completion_async().result(timeout=TRANSCRIBE_TIMEOUT_SEC)
@@ -458,9 +478,38 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
             logger.error(f"AssemblyAI error for [{channel_name}/{fname}]: {err or status}")
             return {"status": "FAILED", "file": file_path, "reason": err or status}
 
+        # -------- ENTITIES-ONLY BACKFILL --------
+        if entities_only:
+            ents_raw = getattr(transcript, "entities", None) or []
+            entities = [entity_to_safe_dict(e) for e in ents_raw]
+
+            # Load existing diarized sidecar to attach speakers
+            try:
+                with open(sidecar_path, "r") as f:
+                    diarized_payload = json.load(f)
+            except Exception as e:
+                logger.warning(f"Could not read existing sidecar for speaker attachment; saving entities without speakers. Err: {e}")
+                diarized_payload = []
+
+            entities_with_speakers = attach_speakers_to_entities(entities, diarized_payload)
+            with open(entities_path, "w") as f:
+                json.dump(
+                    {
+                        "video_file": os.path.basename(file_path),
+                        "entities": entities,
+                        "entities_with_speakers": entities_with_speakers,
+                    },
+                    f,
+                    indent=4,
+                )
+            logger.info(f"Backfilled {len(entities)} entities → {os.path.basename(entities_path)}")
+            cache.mark_processed(file_path)
+            return {"status": "SUCCESS", "file": file_path, "duration": duration, "entities": len(entities), "mode": "ENTITIES_ONLY"}
+
+        # -------- FULL RUN (DIARIZATION [+ ENTITIES]) --------
         utterances = getattr(transcript, "utterances", None)
 
-        # Save
+        # Save diarized sidecar
         if not utterances:
             # Fallback single blob of text
             text = getattr(transcript, "text", "") or ""
@@ -474,29 +523,37 @@ def transcribe_single_file(api_key, file_path, cache_file, logger):
         else:
             payload = [utterance_to_safe_dict(u) for u in utterances]
 
-        with open(transcript_out, 'w') as f:
+        with open(sidecar_path, 'w') as f:
             json.dump(payload, f, indent=4)
 
-        # ------ Entities (requires entity_detection=True) ------
+        # Save entities only if requested/returned
         ents_raw = getattr(transcript, "entities", None) or []
-        entities = [entity_to_safe_dict(e) for e in ents_raw]
-        entities_with_speakers = attach_speakers_to_entities(entities, payload)
-        entities_out = os.path.splitext(file_path)[0] + "_entities.json"
-        with open(entities_out, "w") as f:
-            json.dump(
-                {
-                    "video_file": os.path.basename(file_path),
-                    "entities": entities,
-                    "entities_with_speakers": entities_with_speakers,
-                },
-                f,
-                indent=4,
-            )
-        logger.info(f"Saved {len(entities)} entities → {os.path.basename(entities_out)}")
+        if enable_entities_full:
+            entities = [entity_to_safe_dict(e) for e in ents_raw]
+            entities_with_speakers = attach_speakers_to_entities(entities, payload)
+            with open(entities_path, "w") as f:
+                json.dump(
+                    {
+                        "video_file": os.path.basename(file_path),
+                        "entities": entities,
+                        "entities_with_speakers": entities_with_speakers,
+                    },
+                    f,
+                    indent=4,
+                )
+            logger.info(f"Saved {len(entities)} entities → {os.path.basename(entities_path)}")
+        else:
+            logger.info("Entities disabled for this run (AAI_ENABLE_ENTITIES=0); only diarized sidecar saved.")
 
         cache.mark_processed(file_path)
         logger.info(f"SUCCESS [{channel_name}/{fname}] in {duration:.1f}s")
-        return {"status": "SUCCESS", "file": file_path, "duration": duration, "entities": len(entities)}
+        return {
+            "status": "SUCCESS",
+            "file": file_path,
+            "duration": duration,
+            "entities": len(ents_raw) if enable_entities_full else 0,
+            "mode": "FULL"
+        }
 
     except Exception as e:
         logger.error(f"Error transcribing {file_path}: {e}")
@@ -684,11 +741,6 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
             f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
             f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
         )
-
-        if i + batch_size < total:
-            sleep_s = random.uniform(2, 5)
-            logger.info(f"Waiting {sleep_s:.1f}s before next batch…")
-            time.sleep(sleep_s)
 
     logger.info(
         f"Worker completed! Processed {sum(completed.values())} files "
