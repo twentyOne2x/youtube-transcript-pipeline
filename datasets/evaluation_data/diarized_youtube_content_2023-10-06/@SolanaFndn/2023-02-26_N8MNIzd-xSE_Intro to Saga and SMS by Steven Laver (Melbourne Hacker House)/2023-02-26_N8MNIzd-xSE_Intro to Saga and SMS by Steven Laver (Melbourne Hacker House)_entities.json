@@ -1,0 +1,592 @@
+{
+    "video_file": "2023-02-26_N8MNIzd-xSE_Intro to Saga and SMS by Steven Laver (Melbourne Hacker House).mp3",
+    "entities": [
+        {
+            "text": "Steven Laver",
+            "entity_type": "person_name",
+            "start": 3040,
+            "end": 3840,
+            "confidence": null
+        },
+        {
+            "text": "engineering lead",
+            "entity_type": "occupation",
+            "start": 4520,
+            "end": 5320,
+            "confidence": null
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 5600,
+            "end": 6640,
+            "confidence": null
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 9760,
+            "end": 10640,
+            "confidence": null
+        },
+        {
+            "text": "Ellie",
+            "entity_type": "person_name",
+            "start": 16560,
+            "end": 16960,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 25840,
+            "end": 26320,
+            "confidence": null
+        },
+        {
+            "text": "Laura",
+            "entity_type": "person_name",
+            "start": 48380,
+            "end": 49020,
+            "confidence": null
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 51660,
+            "end": 52300,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 65170,
+            "end": 65730,
+            "confidence": null
+        },
+        {
+            "text": "Saga",
+            "entity_type": "organization",
+            "start": 102270,
+            "end": 102710,
+            "confidence": null
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 106160,
+            "end": 106680,
+            "confidence": null
+        },
+        {
+            "text": "24 hours",
+            "entity_type": "duration",
+            "start": 116000,
+            "end": 116640,
+            "confidence": null
+        },
+        {
+            "text": "Australia",
+            "entity_type": "location",
+            "start": 139410,
+            "end": 139770,
+            "confidence": null
+        },
+        {
+            "text": "June of last year",
+            "entity_type": "date_interval",
+            "start": 149210,
+            "end": 150170,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 171400,
+            "end": 171920,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 178680,
+            "end": 179120,
+            "confidence": null
+        },
+        {
+            "text": "hacker",
+            "entity_type": "occupation",
+            "start": 209490,
+            "end": 209890,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 239900,
+            "end": 240420,
+            "confidence": null
+        },
+        {
+            "text": "solanamobile.com",
+            "entity_type": "url",
+            "start": 314440,
+            "end": 315960,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 316440,
+            "end": 317080,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 329640,
+            "end": 330040,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 332360,
+            "end": 332920,
+            "confidence": null
+        },
+        {
+            "text": "NFTs",
+            "entity_type": "money_amount",
+            "start": 333480,
+            "end": 334360,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 345640,
+            "end": 346160,
+            "confidence": null
+        },
+        {
+            "text": "Chain",
+            "entity_type": "organization",
+            "start": 358220,
+            "end": 358660,
+            "confidence": null
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 425040,
+            "end": 425600,
+            "confidence": null
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 427120,
+            "end": 427520,
+            "confidence": null
+        },
+        {
+            "text": "solanamobile.com",
+            "entity_type": "url",
+            "start": 663870,
+            "end": 665190,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 665990,
+            "end": 666550,
+            "confidence": null
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 768810,
+            "end": 769410,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 830560,
+            "end": 831080,
+            "confidence": null
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 877680,
+            "end": 878480,
+            "confidence": null
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 941260,
+            "end": 941820,
+            "confidence": null
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 954300,
+            "end": 954820,
+            "confidence": null
+        },
+        {
+            "text": "Seed Vault",
+            "entity_type": "organization",
+            "start": 1145280,
+            "end": 1145920,
+            "confidence": null
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 1175060,
+            "end": 1175740,
+            "confidence": null
+        },
+        {
+            "text": "Laura",
+            "entity_type": "person_name",
+            "start": 1175740,
+            "end": 1176260,
+            "confidence": null
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 1184400,
+            "end": 1185160,
+            "confidence": null
+        },
+        {
+            "text": "week",
+            "entity_type": "duration",
+            "start": 1187240,
+            "end": 1187560,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Steven Laver",
+            "entity_type": "person_name",
+            "start": 3040,
+            "end": 3840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "engineering lead",
+            "entity_type": "occupation",
+            "start": 4520,
+            "end": 5320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 5600,
+            "end": 6640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 9760,
+            "end": 10640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ellie",
+            "entity_type": "person_name",
+            "start": 16560,
+            "end": 16960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 25840,
+            "end": 26320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Laura",
+            "entity_type": "person_name",
+            "start": 48380,
+            "end": 49020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 51660,
+            "end": 52300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 65170,
+            "end": 65730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Saga",
+            "entity_type": "organization",
+            "start": 102270,
+            "end": 102710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 106160,
+            "end": 106680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "24 hours",
+            "entity_type": "duration",
+            "start": 116000,
+            "end": 116640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Australia",
+            "entity_type": "location",
+            "start": 139410,
+            "end": 139770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "June of last year",
+            "entity_type": "date_interval",
+            "start": 149210,
+            "end": 150170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 171400,
+            "end": 171920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 178680,
+            "end": 179120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "hacker",
+            "entity_type": "occupation",
+            "start": 209490,
+            "end": 209890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 239900,
+            "end": 240420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solanamobile.com",
+            "entity_type": "url",
+            "start": 314440,
+            "end": 315960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 316440,
+            "end": 317080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 329640,
+            "end": 330040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 332360,
+            "end": 332920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NFTs",
+            "entity_type": "money_amount",
+            "start": 333480,
+            "end": 334360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 345640,
+            "end": 346160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chain",
+            "entity_type": "organization",
+            "start": 358220,
+            "end": 358660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 425040,
+            "end": 425600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NFT",
+            "entity_type": "money_amount",
+            "start": 427120,
+            "end": 427520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solanamobile.com",
+            "entity_type": "url",
+            "start": 663870,
+            "end": 665190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 665990,
+            "end": 666550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 768810,
+            "end": 769410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 830560,
+            "end": 831080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 877680,
+            "end": 878480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 941260,
+            "end": 941820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Qualcomm",
+            "entity_type": "organization",
+            "start": 954300,
+            "end": 954820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Seed Vault",
+            "entity_type": "organization",
+            "start": 1145280,
+            "end": 1145920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ankur",
+            "entity_type": "person_name",
+            "start": 1175060,
+            "end": 1175740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Laura",
+            "entity_type": "person_name",
+            "start": 1175740,
+            "end": 1176260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Mobile",
+            "entity_type": "organization",
+            "start": 1184400,
+            "end": 1185160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "week",
+            "entity_type": "duration",
+            "start": 1187240,
+            "end": 1187560,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

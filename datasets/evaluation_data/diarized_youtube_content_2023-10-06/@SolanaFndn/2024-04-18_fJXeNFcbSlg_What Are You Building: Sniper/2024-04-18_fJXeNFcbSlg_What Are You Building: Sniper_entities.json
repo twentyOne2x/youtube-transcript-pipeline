@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-04-18_fJXeNFcbSlg_What Are You Building: Sniper.mp3",
+    "entities": [
+        {
+            "text": "Max",
+            "entity_type": "person_name",
+            "start": 4760,
+            "end": 5080,
+            "confidence": null
+        },
+        {
+            "text": "Sniper",
+            "entity_type": "organization",
+            "start": 5320,
+            "end": 5920,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 10240,
+            "end": 10880,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Max",
+            "entity_type": "person_name",
+            "start": 4760,
+            "end": 5080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sniper",
+            "entity_type": "organization",
+            "start": 5320,
+            "end": 5920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 10240,
+            "end": 10880,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

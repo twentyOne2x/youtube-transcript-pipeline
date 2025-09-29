@@ -1,0 +1,127 @@
+{
+    "video_file": "2024-10-11_B5CTwKbe59Y_What Are You Building Ft. ABK Labs.mp3",
+    "entities": [
+        {
+            "text": "Kyle",
+            "entity_type": "person_name",
+            "start": 5000,
+            "end": 5440,
+            "confidence": null
+        },
+        {
+            "text": "Kyle Espanola",
+            "entity_type": "person_name",
+            "start": 8440,
+            "end": 9320,
+            "confidence": null
+        },
+        {
+            "text": "co founder",
+            "entity_type": "occupation",
+            "start": 9520,
+            "end": 10120,
+            "confidence": null
+        },
+        {
+            "text": "CTO",
+            "entity_type": "occupation",
+            "start": 10360,
+            "end": 10800,
+            "confidence": null
+        },
+        {
+            "text": "ABK Labs",
+            "entity_type": "organization",
+            "start": 10920,
+            "end": 11920,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 18040,
+            "end": 18560,
+            "confidence": null
+        },
+        {
+            "text": "Triton One",
+            "entity_type": "organization",
+            "start": 24680,
+            "end": 25440,
+            "confidence": null
+        },
+        {
+            "text": "WIN foundation",
+            "entity_type": "organization",
+            "start": 28980,
+            "end": 29860,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Kyle",
+            "entity_type": "person_name",
+            "start": 5000,
+            "end": 5440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kyle Espanola",
+            "entity_type": "person_name",
+            "start": 8440,
+            "end": 9320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "co founder",
+            "entity_type": "occupation",
+            "start": 9520,
+            "end": 10120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "CTO",
+            "entity_type": "occupation",
+            "start": 10360,
+            "end": 10800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ABK Labs",
+            "entity_type": "organization",
+            "start": 10920,
+            "end": 11920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 18040,
+            "end": 18560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Triton One",
+            "entity_type": "organization",
+            "start": 24680,
+            "end": 25440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "WIN foundation",
+            "entity_type": "organization",
+            "start": 28980,
+            "end": 29860,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

@@ -1,0 +1,382 @@
+{
+    "video_file": "2024-04-02_Nd4fv10_sAE_Solana Changelog Apr 2 - CLI explorer, priority fees when deploying, and more.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6200,
+            "end": 6680,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7720,
+            "end": 8040,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8040,
+            "end": 8360,
+            "confidence": null
+        },
+        {
+            "text": "caveman loverboy",
+            "entity_type": "username",
+            "start": 18040,
+            "end": 19160,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 97660,
+            "end": 98140,
+            "confidence": null
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 100900,
+            "end": 101660,
+            "confidence": null
+        },
+        {
+            "text": "118",
+            "entity_type": "money_amount",
+            "start": 132550,
+            "end": 133590,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 139430,
+            "end": 139950,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 188400,
+            "end": 188800,
+            "confidence": null
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 202210,
+            "end": 202970,
+            "confidence": null
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 210210,
+            "end": 211170,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 228170,
+            "end": 228490,
+            "confidence": null
+        },
+        {
+            "text": "Andrew",
+            "entity_type": "person_name",
+            "start": 262370,
+            "end": 262850,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 349210,
+            "end": 349570,
+            "confidence": null
+        },
+        {
+            "text": "Caveman Loverboy",
+            "entity_type": "person_name",
+            "start": 352050,
+            "end": 353130,
+            "confidence": null
+        },
+        {
+            "text": "Sol",
+            "entity_type": "organization",
+            "start": 368890,
+            "end": 369290,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 383980,
+            "end": 384340,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange League",
+            "entity_type": "organization",
+            "start": 386700,
+            "end": 387820,
+            "confidence": null
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 397780,
+            "end": 398300,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 402950,
+            "end": 403230,
+            "confidence": null
+        },
+        {
+            "text": "Sasha",
+            "entity_type": "person_name",
+            "start": 404630,
+            "end": 405230,
+            "confidence": null
+        },
+        {
+            "text": "AAV",
+            "entity_type": "organization",
+            "start": 408030,
+            "end": 408830,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 409230,
+            "end": 409710,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 412390,
+            "end": 412950,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 413710,
+            "end": 414350,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6200,
+            "end": 6680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7720,
+            "end": 8040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8040,
+            "end": 8360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "caveman loverboy",
+            "entity_type": "username",
+            "start": 18040,
+            "end": 19160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 97660,
+            "end": 98140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "jstari",
+            "entity_type": "person_name",
+            "start": 100900,
+            "end": 101660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "118",
+            "entity_type": "money_amount",
+            "start": 132550,
+            "end": 133590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 139430,
+            "end": 139950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 188400,
+            "end": 188800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Firedancer team",
+            "entity_type": "organization",
+            "start": 202210,
+            "end": 202970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 210210,
+            "end": 211170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 228170,
+            "end": 228490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Andrew",
+            "entity_type": "person_name",
+            "start": 262370,
+            "end": 262850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 349210,
+            "end": 349570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Caveman Loverboy",
+            "entity_type": "person_name",
+            "start": 352050,
+            "end": 353130,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sol",
+            "entity_type": "organization",
+            "start": 368890,
+            "end": 369290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 383980,
+            "end": 384340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange League",
+            "entity_type": "organization",
+            "start": 386700,
+            "end": 387820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 397780,
+            "end": 398300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 402950,
+            "end": 403230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sasha",
+            "entity_type": "person_name",
+            "start": 404630,
+            "end": 405230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "AAV",
+            "entity_type": "organization",
+            "start": 408030,
+            "end": 408830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 409230,
+            "end": 409710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 412390,
+            "end": 412950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 413710,
+            "end": 414350,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,322 @@
+{
+    "video_file": "2023-01-31_2FhUumqp-8E_Solana Changelog - January 31, 2023 - Geyser Improvements, Program-Test, and Bokken.mp3",
+    "entities": [
+        {
+            "text": "GM",
+            "entity_type": "person_name",
+            "start": 800,
+            "end": 1360,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 8360,
+            "end": 8840,
+            "confidence": null
+        },
+        {
+            "text": "Sandstorm hackathon",
+            "entity_type": "event",
+            "start": 16240,
+            "end": 17240,
+            "confidence": null
+        },
+        {
+            "text": "Lamport Dao",
+            "entity_type": "person_name",
+            "start": 17400,
+            "end": 18400,
+            "confidence": null
+        },
+        {
+            "text": "Encode hackathon",
+            "entity_type": "event",
+            "start": 20040,
+            "end": 20880,
+            "confidence": null
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 89370,
+            "end": 89890,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 96290,
+            "end": 97010,
+            "confidence": null
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 162910,
+            "end": 163310,
+            "confidence": null
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 212490,
+            "end": 213570,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 238389,
+            "end": 239030,
+            "confidence": null
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 244550,
+            "end": 245270,
+            "confidence": null
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 258870,
+            "end": 259430,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 289010,
+            "end": 289530,
+            "confidence": null
+        },
+        {
+            "text": "bogan",
+            "entity_type": "person_name",
+            "start": 304870,
+            "end": 305350,
+            "confidence": null
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 352440,
+            "end": 353320,
+            "confidence": null
+        },
+        {
+            "text": "ambassadors",
+            "entity_type": "occupation",
+            "start": 354560,
+            "end": 355240,
+            "confidence": null
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 358040,
+            "end": 358600,
+            "confidence": null
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 360560,
+            "end": 360840,
+            "confidence": null
+        },
+        {
+            "text": "ambassadorship",
+            "entity_type": "occupation",
+            "start": 365640,
+            "end": 366680,
+            "confidence": null
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 367280,
+            "end": 368120,
+            "confidence": null
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 375600,
+            "end": 375879,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "GM",
+            "entity_type": "person_name",
+            "start": 800,
+            "end": 1360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 8360,
+            "end": 8840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sandstorm hackathon",
+            "entity_type": "event",
+            "start": 16240,
+            "end": 17240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Lamport Dao",
+            "entity_type": "person_name",
+            "start": 17400,
+            "end": 18400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Encode hackathon",
+            "entity_type": "event",
+            "start": 20040,
+            "end": 20880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 89370,
+            "end": 89890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 96290,
+            "end": 97010,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 162910,
+            "end": 163310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 212490,
+            "end": 213570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 238389,
+            "end": 239030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 244550,
+            "end": 245270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 258870,
+            "end": 259430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 289010,
+            "end": 289530,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "bogan",
+            "entity_type": "person_name",
+            "start": 304870,
+            "end": 305350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 352440,
+            "end": 353320,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "ambassadors",
+            "entity_type": "occupation",
+            "start": 354560,
+            "end": 355240,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 358040,
+            "end": 358600,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 360560,
+            "end": 360840,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "ambassadorship",
+            "entity_type": "occupation",
+            "start": 365640,
+            "end": 366680,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Solana U",
+            "entity_type": "organization",
+            "start": 367280,
+            "end": 368120,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 375600,
+            "end": 375879,
+            "confidence": null,
+            "speaker": "C"
+        }
+    ]
+}

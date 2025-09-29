@@ -1,0 +1,37 @@
+{
+    "video_file": "2022-12-13_AuKvIVzayZY_Breakpoint Highlights - Day 1.mp3",
+    "entities": [
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 25760,
+            "end": 26320,
+            "confidence": null
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 32060,
+            "end": 40540,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 25760,
+            "end": 26320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 32060,
+            "end": 40540,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

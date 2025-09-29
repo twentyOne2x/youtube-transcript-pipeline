@@ -1,0 +1,277 @@
+{
+    "video_file": "2024-06-26_qPOr5-v10fs_Solana Changelog Jun 26 - ZK Elgamal program, better feature gate testing locally, and more.mp3",
+    "entities": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 5280,
+            "end": 5480,
+            "confidence": null
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 5680,
+            "end": 7200,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9080,
+            "end": 9480,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10200,
+            "end": 10640,
+            "confidence": null
+        },
+        {
+            "text": "couple",
+            "entity_type": "duration",
+            "start": 65250,
+            "end": 65650,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 99480,
+            "end": 99920,
+            "confidence": null
+        },
+        {
+            "text": "Blakiosaurus",
+            "entity_type": "person_name",
+            "start": 111240,
+            "end": 112080,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 125520,
+            "end": 125960,
+            "confidence": null
+        },
+        {
+            "text": "blockiosaurus",
+            "entity_type": "person_name",
+            "start": 151200,
+            "end": 152000,
+            "confidence": null
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 286760,
+            "end": 287280,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 346280,
+            "end": 347120,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 347720,
+            "end": 348600,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange League",
+            "entity_type": "organization",
+            "start": 349000,
+            "end": 350160,
+            "confidence": null
+        },
+        {
+            "text": "John, Jimmy",
+            "entity_type": "person_name",
+            "start": 352280,
+            "end": 353360,
+            "confidence": null
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 353360,
+            "end": 353960,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 353960,
+            "end": 354440,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 360620,
+            "end": 361020,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 377460,
+            "end": 377860,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 5280,
+            "end": 5480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 5680,
+            "end": 7200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 9080,
+            "end": 9480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 10200,
+            "end": 10640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "couple",
+            "entity_type": "duration",
+            "start": 65250,
+            "end": 65650,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 99480,
+            "end": 99920,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Blakiosaurus",
+            "entity_type": "person_name",
+            "start": 111240,
+            "end": 112080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 125520,
+            "end": 125960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "blockiosaurus",
+            "entity_type": "person_name",
+            "start": 151200,
+            "end": 152000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 286760,
+            "end": 287280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 346280,
+            "end": 347120,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 347720,
+            "end": 348600,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Stack Exchange League",
+            "entity_type": "organization",
+            "start": 349000,
+            "end": 350160,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "John, Jimmy",
+            "entity_type": "person_name",
+            "start": 352280,
+            "end": 353360,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 353360,
+            "end": 353960,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 353960,
+            "end": 354440,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 360620,
+            "end": 361020,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 377460,
+            "end": 377860,
+            "confidence": null,
+            "speaker": "C"
+        }
+    ]
+}

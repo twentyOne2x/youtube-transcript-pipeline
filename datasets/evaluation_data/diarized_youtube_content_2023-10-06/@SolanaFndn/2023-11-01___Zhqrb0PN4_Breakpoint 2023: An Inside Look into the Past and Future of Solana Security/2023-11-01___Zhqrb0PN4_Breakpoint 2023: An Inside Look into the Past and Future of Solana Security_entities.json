@@ -1,0 +1,967 @@
+{
+    "video_file": "2023-11-01___Zhqrb0PN4_Breakpoint 2023: An Inside Look into the Past and Future of Solana Security.mp3",
+    "entities": [
+        {
+            "text": "Solana Security",
+            "entity_type": "organization",
+            "start": 10760,
+            "end": 11600,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 18880,
+            "end": 19360,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 22200,
+            "end": 22640,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 32060,
+            "end": 32580,
+            "confidence": null
+        },
+        {
+            "text": "Thomas",
+            "entity_type": "person_name",
+            "start": 42460,
+            "end": 42900,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 44180,
+            "end": 44700,
+            "confidence": null
+        },
+        {
+            "text": "co founder",
+            "entity_type": "occupation",
+            "start": 45060,
+            "end": 45980,
+            "confidence": null
+        },
+        {
+            "text": "NeoDym",
+            "entity_type": "organization",
+            "start": 46500,
+            "end": 47380,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 49940,
+            "end": 50500,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 54860,
+            "end": 55380,
+            "confidence": null
+        },
+        {
+            "text": "hardware security, computer engineering",
+            "entity_type": "occupation",
+            "start": 61740,
+            "end": 63900,
+            "confidence": null
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 67260,
+            "end": 67740,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 87980,
+            "end": 88580,
+            "confidence": null
+        },
+        {
+            "text": "mainnet",
+            "entity_type": "organization",
+            "start": 89300,
+            "end": 89940,
+            "confidence": null
+        },
+        {
+            "text": "March of 2020",
+            "entity_type": "date_interval",
+            "start": 91060,
+            "end": 92180,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 92780,
+            "end": 93300,
+            "confidence": null
+        },
+        {
+            "text": "$1",
+            "entity_type": "money_amount",
+            "start": 94580,
+            "end": 95220,
+            "confidence": null
+        },
+        {
+            "text": "Sol",
+            "entity_type": "money_amount",
+            "start": 96020,
+            "end": 96420,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 103540,
+            "end": 104340,
+            "confidence": null
+        },
+        {
+            "text": "Developers",
+            "entity_type": "occupation",
+            "start": 111540,
+            "end": 112060,
+            "confidence": null
+        },
+        {
+            "text": "CTF team",
+            "entity_type": "organization",
+            "start": 116460,
+            "end": 117180,
+            "confidence": null
+        },
+        {
+            "text": "2021",
+            "entity_type": "date_interval",
+            "start": 174010,
+            "end": 174730,
+            "confidence": null
+        },
+        {
+            "text": "February",
+            "entity_type": "date_interval",
+            "start": 179090,
+            "end": 179530,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 212130,
+            "end": 213010,
+            "confidence": null
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 224620,
+            "end": 224900,
+            "confidence": null
+        },
+        {
+            "text": "Neodymyne",
+            "entity_type": "drug",
+            "start": 240060,
+            "end": 240580,
+            "confidence": null
+        },
+        {
+            "text": "August of 2021",
+            "entity_type": "date_interval",
+            "start": 246910,
+            "end": 248350,
+            "confidence": null
+        },
+        {
+            "text": "$200",
+            "entity_type": "money_amount",
+            "start": 250590,
+            "end": 251470,
+            "confidence": null
+        },
+        {
+            "text": "Alameda FTX",
+            "entity_type": "organization",
+            "start": 284890,
+            "end": 285970,
+            "confidence": null
+        },
+        {
+            "text": "hundreds of millions",
+            "entity_type": "money_amount",
+            "start": 288130,
+            "end": 289090,
+            "confidence": null
+        },
+        {
+            "text": "billions",
+            "entity_type": "money_amount",
+            "start": 289490,
+            "end": 289930,
+            "confidence": null
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 292810,
+            "end": 293130,
+            "confidence": null
+        },
+        {
+            "text": "a year",
+            "entity_type": "duration",
+            "start": 293210,
+            "end": 293570,
+            "confidence": null
+        },
+        {
+            "text": "billion",
+            "entity_type": "money_amount",
+            "start": 305590,
+            "end": 305870,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 331750,
+            "end": 332110,
+            "confidence": null
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 343470,
+            "end": 344190,
+            "confidence": null
+        },
+        {
+            "text": "ftx",
+            "entity_type": "organization",
+            "start": 358600,
+            "end": 359320,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 366680,
+            "end": 367200,
+            "confidence": null
+        },
+        {
+            "text": "a couple of years",
+            "entity_type": "duration",
+            "start": 381850,
+            "end": 382330,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 382530,
+            "end": 382970,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 419590,
+            "end": 420030,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 481510,
+            "end": 481830,
+            "confidence": null
+        },
+        {
+            "text": "Sensetify",
+            "entity_type": "organization",
+            "start": 512930,
+            "end": 513570,
+            "confidence": null
+        },
+        {
+            "text": "hackers",
+            "entity_type": "occupation",
+            "start": 518090,
+            "end": 518810,
+            "confidence": null
+        },
+        {
+            "text": "2023",
+            "entity_type": "date_interval",
+            "start": 556270,
+            "end": 556990,
+            "confidence": null
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 576320,
+            "end": 576800,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 633310,
+            "end": 633790,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 637630,
+            "end": 638150,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 642510,
+            "end": 642950,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 647950,
+            "end": 648550,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 655630,
+            "end": 656070,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 728680,
+            "end": 729200,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 731520,
+            "end": 732080,
+            "confidence": null
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 733040,
+            "end": 733600,
+            "confidence": null
+        },
+        {
+            "text": "mainnet",
+            "entity_type": "organization",
+            "start": 733800,
+            "end": 734400,
+            "confidence": null
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 813440,
+            "end": 814240,
+            "confidence": null
+        },
+        {
+            "text": "Tiny Dancer",
+            "entity_type": "organization",
+            "start": 873860,
+            "end": 874540,
+            "confidence": null
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 926350,
+            "end": 926870,
+            "confidence": null
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 960430,
+            "end": 960990,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 979150,
+            "end": 979590,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 980510,
+            "end": 981110,
+            "confidence": null
+        },
+        {
+            "text": "contract dev",
+            "entity_type": "occupation",
+            "start": 989760,
+            "end": 990360,
+            "confidence": null
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 1020650,
+            "end": 1021370,
+            "confidence": null
+        },
+        {
+            "text": "5:15 o'. Clock",
+            "entity_type": "time",
+            "start": 1034730,
+            "end": 1036170,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana Security",
+            "entity_type": "organization",
+            "start": 10760,
+            "end": 11600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 18880,
+            "end": 19360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "drug",
+            "start": 22200,
+            "end": 22640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 32060,
+            "end": 32580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Thomas",
+            "entity_type": "person_name",
+            "start": 42460,
+            "end": 42900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 44180,
+            "end": 44700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "co founder",
+            "entity_type": "occupation",
+            "start": 45060,
+            "end": 45980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NeoDym",
+            "entity_type": "organization",
+            "start": 46500,
+            "end": 47380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 49940,
+            "end": 50500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 54860,
+            "end": 55380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "hardware security, computer engineering",
+            "entity_type": "occupation",
+            "start": 61740,
+            "end": 63900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 67260,
+            "end": 67740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 87980,
+            "end": 88580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mainnet",
+            "entity_type": "organization",
+            "start": 89300,
+            "end": 89940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "March of 2020",
+            "entity_type": "date_interval",
+            "start": 91060,
+            "end": 92180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 92780,
+            "end": 93300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$1",
+            "entity_type": "money_amount",
+            "start": 94580,
+            "end": 95220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sol",
+            "entity_type": "money_amount",
+            "start": 96020,
+            "end": 96420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 103540,
+            "end": 104340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Developers",
+            "entity_type": "occupation",
+            "start": 111540,
+            "end": 112060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CTF team",
+            "entity_type": "organization",
+            "start": 116460,
+            "end": 117180,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2021",
+            "entity_type": "date_interval",
+            "start": 174010,
+            "end": 174730,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "February",
+            "entity_type": "date_interval",
+            "start": 179090,
+            "end": 179530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 212130,
+            "end": 213010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "students",
+            "entity_type": "occupation",
+            "start": 224620,
+            "end": 224900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Neodymyne",
+            "entity_type": "drug",
+            "start": 240060,
+            "end": 240580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "August of 2021",
+            "entity_type": "date_interval",
+            "start": 246910,
+            "end": 248350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$200",
+            "entity_type": "money_amount",
+            "start": 250590,
+            "end": 251470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alameda FTX",
+            "entity_type": "organization",
+            "start": 284890,
+            "end": 285970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "hundreds of millions",
+            "entity_type": "money_amount",
+            "start": 288130,
+            "end": 289090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "billions",
+            "entity_type": "money_amount",
+            "start": 289490,
+            "end": 289930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "student",
+            "entity_type": "occupation",
+            "start": 292810,
+            "end": 293130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a year",
+            "entity_type": "duration",
+            "start": 293210,
+            "end": 293570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "billion",
+            "entity_type": "money_amount",
+            "start": 305590,
+            "end": 305870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 331750,
+            "end": 332110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 343470,
+            "end": 344190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ftx",
+            "entity_type": "organization",
+            "start": 358600,
+            "end": 359320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 366680,
+            "end": 367200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a couple of years",
+            "entity_type": "duration",
+            "start": 381850,
+            "end": 382330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 382530,
+            "end": 382970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 419590,
+            "end": 420030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 481510,
+            "end": 481830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sensetify",
+            "entity_type": "organization",
+            "start": 512930,
+            "end": 513570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "hackers",
+            "entity_type": "occupation",
+            "start": 518090,
+            "end": 518810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2023",
+            "entity_type": "date_interval",
+            "start": 556270,
+            "end": 556990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 576320,
+            "end": 576800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 633310,
+            "end": 633790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 637630,
+            "end": 638150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 642510,
+            "end": 642950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 647950,
+            "end": 648550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 655630,
+            "end": 656070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 728680,
+            "end": 729200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 731520,
+            "end": 732080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 733040,
+            "end": 733600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mainnet",
+            "entity_type": "organization",
+            "start": 733800,
+            "end": 734400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Labs",
+            "entity_type": "organization",
+            "start": 813440,
+            "end": 814240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tiny Dancer",
+            "entity_type": "organization",
+            "start": 873860,
+            "end": 874540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 926350,
+            "end": 926870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 960430,
+            "end": 960990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 979150,
+            "end": 979590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 980510,
+            "end": 981110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "contract dev",
+            "entity_type": "occupation",
+            "start": 989760,
+            "end": 990360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "auditors",
+            "entity_type": "occupation",
+            "start": 1020650,
+            "end": 1021370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "5:15 o'. Clock",
+            "entity_type": "time",
+            "start": 1034730,
+            "end": 1036170,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,1042 @@
+{
+    "video_file": "2024-02-14_GZtJIcitiys_Solana Changelog Feb 13 - devnet faucets, token extension hooks helpers, leader tipping, mtn dao.mp3",
+    "entities": [
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 5640,
+            "end": 6120,
+            "confidence": null
+        },
+        {
+            "text": "Mike McKenna",
+            "entity_type": "person_name",
+            "start": 7440,
+            "end": 8520,
+            "confidence": null
+        },
+        {
+            "text": "Salt Lake City",
+            "entity_type": "location",
+            "start": 9960,
+            "end": 10640,
+            "confidence": null
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 10840,
+            "end": 11560,
+            "confidence": null
+        },
+        {
+            "text": "Mike",
+            "entity_type": "person_name",
+            "start": 12040,
+            "end": 12280,
+            "confidence": null
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 15160,
+            "end": 15760,
+            "confidence": null
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 16039,
+            "end": 16240,
+            "confidence": null
+        },
+        {
+            "text": "Salt Lake City, Utah",
+            "entity_type": "location",
+            "start": 17720,
+            "end": 18960,
+            "confidence": null
+        },
+        {
+            "text": "whole month",
+            "entity_type": "duration",
+            "start": 30140,
+            "end": 30620,
+            "confidence": null
+        },
+        {
+            "text": "builders",
+            "entity_type": "occupation",
+            "start": 31660,
+            "end": 32100,
+            "confidence": null
+        },
+        {
+            "text": "Anagram Labs",
+            "entity_type": "organization",
+            "start": 35260,
+            "end": 36180,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 40220,
+            "end": 40860,
+            "confidence": null
+        },
+        {
+            "text": "Lawrence",
+            "entity_type": "person_name",
+            "start": 42140,
+            "end": 42700,
+            "confidence": null
+        },
+        {
+            "text": "a few minutes",
+            "entity_type": "duration",
+            "start": 53340,
+            "end": 53980,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 57540,
+            "end": 58100,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 64720,
+            "end": 65120,
+            "confidence": null
+        },
+        {
+            "text": "five hours",
+            "entity_type": "duration",
+            "start": 71800,
+            "end": 72520,
+            "confidence": null
+        },
+        {
+            "text": "6th of February",
+            "entity_type": "date",
+            "start": 74000,
+            "end": 74680,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 81360,
+            "end": 81920,
+            "confidence": null
+        },
+        {
+            "text": "five hours",
+            "entity_type": "duration",
+            "start": 94970,
+            "end": 95610,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 100730,
+            "end": 101290,
+            "confidence": null
+        },
+        {
+            "text": "ansa",
+            "entity_type": "organization",
+            "start": 104850,
+            "end": 105450,
+            "confidence": null
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 105970,
+            "end": 106810,
+            "confidence": null
+        },
+        {
+            "text": "defnet",
+            "entity_type": "organization",
+            "start": 114100,
+            "end": 114700,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 116700,
+            "end": 117220,
+            "confidence": null
+        },
+        {
+            "text": "Dev",
+            "entity_type": "organization",
+            "start": 120700,
+            "end": 121140,
+            "confidence": null
+        },
+        {
+            "text": "day",
+            "entity_type": "duration",
+            "start": 134700,
+            "end": 134900,
+            "confidence": null
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 144380,
+            "end": 144780,
+            "confidence": null
+        },
+        {
+            "text": "os",
+            "entity_type": "organization",
+            "start": 160140,
+            "end": 160620,
+            "confidence": null
+        },
+        {
+            "text": "Quicknote",
+            "entity_type": "organization",
+            "start": 160620,
+            "end": 160980,
+            "confidence": null
+        },
+        {
+            "text": "Triton",
+            "entity_type": "organization",
+            "start": 161100,
+            "end": 161580,
+            "confidence": null
+        },
+        {
+            "text": "Lamport DAO",
+            "entity_type": "organization",
+            "start": 179670,
+            "end": 180590,
+            "confidence": null
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 182190,
+            "end": 182790,
+            "confidence": null
+        },
+        {
+            "text": "gib",
+            "entity_type": "person_name",
+            "start": 187390,
+            "end": 188190,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 255750,
+            "end": 256390,
+            "confidence": null
+        },
+        {
+            "text": "Scribes hackathon",
+            "entity_type": "event",
+            "start": 271320,
+            "end": 272520,
+            "confidence": null
+        },
+        {
+            "text": "$137,390",
+            "entity_type": "money_amount",
+            "start": 278400,
+            "end": 281000,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 292440,
+            "end": 293240,
+            "confidence": null
+        },
+        {
+            "text": "economics",
+            "entity_type": "occupation",
+            "start": 294760,
+            "end": 295720,
+            "confidence": null
+        },
+        {
+            "text": "Lampard Dao",
+            "entity_type": "person_name",
+            "start": 347850,
+            "end": 348650,
+            "confidence": null
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 348930,
+            "end": 349450,
+            "confidence": null
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 359530,
+            "end": 360850,
+            "confidence": null
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 361800,
+            "end": 363640,
+            "confidence": null
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 407290,
+            "end": 409290,
+            "confidence": null
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 411130,
+            "end": 412490,
+            "confidence": null
+        },
+        {
+            "text": "solana.com",
+            "entity_type": "url",
+            "start": 413090,
+            "end": 414090,
+            "confidence": null
+        },
+        {
+            "text": "Solana developer",
+            "entity_type": "occupation",
+            "start": 424510,
+            "end": 425390,
+            "confidence": null
+        },
+        {
+            "text": "Solana developers",
+            "entity_type": "occupation",
+            "start": 437550,
+            "end": 438390,
+            "confidence": null
+        },
+        {
+            "text": "dev",
+            "entity_type": "occupation",
+            "start": 439790,
+            "end": 440110,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 448970,
+            "end": 449490,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 452850,
+            "end": 453370,
+            "confidence": null
+        },
+        {
+            "text": "44 days",
+            "entity_type": "duration",
+            "start": 460050,
+            "end": 460770,
+            "confidence": null
+        },
+        {
+            "text": "Sol",
+            "entity_type": "person_name",
+            "start": 462050,
+            "end": 462450,
+            "confidence": null
+        },
+        {
+            "text": "21 days",
+            "entity_type": "duration",
+            "start": 465050,
+            "end": 465810,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 468380,
+            "end": 469140,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 477700,
+            "end": 478420,
+            "confidence": null
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 492300,
+            "end": 493740,
+            "confidence": null
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 513180,
+            "end": 514580,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 525199,
+            "end": 525799,
+            "confidence": null
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 529279,
+            "end": 530519,
+            "confidence": null
+        },
+        {
+            "text": "Solana Sta",
+            "entity_type": "organization",
+            "start": 538919,
+            "end": 539759,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 572900,
+            "end": 573180,
+            "confidence": null
+        },
+        {
+            "text": "MEV",
+            "entity_type": "organization",
+            "start": 587590,
+            "end": 588110,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 603790,
+            "end": 604030,
+            "confidence": null
+        },
+        {
+            "text": "to",
+            "entity_type": "religion",
+            "start": 630200,
+            "end": 630760,
+            "confidence": null
+        },
+        {
+            "text": "Syscall",
+            "entity_type": "organization",
+            "start": 650110,
+            "end": 650910,
+            "confidence": null
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 654590,
+            "end": 654990,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 715470,
+            "end": 716110,
+            "confidence": null
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "organization",
+            "start": 721770,
+            "end": 722530,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 5640,
+            "end": 6120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mike McKenna",
+            "entity_type": "person_name",
+            "start": 7440,
+            "end": 8520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Salt Lake City",
+            "entity_type": "location",
+            "start": 9960,
+            "end": 10640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 10840,
+            "end": 11560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mike",
+            "entity_type": "person_name",
+            "start": 12040,
+            "end": 12280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "event",
+            "start": 15160,
+            "end": 15760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "month",
+            "entity_type": "duration",
+            "start": 16039,
+            "end": 16240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Salt Lake City, Utah",
+            "entity_type": "location",
+            "start": 17720,
+            "end": 18960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "whole month",
+            "entity_type": "duration",
+            "start": 30140,
+            "end": 30620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "builders",
+            "entity_type": "occupation",
+            "start": 31660,
+            "end": 32100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anagram Labs",
+            "entity_type": "organization",
+            "start": 35260,
+            "end": 36180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 40220,
+            "end": 40860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Lawrence",
+            "entity_type": "person_name",
+            "start": 42140,
+            "end": 42700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a few minutes",
+            "entity_type": "duration",
+            "start": 53340,
+            "end": 53980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 57540,
+            "end": 58100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 64720,
+            "end": 65120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five hours",
+            "entity_type": "duration",
+            "start": 71800,
+            "end": 72520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "6th of February",
+            "entity_type": "date",
+            "start": 74000,
+            "end": 74680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 81360,
+            "end": 81920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "five hours",
+            "entity_type": "duration",
+            "start": 94970,
+            "end": 95610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 100730,
+            "end": 101290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ansa",
+            "entity_type": "organization",
+            "start": 104850,
+            "end": 105450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 105970,
+            "end": 106810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "defnet",
+            "entity_type": "organization",
+            "start": 114100,
+            "end": 114700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 116700,
+            "end": 117220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dev",
+            "entity_type": "organization",
+            "start": 120700,
+            "end": 121140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "day",
+            "entity_type": "duration",
+            "start": 134700,
+            "end": 134900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 144380,
+            "end": 144780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "os",
+            "entity_type": "organization",
+            "start": 160140,
+            "end": 160620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Quicknote",
+            "entity_type": "organization",
+            "start": 160620,
+            "end": 160980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Triton",
+            "entity_type": "organization",
+            "start": 161100,
+            "end": 161580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Lamport DAO",
+            "entity_type": "organization",
+            "start": 179670,
+            "end": 180590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devs",
+            "entity_type": "occupation",
+            "start": 182190,
+            "end": 182790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "gib",
+            "entity_type": "person_name",
+            "start": 187390,
+            "end": 188190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 255750,
+            "end": 256390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Scribes hackathon",
+            "entity_type": "event",
+            "start": 271320,
+            "end": 272520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$137,390",
+            "entity_type": "money_amount",
+            "start": 278400,
+            "end": 281000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 292440,
+            "end": 293240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "economics",
+            "entity_type": "occupation",
+            "start": 294760,
+            "end": 295720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Lampard Dao",
+            "entity_type": "person_name",
+            "start": 347850,
+            "end": 348650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 348930,
+            "end": 349450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 359530,
+            "end": 360850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 361800,
+            "end": 363640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "solana.com docs",
+            "entity_type": "url",
+            "start": 407290,
+            "end": 409290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 411130,
+            "end": 412490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solana.com",
+            "entity_type": "url",
+            "start": 413090,
+            "end": 414090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana developer",
+            "entity_type": "occupation",
+            "start": 424510,
+            "end": 425390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana developers",
+            "entity_type": "occupation",
+            "start": 437550,
+            "end": 438390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "dev",
+            "entity_type": "occupation",
+            "start": 439790,
+            "end": 440110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 448970,
+            "end": 449490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 452850,
+            "end": 453370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "44 days",
+            "entity_type": "duration",
+            "start": 460050,
+            "end": 460770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sol",
+            "entity_type": "person_name",
+            "start": 462050,
+            "end": 462450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "21 days",
+            "entity_type": "duration",
+            "start": 465050,
+            "end": 465810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 468380,
+            "end": 469140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 477700,
+            "end": 478420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 492300,
+            "end": 493740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 513180,
+            "end": 514580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 525199,
+            "end": 525799,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 529279,
+            "end": 530519,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Sta",
+            "entity_type": "organization",
+            "start": 538919,
+            "end": 539759,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 572900,
+            "end": 573180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "MEV",
+            "entity_type": "organization",
+            "start": 587590,
+            "end": 588110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 603790,
+            "end": 604030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "to",
+            "entity_type": "religion",
+            "start": 630200,
+            "end": 630760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Syscall",
+            "entity_type": "organization",
+            "start": 650110,
+            "end": 650910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "leader",
+            "entity_type": "occupation",
+            "start": 654590,
+            "end": 654990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 715470,
+            "end": 716110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mountain Dao",
+            "entity_type": "organization",
+            "start": 721770,
+            "end": 722530,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

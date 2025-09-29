@@ -1,0 +1,292 @@
+{
+    "video_file": "2023-01-17_O2An69FsQTE_Solana Changelog - January 17, 2023 - SIMD 3, Compute Cost Updates, Golana.mp3",
+    "entities": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 4000,
+            "end": 4520,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6000,
+            "end": 6400,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 7360,
+            "end": 7920,
+            "confidence": null
+        },
+        {
+            "text": "Lamport Dao",
+            "entity_type": "location",
+            "start": 18080,
+            "end": 19320,
+            "confidence": null
+        },
+        {
+            "text": "Solana Sandstorm hackathon",
+            "entity_type": "event",
+            "start": 19920,
+            "end": 21760,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 25400,
+            "end": 26320,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 35300,
+            "end": 35780,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 42100,
+            "end": 42740,
+            "confidence": null
+        },
+        {
+            "text": "23rd of January",
+            "entity_type": "date",
+            "start": 46540,
+            "end": 47580,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 61970,
+            "end": 62250,
+            "confidence": null
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 257070,
+            "end": 257630,
+            "confidence": null
+        },
+        {
+            "text": "core engineers",
+            "entity_type": "occupation",
+            "start": 361240,
+            "end": 362000,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 394950,
+            "end": 395430,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 419460,
+            "end": 420180,
+            "confidence": null
+        },
+        {
+            "text": "Go developer",
+            "entity_type": "occupation",
+            "start": 437410,
+            "end": 438330,
+            "confidence": null
+        },
+        {
+            "text": "maintainer",
+            "entity_type": "occupation",
+            "start": 463690,
+            "end": 464410,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 474130,
+            "end": 474730,
+            "confidence": null
+        },
+        {
+            "text": "John C",
+            "entity_type": "person_name",
+            "start": 480590,
+            "end": 481190,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 483510,
+            "end": 483910,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 4000,
+            "end": 4520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6000,
+            "end": 6400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 7360,
+            "end": 7920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Lamport Dao",
+            "entity_type": "location",
+            "start": 18080,
+            "end": 19320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Sandstorm hackathon",
+            "entity_type": "event",
+            "start": 19920,
+            "end": 21760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 25400,
+            "end": 26320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 35300,
+            "end": 35780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 42100,
+            "end": 42740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "23rd of January",
+            "entity_type": "date",
+            "start": 46540,
+            "end": 47580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 61970,
+            "end": 62250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jupyter",
+            "entity_type": "organization",
+            "start": 257070,
+            "end": 257630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "core engineers",
+            "entity_type": "occupation",
+            "start": 361240,
+            "end": 362000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 394950,
+            "end": 395430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 419460,
+            "end": 420180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Go developer",
+            "entity_type": "occupation",
+            "start": 437410,
+            "end": 438330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "maintainer",
+            "entity_type": "occupation",
+            "start": 463690,
+            "end": 464410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 474130,
+            "end": 474730,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "John C",
+            "entity_type": "person_name",
+            "start": 480590,
+            "end": 481190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 483510,
+            "end": 483910,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

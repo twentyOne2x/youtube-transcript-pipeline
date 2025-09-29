@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-01-10_UttQc_9P5VY_Introducing Validated (Trailer).mp3",
+    "entities": [
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 25720,
+            "end": 26040,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 26200,
+            "end": 26640,
+            "confidence": null
+        },
+        {
+            "text": "Austin Federa",
+            "entity_type": "person_name",
+            "start": 32080,
+            "end": 33040,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 25720,
+            "end": 26040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 26200,
+            "end": 26640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Austin Federa",
+            "entity_type": "person_name",
+            "start": 32080,
+            "end": 33040,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

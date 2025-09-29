@@ -1,0 +1,922 @@
+{
+    "video_file": "2023-07-25_s8kMrMi3J5g_Solana Bootcamp 2023 - Episode 6 - Oracles, Clockwork, and Randomness.mp3",
+    "entities": [
+        {
+            "text": "Pirate",
+            "entity_type": "occupation",
+            "start": 11920,
+            "end": 12360,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 48840,
+            "end": 49440,
+            "confidence": null
+        },
+        {
+            "text": "Anchorage",
+            "entity_type": "location",
+            "start": 56520,
+            "end": 57280,
+            "confidence": null
+        },
+        {
+            "text": "two seconds",
+            "entity_type": "duration",
+            "start": 122640,
+            "end": 123640,
+            "confidence": null
+        },
+        {
+            "text": "1000 lampards",
+            "entity_type": "money_amount",
+            "start": 178430,
+            "end": 179670,
+            "confidence": null
+        },
+        {
+            "text": "12am noon",
+            "entity_type": "time",
+            "start": 195120,
+            "end": 196400,
+            "confidence": null
+        },
+        {
+            "text": "2:00pm",
+            "entity_type": "time",
+            "start": 241300,
+            "end": 241940,
+            "confidence": null
+        },
+        {
+            "text": "10:15",
+            "entity_type": "time",
+            "start": 245960,
+            "end": 246560,
+            "confidence": null
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 321440,
+            "end": 321720,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 361870,
+            "end": 362470,
+            "confidence": null
+        },
+        {
+            "text": "Developers",
+            "entity_type": "occupation",
+            "start": 362470,
+            "end": 362990,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 362990,
+            "end": 363470,
+            "confidence": null
+        },
+        {
+            "text": "ten seconds",
+            "entity_type": "duration",
+            "start": 438100,
+            "end": 438940,
+            "confidence": null
+        },
+        {
+            "text": "lumberjack",
+            "entity_type": "occupation",
+            "start": 452820,
+            "end": 453500,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 457380,
+            "end": 458220,
+            "confidence": null
+        },
+        {
+            "text": "lum",
+            "entity_type": "occupation",
+            "start": 489810,
+            "end": 490770,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 519580,
+            "end": 520460,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 551340,
+            "end": 552060,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 594750,
+            "end": 595430,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 681740,
+            "end": 682460,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 698140,
+            "end": 699019,
+            "confidence": null
+        },
+        {
+            "text": "thousand lampards",
+            "entity_type": "money_amount",
+            "start": 732650,
+            "end": 733650,
+            "confidence": null
+        },
+        {
+            "text": "5 SOL",
+            "entity_type": "money_amount",
+            "start": 738050,
+            "end": 738770,
+            "confidence": null
+        },
+        {
+            "text": "two seconds",
+            "entity_type": "duration",
+            "start": 889920,
+            "end": 890560,
+            "confidence": null
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 890960,
+            "end": 891800,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 959290,
+            "end": 959770,
+            "confidence": null
+        },
+        {
+            "text": "big Cthulhu",
+            "entity_type": "person_name",
+            "start": 1124060,
+            "end": 1125140,
+            "confidence": null
+        },
+        {
+            "text": "Wikipedia",
+            "entity_type": "organization",
+            "start": 1140610,
+            "end": 1141370,
+            "confidence": null
+        },
+        {
+            "text": "thulhu",
+            "entity_type": "person_name",
+            "start": 1172230,
+            "end": 1172950,
+            "confidence": null
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1179870,
+            "end": 1180510,
+            "confidence": null
+        },
+        {
+            "text": "thulhu",
+            "entity_type": "person_name",
+            "start": 1184610,
+            "end": 1185250,
+            "confidence": null
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1189570,
+            "end": 1190170,
+            "confidence": null
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1197690,
+            "end": 1198450,
+            "confidence": null
+        },
+        {
+            "text": "Trash Panda Mint",
+            "entity_type": "money_amount",
+            "start": 1377460,
+            "end": 1378540,
+            "confidence": null
+        },
+        {
+            "text": "cobrette",
+            "entity_type": "money_amount",
+            "start": 1386940,
+            "end": 1387940,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1410200,
+            "end": 1410680,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1412120,
+            "end": 1412800,
+            "confidence": null
+        },
+        {
+            "text": "Switchboard",
+            "entity_type": "organization",
+            "start": 1413160,
+            "end": 1414000,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1423570,
+            "end": 1424050,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1426570,
+            "end": 1427130,
+            "confidence": null
+        },
+        {
+            "text": "Switchboard Oracle",
+            "entity_type": "organization",
+            "start": 1448740,
+            "end": 1449980,
+            "confidence": null
+        },
+        {
+            "text": "Switchboard",
+            "entity_type": "organization",
+            "start": 1463660,
+            "end": 1464380,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1464940,
+            "end": 1465580,
+            "confidence": null
+        },
+        {
+            "text": "0.002 Sol",
+            "entity_type": "money_amount",
+            "start": 1479390,
+            "end": 1480830,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1575660,
+            "end": 1576260,
+            "confidence": null
+        },
+        {
+            "text": "librs",
+            "entity_type": "filename",
+            "start": 1634190,
+            "end": 1634950,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1721290,
+            "end": 1721810,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1751330,
+            "end": 1751770,
+            "confidence": null
+        },
+        {
+            "text": "Repsol",
+            "entity_type": "organization",
+            "start": 1767250,
+            "end": 1768090,
+            "confidence": null
+        },
+        {
+            "text": "0.002 SOL",
+            "entity_type": "money_amount",
+            "start": 1770750,
+            "end": 1772470,
+            "confidence": null
+        },
+        {
+            "text": "Clockwork",
+            "entity_type": "organization",
+            "start": 1802760,
+            "end": 1803360,
+            "confidence": null
+        },
+        {
+            "text": "0.07 SOL",
+            "entity_type": "money_amount",
+            "start": 2321010,
+            "end": 2322610,
+            "confidence": null
+        },
+        {
+            "text": "0.7",
+            "entity_type": "money_amount",
+            "start": 2323450,
+            "end": 2324330,
+            "confidence": null
+        },
+        {
+            "text": "0.07 SOL",
+            "entity_type": "money_amount",
+            "start": 2337186,
+            "end": 2338450,
+            "confidence": null
+        },
+        {
+            "text": "pirate",
+            "entity_type": "occupation",
+            "start": 2532110,
+            "end": 2532390,
+            "confidence": null
+        },
+        {
+            "text": "pirate",
+            "entity_type": "occupation",
+            "start": 2834220,
+            "end": 2834580,
+            "confidence": null
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 3024180,
+            "end": 3024820,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 3033140,
+            "end": 3033700,
+            "confidence": null
+        },
+        {
+            "text": "Clockwork",
+            "entity_type": "organization",
+            "start": 3140140,
+            "end": 3140500,
+            "confidence": null
+        },
+        {
+            "text": "workers",
+            "entity_type": "occupation",
+            "start": 3144500,
+            "end": 3144740,
+            "confidence": null
+        },
+        {
+            "text": "Khuturu attack",
+            "entity_type": "event",
+            "start": 3164960,
+            "end": 3166040,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Pirate",
+            "entity_type": "occupation",
+            "start": 11920,
+            "end": 12360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 48840,
+            "end": 49440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anchorage",
+            "entity_type": "location",
+            "start": 56520,
+            "end": 57280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two seconds",
+            "entity_type": "duration",
+            "start": 122640,
+            "end": 123640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1000 lampards",
+            "entity_type": "money_amount",
+            "start": 178430,
+            "end": 179670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12am noon",
+            "entity_type": "time",
+            "start": 195120,
+            "end": 196400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2:00pm",
+            "entity_type": "time",
+            "start": 241300,
+            "end": 241940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10:15",
+            "entity_type": "time",
+            "start": 245960,
+            "end": 246560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 321440,
+            "end": 321720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 361870,
+            "end": 362470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Developers",
+            "entity_type": "occupation",
+            "start": 362470,
+            "end": 362990,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 362990,
+            "end": 363470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ten seconds",
+            "entity_type": "duration",
+            "start": 438100,
+            "end": 438940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "lumberjack",
+            "entity_type": "occupation",
+            "start": 452820,
+            "end": 453500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 457380,
+            "end": 458220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "lum",
+            "entity_type": "occupation",
+            "start": 489810,
+            "end": 490770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 519580,
+            "end": 520460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 551340,
+            "end": 552060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "organization",
+            "start": 594750,
+            "end": 595430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 681740,
+            "end": 682460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 698140,
+            "end": 699019,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "thousand lampards",
+            "entity_type": "money_amount",
+            "start": 732650,
+            "end": 733650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "5 SOL",
+            "entity_type": "money_amount",
+            "start": 738050,
+            "end": 738770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two seconds",
+            "entity_type": "duration",
+            "start": 889920,
+            "end": 890560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 seconds",
+            "entity_type": "duration",
+            "start": 890960,
+            "end": 891800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 959290,
+            "end": 959770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "big Cthulhu",
+            "entity_type": "person_name",
+            "start": 1124060,
+            "end": 1125140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Wikipedia",
+            "entity_type": "organization",
+            "start": 1140610,
+            "end": 1141370,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "thulhu",
+            "entity_type": "person_name",
+            "start": 1172230,
+            "end": 1172950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1179870,
+            "end": 1180510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "thulhu",
+            "entity_type": "person_name",
+            "start": 1184610,
+            "end": 1185250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1189570,
+            "end": 1190170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 1197690,
+            "end": 1198450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Trash Panda Mint",
+            "entity_type": "money_amount",
+            "start": 1377460,
+            "end": 1378540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "cobrette",
+            "entity_type": "money_amount",
+            "start": 1386940,
+            "end": 1387940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1410200,
+            "end": 1410680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1412120,
+            "end": 1412800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Switchboard",
+            "entity_type": "organization",
+            "start": 1413160,
+            "end": 1414000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1423570,
+            "end": 1424050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1426570,
+            "end": 1427130,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Switchboard Oracle",
+            "entity_type": "organization",
+            "start": 1448740,
+            "end": 1449980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Switchboard",
+            "entity_type": "organization",
+            "start": 1463660,
+            "end": 1464380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1464940,
+            "end": 1465580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.002 Sol",
+            "entity_type": "money_amount",
+            "start": 1479390,
+            "end": 1480830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1575660,
+            "end": 1576260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "librs",
+            "entity_type": "filename",
+            "start": 1634190,
+            "end": 1634950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1721290,
+            "end": 1721810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1751330,
+            "end": 1751770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Repsol",
+            "entity_type": "organization",
+            "start": 1767250,
+            "end": 1768090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.002 SOL",
+            "entity_type": "money_amount",
+            "start": 1770750,
+            "end": 1772470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Clockwork",
+            "entity_type": "organization",
+            "start": 1802760,
+            "end": 1803360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.07 SOL",
+            "entity_type": "money_amount",
+            "start": 2321010,
+            "end": 2322610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.7",
+            "entity_type": "money_amount",
+            "start": 2323450,
+            "end": 2324330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "0.07 SOL",
+            "entity_type": "money_amount",
+            "start": 2337186,
+            "end": 2338450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pirate",
+            "entity_type": "occupation",
+            "start": 2532110,
+            "end": 2532390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pirate",
+            "entity_type": "occupation",
+            "start": 2834220,
+            "end": 2834580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Cthulhu",
+            "entity_type": "person_name",
+            "start": 3024180,
+            "end": 3024820,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 3033140,
+            "end": 3033700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Clockwork",
+            "entity_type": "organization",
+            "start": 3140140,
+            "end": 3140500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "workers",
+            "entity_type": "occupation",
+            "start": 3144500,
+            "end": 3144740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Khuturu attack",
+            "entity_type": "event",
+            "start": 3164960,
+            "end": 3166040,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

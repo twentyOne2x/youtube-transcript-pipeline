@@ -1,0 +1,67 @@
+{
+    "video_file": "2024-09-25_a84HixtbbaE_What Are You Building Ft. Triton One.mp3",
+    "entities": [
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 3120,
+            "end": 3600,
+            "confidence": null
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 8520,
+            "end": 8960,
+            "confidence": null
+        },
+        {
+            "text": "Www.triton.1",
+            "entity_type": "url",
+            "start": 27580,
+            "end": 29460,
+            "confidence": null
+        },
+        {
+            "text": "Cascade Cascade Network",
+            "entity_type": "organization",
+            "start": 34220,
+            "end": 35940,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 3120,
+            "end": 3600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 8520,
+            "end": 8960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Www.triton.1",
+            "entity_type": "url",
+            "start": 27580,
+            "end": 29460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Cascade Cascade Network",
+            "entity_type": "organization",
+            "start": 34220,
+            "end": 35940,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,607 @@
+{
+    "video_file": "2024-06-19_1aEGAV7mM0Q_Solana Changelog Jun 19 - Test validator fix, new Syscall, RPC updates, and more.mp3",
+    "entities": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 6440,
+            "end": 6840,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8480,
+            "confidence": null
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 9320,
+            "end": 11160,
+            "confidence": null
+        },
+        {
+            "text": "Jean Cinquer",
+            "entity_type": "person_name",
+            "start": 21640,
+            "end": 22640,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 32300,
+            "end": 32780,
+            "confidence": null
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 66770,
+            "end": 67210,
+            "confidence": null
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 69250,
+            "end": 70050,
+            "confidence": null
+        },
+        {
+            "text": "John Shankway",
+            "entity_type": "person_name",
+            "start": 133370,
+            "end": 134210,
+            "confidence": null
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 194350,
+            "end": 195150,
+            "confidence": null
+        },
+        {
+            "text": "JSTarry",
+            "entity_type": "person_name",
+            "start": 214840,
+            "end": 215520,
+            "confidence": null
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 257360,
+            "end": 258120,
+            "confidence": null
+        },
+        {
+            "text": "KV",
+            "entity_type": "person_name",
+            "start": 360110,
+            "end": 360630,
+            "confidence": null
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 361910,
+            "end": 362230,
+            "confidence": null
+        },
+        {
+            "text": "Solana Game Jam",
+            "entity_type": "event",
+            "start": 427630,
+            "end": 428630,
+            "confidence": null
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 430110,
+            "end": 430910,
+            "confidence": null
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 431590,
+            "end": 432270,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 452780,
+            "end": 453260,
+            "confidence": null
+        },
+        {
+            "text": "Redhead",
+            "entity_type": "person_name",
+            "start": 459820,
+            "end": 460460,
+            "confidence": null
+        },
+        {
+            "text": "Blockiosaurus",
+            "entity_type": "organization",
+            "start": 463180,
+            "end": 464100,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 472540,
+            "end": 473020,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 483800,
+            "end": 484240,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 495480,
+            "end": 495920,
+            "confidence": null
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 515950,
+            "end": 516630,
+            "confidence": null
+        },
+        {
+            "text": "Ichigo",
+            "entity_type": "person_name",
+            "start": 516870,
+            "end": 517550,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 550920,
+            "end": 551760,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 553240,
+            "end": 553880,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 556560,
+            "end": 557240,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 560740,
+            "end": 561300,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 562060,
+            "end": 562500,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 563100,
+            "end": 563500,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 564940,
+            "end": 565220,
+            "confidence": null
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 568140,
+            "end": 568540,
+            "confidence": null
+        },
+        {
+            "text": "White",
+            "entity_type": "person_name",
+            "start": 568540,
+            "end": 568740,
+            "confidence": null
+        },
+        {
+            "text": "Seal",
+            "entity_type": "person_name",
+            "start": 568740,
+            "end": 569140,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 569140,
+            "end": 569620,
+            "confidence": null
+        },
+        {
+            "text": "Shalda",
+            "entity_type": "person_name",
+            "start": 570820,
+            "end": 571620,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 573300,
+            "end": 573980,
+            "confidence": null
+        },
+        {
+            "text": "Doula Servan",
+            "entity_type": "person_name",
+            "start": 574459,
+            "end": 575540,
+            "confidence": null
+        },
+        {
+            "text": "Burger Bob",
+            "entity_type": "person_name",
+            "start": 577540,
+            "end": 578260,
+            "confidence": null
+        },
+        {
+            "text": "Solandi",
+            "entity_type": "person_name",
+            "start": 578740,
+            "end": 579540,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 6440,
+            "end": 6840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Foundation Devrel team",
+            "entity_type": "organization",
+            "start": 9320,
+            "end": 11160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jean Cinquer",
+            "entity_type": "person_name",
+            "start": 21640,
+            "end": 22640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 32300,
+            "end": 32780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 66770,
+            "end": 67210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 69250,
+            "end": 70050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John Shankway",
+            "entity_type": "person_name",
+            "start": 133370,
+            "end": 134210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 194350,
+            "end": 195150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "JSTarry",
+            "entity_type": "person_name",
+            "start": 214840,
+            "end": 215520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joe Buffalo",
+            "entity_type": "person_name",
+            "start": 257360,
+            "end": 258120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "KV",
+            "entity_type": "person_name",
+            "start": 360110,
+            "end": 360630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 361910,
+            "end": 362230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Game Jam",
+            "entity_type": "event",
+            "start": 427630,
+            "end": 428630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 430110,
+            "end": 430910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 431590,
+            "end": 432270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 452780,
+            "end": 453260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Redhead",
+            "entity_type": "person_name",
+            "start": 459820,
+            "end": 460460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Blockiosaurus",
+            "entity_type": "organization",
+            "start": 463180,
+            "end": 464100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 472540,
+            "end": 473020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 483800,
+            "end": 484240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 495480,
+            "end": 495920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 515950,
+            "end": 516630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ichigo",
+            "entity_type": "person_name",
+            "start": 516870,
+            "end": 517550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 550920,
+            "end": 551760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 553240,
+            "end": 553880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 556560,
+            "end": 557240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 560740,
+            "end": 561300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 562060,
+            "end": 562500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 563100,
+            "end": 563500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 564940,
+            "end": 565220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ari",
+            "entity_type": "person_name",
+            "start": 568140,
+            "end": 568540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "White",
+            "entity_type": "person_name",
+            "start": 568540,
+            "end": 568740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Seal",
+            "entity_type": "person_name",
+            "start": 568740,
+            "end": 569140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 569140,
+            "end": 569620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Shalda",
+            "entity_type": "person_name",
+            "start": 570820,
+            "end": 571620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 573300,
+            "end": 573980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Doula Servan",
+            "entity_type": "person_name",
+            "start": 574459,
+            "end": 575540,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Burger Bob",
+            "entity_type": "person_name",
+            "start": 577540,
+            "end": 578260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solandi",
+            "entity_type": "person_name",
+            "start": 578740,
+            "end": 579540,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

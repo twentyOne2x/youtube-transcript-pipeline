@@ -1,0 +1,2617 @@
+{
+    "video_file": "2024-05-14_83QinyhSvVs_Parallelizing the EVM on Solana.mp3",
+    "entities": [
+        {
+            "text": "Andrej",
+            "entity_type": "person_name",
+            "start": 4760,
+            "end": 5320,
+            "confidence": null
+        },
+        {
+            "text": "Validated",
+            "entity_type": "organization",
+            "start": 5720,
+            "end": 6320,
+            "confidence": null
+        },
+        {
+            "text": "Austin",
+            "entity_type": "person_name",
+            "start": 7360,
+            "end": 7920,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 15200,
+            "end": 15840,
+            "confidence": null
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 16680,
+            "end": 17120,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 18240,
+            "end": 18840,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 23000,
+            "end": 23520,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 29130,
+            "end": 29650,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 31250,
+            "end": 31930,
+            "confidence": null
+        },
+        {
+            "text": "engineering",
+            "entity_type": "occupation",
+            "start": 45890,
+            "end": 46330,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 86420,
+            "end": 87060,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 128270,
+            "end": 128830,
+            "confidence": null
+        },
+        {
+            "text": "Solana Mainet",
+            "entity_type": "organization",
+            "start": 160000,
+            "end": 161280,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 162540,
+            "end": 163140,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 165180,
+            "end": 165820,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 167620,
+            "end": 168020,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 171180,
+            "end": 171740,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 173900,
+            "end": 174500,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 175100,
+            "end": 175620,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 176140,
+            "end": 176700,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 192930,
+            "end": 193370,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 197210,
+            "end": 197850,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 200570,
+            "end": 201090,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 205530,
+            "end": 206090,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 206730,
+            "end": 207290,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 221740,
+            "end": 222580,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 237300,
+            "end": 237700,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 250970,
+            "end": 251650,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 252450,
+            "end": 252970,
+            "confidence": null
+        },
+        {
+            "text": "NE",
+            "entity_type": "money_amount",
+            "start": 257370,
+            "end": 257970,
+            "confidence": null
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 267610,
+            "end": 268170,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 276550,
+            "end": 276990,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 284710,
+            "end": 285350,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 287309,
+            "end": 287830,
+            "confidence": null
+        },
+        {
+            "text": "GAS",
+            "entity_type": "money_amount",
+            "start": 291390,
+            "end": 291750,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 291950,
+            "end": 292390,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 361260,
+            "end": 361820,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 367580,
+            "end": 368260,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 443090,
+            "end": 443770,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 454130,
+            "end": 454810,
+            "confidence": null
+        },
+        {
+            "text": "Merkel Patricia Tricy",
+            "entity_type": "person_name",
+            "start": 455810,
+            "end": 457290,
+            "confidence": null
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 477570,
+            "end": 477970,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 486890,
+            "end": 487410,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 495060,
+            "end": 495660,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 511140,
+            "end": 511620,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 598330,
+            "end": 598930,
+            "confidence": null
+        },
+        {
+            "text": "August",
+            "entity_type": "date_interval",
+            "start": 654120,
+            "end": 654680,
+            "confidence": null
+        },
+        {
+            "text": "August",
+            "entity_type": "date_interval",
+            "start": 656520,
+            "end": 657040,
+            "confidence": null
+        },
+        {
+            "text": "September",
+            "entity_type": "date_interval",
+            "start": 657320,
+            "end": 657880,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 671590,
+            "end": 671910,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 714840,
+            "end": 715400,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 726480,
+            "end": 726760,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 729840,
+            "end": 730360,
+            "confidence": null
+        },
+        {
+            "text": "November",
+            "entity_type": "date_interval",
+            "start": 765610,
+            "end": 766330,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 774940,
+            "end": 775260,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 788020,
+            "end": 788580,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 805240,
+            "end": 805920,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 825390,
+            "end": 826030,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 840270,
+            "end": 840870,
+            "confidence": null
+        },
+        {
+            "text": "one minute",
+            "entity_type": "duration",
+            "start": 851600,
+            "end": 852280,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 852920,
+            "end": 853440,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 864080,
+            "end": 864560,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 871800,
+            "end": 872200,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 890500,
+            "end": 890980,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 909890,
+            "end": 910330,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 923530,
+            "end": 923930,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 947600,
+            "end": 948120,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 953760,
+            "end": 954440,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 961140,
+            "end": 961860,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1025580,
+            "end": 1026180,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1032740,
+            "end": 1033140,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1050509,
+            "end": 1051029,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1053909,
+            "end": 1054549,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1057789,
+            "end": 1058309,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1061509,
+            "end": 1062069,
+            "confidence": null
+        },
+        {
+            "text": "Neon EVM neodym",
+            "entity_type": "organization",
+            "start": 1090320,
+            "end": 1093160,
+            "confidence": null
+        },
+        {
+            "text": "April",
+            "entity_type": "date_interval",
+            "start": 1111560,
+            "end": 1111840,
+            "confidence": null
+        },
+        {
+            "text": "May",
+            "entity_type": "date_interval",
+            "start": 1115120,
+            "end": 1115440,
+            "confidence": null
+        },
+        {
+            "text": "June",
+            "entity_type": "date_interval",
+            "start": 1117440,
+            "end": 1117840,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1127460,
+            "end": 1127860,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1140139,
+            "end": 1140420,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1142860,
+            "end": 1143420,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1157330,
+            "end": 1157890,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1159370,
+            "end": 1159810,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1165250,
+            "end": 1165890,
+            "confidence": null
+        },
+        {
+            "text": "on",
+            "entity_type": "money_amount",
+            "start": 1215030,
+            "end": 1215510,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1218550,
+            "end": 1219110,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1232580,
+            "end": 1233060,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1238140,
+            "end": 1238500,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1241700,
+            "end": 1242340,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1248180,
+            "end": 1248900,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1250340,
+            "end": 1250980,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1253180,
+            "end": 1253820,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1256940,
+            "end": 1257420,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1260580,
+            "end": 1261180,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1262660,
+            "end": 1263260,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1270060,
+            "end": 1270740,
+            "confidence": null
+        },
+        {
+            "text": "Dym",
+            "entity_type": "organization",
+            "start": 1297360,
+            "end": 1298240,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1321640,
+            "end": 1322360,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1394550,
+            "end": 1395190,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1411260,
+            "end": 1411900,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1421620,
+            "end": 1422220,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1424070,
+            "end": 1424590,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1427670,
+            "end": 1428190,
+            "confidence": null
+        },
+        {
+            "text": "Neon Event",
+            "entity_type": "organization",
+            "start": 1494190,
+            "end": 1494910,
+            "confidence": null
+        },
+        {
+            "text": "Solana State",
+            "entity_type": "location",
+            "start": 1496870,
+            "end": 1497710,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1526370,
+            "end": 1527010,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1536430,
+            "end": 1537070,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1539630,
+            "end": 1540430,
+            "confidence": null
+        },
+        {
+            "text": "Merkle",
+            "entity_type": "organization",
+            "start": 1544510,
+            "end": 1545030,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1552590,
+            "end": 1553230,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1574080,
+            "end": 1574560,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1590010,
+            "end": 1590530,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1595610,
+            "end": 1596250,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1600530,
+            "end": 1601050,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1609330,
+            "end": 1609850,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1620220,
+            "end": 1620740,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1623660,
+            "end": 1624340,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 1642670,
+            "end": 1643270,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1667400,
+            "end": 1667880,
+            "confidence": null
+        },
+        {
+            "text": "Solana team",
+            "entity_type": "organization",
+            "start": 1673880,
+            "end": 1674640,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1703920,
+            "end": 1704560,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1709120,
+            "end": 1709840,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1731040,
+            "end": 1731640,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1759870,
+            "end": 1760350,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1768390,
+            "end": 1768990,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1772350,
+            "end": 1772910,
+            "confidence": null
+        },
+        {
+            "text": "insurers",
+            "entity_type": "occupation",
+            "start": 1808130,
+            "end": 1808810,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 1815730,
+            "end": 1816290,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 1825530,
+            "end": 1825850,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1848680,
+            "end": 1849320,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1849560,
+            "end": 1850200,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1956310,
+            "end": 1956950,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 1980180,
+            "end": 1980620,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 1984820,
+            "end": 1985340,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2038420,
+            "end": 2039100,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2046220,
+            "end": 2046700,
+            "confidence": null
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 2052060,
+            "end": 2053900,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2129650,
+            "end": 2130130,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2143330,
+            "end": 2143930,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2178980,
+            "end": 2179460,
+            "confidence": null
+        },
+        {
+            "text": "gas token",
+            "entity_type": "money_amount",
+            "start": 2181420,
+            "end": 2182140,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2195660,
+            "end": 2196220,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2199460,
+            "end": 2200020,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2205970,
+            "end": 2206490,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2221850,
+            "end": 2222410,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2229780,
+            "end": 2230420,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2237700,
+            "end": 2238180,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2276030,
+            "end": 2276630,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2295130,
+            "end": 2295890,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2348070,
+            "end": 2348710,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 2354590,
+            "end": 2355190,
+            "confidence": null
+        },
+        {
+            "text": "neon token",
+            "entity_type": "money_amount",
+            "start": 2429330,
+            "end": 2430330,
+            "confidence": null
+        },
+        {
+            "text": "neon token",
+            "entity_type": "money_amount",
+            "start": 2432130,
+            "end": 2433050,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2434090,
+            "end": 2434690,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 2434850,
+            "end": 2435330,
+            "confidence": null
+        },
+        {
+            "text": "Neon token",
+            "entity_type": "money_amount",
+            "start": 2437930,
+            "end": 2438810,
+            "confidence": null
+        },
+        {
+            "text": "Neon token",
+            "entity_type": "money_amount",
+            "start": 2439450,
+            "end": 2440330,
+            "confidence": null
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2472630,
+            "end": 2473110,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2475900,
+            "end": 2476620,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2487420,
+            "end": 2488060,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2491140,
+            "end": 2491580,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2494500,
+            "end": 2494980,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2514440,
+            "end": 2515080,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2527360,
+            "end": 2528040,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 2556710,
+            "end": 2557430,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 2557910,
+            "end": 2558470,
+            "confidence": null
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2568910,
+            "end": 2569910,
+            "confidence": null
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2571590,
+            "end": 2572590,
+            "confidence": null
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2580710,
+            "end": 2581910,
+            "confidence": null
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2595030,
+            "end": 2595950,
+            "confidence": null
+        },
+        {
+            "text": "neons",
+            "entity_type": "money_amount",
+            "start": 2605670,
+            "end": 2606150,
+            "confidence": null
+        },
+        {
+            "text": "neon",
+            "entity_type": "money_amount",
+            "start": 2610310,
+            "end": 2610790,
+            "confidence": null
+        },
+        {
+            "text": "Audrey",
+            "entity_type": "person_name",
+            "start": 2614680,
+            "end": 2615240,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Andrej",
+            "entity_type": "person_name",
+            "start": 4760,
+            "end": 5320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Validated",
+            "entity_type": "organization",
+            "start": 5720,
+            "end": 6320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Austin",
+            "entity_type": "person_name",
+            "start": 7360,
+            "end": 7920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 15200,
+            "end": 15840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 16680,
+            "end": 17120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 18240,
+            "end": 18840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 23000,
+            "end": 23520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 29130,
+            "end": 29650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 31250,
+            "end": 31930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "engineering",
+            "entity_type": "occupation",
+            "start": 45890,
+            "end": 46330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 86420,
+            "end": 87060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 128270,
+            "end": 128830,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Mainet",
+            "entity_type": "organization",
+            "start": 160000,
+            "end": 161280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 162540,
+            "end": 163140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 165180,
+            "end": 165820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 167620,
+            "end": 168020,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 171180,
+            "end": 171740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 173900,
+            "end": 174500,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 175100,
+            "end": 175620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 176140,
+            "end": 176700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 192930,
+            "end": 193370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 197210,
+            "end": 197850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 200570,
+            "end": 201090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 205530,
+            "end": 206090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 206730,
+            "end": 207290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 221740,
+            "end": 222580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 237300,
+            "end": 237700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 250970,
+            "end": 251650,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ana",
+            "entity_type": "money_amount",
+            "start": 252450,
+            "end": 252970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "NE",
+            "entity_type": "money_amount",
+            "start": 257370,
+            "end": 257970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 267610,
+            "end": 268170,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 276550,
+            "end": 276990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 284710,
+            "end": 285350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 287309,
+            "end": 287830,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "GAS",
+            "entity_type": "money_amount",
+            "start": 291390,
+            "end": 291750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 291950,
+            "end": 292390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 361260,
+            "end": 361820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 367580,
+            "end": 368260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 443090,
+            "end": 443770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 454130,
+            "end": 454810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Merkel Patricia Tricy",
+            "entity_type": "person_name",
+            "start": 455810,
+            "end": 457290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "NEON",
+            "entity_type": "money_amount",
+            "start": 477570,
+            "end": 477970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 486890,
+            "end": 487410,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 495060,
+            "end": 495660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 511140,
+            "end": 511620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 598330,
+            "end": 598930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "August",
+            "entity_type": "date_interval",
+            "start": 654120,
+            "end": 654680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "August",
+            "entity_type": "date_interval",
+            "start": 656520,
+            "end": 657040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "September",
+            "entity_type": "date_interval",
+            "start": 657320,
+            "end": 657880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 671590,
+            "end": 671910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 714840,
+            "end": 715400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 726480,
+            "end": 726760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 729840,
+            "end": 730360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "November",
+            "entity_type": "date_interval",
+            "start": 765610,
+            "end": 766330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 774940,
+            "end": 775260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 788020,
+            "end": 788580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 805240,
+            "end": 805920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 825390,
+            "end": 826030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 840270,
+            "end": 840870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "one minute",
+            "entity_type": "duration",
+            "start": 851600,
+            "end": 852280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 852920,
+            "end": 853440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 864080,
+            "end": 864560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 871800,
+            "end": 872200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 890500,
+            "end": 890980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 909890,
+            "end": 910330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 923530,
+            "end": 923930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 947600,
+            "end": 948120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 953760,
+            "end": 954440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 961140,
+            "end": 961860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1025580,
+            "end": 1026180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1032740,
+            "end": 1033140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1050509,
+            "end": 1051029,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1053909,
+            "end": 1054549,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1057789,
+            "end": 1058309,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 1061509,
+            "end": 1062069,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon EVM neodym",
+            "entity_type": "organization",
+            "start": 1090320,
+            "end": 1093160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "April",
+            "entity_type": "date_interval",
+            "start": 1111560,
+            "end": 1111840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "May",
+            "entity_type": "date_interval",
+            "start": 1115120,
+            "end": 1115440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "June",
+            "entity_type": "date_interval",
+            "start": 1117440,
+            "end": 1117840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1127460,
+            "end": 1127860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1140139,
+            "end": 1140420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1142860,
+            "end": 1143420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1157330,
+            "end": 1157890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1159370,
+            "end": 1159810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1165250,
+            "end": 1165890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "on",
+            "entity_type": "money_amount",
+            "start": 1215030,
+            "end": 1215510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1218550,
+            "end": 1219110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1232580,
+            "end": 1233060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 1238140,
+            "end": 1238500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1241700,
+            "end": 1242340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1248180,
+            "end": 1248900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1250340,
+            "end": 1250980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1253180,
+            "end": 1253820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1256940,
+            "end": 1257420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1260580,
+            "end": 1261180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1262660,
+            "end": 1263260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1270060,
+            "end": 1270740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Dym",
+            "entity_type": "organization",
+            "start": 1297360,
+            "end": 1298240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1321640,
+            "end": 1322360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1394550,
+            "end": 1395190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1411260,
+            "end": 1411900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1421620,
+            "end": 1422220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1424070,
+            "end": 1424590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1427670,
+            "end": 1428190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon Event",
+            "entity_type": "organization",
+            "start": 1494190,
+            "end": 1494910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana State",
+            "entity_type": "location",
+            "start": 1496870,
+            "end": 1497710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1526370,
+            "end": 1527010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1536430,
+            "end": 1537070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1539630,
+            "end": 1540430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Merkle",
+            "entity_type": "organization",
+            "start": 1544510,
+            "end": 1545030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1552590,
+            "end": 1553230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1574080,
+            "end": 1574560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1590010,
+            "end": 1590530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1595610,
+            "end": 1596250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1600530,
+            "end": 1601050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1609330,
+            "end": 1609850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1620220,
+            "end": 1620740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1623660,
+            "end": 1624340,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 1642670,
+            "end": 1643270,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 1667400,
+            "end": 1667880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana team",
+            "entity_type": "organization",
+            "start": 1673880,
+            "end": 1674640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1703920,
+            "end": 1704560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1709120,
+            "end": 1709840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 1731040,
+            "end": 1731640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1759870,
+            "end": 1760350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1768390,
+            "end": 1768990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 1772350,
+            "end": 1772910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "insurers",
+            "entity_type": "occupation",
+            "start": 1808130,
+            "end": 1808810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 1815730,
+            "end": 1816290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "organization",
+            "start": 1825530,
+            "end": 1825850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1848680,
+            "end": 1849320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1849560,
+            "end": 1850200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 1956310,
+            "end": 1956950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 1980180,
+            "end": 1980620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 1984820,
+            "end": 1985340,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2038420,
+            "end": 2039100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2046220,
+            "end": 2046700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2016",
+            "entity_type": "date_interval",
+            "start": 2052060,
+            "end": 2053900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2129650,
+            "end": 2130130,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2143330,
+            "end": 2143930,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2178980,
+            "end": 2179460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "gas token",
+            "entity_type": "money_amount",
+            "start": 2181420,
+            "end": 2182140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2195660,
+            "end": 2196220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2199460,
+            "end": 2200020,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2205970,
+            "end": 2206490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2221850,
+            "end": 2222410,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2229780,
+            "end": 2230420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2237700,
+            "end": 2238180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2276030,
+            "end": 2276630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2295130,
+            "end": 2295890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2348070,
+            "end": 2348710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 2354590,
+            "end": 2355190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon token",
+            "entity_type": "money_amount",
+            "start": 2429330,
+            "end": 2430330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "neon token",
+            "entity_type": "money_amount",
+            "start": 2432130,
+            "end": 2433050,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2434090,
+            "end": 2434690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 2434850,
+            "end": 2435330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Neon token",
+            "entity_type": "money_amount",
+            "start": 2437930,
+            "end": 2438810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon token",
+            "entity_type": "money_amount",
+            "start": 2439450,
+            "end": 2440330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neon",
+            "entity_type": "money_amount",
+            "start": 2472630,
+            "end": 2473110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2475900,
+            "end": 2476620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2487420,
+            "end": 2488060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2491140,
+            "end": 2491580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 2494500,
+            "end": 2494980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2514440,
+            "end": 2515080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 2527360,
+            "end": 2528040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "organization",
+            "start": 2556710,
+            "end": 2557430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 2557910,
+            "end": 2558470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2568910,
+            "end": 2569910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2571590,
+            "end": 2572590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2580710,
+            "end": 2581910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon tokens",
+            "entity_type": "money_amount",
+            "start": 2595030,
+            "end": 2595950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neons",
+            "entity_type": "money_amount",
+            "start": 2605670,
+            "end": 2606150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "neon",
+            "entity_type": "money_amount",
+            "start": 2610310,
+            "end": 2610790,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Audrey",
+            "entity_type": "person_name",
+            "start": 2614680,
+            "end": 2615240,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

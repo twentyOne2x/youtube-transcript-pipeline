@@ -1,0 +1,67 @@
+{
+    "video_file": "2022-12-13_lV_BcwXQu68_Breakpoint Highlights - Day 2.mp3",
+    "entities": [
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 240,
+            "end": 20000,
+            "confidence": null
+        },
+        {
+            "text": "Verify Tiles",
+            "entity_type": "organization",
+            "start": 33270,
+            "end": 34150,
+            "confidence": null
+        },
+        {
+            "text": "Aggregate",
+            "entity_type": "organization",
+            "start": 34270,
+            "end": 34750,
+            "confidence": null
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 36830,
+            "end": 37110,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 240,
+            "end": 20000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Verify Tiles",
+            "entity_type": "organization",
+            "start": 33270,
+            "end": 34150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Aggregate",
+            "entity_type": "organization",
+            "start": 34270,
+            "end": 34750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "second",
+            "entity_type": "duration",
+            "start": 36830,
+            "end": 37110,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

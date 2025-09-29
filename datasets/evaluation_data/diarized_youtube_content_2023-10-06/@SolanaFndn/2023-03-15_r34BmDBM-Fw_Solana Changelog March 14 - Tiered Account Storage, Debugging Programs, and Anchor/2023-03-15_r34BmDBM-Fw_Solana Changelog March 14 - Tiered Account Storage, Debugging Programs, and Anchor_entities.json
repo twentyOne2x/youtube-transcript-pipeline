@@ -1,0 +1,412 @@
+{
+    "video_file": "2023-03-15_r34BmDBM-Fw_Solana Changelog March 14 - Tiered Account Storage, Debugging Programs, and Anchor.mp3",
+    "entities": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 2840,
+            "end": 3280,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 5400,
+            "end": 6040,
+            "confidence": null
+        },
+        {
+            "text": "Grizzly Thon",
+            "entity_type": "event",
+            "start": 9760,
+            "end": 10560,
+            "confidence": null
+        },
+        {
+            "text": "grizzlyathon",
+            "entity_type": "event",
+            "start": 14720,
+            "end": 15480,
+            "confidence": null
+        },
+        {
+            "text": "Dev Rel team",
+            "entity_type": "organization",
+            "start": 24840,
+            "end": 25560,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 25720,
+            "end": 26480,
+            "confidence": null
+        },
+        {
+            "text": "Grizzly Thon",
+            "entity_type": "organization",
+            "start": 35780,
+            "end": 36700,
+            "confidence": null
+        },
+        {
+            "text": "19:00 o'clock UTC time",
+            "entity_type": "time",
+            "start": 42940,
+            "end": 45260,
+            "confidence": null
+        },
+        {
+            "text": "Labs team",
+            "entity_type": "organization",
+            "start": 53780,
+            "end": 54460,
+            "confidence": null
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 54460,
+            "end": 55460,
+            "confidence": null
+        },
+        {
+            "text": "Mango",
+            "entity_type": "person_name",
+            "start": 55460,
+            "end": 55940,
+            "confidence": null
+        },
+        {
+            "text": "Jito",
+            "entity_type": "person_name",
+            "start": 55940,
+            "end": 56620,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 80290,
+            "end": 80810,
+            "confidence": null
+        },
+        {
+            "text": "Labs",
+            "entity_type": "organization",
+            "start": 92000,
+            "end": 92520,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 138670,
+            "end": 139150,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 144510,
+            "end": 144830,
+            "confidence": null
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 145030,
+            "end": 145590,
+            "confidence": null
+        },
+        {
+            "text": "FT",
+            "entity_type": "money_amount",
+            "start": 148850,
+            "end": 149490,
+            "confidence": null
+        },
+        {
+            "text": "1 million",
+            "entity_type": "money_amount",
+            "start": 209790,
+            "end": 210470,
+            "confidence": null
+        },
+        {
+            "text": "5 SOL",
+            "entity_type": "money_amount",
+            "start": 210910,
+            "end": 211510,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 281270,
+            "end": 281910,
+            "confidence": null
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 284390,
+            "end": 284990,
+            "confidence": null
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 285630,
+            "end": 286070,
+            "confidence": null
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 311720,
+            "end": 312640,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 330850,
+            "end": 331370,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 334930,
+            "end": 335410,
+            "confidence": null
+        },
+        {
+            "text": "Labs",
+            "entity_type": "organization",
+            "start": 348450,
+            "end": 349010,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 2840,
+            "end": 3280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 5400,
+            "end": 6040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Grizzly Thon",
+            "entity_type": "event",
+            "start": 9760,
+            "end": 10560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "grizzlyathon",
+            "entity_type": "event",
+            "start": 14720,
+            "end": 15480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dev Rel team",
+            "entity_type": "organization",
+            "start": 24840,
+            "end": 25560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 25720,
+            "end": 26480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Grizzly Thon",
+            "entity_type": "organization",
+            "start": 35780,
+            "end": 36700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "19:00 o'clock UTC time",
+            "entity_type": "time",
+            "start": 42940,
+            "end": 45260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Labs team",
+            "entity_type": "organization",
+            "start": 53780,
+            "end": 54460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Fire Dancer team",
+            "entity_type": "organization",
+            "start": 54460,
+            "end": 55460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mango",
+            "entity_type": "person_name",
+            "start": 55460,
+            "end": 55940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jito",
+            "entity_type": "person_name",
+            "start": 55940,
+            "end": 56620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 80290,
+            "end": 80810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Labs",
+            "entity_type": "organization",
+            "start": 92000,
+            "end": 92520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 138670,
+            "end": 139150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 144510,
+            "end": 144830,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Helios",
+            "entity_type": "organization",
+            "start": 145030,
+            "end": 145590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "FT",
+            "entity_type": "money_amount",
+            "start": 148850,
+            "end": 149490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1 million",
+            "entity_type": "money_amount",
+            "start": 209790,
+            "end": 210470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "5 SOL",
+            "entity_type": "money_amount",
+            "start": 210910,
+            "end": 211510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 281270,
+            "end": 281910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 284390,
+            "end": 284990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Anchor",
+            "entity_type": "organization",
+            "start": 285630,
+            "end": 286070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2022",
+            "entity_type": "date_interval",
+            "start": 311720,
+            "end": 312640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 330850,
+            "end": 331370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 334930,
+            "end": 335410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Labs",
+            "entity_type": "organization",
+            "start": 348450,
+            "end": 349010,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

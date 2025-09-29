@@ -1,0 +1,382 @@
+{
+    "video_file": "2024-10-09_cEc8DVvy31M_Solana Changelog Oct 9 - Program Runtime ABI v2, Updating Rust to 1.81.0, Agave v2.0 transition.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5960,
+            "end": 6360,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7600,
+            "end": 8000,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8880,
+            "end": 9360,
+            "confidence": null
+        },
+        {
+            "text": "two years",
+            "entity_type": "duration",
+            "start": 21760,
+            "end": 22400,
+            "confidence": null
+        },
+        {
+            "text": "Alexander",
+            "entity_type": "person_name",
+            "start": 27480,
+            "end": 28320,
+            "confidence": null
+        },
+        {
+            "text": "Alessandra",
+            "entity_type": "person_name",
+            "start": 29960,
+            "end": 30720,
+            "confidence": null
+        },
+        {
+            "text": "application developer",
+            "entity_type": "occupation",
+            "start": 48560,
+            "end": 49760,
+            "confidence": null
+        },
+        {
+            "text": "application developer",
+            "entity_type": "occupation",
+            "start": 116440,
+            "end": 117200,
+            "confidence": null
+        },
+        {
+            "text": "Alexander",
+            "entity_type": "person_name",
+            "start": 126120,
+            "end": 126960,
+            "confidence": null
+        },
+        {
+            "text": "application developers",
+            "entity_type": "occupation",
+            "start": 130960,
+            "end": 132080,
+            "confidence": null
+        },
+        {
+            "text": "Brandon Washington",
+            "entity_type": "person_name",
+            "start": 159010,
+            "end": 160090,
+            "confidence": null
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 175100,
+            "end": 175420,
+            "confidence": null
+        },
+        {
+            "text": "October 14th",
+            "entity_type": "date",
+            "start": 241600,
+            "end": 243280,
+            "confidence": null
+        },
+        {
+            "text": "October 21st",
+            "entity_type": "date",
+            "start": 245800,
+            "end": 246960,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 285530,
+            "end": 286090,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 298170,
+            "end": 298810,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 300290,
+            "end": 301050,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 305810,
+            "end": 306250,
+            "confidence": null
+        },
+        {
+            "text": "Truett",
+            "entity_type": "person_name",
+            "start": 306530,
+            "end": 307210,
+            "confidence": null
+        },
+        {
+            "text": "Truett",
+            "entity_type": "person_name",
+            "start": 310500,
+            "end": 310860,
+            "confidence": null
+        },
+        {
+            "text": "Abdullah",
+            "entity_type": "person_name",
+            "start": 315500,
+            "end": 316540,
+            "confidence": null
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 317060,
+            "end": 317860,
+            "confidence": null
+        },
+        {
+            "text": "Childa",
+            "entity_type": "person_name",
+            "start": 317860,
+            "end": 318620,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 325780,
+            "end": 326260,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 326420,
+            "end": 326940,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5960,
+            "end": 6360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7600,
+            "end": 8000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 8880,
+            "end": 9360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two years",
+            "entity_type": "duration",
+            "start": 21760,
+            "end": 22400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alexander",
+            "entity_type": "person_name",
+            "start": 27480,
+            "end": 28320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alessandra",
+            "entity_type": "person_name",
+            "start": 29960,
+            "end": 30720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "application developer",
+            "entity_type": "occupation",
+            "start": 48560,
+            "end": 49760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "application developer",
+            "entity_type": "occupation",
+            "start": 116440,
+            "end": 117200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Alexander",
+            "entity_type": "person_name",
+            "start": 126120,
+            "end": 126960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "application developers",
+            "entity_type": "occupation",
+            "start": 130960,
+            "end": 132080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Brandon Washington",
+            "entity_type": "person_name",
+            "start": 159010,
+            "end": 160090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "three years",
+            "entity_type": "duration",
+            "start": 175100,
+            "end": 175420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "October 14th",
+            "entity_type": "date",
+            "start": 241600,
+            "end": 243280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "October 21st",
+            "entity_type": "date",
+            "start": 245800,
+            "end": 246960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 285530,
+            "end": 286090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 298170,
+            "end": 298810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 300290,
+            "end": 301050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 305810,
+            "end": 306250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Truett",
+            "entity_type": "person_name",
+            "start": 306530,
+            "end": 307210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Truett",
+            "entity_type": "person_name",
+            "start": 310500,
+            "end": 310860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Abdullah",
+            "entity_type": "person_name",
+            "start": 315500,
+            "end": 316540,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 317060,
+            "end": 317860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Childa",
+            "entity_type": "person_name",
+            "start": 317860,
+            "end": 318620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 325780,
+            "end": 326260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 326420,
+            "end": 326940,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

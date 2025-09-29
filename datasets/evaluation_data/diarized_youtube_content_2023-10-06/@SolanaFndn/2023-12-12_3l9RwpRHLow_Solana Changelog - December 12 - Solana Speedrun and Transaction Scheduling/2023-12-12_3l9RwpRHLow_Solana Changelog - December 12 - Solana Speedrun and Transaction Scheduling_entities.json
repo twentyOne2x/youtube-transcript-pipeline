@@ -1,0 +1,277 @@
+{
+    "video_file": "2023-12-12_3l9RwpRHLow_Solana Changelog - December 12 - Solana Speedrun and Transaction Scheduling.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6760,
+            "end": 7200,
+            "confidence": null
+        },
+        {
+            "text": "Solana Speedrun",
+            "entity_type": "event",
+            "start": 10920,
+            "end": 12160,
+            "confidence": null
+        },
+        {
+            "text": "MagicBlock",
+            "entity_type": "organization",
+            "start": 14880,
+            "end": 15640,
+            "confidence": null
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 15999,
+            "end": 16800,
+            "confidence": null
+        },
+        {
+            "text": "Speedrun",
+            "entity_type": "event",
+            "start": 32540,
+            "end": 33140,
+            "confidence": null
+        },
+        {
+            "text": "Speedrun hackathon",
+            "entity_type": "event",
+            "start": 38180,
+            "end": 39500,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 46740,
+            "end": 47340,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 55180,
+            "end": 55900,
+            "confidence": null
+        },
+        {
+            "text": "devrel",
+            "entity_type": "occupation",
+            "start": 56500,
+            "end": 56940,
+            "confidence": null
+        },
+        {
+            "text": "foundation",
+            "entity_type": "organization",
+            "start": 57420,
+            "end": 57900,
+            "confidence": null
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 60100,
+            "end": 60700,
+            "confidence": null
+        },
+        {
+            "text": "John Cinque",
+            "entity_type": "person_name",
+            "start": 190090,
+            "end": 190970,
+            "confidence": null
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 213670,
+            "end": 214110,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 234600,
+            "end": 235040,
+            "confidence": null
+        },
+        {
+            "text": "developer relations",
+            "entity_type": "organization",
+            "start": 250280,
+            "end": 251040,
+            "confidence": null
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 251360,
+            "end": 252080,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 260070,
+            "end": 260350,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 269710,
+            "end": 270230,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 6760,
+            "end": 7200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Speedrun",
+            "entity_type": "event",
+            "start": 10920,
+            "end": 12160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "MagicBlock",
+            "entity_type": "organization",
+            "start": 14880,
+            "end": 15640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Magic Block",
+            "entity_type": "organization",
+            "start": 15999,
+            "end": 16800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Speedrun",
+            "entity_type": "event",
+            "start": 32540,
+            "end": 33140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Speedrun hackathon",
+            "entity_type": "event",
+            "start": 38180,
+            "end": 39500,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 46740,
+            "end": 47340,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 55180,
+            "end": 55900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "devrel",
+            "entity_type": "occupation",
+            "start": 56500,
+            "end": 56940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "foundation",
+            "entity_type": "organization",
+            "start": 57420,
+            "end": 57900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "10 minutes",
+            "entity_type": "duration",
+            "start": 60100,
+            "end": 60700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John Cinque",
+            "entity_type": "person_name",
+            "start": 190090,
+            "end": 190970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "engineers",
+            "entity_type": "occupation",
+            "start": 213670,
+            "end": 214110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 234600,
+            "end": 235040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer relations",
+            "entity_type": "organization",
+            "start": 250280,
+            "end": 251040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana foundation",
+            "entity_type": "organization",
+            "start": 251360,
+            "end": 252080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 260070,
+            "end": 260350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 269710,
+            "end": 270230,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

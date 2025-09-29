@@ -1,0 +1,382 @@
+{
+    "video_file": "2024-05-01_HqEhlxwS2cc_Solana Changelog May 1 - Auto-extend programs in the CLI, deploy Solana programs with an RPC, more.mp3",
+    "entities": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5440,
+            "end": 5800,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6840,
+            "end": 7200,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8400,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 62600,
+            "end": 62920,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 94510,
+            "end": 95070,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 95710,
+            "end": 96190,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 120360,
+            "end": 120920,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 171210,
+            "end": 171490,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 204420,
+            "end": 205140,
+            "confidence": null
+        },
+        {
+            "text": "turbo@turbo.computer",
+            "entity_type": "email_address",
+            "start": 235010,
+            "end": 236810,
+            "confidence": null
+        },
+        {
+            "text": "developer relations team",
+            "entity_type": "organization",
+            "start": 252850,
+            "end": 253770,
+            "confidence": null
+        },
+        {
+            "text": "Sonic foundation",
+            "entity_type": "organization",
+            "start": 254350,
+            "end": 255190,
+            "confidence": null
+        },
+        {
+            "text": "April 1st",
+            "entity_type": "date",
+            "start": 276350,
+            "end": 277070,
+            "confidence": null
+        },
+        {
+            "text": "May 27th",
+            "entity_type": "date",
+            "start": 283940,
+            "end": 285060,
+            "confidence": null
+        },
+        {
+            "text": "April 30",
+            "entity_type": "date",
+            "start": 297540,
+            "end": 298500,
+            "confidence": null
+        },
+        {
+            "text": "TestNet",
+            "entity_type": "organization",
+            "start": 305300,
+            "end": 305740,
+            "confidence": null
+        },
+        {
+            "text": "May 6th",
+            "entity_type": "date",
+            "start": 308140,
+            "end": 308980,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 344980,
+            "end": 345580,
+            "confidence": null
+        },
+        {
+            "text": "Chala",
+            "entity_type": "person_name",
+            "start": 352380,
+            "end": 352900,
+            "confidence": null
+        },
+        {
+            "text": "Mark",
+            "entity_type": "person_name",
+            "start": 353180,
+            "end": 353460,
+            "confidence": null
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 354100,
+            "end": 354780,
+            "confidence": null
+        },
+        {
+            "text": "Nabil",
+            "entity_type": "person_name",
+            "start": 355860,
+            "end": 356500,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 358300,
+            "end": 359140,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 368560,
+            "end": 369040,
+            "confidence": null
+        },
+        {
+            "text": "Exchange",
+            "entity_type": "organization",
+            "start": 371560,
+            "end": 372080,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 5440,
+            "end": 5800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 6840,
+            "end": 7200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7960,
+            "end": 8400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 62600,
+            "end": 62920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 94510,
+            "end": 95070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 95710,
+            "end": 96190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 120360,
+            "end": 120920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 171210,
+            "end": 171490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 204420,
+            "end": 205140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "turbo@turbo.computer",
+            "entity_type": "email_address",
+            "start": 235010,
+            "end": 236810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developer relations team",
+            "entity_type": "organization",
+            "start": 252850,
+            "end": 253770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sonic foundation",
+            "entity_type": "organization",
+            "start": 254350,
+            "end": 255190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "April 1st",
+            "entity_type": "date",
+            "start": 276350,
+            "end": 277070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "May 27th",
+            "entity_type": "date",
+            "start": 283940,
+            "end": 285060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "April 30",
+            "entity_type": "date",
+            "start": 297540,
+            "end": 298500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "TestNet",
+            "entity_type": "organization",
+            "start": 305300,
+            "end": 305740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "May 6th",
+            "entity_type": "date",
+            "start": 308140,
+            "end": 308980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 344980,
+            "end": 345580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chala",
+            "entity_type": "person_name",
+            "start": 352380,
+            "end": 352900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mark",
+            "entity_type": "person_name",
+            "start": 353180,
+            "end": 353460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "White Seal",
+            "entity_type": "person_name",
+            "start": 354100,
+            "end": 354780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nabil",
+            "entity_type": "person_name",
+            "start": 355860,
+            "end": 356500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 358300,
+            "end": 359140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 368560,
+            "end": 369040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Exchange",
+            "entity_type": "organization",
+            "start": 371560,
+            "end": 372080,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

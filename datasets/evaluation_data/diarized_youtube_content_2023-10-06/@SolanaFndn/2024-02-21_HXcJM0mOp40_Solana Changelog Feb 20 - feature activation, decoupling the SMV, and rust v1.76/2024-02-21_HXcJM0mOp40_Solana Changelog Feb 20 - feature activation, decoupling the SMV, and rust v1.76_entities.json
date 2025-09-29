@@ -1,0 +1,397 @@
+{
+    "video_file": "2024-02-21_HXcJM0mOp40_Solana Changelog Feb 20 - feature activation, decoupling the SMV, and rust v1.76.mp3",
+    "entities": [
+        {
+            "text": "Jacob Creech",
+            "entity_type": "person_name",
+            "start": 6480,
+            "end": 7400,
+            "confidence": null
+        },
+        {
+            "text": "Jonas Hahn",
+            "entity_type": "person_name",
+            "start": 7720,
+            "end": 8640,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 149390,
+            "end": 149950,
+            "confidence": null
+        },
+        {
+            "text": "60 days",
+            "entity_type": "duration",
+            "start": 196410,
+            "end": 196890,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 224400,
+            "end": 224920,
+            "confidence": null
+        },
+        {
+            "text": "March",
+            "entity_type": "date_interval",
+            "start": 236620,
+            "end": 236820,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 242980,
+            "end": 243460,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 264060,
+            "end": 264620,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 268940,
+            "end": 269300,
+            "confidence": null
+        },
+        {
+            "text": "Hack Illinois",
+            "entity_type": "event",
+            "start": 272740,
+            "end": 273540,
+            "confidence": null
+        },
+        {
+            "text": "Anatolia Kovenko",
+            "entity_type": "person_name",
+            "start": 287420,
+            "end": 288700,
+            "confidence": null
+        },
+        {
+            "text": "East Denver",
+            "entity_type": "location",
+            "start": 298850,
+            "end": 299450,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 304290,
+            "end": 305010,
+            "confidence": null
+        },
+        {
+            "text": "Ethan",
+            "entity_type": "location",
+            "start": 308970,
+            "end": 309490,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 310050,
+            "end": 310530,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 315770,
+            "end": 316250,
+            "confidence": null
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 329180,
+            "end": 329780,
+            "confidence": null
+        },
+        {
+            "text": "Salonic",
+            "entity_type": "organization",
+            "start": 359030,
+            "end": 359510,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 362110,
+            "end": 362750,
+            "confidence": null
+        },
+        {
+            "text": "google",
+            "entity_type": "organization",
+            "start": 369750,
+            "end": 370070,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 372910,
+            "end": 373710,
+            "confidence": null
+        },
+        {
+            "text": "moderator election",
+            "entity_type": "event",
+            "start": 375630,
+            "end": 376510,
+            "confidence": null
+        },
+        {
+            "text": "moderator",
+            "entity_type": "occupation",
+            "start": 380750,
+            "end": 381390,
+            "confidence": null
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 382030,
+            "end": 383310,
+            "confidence": null
+        },
+        {
+            "text": "moderator",
+            "entity_type": "occupation",
+            "start": 395910,
+            "end": 396430,
+            "confidence": null
+        },
+        {
+            "text": "Arcelona Stack Exchange",
+            "entity_type": "organization",
+            "start": 397230,
+            "end": 398470,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Jacob Creech",
+            "entity_type": "person_name",
+            "start": 6480,
+            "end": 7400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas Hahn",
+            "entity_type": "person_name",
+            "start": 7720,
+            "end": 8640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 149390,
+            "end": 149950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "60 days",
+            "entity_type": "duration",
+            "start": 196410,
+            "end": 196890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 224400,
+            "end": 224920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "March",
+            "entity_type": "date_interval",
+            "start": 236620,
+            "end": 236820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 242980,
+            "end": 243460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 264060,
+            "end": 264620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 268940,
+            "end": 269300,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hack Illinois",
+            "entity_type": "event",
+            "start": 272740,
+            "end": 273540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anatolia Kovenko",
+            "entity_type": "person_name",
+            "start": 287420,
+            "end": 288700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "East Denver",
+            "entity_type": "location",
+            "start": 298850,
+            "end": 299450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 304290,
+            "end": 305010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethan",
+            "entity_type": "location",
+            "start": 308970,
+            "end": 309490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 310050,
+            "end": 310530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 315770,
+            "end": 316250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 329180,
+            "end": 329780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Salonic",
+            "entity_type": "organization",
+            "start": 359030,
+            "end": 359510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 362110,
+            "end": 362750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "google",
+            "entity_type": "organization",
+            "start": 369750,
+            "end": 370070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 372910,
+            "end": 373710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "moderator election",
+            "entity_type": "event",
+            "start": 375630,
+            "end": 376510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "moderator",
+            "entity_type": "occupation",
+            "start": 380750,
+            "end": 381390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana Stack Exchange",
+            "entity_type": "organization",
+            "start": 382030,
+            "end": 383310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "moderator",
+            "entity_type": "occupation",
+            "start": 395910,
+            "end": 396430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Arcelona Stack Exchange",
+            "entity_type": "organization",
+            "start": 397230,
+            "end": 398470,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

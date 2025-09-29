@@ -1,0 +1,832 @@
+{
+    "video_file": "2023-12-12_5IR_riAAAls_Solana Community Validator Discussion - December 7 2023.mp3",
+    "entities": [
+        {
+            "text": "Solana Community Validator Discussion",
+            "entity_type": "event",
+            "start": 1160,
+            "end": 2920,
+            "confidence": null
+        },
+        {
+            "text": "December 7, 2023",
+            "entity_type": "date",
+            "start": 2920,
+            "end": 4720,
+            "confidence": null
+        },
+        {
+            "text": "SFDP",
+            "entity_type": "organization",
+            "start": 18160,
+            "end": 19080,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 22120,
+            "end": 22560,
+            "confidence": null
+        },
+        {
+            "text": "Validator",
+            "entity_type": "occupation",
+            "start": 27050,
+            "end": 27610,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 38890,
+            "end": 39610,
+            "confidence": null
+        },
+        {
+            "text": "117",
+            "entity_type": "money_amount",
+            "start": 67240,
+            "end": 68440,
+            "confidence": null
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 89660,
+            "end": 90220,
+            "confidence": null
+        },
+        {
+            "text": "debug leader",
+            "entity_type": "occupation",
+            "start": 94260,
+            "end": 95060,
+            "confidence": null
+        },
+        {
+            "text": "116",
+            "entity_type": "ip_address",
+            "start": 125790,
+            "end": 126230,
+            "confidence": null
+        },
+        {
+            "text": "117",
+            "entity_type": "ip_address",
+            "start": 127190,
+            "end": 127670,
+            "confidence": null
+        },
+        {
+            "text": "116.21",
+            "entity_type": "ip_address",
+            "start": 133400,
+            "end": 134480,
+            "confidence": null
+        },
+        {
+            "text": "117.7",
+            "entity_type": "ip_address",
+            "start": 134960,
+            "end": 135960,
+            "confidence": null
+        },
+        {
+            "text": "12.1",
+            "entity_type": "date",
+            "start": 148920,
+            "end": 149600,
+            "confidence": null
+        },
+        {
+            "text": "2023",
+            "entity_type": "date_interval",
+            "start": 162020,
+            "end": 162776,
+            "confidence": null
+        },
+        {
+            "text": "1201",
+            "entity_type": "date_interval",
+            "start": 162944,
+            "end": 163700,
+            "confidence": null
+        },
+        {
+            "text": "testnet operator",
+            "entity_type": "occupation",
+            "start": 196270,
+            "end": 197150,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 213590,
+            "end": 214150,
+            "confidence": null
+        },
+        {
+            "text": "SFDP",
+            "entity_type": "organization",
+            "start": 276729,
+            "end": 277529,
+            "confidence": null
+        },
+        {
+            "text": "one year",
+            "entity_type": "duration",
+            "start": 284129,
+            "end": 284649,
+            "confidence": null
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 322210,
+            "end": 322570,
+            "confidence": null
+        },
+        {
+            "text": "Zetetsu",
+            "entity_type": "person_name",
+            "start": 364510,
+            "end": 365190,
+            "confidence": null
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 388310,
+            "end": 388750,
+            "confidence": null
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 461220,
+            "end": 461820,
+            "confidence": null
+        },
+        {
+            "text": "Zan",
+            "entity_type": "organization",
+            "start": 534630,
+            "end": 535190,
+            "confidence": null
+        },
+        {
+            "text": "Lori",
+            "entity_type": "person_name",
+            "start": 825990,
+            "end": 826350,
+            "confidence": null
+        },
+        {
+            "text": "late January",
+            "entity_type": "date_interval",
+            "start": 840069,
+            "end": 840630,
+            "confidence": null
+        },
+        {
+            "text": "early February",
+            "entity_type": "date_interval",
+            "start": 840790,
+            "end": 841670,
+            "confidence": null
+        },
+        {
+            "text": "late January",
+            "entity_type": "date_interval",
+            "start": 856430,
+            "end": 857710,
+            "confidence": null
+        },
+        {
+            "text": "Feb",
+            "entity_type": "date_interval",
+            "start": 858030,
+            "end": 858510,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 870510,
+            "end": 870990,
+            "confidence": null
+        },
+        {
+            "text": "40k",
+            "entity_type": "money_amount",
+            "start": 890600,
+            "end": 891240,
+            "confidence": null
+        },
+        {
+            "text": "30k",
+            "entity_type": "money_amount",
+            "start": 915470,
+            "end": 916830,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 963330,
+            "end": 963850,
+            "confidence": null
+        },
+        {
+            "text": "Pavel",
+            "entity_type": "person_name",
+            "start": 1052948,
+            "end": 1053429,
+            "confidence": null
+        },
+        {
+            "text": "nyc",
+            "entity_type": "location",
+            "start": 1079840,
+            "end": 1080640,
+            "confidence": null
+        },
+        {
+            "text": "Pavel",
+            "entity_type": "person_name",
+            "start": 1112530,
+            "end": 1112890,
+            "confidence": null
+        },
+        {
+            "text": "Tim",
+            "entity_type": "person_name",
+            "start": 1151690,
+            "end": 1152010,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 1193220,
+            "end": 1193620,
+            "confidence": null
+        },
+        {
+            "text": "John Wong",
+            "entity_type": "person_name",
+            "start": 1209750,
+            "end": 1210350,
+            "confidence": null
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 1233840,
+            "end": 1234400,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 1235440,
+            "end": 1235840,
+            "confidence": null
+        },
+        {
+            "text": "Soulflare",
+            "entity_type": "organization",
+            "start": 1301610,
+            "end": 1302210,
+            "confidence": null
+        },
+        {
+            "text": "Phantom",
+            "entity_type": "organization",
+            "start": 1303490,
+            "end": 1304090,
+            "confidence": null
+        },
+        {
+            "text": "January",
+            "entity_type": "date_interval",
+            "start": 1310630,
+            "end": 1310950,
+            "confidence": null
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 1341040,
+            "end": 1341560,
+            "confidence": null
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 1365420,
+            "end": 1365900,
+            "confidence": null
+        },
+        {
+            "text": "BlockLogic",
+            "entity_type": "organization",
+            "start": 1394090,
+            "end": 1394930,
+            "confidence": null
+        },
+        {
+            "text": "two hours",
+            "entity_type": "duration",
+            "start": 1395450,
+            "end": 1396010,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 1412130,
+            "end": 1412650,
+            "confidence": null
+        },
+        {
+            "text": "a few weeks",
+            "entity_type": "duration",
+            "start": 1425200,
+            "end": 1425720,
+            "confidence": null
+        },
+        {
+            "text": "December 1",
+            "entity_type": "date",
+            "start": 1439710,
+            "end": 1440510,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 1476080,
+            "end": 1476520,
+            "confidence": null
+        },
+        {
+            "text": "Tim",
+            "entity_type": "person_name",
+            "start": 1480680,
+            "end": 1480959,
+            "confidence": null
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 1481240,
+            "end": 1481560,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana Community Validator Discussion",
+            "entity_type": "event",
+            "start": 1160,
+            "end": 2920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "December 7, 2023",
+            "entity_type": "date",
+            "start": 2920,
+            "end": 4720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "SFDP",
+            "entity_type": "organization",
+            "start": 18160,
+            "end": 19080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 22120,
+            "end": 22560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Validator",
+            "entity_type": "occupation",
+            "start": 27050,
+            "end": 27610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 38890,
+            "end": 39610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "117",
+            "entity_type": "money_amount",
+            "start": 67240,
+            "end": 68440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "operators",
+            "entity_type": "occupation",
+            "start": 89660,
+            "end": 90220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "debug leader",
+            "entity_type": "occupation",
+            "start": 94260,
+            "end": 95060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "116",
+            "entity_type": "ip_address",
+            "start": 125790,
+            "end": 126230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "117",
+            "entity_type": "ip_address",
+            "start": 127190,
+            "end": 127670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "116.21",
+            "entity_type": "ip_address",
+            "start": 133400,
+            "end": 134480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "117.7",
+            "entity_type": "ip_address",
+            "start": 134960,
+            "end": 135960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "12.1",
+            "entity_type": "date",
+            "start": 148920,
+            "end": 149600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2023",
+            "entity_type": "date_interval",
+            "start": 162020,
+            "end": 162776,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "1201",
+            "entity_type": "date_interval",
+            "start": 162944,
+            "end": 163700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "testnet operator",
+            "entity_type": "occupation",
+            "start": 196270,
+            "end": 197150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 213590,
+            "end": 214150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "SFDP",
+            "entity_type": "organization",
+            "start": 276729,
+            "end": 277529,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "one year",
+            "entity_type": "duration",
+            "start": 284129,
+            "end": 284649,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 322210,
+            "end": 322570,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Zetetsu",
+            "entity_type": "person_name",
+            "start": 364510,
+            "end": 365190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 388310,
+            "end": 388750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 461220,
+            "end": 461820,
+            "confidence": null,
+            "speaker": "D"
+        },
+        {
+            "text": "Zan",
+            "entity_type": "organization",
+            "start": 534630,
+            "end": 535190,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Lori",
+            "entity_type": "person_name",
+            "start": 825990,
+            "end": 826350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "late January",
+            "entity_type": "date_interval",
+            "start": 840069,
+            "end": 840630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "early February",
+            "entity_type": "date_interval",
+            "start": 840790,
+            "end": 841670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "late January",
+            "entity_type": "date_interval",
+            "start": 856430,
+            "end": 857710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Feb",
+            "entity_type": "date_interval",
+            "start": 858030,
+            "end": 858510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 870510,
+            "end": 870990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "40k",
+            "entity_type": "money_amount",
+            "start": 890600,
+            "end": 891240,
+            "confidence": null,
+            "speaker": "E"
+        },
+        {
+            "text": "30k",
+            "entity_type": "money_amount",
+            "start": 915470,
+            "end": 916830,
+            "confidence": null,
+            "speaker": "E"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 963330,
+            "end": 963850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Pavel",
+            "entity_type": "person_name",
+            "start": 1052948,
+            "end": 1053429,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "nyc",
+            "entity_type": "location",
+            "start": 1079840,
+            "end": 1080640,
+            "confidence": null,
+            "speaker": "F"
+        },
+        {
+            "text": "Pavel",
+            "entity_type": "person_name",
+            "start": 1112530,
+            "end": 1112890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tim",
+            "entity_type": "person_name",
+            "start": 1151690,
+            "end": 1152010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 1193220,
+            "end": 1193620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John Wong",
+            "entity_type": "person_name",
+            "start": 1209750,
+            "end": 1210350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "operator",
+            "entity_type": "occupation",
+            "start": 1233840,
+            "end": 1234400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 1235440,
+            "end": 1235840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Soulflare",
+            "entity_type": "organization",
+            "start": 1301610,
+            "end": 1302210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Phantom",
+            "entity_type": "organization",
+            "start": 1303490,
+            "end": 1304090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "January",
+            "entity_type": "date_interval",
+            "start": 1310630,
+            "end": 1310950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "JITO",
+            "entity_type": "organization",
+            "start": 1341040,
+            "end": 1341560,
+            "confidence": null,
+            "speaker": "G"
+        },
+        {
+            "text": "Brian",
+            "entity_type": "person_name",
+            "start": 1365420,
+            "end": 1365900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "BlockLogic",
+            "entity_type": "organization",
+            "start": 1394090,
+            "end": 1394930,
+            "confidence": null,
+            "speaker": "G"
+        },
+        {
+            "text": "two hours",
+            "entity_type": "duration",
+            "start": 1395450,
+            "end": 1396010,
+            "confidence": null,
+            "speaker": "G"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 1412130,
+            "end": 1412650,
+            "confidence": null,
+            "speaker": "G"
+        },
+        {
+            "text": "a few weeks",
+            "entity_type": "duration",
+            "start": 1425200,
+            "end": 1425720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "December 1",
+            "entity_type": "date",
+            "start": 1439710,
+            "end": 1440510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 1476080,
+            "end": 1476520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tim",
+            "entity_type": "person_name",
+            "start": 1480680,
+            "end": 1480959,
+            "confidence": null,
+            "speaker": "G"
+        },
+        {
+            "text": "Ben",
+            "entity_type": "person_name",
+            "start": 1481240,
+            "end": 1481560,
+            "confidence": null,
+            "speaker": "G"
+        }
+    ]
+}

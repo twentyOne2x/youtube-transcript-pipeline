@@ -1,0 +1,97 @@
+{
+    "video_file": "2024-06-06_Lvea_uifzR8_Paypal USD on Solana.mp3",
+    "entities": [
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 4200,
+            "end": 4600,
+            "confidence": null
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 7200,
+            "end": 7640,
+            "confidence": null
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 17520,
+            "end": 17920,
+            "confidence": null
+        },
+        {
+            "text": "Paxus Trust Co",
+            "entity_type": "organization",
+            "start": 18480,
+            "end": 19440,
+            "confidence": null
+        },
+        {
+            "text": "entwickler",
+            "entity_type": "occupation",
+            "start": 45180,
+            "end": 45620,
+            "confidence": null
+        },
+        {
+            "text": "Salana",
+            "entity_type": "location",
+            "start": 94140,
+            "end": 94540,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 4200,
+            "end": 4600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "stablecoin",
+            "entity_type": "money_amount",
+            "start": 7200,
+            "end": 7640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "USD",
+            "entity_type": "money_amount",
+            "start": 17520,
+            "end": 17920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Paxus Trust Co",
+            "entity_type": "organization",
+            "start": 18480,
+            "end": 19440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "entwickler",
+            "entity_type": "occupation",
+            "start": 45180,
+            "end": 45620,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Salana",
+            "entity_type": "location",
+            "start": 94140,
+            "end": 94540,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

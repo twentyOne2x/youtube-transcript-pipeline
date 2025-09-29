@@ -1,0 +1,517 @@
+{
+    "video_file": "2024-06-05_UQy6nDI1RlU_Solana Changelog Jun 5 - Faster getProgramAccounts, SIMD-96 approved, and Anchor types in Kinobi.mp3",
+    "entities": [
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 6360,
+            "end": 6720,
+            "confidence": null
+        },
+        {
+            "text": "Bri",
+            "entity_type": "person_name",
+            "start": 9080,
+            "end": 9480,
+            "confidence": null
+        },
+        {
+            "text": "Devrel team",
+            "entity_type": "organization",
+            "start": 9960,
+            "end": 10600,
+            "confidence": null
+        },
+        {
+            "text": "Foundation",
+            "entity_type": "organization",
+            "start": 10920,
+            "end": 11360,
+            "confidence": null
+        },
+        {
+            "text": "Bri",
+            "entity_type": "person_name",
+            "start": 11800,
+            "end": 12240,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 14520,
+            "end": 14880,
+            "confidence": null
+        },
+        {
+            "text": "Texas",
+            "entity_type": "location",
+            "start": 16400,
+            "end": 16760,
+            "confidence": null
+        },
+        {
+            "text": "Consensys",
+            "entity_type": "organization",
+            "start": 17240,
+            "end": 17800,
+            "confidence": null
+        },
+        {
+            "text": "Bree",
+            "entity_type": "person_name",
+            "start": 27650,
+            "end": 28090,
+            "confidence": null
+        },
+        {
+            "text": "8 minutes",
+            "entity_type": "duration",
+            "start": 131100,
+            "end": 131620,
+            "confidence": null
+        },
+        {
+            "text": "11 minutes",
+            "entity_type": "duration",
+            "start": 132020,
+            "end": 132580,
+            "confidence": null
+        },
+        {
+            "text": "2 minutes",
+            "entity_type": "duration",
+            "start": 135820,
+            "end": 136300,
+            "confidence": null
+        },
+        {
+            "text": "3 minutes",
+            "entity_type": "duration",
+            "start": 136460,
+            "end": 137060,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 161760,
+            "end": 162080,
+            "confidence": null
+        },
+        {
+            "text": "valida",
+            "entity_type": "occupation",
+            "start": 168580,
+            "end": 169140,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 217950,
+            "end": 218550,
+            "confidence": null
+        },
+        {
+            "text": "documentation@solana.com",
+            "entity_type": "email_address",
+            "start": 219470,
+            "end": 221430,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 232740,
+            "end": 233260,
+            "confidence": null
+        },
+        {
+            "text": "rust engineers",
+            "entity_type": "occupation",
+            "start": 251620,
+            "end": 252620,
+            "confidence": null
+        },
+        {
+            "text": "Dean",
+            "entity_type": "person_name",
+            "start": 287550,
+            "end": 287950,
+            "confidence": null
+        },
+        {
+            "text": "WBA",
+            "entity_type": "organization",
+            "start": 288270,
+            "end": 288870,
+            "confidence": null
+        },
+        {
+            "text": "Turbine",
+            "entity_type": "organization",
+            "start": 289150,
+            "end": 289870,
+            "confidence": null
+        },
+        {
+            "text": "Dean",
+            "entity_type": "person_name",
+            "start": 329190,
+            "end": 329510,
+            "confidence": null
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 346670,
+            "end": 347430,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 366230,
+            "end": 367070,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 368070,
+            "end": 368790,
+            "confidence": null
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 370789,
+            "end": 371150,
+            "confidence": null
+        },
+        {
+            "text": "Chalda",
+            "entity_type": "person_name",
+            "start": 374390,
+            "end": 375070,
+            "confidence": null
+        },
+        {
+            "text": "Mitchell",
+            "entity_type": "person_name",
+            "start": 377150,
+            "end": 377670,
+            "confidence": null
+        },
+        {
+            "text": "Dennis",
+            "entity_type": "person_name",
+            "start": 377670,
+            "end": 378110,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 378750,
+            "end": 379110,
+            "confidence": null
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 379590,
+            "end": 379830,
+            "confidence": null
+        },
+        {
+            "text": "Stockpile",
+            "entity_type": "location",
+            "start": 379990,
+            "end": 380670,
+            "confidence": null
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 384270,
+            "end": 384950,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Solana",
+            "entity_type": "person_name",
+            "start": 6360,
+            "end": 6720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bri",
+            "entity_type": "person_name",
+            "start": 9080,
+            "end": 9480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Devrel team",
+            "entity_type": "organization",
+            "start": 9960,
+            "end": 10600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Foundation",
+            "entity_type": "organization",
+            "start": 10920,
+            "end": 11360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bri",
+            "entity_type": "person_name",
+            "start": 11800,
+            "end": 12240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 14520,
+            "end": 14880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Texas",
+            "entity_type": "location",
+            "start": 16400,
+            "end": 16760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Consensys",
+            "entity_type": "organization",
+            "start": 17240,
+            "end": 17800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bree",
+            "entity_type": "person_name",
+            "start": 27650,
+            "end": 28090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "8 minutes",
+            "entity_type": "duration",
+            "start": 131100,
+            "end": 131620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "11 minutes",
+            "entity_type": "duration",
+            "start": 132020,
+            "end": 132580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2 minutes",
+            "entity_type": "duration",
+            "start": 135820,
+            "end": 136300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "3 minutes",
+            "entity_type": "duration",
+            "start": 136460,
+            "end": 137060,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 161760,
+            "end": 162080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "valida",
+            "entity_type": "occupation",
+            "start": 168580,
+            "end": 169140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 217950,
+            "end": 218550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "documentation@solana.com",
+            "entity_type": "email_address",
+            "start": 219470,
+            "end": 221430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 232740,
+            "end": 233260,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "rust engineers",
+            "entity_type": "occupation",
+            "start": 251620,
+            "end": 252620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Dean",
+            "entity_type": "person_name",
+            "start": 287550,
+            "end": 287950,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "WBA",
+            "entity_type": "organization",
+            "start": 288270,
+            "end": 288870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Turbine",
+            "entity_type": "organization",
+            "start": 289150,
+            "end": 289870,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dean",
+            "entity_type": "person_name",
+            "start": 329190,
+            "end": 329510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Metaplex",
+            "entity_type": "organization",
+            "start": 346670,
+            "end": 347430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 366230,
+            "end": 367070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 368070,
+            "end": 368790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jimmy",
+            "entity_type": "person_name",
+            "start": 370789,
+            "end": 371150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chalda",
+            "entity_type": "person_name",
+            "start": 374390,
+            "end": 375070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mitchell",
+            "entity_type": "person_name",
+            "start": 377150,
+            "end": 377670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Dennis",
+            "entity_type": "person_name",
+            "start": 377670,
+            "end": 378110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 378750,
+            "end": 379110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joey",
+            "entity_type": "person_name",
+            "start": 379590,
+            "end": 379830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stockpile",
+            "entity_type": "location",
+            "start": 379990,
+            "end": 380670,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Stack Exchange",
+            "entity_type": "organization",
+            "start": 384270,
+            "end": 384950,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,397 @@
+{
+    "video_file": "2023-09-06_g5EkJEALXQA_Solana Changelog - September 6 - Hyperdrive hackathon edition.mp3",
+    "entities": [
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 5440,
+            "end": 5760,
+            "confidence": null
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7240,
+            "end": 7600,
+            "confidence": null
+        },
+        {
+            "text": "hyperdrive hackathon",
+            "entity_type": "event",
+            "start": 11280,
+            "end": 12800,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 19920,
+            "end": 20560,
+            "confidence": null
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 35120,
+            "end": 36160,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 36400,
+            "end": 37120,
+            "confidence": null
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 68430,
+            "end": 70270,
+            "confidence": null
+        },
+        {
+            "text": "Sta",
+            "entity_type": "organization",
+            "start": 79590,
+            "end": 79830,
+            "confidence": null
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 81350,
+            "end": 81590,
+            "confidence": null
+        },
+        {
+            "text": "Solana Developers",
+            "entity_type": "organization",
+            "start": 85480,
+            "end": 86320,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 105080,
+            "end": 105600,
+            "confidence": null
+        },
+        {
+            "text": "Devrel team",
+            "entity_type": "organization",
+            "start": 105800,
+            "end": 106480,
+            "confidence": null
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 124070,
+            "end": 124670,
+            "confidence": null
+        },
+        {
+            "text": "docs.solanamobile.com",
+            "entity_type": "url",
+            "start": 145580,
+            "end": 147300,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 149980,
+            "end": 150460,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 159900,
+            "end": 160500,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 170300,
+            "end": 170780,
+            "confidence": null
+        },
+        {
+            "text": "solana pay@solanapay.com",
+            "entity_type": "email_address",
+            "start": 173460,
+            "end": 175540,
+            "confidence": null
+        },
+        {
+            "text": "docs.solanapay.com",
+            "entity_type": "url",
+            "start": 175860,
+            "end": 177380,
+            "confidence": null
+        },
+        {
+            "text": "Solana Pay",
+            "entity_type": "organization",
+            "start": 179460,
+            "end": 180140,
+            "confidence": null
+        },
+        {
+            "text": "solana",
+            "entity_type": "organization",
+            "start": 198840,
+            "end": 199480,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 202720,
+            "end": 203200,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 209399,
+            "end": 209840,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 212600,
+            "end": 213000,
+            "confidence": null
+        },
+        {
+            "text": "chatgpt.solanalabs.com",
+            "entity_type": "url",
+            "start": 214160,
+            "end": 216400,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 219400,
+            "end": 219800,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 5440,
+            "end": 5760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nick",
+            "entity_type": "person_name",
+            "start": 7240,
+            "end": 7600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "hyperdrive hackathon",
+            "entity_type": "event",
+            "start": 11280,
+            "end": 12800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 19920,
+            "end": 20560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana.com",
+            "entity_type": "url",
+            "start": 35120,
+            "end": 36160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 36400,
+            "end": 37120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "docs.solana.com",
+            "entity_type": "url",
+            "start": 68430,
+            "end": 70270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Sta",
+            "entity_type": "organization",
+            "start": 79590,
+            "end": 79830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "John",
+            "entity_type": "person_name",
+            "start": 81350,
+            "end": 81590,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Developers",
+            "entity_type": "organization",
+            "start": 85480,
+            "end": 86320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 105080,
+            "end": 105600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Devrel team",
+            "entity_type": "organization",
+            "start": 105800,
+            "end": 106480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jonas",
+            "entity_type": "person_name",
+            "start": 124070,
+            "end": 124670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "docs.solanamobile.com",
+            "entity_type": "url",
+            "start": 145580,
+            "end": 147300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 149980,
+            "end": 150460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 159900,
+            "end": 160500,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 170300,
+            "end": 170780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solana pay@solanapay.com",
+            "entity_type": "email_address",
+            "start": 173460,
+            "end": 175540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "docs.solanapay.com",
+            "entity_type": "url",
+            "start": 175860,
+            "end": 177380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana Pay",
+            "entity_type": "organization",
+            "start": 179460,
+            "end": 180140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "solana",
+            "entity_type": "organization",
+            "start": 198840,
+            "end": 199480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 202720,
+            "end": 203200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 209399,
+            "end": 209840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 212600,
+            "end": 213000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "chatgpt.solanalabs.com",
+            "entity_type": "url",
+            "start": 214160,
+            "end": 216400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 219400,
+            "end": 219800,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}
