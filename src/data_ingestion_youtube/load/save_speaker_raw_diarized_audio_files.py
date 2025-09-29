@@ -697,7 +697,7 @@ def print_plan_summary(buckets: Dict[str, List[str]]) -> None:
 # Workers
 # =========================
 
-def worker_with_backlog(api_key_index, api_key, file_paths, cache):
+def worker_with_backlog(api_key_index, api_key, file_paths, cache, global_progress=None):
     set_api_key(api_key)
     logger = ThreadLogger.get_logger(api_key_index)
 
@@ -732,15 +732,29 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache):
                     result = fut.result(timeout=TRANSCRIBE_TIMEOUT_SEC + 180)
                     status = (result or {}).get("status", "FAILED")
                     completed[status] = completed.get(status, 0) + 1
+
+                    # NEW: bump global, log one-liner
+                    if global_progress is not None:
+                        logger.info(f"[GLOBAL] {bump_global(global_progress, status)}")
+
+                    completed[status] = completed.get(status, 0) + 1
                 except Exception as e:
                     logger.error(f"Batch processing error: {e}")
                     completed["FAILED"] += 1
 
-        logger.info(
-            f"Batch complete. Total done: {sum(completed.values())}/{total} "
-            f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
-            f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
-        )
+        if global_progress is not None:
+            logger.info(
+                f"GLOBAL {bump_global(global_progress, 'SKIPPED', 0)}"
+                f"Batch complete. Total done: {sum(completed.values())}/{total} "
+                f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
+                f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})" # 0 increment → just prints
+            )
+        else:
+            logger.info(
+                f"Batch complete. Total done: {sum(completed.values())}/{total} "
+                f"(SUCCESS: {completed['SUCCESS']}, FALLBACK: {completed['FALLBACK']}, "
+                f"SKIPPED: {completed['SKIPPED']}, FAILED: {completed['FAILED']})"
+            )
 
     logger.info(
         f"Worker completed! Processed {sum(completed.values())} files "
@@ -817,6 +831,50 @@ def _has_complete_outputs(file_path: str) -> bool:
     return _has_valid_sidecar(file_path) and _has_valid_entities(file_path)
 
 # =========================
+# Global cross-process progress
+# =========================
+from multiprocessing import Manager
+
+def make_global_progress(total: int):
+    """
+    Returns a tuple (counters, lock, total) backed by a multiprocessing.Manager,
+    safe to share across ProcessPool workers.
+    """
+    mgr = Manager()
+    counters = mgr.dict(SUCCESS=0, FAILED=0, SKIPPED=0, FALLBACK=0)
+    lock = mgr.RLock()
+    return (counters, lock, total)
+
+def bump_global(progress_tuple, status: str, n: int = 1, style: str = "long") -> str:
+    counters, lock, total = progress_tuple
+    key = (status or "").upper()
+    if key not in ("SUCCESS", "FAILED", "SKIPPED", "FALLBACK"):
+        key = "FAILED"
+    with lock:
+        counters[key] = counters.get(key, 0) + n
+        done = sum(counters.values())
+        s  = counters.get("SUCCESS", 0)
+        f  = counters.get("FAILED", 0)
+        fb = counters.get("FALLBACK", 0)
+        sk = counters.get("SKIPPED", 0)
+    pct = (100.0 * done / total) if total else 0.0
+
+    if style == "short":
+        return f"{done}/{total} ({pct:.1f}%) (S:{s} F:{f} FB:{fb} SK:{sk})"
+    # default: long, human-readable
+    return f"{done}/{total} done ({pct:.1f}%) — {s} succeeded, {f} failed, {fb} fallback, {sk} skipped"
+
+def global_snapshot(progress_tuple) -> dict:
+    """Grab a dict of the current global counters."""
+    counters, lock, total = progress_tuple
+    with lock:
+        c = dict(counters)
+    c["DONE"] = sum(c.values())
+    c["TOTAL"] = total
+    return c
+
+
+# =========================
 # Main
 # =========================
 
@@ -850,6 +908,9 @@ def main():
     # Build global ordered list from plan
     ordered_files = plan_order(buckets)
 
+    grand_total = len(ordered_files)
+    progress = make_global_progress(grand_total)
+
     # Log a few samples (global order)
     sample_sz = min(5, len(ordered_files))
     for i in range(sample_sz):
@@ -868,7 +929,7 @@ def main():
     # Launch workers
     with ProcessPoolExecutor(max_workers=nkeys) as executor:
         futures = [
-            executor.submit(worker_with_backlog, i, api_key, chunks[i], cache)
+            executor.submit(worker_with_backlog, i, api_key, chunks[i], cache, progress)
             for i, api_key in enumerate(api_keys)
         ]
         for fut in as_completed(futures):
@@ -877,6 +938,7 @@ def main():
             except Exception as e:
                 logging.error(f"Worker process failed: {e}")
 
+    logging.info(f"Final GLOBAL: {global_snapshot(progress)}")
     logging.info("All workers completed!")
 
 
