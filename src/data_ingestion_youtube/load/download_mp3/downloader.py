@@ -60,6 +60,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
 
     for attempt in range(1, retries + 1):
         try:
+            # Probe info first (no download) so we can rank formats
             with ydlp.YoutubeDL({**ydl_opts, "format": "bestaudio/best"}) as ydl:
                 info = ydl.extract_info(url, download=False)
             debug_log_formats(info, url, settings)
@@ -68,9 +69,18 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 logging.info(f"Already exists: {target_path}")
                 return DlStatus.OK
 
-            tried_any = False
-            for fmt_id in ranked_audio_format_ids(info, settings):
-                tried_any = True
+            candidates = ranked_audio_format_ids(info, settings)
+            if not candidates:
+                if attempt < retries:
+                    prev, nxt = rot.current(), rot.next()
+                    logging.warning(f"No audio-only formats for client={prev}. Rotating → {nxt}")
+                    set_client(ydl_opts, nxt)
+                    continue
+                return DlStatus.NOAUDIO
+
+            rotate_next_client = False
+
+            for fmt_id in candidates:
                 try:
                     with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id}) as ydl:
                         ydl.download([url])
@@ -79,17 +89,47 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                     else:
                         logging.warning(f"Download reported success but file not found at expected path: {target_path}")
                     return DlStatus.OK
-                except DownloadError as fe:
-                    logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
-                    continue
 
-            if attempt < retries:
-                prev = rot.current()
-                nxt = rot.next()
-                logging.warning(f"{'No viable audio formats' if tried_any else 'No audio-only formats'} for client={prev}. Rotating → {nxt}")
+                except DownloadError as fe:
+                    s = str(fe)
+
+                    # Clean retry for 416 on this SAME format
+                    if "HTTP Error 416" in s and target_path and os.path.exists(target_path):
+                        try:
+                            os.remove(target_path)
+                        except Exception:
+                            pass
+                        logging.warning("416 on resume; removed existing file; retrying this format clean once…")
+                        try:
+                            with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id, "continuedl": False, "overwrites": True}) as ydl:
+                                ydl.download([url])
+                            if target_path and os.path.exists(target_path):
+                                logging.info(f"Saved: {target_path}")
+                                return DlStatus.OK
+                        except DownloadError:
+                            # fall through to try the next candidate
+                            pass
+
+                    # Client-sensitive failures → rotate on next outer attempt
+                    if ("m3u8" in s and "403" in s) or any(k in s for k in ("Requested format is not available", "Only images are available", "SABR", "missing a url", "nsig")):
+                        rotate_next_client = True
+                        break
+
+                    logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
+
+            if rotate_next_client and attempt < retries:
+                prev, nxt = rot.current(), rot.next()
+                logging.warning(f"Rotating client {prev} → {nxt}")
                 set_client(ydl_opts, nxt)
                 continue
 
+            if attempt < retries:
+                prev, nxt = rot.current(), rot.next()
+                logging.warning(f"No viable audio formats for client={prev}. Rotating → {nxt}")
+                set_client(ydl_opts, nxt)
+                continue
+
+            # Final fallback
             fallback = "bestaudio[ext=m4a]/bestaudio[acodec^=mp4a]/140/251/bestaudio"
             with ydlp.YoutubeDL({**ydl_opts, "format": fallback}) as ydl:
                 ydl.download([url])
@@ -101,6 +141,8 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
 
         except DownloadError as e:
             s = str(e)
+
+            # Auth/rate limiting paths
             if ("Sign in to confirm" in s or "HTTP Error 429" in s) and using_cookies:
                 wait = 30 if attempt == 1 else min(90, 20 * attempt)
                 logging.warning(f"{s} — sleeping {wait}s; forcing web client with cookies and retrying")
@@ -110,55 +152,28 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 if attempt < retries:
                     continue
 
-            if any(k in s for k in ("Requested format is not available","Only images are available","SABR","missing a url","nsig")) or ("m3u8" in s and "403" in s):
-                if attempt < retries:
-                    prev = rot.current()
-                    nxt = rot.next()
-                    logging.warning(f"{s} — rotating client {prev} → {nxt}")
-                    set_client(ydl_opts, nxt)
-                    continue
-                if "Only images" in s or "SABR" in s:
-                    return DlStatus.SABR
-                if "Requested format is not available" in s:
-                    return DlStatus.NOAUDIO
+            if "HTTP Error 429" in s:
+                return DlStatus.RATE
+
+            # Hard failures that won't improve with retries
+            if any(msg in s for msg in ("Video unavailable", "Private video", "This video is no longer available")):
+                logging.error(s)
                 return DlStatus.ERR
 
-            if "HTTP Error 416" in s and target_path and os.path.exists(target_path):
-                try:
-                    os.remove(target_path)
-                except Exception:
-                    pass
-                logging.warning("416 on resume; removed existing file; retrying this format clean once…")
-                try:
-                    with ydlp.YoutubeDL({**ydl_opts, "format": fmt_id, "continuedl": False, "overwrites": True}) as ydl:
-                        ydl.download([url])
-                    if target_path and os.path.exists(target_path):
-                        logging.info(f"Saved: {target_path}")
-                    return DlStatus.OK
-                except DownloadError:
-                    # fall through to try next candidate
-                    pass
-            logging.warning(f"Format {fmt_id} failed: {fe}. Trying next candidate…")
-            continue
-            logging.warning(f"Attempt {attempt} failed: {s}. Backing off…")
+            logging.warning(f"Attempt {attempt} failed during info extraction: {s}. Backing off…")
             time.sleep(5 * attempt)
             if attempt < retries:
-                prev = rot.current()
-                nxt = rot.next()
+                prev, nxt = rot.current(), rot.next()
                 logging.info(f"Switching client {prev} → {nxt}")
                 set_client(ydl_opts, nxt)
                 continue
-
-            if "HTTP Error 429" in s:
-                return DlStatus.RATE
             return DlStatus.ERR
 
         except Exception as e:
             logging.exception(f"Unexpected error on attempt {attempt}: {e}")
             time.sleep(5 * attempt)
             if attempt < retries:
-                prev = rot.current()
-                nxt = rot.next()
+                prev, nxt = rot.current(), rot.next()
                 logging.info(f"Switching client {prev} → {nxt}")
                 set_client(ydl_opts, nxt)
                 continue
