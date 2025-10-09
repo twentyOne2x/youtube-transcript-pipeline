@@ -1,0 +1,67 @@
+{
+    "video_file": "2023-05-22_zXFHuAcI0-A_What Is Web 2.0.mp3",
+    "entities": [
+        {
+            "text": "1999",
+            "entity_type": "date_interval",
+            "start": 520,
+            "end": 1440,
+            "confidence": null
+        },
+        {
+            "text": "author",
+            "entity_type": "occupation",
+            "start": 1600,
+            "end": 1960,
+            "confidence": null
+        },
+        {
+            "text": "web designer",
+            "entity_type": "occupation",
+            "start": 2200,
+            "end": 2840,
+            "confidence": null
+        },
+        {
+            "text": "Darcy Denucci",
+            "entity_type": "person_name",
+            "start": 2840,
+            "end": 4000,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "1999",
+            "entity_type": "date_interval",
+            "start": 520,
+            "end": 1440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "author",
+            "entity_type": "occupation",
+            "start": 1600,
+            "end": 1960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "web designer",
+            "entity_type": "occupation",
+            "start": 2200,
+            "end": 2840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Darcy Denucci",
+            "entity_type": "person_name",
+            "start": 2840,
+            "end": 4000,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

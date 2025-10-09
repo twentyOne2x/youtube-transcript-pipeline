@@ -1,0 +1,142 @@
+{
+    "video_file": "2022-10-25_yliuMPDyoSs_Solana Changelog - October 25, 2022 - 2x Transaction Size, Off-Chain Messaging, & Seahorse Cookbook.mp3",
+    "entities": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 2560,
+            "end": 2960,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 3880,
+            "end": 4400,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 5160,
+            "end": 5680,
+            "confidence": null
+        },
+        {
+            "text": "Jake",
+            "entity_type": "person_name",
+            "start": 11520,
+            "end": 12000,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 31600,
+            "end": 31960,
+            "confidence": null
+        },
+        {
+            "text": "ZK",
+            "entity_type": "money_amount",
+            "start": 57320,
+            "end": 57720,
+            "confidence": null
+        },
+        {
+            "text": "elgamo",
+            "entity_type": "money_amount",
+            "start": 59810,
+            "end": 60410,
+            "confidence": null
+        },
+        {
+            "text": "Seahorse",
+            "entity_type": "organization",
+            "start": 126630,
+            "end": 127470,
+            "confidence": null
+        },
+        {
+            "text": "Seahorse",
+            "entity_type": "organization",
+            "start": 131070,
+            "end": 131750,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 2560,
+            "end": 2960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 3880,
+            "end": 4400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 5160,
+            "end": 5680,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Jake",
+            "entity_type": "person_name",
+            "start": 11520,
+            "end": 12000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 31600,
+            "end": 31960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ZK",
+            "entity_type": "money_amount",
+            "start": 57320,
+            "end": 57720,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "elgamo",
+            "entity_type": "money_amount",
+            "start": 59810,
+            "end": 60410,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "Seahorse",
+            "entity_type": "organization",
+            "start": 126630,
+            "end": 127470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Seahorse",
+            "entity_type": "organization",
+            "start": 131070,
+            "end": 131750,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

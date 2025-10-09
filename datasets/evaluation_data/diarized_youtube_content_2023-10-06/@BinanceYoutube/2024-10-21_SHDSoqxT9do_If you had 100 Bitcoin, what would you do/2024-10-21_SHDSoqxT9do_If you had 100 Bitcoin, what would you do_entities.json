@@ -1,0 +1,67 @@
+{
+    "video_file": "2024-10-21_SHDSoqxT9do_If you had 100 Bitcoin, what would you do.mp3",
+    "entities": [
+        {
+            "text": "1,000 Bitcoin",
+            "entity_type": "money_amount",
+            "start": 880,
+            "end": 2240,
+            "confidence": null
+        },
+        {
+            "text": "$6 million",
+            "entity_type": "money_amount",
+            "start": 3480,
+            "end": 3920,
+            "confidence": null
+        },
+        {
+            "text": "thousand bitcoins",
+            "entity_type": "money_amount",
+            "start": 13640,
+            "end": 14320,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 48740,
+            "end": 49220,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "1,000 Bitcoin",
+            "entity_type": "money_amount",
+            "start": 880,
+            "end": 2240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$6 million",
+            "entity_type": "money_amount",
+            "start": 3480,
+            "end": 3920,
+            "confidence": null,
+            "speaker": "C"
+        },
+        {
+            "text": "thousand bitcoins",
+            "entity_type": "money_amount",
+            "start": 13640,
+            "end": 14320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 48740,
+            "end": 49220,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

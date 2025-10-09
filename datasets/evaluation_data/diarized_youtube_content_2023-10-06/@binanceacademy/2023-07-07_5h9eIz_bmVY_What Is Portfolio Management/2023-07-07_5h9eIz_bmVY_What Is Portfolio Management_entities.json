@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-07-07_5h9eIz_bmVY_What Is Portfolio Management.mp3",
+    "entities": [
+        {
+            "text": "Binance Academy",
+            "entity_type": "organization",
+            "start": 1200,
+            "end": 2280,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 41570,
+            "end": 42090,
+            "confidence": null
+        },
+        {
+            "text": "altcoins",
+            "entity_type": "money_amount",
+            "start": 42490,
+            "end": 43210,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Binance Academy",
+            "entity_type": "organization",
+            "start": 1200,
+            "end": 2280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 41570,
+            "end": 42090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "altcoins",
+            "entity_type": "money_amount",
+            "start": 42490,
+            "end": 43210,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

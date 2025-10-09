@@ -1,0 +1,1252 @@
+[
+    {
+        "text": "In blockchains, the Byzantine General's problem is mitigated by allowing all users on the network to validate the information. In the interest of precision, we'll stop referring to users as users and call them nodes instead. In the decentralized environment we're trying to create, nodes don't, or at least shouldn't, trust their peers. You never know which one could turn malicious, or whether they're unknowingly passing you false information. To combat the spread of false information, we use a blockchain to sequence the messages as they appear. If nodes want to submit a message, which in our case is a block, then they need to put in some work to prove that they're serious. This is the logic behind proof of work, a type of consensus mechanism allowing nodes to coordinate in a distributed setting. Such mechanisms ensure that all agents in the system can agree on a single truth, even if some agents fail.",
+        "start": 240,
+        "end": 52640,
+        "confidence": 0.98289996,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "In",
+                "start": 240,
+                "end": 400,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "blockchains,",
+                "start": 400,
+                "end": 1000,
+                "confidence": 0.99938965,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 1000,
+                "end": 1280,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Byzantine",
+                "start": 1280,
+                "end": 2040,
+                "confidence": 0.9991455,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "General's",
+                "start": 2040,
+                "end": 2600,
+                "confidence": 0.8421224,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "problem",
+                "start": 2600,
+                "end": 2840,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 2840,
+                "end": 3080,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "mitigated",
+                "start": 3080,
+                "end": 3640,
+                "confidence": 0.9996338,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "by",
+                "start": 3640,
+                "end": 3920,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "allowing",
+                "start": 3920,
+                "end": 4280,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "all",
+                "start": 4280,
+                "end": 4480,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "users",
+                "start": 4480,
+                "end": 4880,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 4880,
+                "end": 4960,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 4960,
+                "end": 5080,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "network",
+                "start": 5080,
+                "end": 5320,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 5320,
+                "end": 5560,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "validate",
+                "start": 5560,
+                "end": 5960,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 5960,
+                "end": 6120,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "information.",
+                "start": 6120,
+                "end": 6400,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "In",
+                "start": 7040,
+                "end": 7320,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 7320,
+                "end": 7480,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "interest",
+                "start": 7480,
+                "end": 7720,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 7720,
+                "end": 8040,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "precision,",
+                "start": 8040,
+                "end": 8640,
+                "confidence": 0.99869794,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we'll",
+                "start": 8800,
+                "end": 9160,
+                "confidence": 0.9498698,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "stop",
+                "start": 9160,
+                "end": 9360,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "referring",
+                "start": 9360,
+                "end": 9800,
+                "confidence": 0.9991862,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 9800,
+                "end": 9960,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "users",
+                "start": 9960,
+                "end": 10360,
+                "confidence": 0.9991862,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "as",
+                "start": 10360,
+                "end": 10640,
+                "confidence": 0.9921875,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "users",
+                "start": 10640,
+                "end": 11320,
+                "confidence": 0.99625653,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 11320,
+                "end": 11640,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "call",
+                "start": 11640,
+                "end": 11920,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "them",
+                "start": 11920,
+                "end": 12240,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "nodes",
+                "start": 12240,
+                "end": 12760,
+                "confidence": 0.93847656,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "instead.",
+                "start": 12760,
+                "end": 13120,
+                "confidence": 0.9169922,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "In",
+                "start": 13520,
+                "end": 13800,
+                "confidence": 0.9511719,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 13800,
+                "end": 13960,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "decentralized",
+                "start": 13960,
+                "end": 14640,
+                "confidence": 0.9219971,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "environment",
+                "start": 14640,
+                "end": 14960,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we're",
+                "start": 15120,
+                "end": 15480,
+                "confidence": 0.9689128,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trying",
+                "start": 15480,
+                "end": 15640,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 15640,
+                "end": 15800,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "create,",
+                "start": 15800,
+                "end": 16080,
+                "confidence": 0.9819336,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "nodes",
+                "start": 16400,
+                "end": 16960,
+                "confidence": 0.9498698,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "don't,",
+                "start": 16960,
+                "end": 17440,
+                "confidence": 0.9899089,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "or",
+                "start": 17440,
+                "end": 17840,
+                "confidence": 0.9145508,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 17840,
+                "end": 18120,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "least",
+                "start": 18120,
+                "end": 18360,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "shouldn't,",
+                "start": 18360,
+                "end": 18880,
+                "confidence": 0.9251709,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trust",
+                "start": 18960,
+                "end": 19440,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "their",
+                "start": 19440,
+                "end": 19680,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "peers.",
+                "start": 19680,
+                "end": 20080,
+                "confidence": 0.93310547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "You",
+                "start": 20480,
+                "end": 20760,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "never",
+                "start": 20760,
+                "end": 20960,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "know",
+                "start": 20960,
+                "end": 21160,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "which",
+                "start": 21160,
+                "end": 21360,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "one",
+                "start": 21360,
+                "end": 21600,
+                "confidence": 0.9916992,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "could",
+                "start": 21600,
+                "end": 21800,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "turn",
+                "start": 21800,
+                "end": 22000,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "malicious,",
+                "start": 22000,
+                "end": 22640,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "or",
+                "start": 22720,
+                "end": 23040,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "whether",
+                "start": 23040,
+                "end": 23280,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "they're",
+                "start": 23280,
+                "end": 23640,
+                "confidence": 0.9835612,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "unknowingly",
+                "start": 23640,
+                "end": 24320,
+                "confidence": 0.95857745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "passing",
+                "start": 24320,
+                "end": 24640,
+                "confidence": 0.7807617,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "you",
+                "start": 24640,
+                "end": 24880,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "false",
+                "start": 24880,
+                "end": 25200,
+                "confidence": 0.9555664,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "information.",
+                "start": 25200,
+                "end": 25520,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "To",
+                "start": 26480,
+                "end": 26640,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "combat",
+                "start": 26640,
+                "end": 27080,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 27080,
+                "end": 27240,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "spread",
+                "start": 27240,
+                "end": 27480,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 27480,
+                "end": 27640,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "false",
+                "start": 27640,
+                "end": 27920,
+                "confidence": 0.91031903,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "information,",
+                "start": 27920,
+                "end": 28240,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 28640,
+                "end": 28960,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "use",
+                "start": 28960,
+                "end": 29160,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 29160,
+                "end": 29320,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "blockchain",
+                "start": 29320,
+                "end": 29840,
+                "confidence": 0.9123535,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 29840,
+                "end": 29960,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sequence",
+                "start": 29960,
+                "end": 30320,
+                "confidence": 0.8826904,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 30320,
+                "end": 30520,
+                "confidence": 0.9916992,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "messages",
+                "start": 30520,
+                "end": 30920,
+                "confidence": 0.99487305,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "as",
+                "start": 30920,
+                "end": 31200,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "they",
+                "start": 31200,
+                "end": 31400,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "appear.",
+                "start": 31400,
+                "end": 31680,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "If",
+                "start": 32000,
+                "end": 32280,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "nodes",
+                "start": 32280,
+                "end": 32600,
+                "confidence": 0.99934894,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "want",
+                "start": 32600,
+                "end": 32760,
+                "confidence": 0.9926758,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 32760,
+                "end": 32880,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "submit",
+                "start": 32880,
+                "end": 33160,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 33160,
+                "end": 33320,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "message,",
+                "start": 33320,
+                "end": 33720,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "which",
+                "start": 33720,
+                "end": 34000,
+                "confidence": 0.9902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 34000,
+                "end": 34200,
+                "confidence": 0.99072266,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "our",
+                "start": 34200,
+                "end": 34360,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "case",
+                "start": 34360,
+                "end": 34560,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 34560,
+                "end": 34760,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 34760,
+                "end": 34920,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "block,",
+                "start": 34920,
+                "end": 35280,
+                "confidence": 0.970459,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "then",
+                "start": 35280,
+                "end": 35600,
+                "confidence": 0.97753906,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "they",
+                "start": 35600,
+                "end": 35800,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "need",
+                "start": 35800,
+                "end": 35960,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 35960,
+                "end": 36080,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "put",
+                "start": 36080,
+                "end": 36240,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 36240,
+                "end": 36480,
+                "confidence": 0.98828125,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "some",
+                "start": 36480,
+                "end": 36720,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work",
+                "start": 36720,
+                "end": 37000,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 37000,
+                "end": 37240,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "prove",
+                "start": 37240,
+                "end": 37480,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "that",
+                "start": 37480,
+                "end": 37640,
+                "confidence": 0.9399414,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "they're",
+                "start": 37640,
+                "end": 37880,
+                "confidence": 0.9008789,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "serious.",
+                "start": 37880,
+                "end": 38320,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "This",
+                "start": 39280,
+                "end": 39600,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 39600,
+                "end": 39840,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 39840,
+                "end": 40040,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "logic",
+                "start": 40040,
+                "end": 40400,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "behind",
+                "start": 40400,
+                "end": 40720,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "proof",
+                "start": 40800,
+                "end": 41160,
+                "confidence": 0.9954427,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 41160,
+                "end": 41360,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work,",
+                "start": 41360,
+                "end": 41680,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 41839,
+                "end": 42119,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "type",
+                "start": 42119,
+                "end": 42320,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 42320,
+                "end": 42520,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "consensus",
+                "start": 42520,
+                "end": 43120,
+                "confidence": 0.9498698,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "mechanism",
+                "start": 43120,
+                "end": 43640,
+                "confidence": 0.9998779,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "allowing",
+                "start": 43640,
+                "end": 44040,
+                "confidence": 0.9987793,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "nodes",
+                "start": 44040,
+                "end": 44360,
+                "confidence": 0.984375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 44360,
+                "end": 44520,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "coordinate",
+                "start": 44520,
+                "end": 45000,
+                "confidence": 0.90515137,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 45000,
+                "end": 45160,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 45160,
+                "end": 45280,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "distributed",
+                "start": 45280,
+                "end": 45840,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "setting.",
+                "start": 45840,
+                "end": 46320,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Such",
+                "start": 46480,
+                "end": 46840,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "mechanisms",
+                "start": 46840,
+                "end": 47520,
+                "confidence": 0.99833983,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "ensure",
+                "start": 47520,
+                "end": 47800,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "that",
+                "start": 47800,
+                "end": 48040,
+                "confidence": 0.99121094,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "all",
+                "start": 48040,
+                "end": 48240,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "agents",
+                "start": 48240,
+                "end": 48640,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 48640,
+                "end": 48800,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 48800,
+                "end": 48920,
+                "confidence": 0.9902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "system",
+                "start": 48920,
+                "end": 49200,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "can",
+                "start": 49200,
+                "end": 49480,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "agree",
+                "start": 49480,
+                "end": 49680,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 49680,
+                "end": 49960,
+                "confidence": 0.6508789,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 49960,
+                "end": 50200,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "single",
+                "start": 50200,
+                "end": 50560,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "truth,",
+                "start": 50560,
+                "end": 51040,
+                "confidence": 0.7762044,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "even",
+                "start": 51280,
+                "end": 51560,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "if",
+                "start": 51560,
+                "end": 51760,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "some",
+                "start": 51760,
+                "end": 51960,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "agents",
+                "start": 51960,
+                "end": 52320,
+                "confidence": 0.9972331,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "fail.",
+                "start": 52320,
+                "end": 52640,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    }
+]

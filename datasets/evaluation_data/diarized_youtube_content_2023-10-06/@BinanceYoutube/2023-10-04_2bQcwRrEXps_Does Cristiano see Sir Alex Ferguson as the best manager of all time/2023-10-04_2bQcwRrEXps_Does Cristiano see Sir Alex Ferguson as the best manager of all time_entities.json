@@ -1,0 +1,67 @@
+{
+    "video_file": "2023-10-04_2bQcwRrEXps_Does Cristiano see Sir Alex Ferguson as the best manager of all time.mp3",
+    "entities": [
+        {
+            "text": "Sir",
+            "entity_type": "occupation",
+            "start": 440,
+            "end": 680,
+            "confidence": null
+        },
+        {
+            "text": "Alex Ferguson",
+            "entity_type": "person_name",
+            "start": 680,
+            "end": 1760,
+            "confidence": null
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 2520,
+            "end": 3120,
+            "confidence": null
+        },
+        {
+            "text": "Coaches",
+            "entity_type": "occupation",
+            "start": 8080,
+            "end": 8600,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Sir",
+            "entity_type": "occupation",
+            "start": 440,
+            "end": 680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Alex Ferguson",
+            "entity_type": "person_name",
+            "start": 680,
+            "end": 1760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 2520,
+            "end": 3120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coaches",
+            "entity_type": "occupation",
+            "start": 8080,
+            "end": 8600,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

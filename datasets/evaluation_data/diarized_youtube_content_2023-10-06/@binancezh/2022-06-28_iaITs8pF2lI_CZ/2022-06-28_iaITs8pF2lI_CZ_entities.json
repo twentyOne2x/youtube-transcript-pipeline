@@ -1,0 +1,67 @@
+{
+    "video_file": "2022-06-28_iaITs8pF2lI_CZ.mp3",
+    "entities": [
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 9440,
+            "end": 9920,
+            "confidence": null
+        },
+        {
+            "text": "50",
+            "entity_type": "money_amount",
+            "start": 27840,
+            "end": 28120,
+            "confidence": null
+        },
+        {
+            "text": "100 coins",
+            "entity_type": "money_amount",
+            "start": 28320,
+            "end": 29720,
+            "confidence": null
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 31080,
+            "end": 31360,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "six months",
+            "entity_type": "duration",
+            "start": 9440,
+            "end": 9920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "50",
+            "entity_type": "money_amount",
+            "start": 27840,
+            "end": 28120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "100 coins",
+            "entity_type": "money_amount",
+            "start": 28320,
+            "end": 29720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "coins",
+            "entity_type": "money_amount",
+            "start": 31080,
+            "end": 31360,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-03-04_R9l8lWuFZpo_A Memorable First #Binance Community Meetup in Palestine..mp3",
+    "entities": [
+        {
+            "text": "Binance",
+            "entity_type": "religion",
+            "start": 1000,
+            "end": 1520,
+            "confidence": null
+        },
+        {
+            "text": "Palestine",
+            "entity_type": "location",
+            "start": 2320,
+            "end": 2840,
+            "confidence": null
+        },
+        {
+            "text": "Tarafna Actor",
+            "entity_type": "occupation",
+            "start": 51880,
+            "end": 53000,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Binance",
+            "entity_type": "religion",
+            "start": 1000,
+            "end": 1520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Palestine",
+            "entity_type": "location",
+            "start": 2320,
+            "end": 2840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tarafna Actor",
+            "entity_type": "occupation",
+            "start": 51880,
+            "end": 53000,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

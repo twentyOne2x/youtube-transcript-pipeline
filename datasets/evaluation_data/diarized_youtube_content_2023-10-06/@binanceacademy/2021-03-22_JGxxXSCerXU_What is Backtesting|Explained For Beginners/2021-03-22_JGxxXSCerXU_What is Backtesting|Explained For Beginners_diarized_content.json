@@ -1,0 +1,2444 @@
+[
+    {
+        "text": "Do you know what backtesting is? Backtesting is applying a trading strategy to historical data to assess its profitability. It allows you to test trading ideas without risking real funds. If backtesting shows good results, traders may go ahead and apply the strategy to a live environment. On a more professional level, backtesting trading strategies is essential, especially when it comes to automated trading. The underlying premise behind backtesting is is that what worked in the past may work in the future. But just like technical analysis and charting, there's no guarantee the backtesting will work even if it produces great results based on historical data. Let's go through a simple example. Imagine a long term strategy for Bitcoin. Here's our trading system. We buy bitcoin at the first weekly close above the 20 week moving average. Then we sell bitcoin at the first weekly close below the 20 week moving average. If we consider the Bitcoin weekly chart since 2019, our backtesting will produce five signals. We buy at $4,000 and sell at $8,000 for a profit of 100%. Buy at 8,500 and sell at 8,000 for a loss of 5.9%. We buy at $9,000. Our back testing shows that this strategy would have been profitable if applied to that period. This doesn't guarantee it will continue to work, but tests like this can give us a good starting point. Some traders add metrics and technical indicators to optimize their strategies, making the signals more reliable. Still, what you do with the results depends on your trading profile and risk tolerance. There are many ways to do backtesting. Some do it manually, using notes and spreadsheets. Others use computer code or specialized software to automate the process. Want to keep learning? Head over to Binance Academy for more on backtesting and trading strategies.",
+        "start": 800,
+        "end": 113140,
+        "confidence": 0.9855641,
+        "channel": null,
+        "speaker": "A",
+        "words": [
+            {
+                "text": "Do",
+                "start": 800,
+                "end": 920,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "you",
+                "start": 920,
+                "end": 1080,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "know",
+                "start": 1080,
+                "end": 1240,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "what",
+                "start": 1240,
+                "end": 1440,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 1440,
+                "end": 2120,
+                "confidence": 0.97436523,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is?",
+                "start": 2120,
+                "end": 2400,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Backtesting",
+                "start": 2880,
+                "end": 3600,
+                "confidence": 0.95129395,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 3600,
+                "end": 3720,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "applying",
+                "start": 3720,
+                "end": 4080,
+                "confidence": 0.7967122,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 4080,
+                "end": 4240,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 4240,
+                "end": 4560,
+                "confidence": 0.9560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategy",
+                "start": 4560,
+                "end": 5000,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 5000,
+                "end": 5200,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "historical",
+                "start": 5200,
+                "end": 5760,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "data",
+                "start": 5760,
+                "end": 6080,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 6080,
+                "end": 6360,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "assess",
+                "start": 6360,
+                "end": 6720,
+                "confidence": 0.99780273,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "its",
+                "start": 6720,
+                "end": 6960,
+                "confidence": 0.9946289,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "profitability.",
+                "start": 6960,
+                "end": 7600,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "It",
+                "start": 8160,
+                "end": 8440,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "allows",
+                "start": 8440,
+                "end": 8760,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "you",
+                "start": 8760,
+                "end": 8880,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 8880,
+                "end": 9000,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "test",
+                "start": 9000,
+                "end": 9240,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 9240,
+                "end": 9680,
+                "confidence": 0.907959,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "ideas",
+                "start": 9680,
+                "end": 10160,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "without",
+                "start": 10160,
+                "end": 10560,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "risking",
+                "start": 10560,
+                "end": 11120,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "real",
+                "start": 11120,
+                "end": 11400,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "funds.",
+                "start": 11400,
+                "end": 11920,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "If",
+                "start": 12320,
+                "end": 12640,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 12640,
+                "end": 13320,
+                "confidence": 0.97180176,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "shows",
+                "start": 13320,
+                "end": 13560,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "good",
+                "start": 13560,
+                "end": 13760,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "results,",
+                "start": 13760,
+                "end": 14080,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "traders",
+                "start": 14320,
+                "end": 14840,
+                "confidence": 0.9555664,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "may",
+                "start": 14840,
+                "end": 15040,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "go",
+                "start": 15040,
+                "end": 15240,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "ahead",
+                "start": 15240,
+                "end": 15480,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 15480,
+                "end": 15720,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "apply",
+                "start": 15720,
+                "end": 15999,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 15999,
+                "end": 16199,
+                "confidence": 0.9848633,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategy",
+                "start": 16199,
+                "end": 16600,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 16600,
+                "end": 16760,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 16760,
+                "end": 16920,
+                "confidence": 0.9897461,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "live",
+                "start": 16920,
+                "end": 17160,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "environment.",
+                "start": 17160,
+                "end": 17520,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "On",
+                "start": 18000,
+                "end": 18280,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 18280,
+                "end": 18440,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "more",
+                "start": 18440,
+                "end": 18640,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "professional",
+                "start": 18640,
+                "end": 19120,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "level,",
+                "start": 19120,
+                "end": 19440,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 19520,
+                "end": 20320,
+                "confidence": 0.91381836,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 20320,
+                "end": 20680,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategies",
+                "start": 20680,
+                "end": 21200,
+                "confidence": 0.9987793,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 21200,
+                "end": 21440,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "essential,",
+                "start": 21440,
+                "end": 21920,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "especially",
+                "start": 22400,
+                "end": 22800,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "when",
+                "start": 22880,
+                "end": 23160,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "it",
+                "start": 23160,
+                "end": 23280,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "comes",
+                "start": 23280,
+                "end": 23440,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 23440,
+                "end": 23640,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "automated",
+                "start": 23640,
+                "end": 24080,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading.",
+                "start": 24080,
+                "end": 24640,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "The",
+                "start": 25280,
+                "end": 25560,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "underlying",
+                "start": 25560,
+                "end": 26080,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "premise",
+                "start": 26080,
+                "end": 26480,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "behind",
+                "start": 26480,
+                "end": 26760,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 26760,
+                "end": 27520,
+                "confidence": 0.9605713,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 27520,
+                "end": 27790,
+                "confidence": 0.7050781,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "is",
+                "start": 27940,
+                "end": 28100,
+                "confidence": 0.9042969,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "that",
+                "start": 28100,
+                "end": 28300,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "what",
+                "start": 28300,
+                "end": 28500,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "worked",
+                "start": 28500,
+                "end": 28780,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 28780,
+                "end": 28900,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 28900,
+                "end": 29020,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "past",
+                "start": 29020,
+                "end": 29300,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "may",
+                "start": 29460,
+                "end": 29780,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work",
+                "start": 29780,
+                "end": 29980,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "in",
+                "start": 29980,
+                "end": 30140,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 30140,
+                "end": 30300,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "future.",
+                "start": 30300,
+                "end": 30580,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "But",
+                "start": 31060,
+                "end": 31340,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "just",
+                "start": 31340,
+                "end": 31540,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "like",
+                "start": 31540,
+                "end": 31780,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "technical",
+                "start": 31780,
+                "end": 32180,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "analysis",
+                "start": 32180,
+                "end": 32740,
+                "confidence": 0.9737956,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 32740,
+                "end": 32940,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "charting,",
+                "start": 32940,
+                "end": 33380,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "there's",
+                "start": 33540,
+                "end": 33940,
+                "confidence": 0.9781901,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "no",
+                "start": 33940,
+                "end": 34060,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "guarantee",
+                "start": 34060,
+                "end": 34540,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 34540,
+                "end": 34700,
+                "confidence": 0.9550781,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 34700,
+                "end": 35340,
+                "confidence": 0.91015625,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "will",
+                "start": 35340,
+                "end": 35500,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work",
+                "start": 35500,
+                "end": 35780,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "even",
+                "start": 35940,
+                "end": 36220,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "if",
+                "start": 36220,
+                "end": 36380,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "it",
+                "start": 36380,
+                "end": 36540,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "produces",
+                "start": 36540,
+                "end": 36980,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "great",
+                "start": 36980,
+                "end": 37220,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "results",
+                "start": 37220,
+                "end": 37540,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "based",
+                "start": 37620,
+                "end": 37940,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 37940,
+                "end": 38140,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "historical",
+                "start": 38140,
+                "end": 38660,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "data.",
+                "start": 38660,
+                "end": 38980,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Let's",
+                "start": 39460,
+                "end": 39780,
+                "confidence": 0.9954427,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "go",
+                "start": 39780,
+                "end": 39940,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "through",
+                "start": 39940,
+                "end": 40140,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 40140,
+                "end": 40300,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "simple",
+                "start": 40300,
+                "end": 40580,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "example.",
+                "start": 40580,
+                "end": 41140,
+                "confidence": 0.9274089,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Imagine",
+                "start": 41380,
+                "end": 41820,
+                "confidence": 0.9552409,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 41820,
+                "end": 41980,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "long",
+                "start": 41980,
+                "end": 42180,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "term",
+                "start": 42180,
+                "end": 42420,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategy",
+                "start": 42420,
+                "end": 42860,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "for",
+                "start": 42860,
+                "end": 43060,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Bitcoin.",
+                "start": 43060,
+                "end": 43620,
+                "confidence": 0.97770184,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Here's",
+                "start": 43780,
+                "end": 44180,
+                "confidence": 0.98535156,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "our",
+                "start": 44180,
+                "end": 44300,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 44300,
+                "end": 44660,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "system.",
+                "start": 44660,
+                "end": 44980,
+                "confidence": 0.78759766,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "We",
+                "start": 45220,
+                "end": 45500,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "buy",
+                "start": 45500,
+                "end": 45700,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "bitcoin",
+                "start": 45700,
+                "end": 46140,
+                "confidence": 0.99934894,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 46140,
+                "end": 46260,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 46260,
+                "end": 46380,
+                "confidence": 0.9946289,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "first",
+                "start": 46380,
+                "end": 46620,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "weekly",
+                "start": 46620,
+                "end": 47020,
+                "confidence": 0.99780273,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "close",
+                "start": 47020,
+                "end": 47260,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "above",
+                "start": 47260,
+                "end": 47580,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 47580,
+                "end": 47740,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "20",
+                "start": 47740,
+                "end": 47940,
+                "confidence": 0.99707,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "week",
+                "start": 47940,
+                "end": 48220,
+                "confidence": 0.98583984,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "moving",
+                "start": 48220,
+                "end": 48580,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "average.",
+                "start": 48580,
+                "end": 49060,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Then",
+                "start": 49380,
+                "end": 49740,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 49740,
+                "end": 50020,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sell",
+                "start": 50020,
+                "end": 50260,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "bitcoin",
+                "start": 50260,
+                "end": 50740,
+                "confidence": 0.9987,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 50740,
+                "end": 50900,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 50900,
+                "end": 51020,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "first",
+                "start": 51020,
+                "end": 51220,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "weekly",
+                "start": 51220,
+                "end": 51580,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "close",
+                "start": 51580,
+                "end": 51860,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "below",
+                "start": 51860,
+                "end": 52180,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 52180,
+                "end": 52420,
+                "confidence": 0.9951172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "20",
+                "start": 52420,
+                "end": 52660,
+                "confidence": 0.99854,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "week",
+                "start": 52660,
+                "end": 52940,
+                "confidence": 0.95996094,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "moving",
+                "start": 52940,
+                "end": 53300,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "average.",
+                "start": 53300,
+                "end": 53780,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "If",
+                "start": 54300,
+                "end": 54420,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "we",
+                "start": 54420,
+                "end": 54580,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "consider",
+                "start": 54580,
+                "end": 54820,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 54820,
+                "end": 55100,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Bitcoin",
+                "start": 55100,
+                "end": 55580,
+                "confidence": 0.9943034,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "weekly",
+                "start": 55580,
+                "end": 55940,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "chart",
+                "start": 55940,
+                "end": 56220,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "since",
+                "start": 56220,
+                "end": 56460,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "2019,",
+                "start": 56460,
+                "end": 57020,
+                "confidence": 0.99951,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "our",
+                "start": 57500,
+                "end": 57820,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 57820,
+                "end": 58500,
+                "confidence": 0.9088135,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "will",
+                "start": 58500,
+                "end": 58660,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "produce",
+                "start": 58660,
+                "end": 58940,
+                "confidence": 0.7956543,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "five",
+                "start": 58940,
+                "end": 59220,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "signals.",
+                "start": 59220,
+                "end": 59820,
+                "confidence": 0.8701172,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "We",
+                "start": 60140,
+                "end": 60460,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "buy",
+                "start": 60460,
+                "end": 60740,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 60740,
+                "end": 61060,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "$4,000",
+                "start": 61060,
+                "end": 62060,
+                "confidence": 0.98352,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 62300,
+                "end": 62620,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sell",
+                "start": 62620,
+                "end": 62900,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 62900,
+                "end": 63180,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "$8,000",
+                "start": 63180,
+                "end": 64060,
+                "confidence": 0.95593,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "for",
+                "start": 64060,
+                "end": 64340,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 64340,
+                "end": 64500,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "profit",
+                "start": 64500,
+                "end": 64860,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 64860,
+                "end": 65060,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "100%.",
+                "start": 65060,
+                "end": 65820,
+                "confidence": 0.99805,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Buy",
+                "start": 66700,
+                "end": 67020,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 67020,
+                "end": 67260,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "8,500",
+                "start": 67260,
+                "end": 68380,
+                "confidence": 0.99829,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 68780,
+                "end": 69100,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "sell",
+                "start": 69100,
+                "end": 69340,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 69340,
+                "end": 69580,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "8,000",
+                "start": 69580,
+                "end": 70060,
+                "confidence": 0.99829,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "for",
+                "start": 70139,
+                "end": 70420,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 70420,
+                "end": 70580,
+                "confidence": 0.9926758,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "loss",
+                "start": 70580,
+                "end": 70820,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "of",
+                "start": 70820,
+                "end": 71100,
+                "confidence": 0.9892578,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "5.9%.",
+                "start": 71100,
+                "end": 72140,
+                "confidence": 0.99915,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "We",
+                "start": 72860,
+                "end": 73180,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "buy",
+                "start": 73180,
+                "end": 73460,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "at",
+                "start": 73460,
+                "end": 73740,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "$9,000.",
+                "start": 73740,
+                "end": 74780,
+                "confidence": 0.98889,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Our",
+                "start": 75180,
+                "end": 75500,
+                "confidence": 0.9946289,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "back",
+                "start": 75500,
+                "end": 75740,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "testing",
+                "start": 75740,
+                "end": 76180,
+                "confidence": 0.85253906,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "shows",
+                "start": 76180,
+                "end": 76420,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "that",
+                "start": 76420,
+                "end": 76580,
+                "confidence": 0.99365234,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "this",
+                "start": 76580,
+                "end": 76740,
+                "confidence": 0.9511719,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategy",
+                "start": 76740,
+                "end": 77220,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "would",
+                "start": 77220,
+                "end": 77380,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "have",
+                "start": 77380,
+                "end": 77500,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "been",
+                "start": 77500,
+                "end": 77620,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "profitable",
+                "start": 77620,
+                "end": 78140,
+                "confidence": 0.9889323,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "if",
+                "start": 78140,
+                "end": 78460,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "applied",
+                "start": 78460,
+                "end": 78780,
+                "confidence": 0.83447266,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 78780,
+                "end": 78980,
+                "confidence": 0.9423828,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "that",
+                "start": 78980,
+                "end": 79180,
+                "confidence": 0.98828125,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "period.",
+                "start": 79180,
+                "end": 79500,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "This",
+                "start": 80180,
+                "end": 80340,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "doesn't",
+                "start": 80340,
+                "end": 80660,
+                "confidence": 0.9977214,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "guarantee",
+                "start": 80660,
+                "end": 81020,
+                "confidence": 0.99975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "it",
+                "start": 81020,
+                "end": 81180,
+                "confidence": 0.94921875,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "will",
+                "start": 81180,
+                "end": 81340,
+                "confidence": 0.9873047,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "continue",
+                "start": 81340,
+                "end": 81580,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 81580,
+                "end": 81860,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "work,",
+                "start": 81860,
+                "end": 82180,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "but",
+                "start": 82340,
+                "end": 82660,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "tests",
+                "start": 82660,
+                "end": 83060,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "like",
+                "start": 83060,
+                "end": 83180,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "this",
+                "start": 83180,
+                "end": 83420,
+                "confidence": 0.9926758,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "can",
+                "start": 83420,
+                "end": 83660,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "give",
+                "start": 83660,
+                "end": 83820,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "us",
+                "start": 83820,
+                "end": 83980,
+                "confidence": 0.99560547,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "a",
+                "start": 83980,
+                "end": 84100,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "good",
+                "start": 84100,
+                "end": 84260,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "starting",
+                "start": 84260,
+                "end": 84660,
+                "confidence": 0.9987793,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "point.",
+                "start": 84660,
+                "end": 84980,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Some",
+                "start": 85860,
+                "end": 86140,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "traders",
+                "start": 86140,
+                "end": 86580,
+                "confidence": 0.92871094,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "add",
+                "start": 86580,
+                "end": 86780,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "metrics",
+                "start": 86780,
+                "end": 87260,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 87260,
+                "end": 87420,
+                "confidence": 0.9970703,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "technical",
+                "start": 87420,
+                "end": 87860,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "indicators",
+                "start": 87860,
+                "end": 88420,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 88420,
+                "end": 88620,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "optimize",
+                "start": 88620,
+                "end": 89100,
+                "confidence": 0.9866536,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "their",
+                "start": 89100,
+                "end": 89300,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategies,",
+                "start": 89300,
+                "end": 89940,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "making",
+                "start": 90260,
+                "end": 90620,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 90620,
+                "end": 90860,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "signals",
+                "start": 90860,
+                "end": 91220,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "more",
+                "start": 91220,
+                "end": 91460,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "reliable.",
+                "start": 91460,
+                "end": 92020,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Still,",
+                "start": 92820,
+                "end": 93220,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "what",
+                "start": 93300,
+                "end": 93620,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "you",
+                "start": 93620,
+                "end": 93820,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "do",
+                "start": 93820,
+                "end": 93980,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "with",
+                "start": 93980,
+                "end": 94140,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 94140,
+                "end": 94260,
+                "confidence": 0.98291016,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "results",
+                "start": 94260,
+                "end": 94500,
+                "confidence": 0.99609375,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "depends",
+                "start": 94580,
+                "end": 94980,
+                "confidence": 0.9983724,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 94980,
+                "end": 95100,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "your",
+                "start": 95100,
+                "end": 95260,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 95260,
+                "end": 95620,
+                "confidence": 0.982666,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "profile",
+                "start": 95620,
+                "end": 96139,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 96139,
+                "end": 96380,
+                "confidence": 0.6513672,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "risk",
+                "start": 96380,
+                "end": 96660,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "tolerance.",
+                "start": 96660,
+                "end": 97300,
+                "confidence": 0.9996745,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "There",
+                "start": 97860,
+                "end": 98140,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "are",
+                "start": 98140,
+                "end": 98300,
+                "confidence": 0.9975586,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "many",
+                "start": 98300,
+                "end": 98460,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "ways",
+                "start": 98460,
+                "end": 98740,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 98740,
+                "end": 98860,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "do",
+                "start": 98860,
+                "end": 99020,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting.",
+                "start": 99020,
+                "end": 99860,
+                "confidence": 0.9033203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Some",
+                "start": 99860,
+                "end": 100180,
+                "confidence": 0.99316406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "do",
+                "start": 100180,
+                "end": 100340,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "it",
+                "start": 100340,
+                "end": 100500,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "manually,",
+                "start": 100500,
+                "end": 100980,
+                "confidence": 0.99658203,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "using",
+                "start": 101300,
+                "end": 101660,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "notes",
+                "start": 101660,
+                "end": 101980,
+                "confidence": 0.9909668,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 101980,
+                "end": 102140,
+                "confidence": 0.9785156,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "spreadsheets.",
+                "start": 102140,
+                "end": 102820,
+                "confidence": 0.94013673,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Others",
+                "start": 103220,
+                "end": 103580,
+                "confidence": 0.9941406,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "use",
+                "start": 103580,
+                "end": 103940,
+                "confidence": 0.9980469,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "computer",
+                "start": 103940,
+                "end": 104460,
+                "confidence": 0.8930664,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "code",
+                "start": 104460,
+                "end": 104740,
+                "confidence": 0.9978841,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "or",
+                "start": 104740,
+                "end": 104980,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "specialized",
+                "start": 104980,
+                "end": 105540,
+                "confidence": 0.9938965,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "software",
+                "start": 105540,
+                "end": 105940,
+                "confidence": 0.98864746,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 105940,
+                "end": 106140,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "automate",
+                "start": 106140,
+                "end": 106540,
+                "confidence": 0.9998372,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "the",
+                "start": 106540,
+                "end": 106700,
+                "confidence": 0.99853516,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "process.",
+                "start": 106700,
+                "end": 106980,
+                "confidence": 0.99902344,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Want",
+                "start": 108020,
+                "end": 108180,
+                "confidence": 0.6791992,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 108180,
+                "end": 108380,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "keep",
+                "start": 108380,
+                "end": 108580,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "learning?",
+                "start": 108580,
+                "end": 108980,
+                "confidence": 0.9992676,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Head",
+                "start": 109140,
+                "end": 109420,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "over",
+                "start": 109420,
+                "end": 109580,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "to",
+                "start": 109580,
+                "end": 109780,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Binance",
+                "start": 109780,
+                "end": 110220,
+                "confidence": 0.9996338,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "Academy",
+                "start": 110220,
+                "end": 110740,
+                "confidence": 0.9189453,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "for",
+                "start": 110740,
+                "end": 110860,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "more",
+                "start": 110860,
+                "end": 111020,
+                "confidence": 0.9995117,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "on",
+                "start": 111020,
+                "end": 111220,
+                "confidence": 0.8515625,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "backtesting",
+                "start": 111220,
+                "end": 111860,
+                "confidence": 0.9954834,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "and",
+                "start": 111860,
+                "end": 112060,
+                "confidence": 0.9667969,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "trading",
+                "start": 112060,
+                "end": 112500,
+                "confidence": 0.9934082,
+                "channel": null,
+                "speaker": "A"
+            },
+            {
+                "text": "strategies.",
+                "start": 112500,
+                "end": 113140,
+                "confidence": 1.0,
+                "channel": null,
+                "speaker": "A"
+            }
+        ]
+    }
+]

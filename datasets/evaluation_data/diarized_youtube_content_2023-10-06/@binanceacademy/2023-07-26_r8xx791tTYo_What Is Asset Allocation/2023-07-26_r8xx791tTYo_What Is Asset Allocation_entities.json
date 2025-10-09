@@ -1,0 +1,37 @@
+{
+    "video_file": "2023-07-26_r8xx791tTYo_What Is Asset Allocation.mp3",
+    "entities": [
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 11560,
+            "end": 12120,
+            "confidence": null
+        },
+        {
+            "text": "ether",
+            "entity_type": "money_amount",
+            "start": 12120,
+            "end": 12520,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 11560,
+            "end": 12120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ether",
+            "entity_type": "money_amount",
+            "start": 12120,
+            "end": 12520,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

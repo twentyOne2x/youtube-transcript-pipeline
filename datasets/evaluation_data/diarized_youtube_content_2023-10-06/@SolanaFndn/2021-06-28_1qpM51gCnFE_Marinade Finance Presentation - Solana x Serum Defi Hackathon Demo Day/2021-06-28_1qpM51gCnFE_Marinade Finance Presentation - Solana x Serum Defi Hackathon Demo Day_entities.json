@@ -1,0 +1,967 @@
+{
+    "video_file": "2021-06-28_1qpM51gCnFE_Marinade Finance Presentation - Solana x Serum Defi Hackathon Demo Day.mp3",
+    "entities": [
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 2960,
+            "end": 3480,
+            "confidence": null
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 3680,
+            "end": 4040,
+            "confidence": null
+        },
+        {
+            "text": "Marinade Finance",
+            "entity_type": "organization",
+            "start": 4240,
+            "end": 5560,
+            "confidence": null
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 5800,
+            "end": 6240,
+            "confidence": null
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 9520,
+            "end": 10080,
+            "confidence": null
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 26000,
+            "end": 26400,
+            "confidence": null
+        },
+        {
+            "text": "co founders",
+            "entity_type": "occupation",
+            "start": 30210,
+            "end": 30970,
+            "confidence": null
+        },
+        {
+            "text": "Lucio",
+            "entity_type": "person_name",
+            "start": 30970,
+            "end": 31570,
+            "confidence": null
+        },
+        {
+            "text": "Marco",
+            "entity_type": "person_name",
+            "start": 32010,
+            "end": 32450,
+            "confidence": null
+        },
+        {
+            "text": "contributor",
+            "entity_type": "occupation",
+            "start": 36450,
+            "end": 37170,
+            "confidence": null
+        },
+        {
+            "text": "de Finance",
+            "entity_type": "organization",
+            "start": 38010,
+            "end": 39010,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 45570,
+            "end": 45970,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 109720,
+            "end": 110200,
+            "confidence": null
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 120880,
+            "end": 121800,
+            "confidence": null
+        },
+        {
+            "text": "SOL token",
+            "entity_type": "money_amount",
+            "start": 128560,
+            "end": 129280,
+            "confidence": null
+        },
+        {
+            "text": "tokens",
+            "entity_type": "money_amount",
+            "start": 136630,
+            "end": 136950,
+            "confidence": null
+        },
+        {
+            "text": "to",
+            "entity_type": "money_amount",
+            "start": 151710,
+            "end": 152310,
+            "confidence": null
+        },
+        {
+            "text": "three days",
+            "entity_type": "duration",
+            "start": 161010,
+            "end": 161490,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 161690,
+            "end": 162170,
+            "confidence": null
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 201780,
+            "end": 202460,
+            "confidence": null
+        },
+        {
+            "text": "Defi hackathon",
+            "entity_type": "event",
+            "start": 216240,
+            "end": 217320,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 217800,
+            "end": 218240,
+            "confidence": null
+        },
+        {
+            "text": "Serum",
+            "entity_type": "organization",
+            "start": 218400,
+            "end": 218800,
+            "confidence": null
+        },
+        {
+            "text": "February this year",
+            "entity_type": "date_interval",
+            "start": 218960,
+            "end": 220080,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 227480,
+            "end": 228080,
+            "confidence": null
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 244830,
+            "end": 245230,
+            "confidence": null
+        },
+        {
+            "text": "Devnet",
+            "entity_type": "organization",
+            "start": 247070,
+            "end": 247470,
+            "confidence": null
+        },
+        {
+            "text": "SOL",
+            "entity_type": "money_amount",
+            "start": 261350,
+            "end": 261670,
+            "confidence": null
+        },
+        {
+            "text": "solid",
+            "entity_type": "money_amount",
+            "start": 265550,
+            "end": 266030,
+            "confidence": null
+        },
+        {
+            "text": "sols",
+            "entity_type": "money_amount",
+            "start": 275850,
+            "end": 276370,
+            "confidence": null
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 281290,
+            "end": 282010,
+            "confidence": null
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 296280,
+            "end": 297000,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 303040,
+            "end": 303480,
+            "confidence": null
+        },
+        {
+            "text": "five SOL",
+            "entity_type": "money_amount",
+            "start": 310640,
+            "end": 311160,
+            "confidence": null
+        },
+        {
+            "text": "five STSOL",
+            "entity_type": "money_amount",
+            "start": 312560,
+            "end": 313720,
+            "confidence": null
+        },
+        {
+            "text": "STSOL tokens",
+            "entity_type": "money_amount",
+            "start": 317000,
+            "end": 318080,
+            "confidence": null
+        },
+        {
+            "text": "sol",
+            "entity_type": "money_amount",
+            "start": 319280,
+            "end": 319640,
+            "confidence": null
+        },
+        {
+            "text": "SOL token",
+            "entity_type": "money_amount",
+            "start": 324710,
+            "end": 325390,
+            "confidence": null
+        },
+        {
+            "text": "few seconds",
+            "entity_type": "duration",
+            "start": 336430,
+            "end": 337230,
+            "confidence": null
+        },
+        {
+            "text": "ST SOL",
+            "entity_type": "money_amount",
+            "start": 349430,
+            "end": 350110,
+            "confidence": null
+        },
+        {
+            "text": "sdsol",
+            "entity_type": "money_amount",
+            "start": 402850,
+            "end": 403610,
+            "confidence": null
+        },
+        {
+            "text": "SDSOL",
+            "entity_type": "money_amount",
+            "start": 405900,
+            "end": 406580,
+            "confidence": null
+        },
+        {
+            "text": "STSOL",
+            "entity_type": "money_amount",
+            "start": 414620,
+            "end": 415300,
+            "confidence": null
+        },
+        {
+            "text": "SOL",
+            "entity_type": "money_amount",
+            "start": 416500,
+            "end": 416780,
+            "confidence": null
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 442200,
+            "end": 442840,
+            "confidence": null
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 443840,
+            "end": 444760,
+            "confidence": null
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 447400,
+            "end": 448120,
+            "confidence": null
+        },
+        {
+            "text": "SD SOL",
+            "entity_type": "money_amount",
+            "start": 449280,
+            "end": 449960,
+            "confidence": null
+        },
+        {
+            "text": "Tristan",
+            "entity_type": "person_name",
+            "start": 454160,
+            "end": 454520,
+            "confidence": null
+        },
+        {
+            "text": "Tristan",
+            "entity_type": "person_name",
+            "start": 455160,
+            "end": 455640,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 463900,
+            "end": 464300,
+            "confidence": null
+        },
+        {
+            "text": "und USDT",
+            "entity_type": "money_amount",
+            "start": 464700,
+            "end": 465780,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 468980,
+            "end": 469380,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 473220,
+            "end": 473700,
+            "confidence": null
+        },
+        {
+            "text": "Marinade",
+            "entity_type": "organization",
+            "start": 489460,
+            "end": 490100,
+            "confidence": null
+        },
+        {
+            "text": "investor",
+            "entity_type": "occupation",
+            "start": 499760,
+            "end": 500400,
+            "confidence": null
+        },
+        {
+            "text": "Marinade Finance",
+            "entity_type": "organization",
+            "start": 507040,
+            "end": 508480,
+            "confidence": null
+        },
+        {
+            "text": "tiny cc",
+            "entity_type": "url",
+            "start": 515440,
+            "end": 517040,
+            "confidence": null
+        },
+        {
+            "text": "builders",
+            "entity_type": "occupation",
+            "start": 539160,
+            "end": 539520,
+            "confidence": null
+        },
+        {
+            "text": "Marinade",
+            "entity_type": "organization",
+            "start": 539840,
+            "end": 540520,
+            "confidence": null
+        },
+        {
+            "text": "system partners",
+            "entity_type": "organization",
+            "start": 540840,
+            "end": 541880,
+            "confidence": null
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 548790,
+            "end": 549190,
+            "confidence": null
+        },
+        {
+            "text": "a minute or two",
+            "entity_type": "duration",
+            "start": 554870,
+            "end": 555430,
+            "confidence": null
+        },
+        {
+            "text": "psyoption",
+            "entity_type": "organization",
+            "start": 555950,
+            "end": 556630,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 2960,
+            "end": 3480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "founder",
+            "entity_type": "occupation",
+            "start": 3680,
+            "end": 4040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Marinade Finance",
+            "entity_type": "organization",
+            "start": 4240,
+            "end": 5560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 5800,
+            "end": 6240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 9520,
+            "end": 10080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 26000,
+            "end": 26400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "co founders",
+            "entity_type": "occupation",
+            "start": 30210,
+            "end": 30970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Lucio",
+            "entity_type": "person_name",
+            "start": 30970,
+            "end": 31570,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Marco",
+            "entity_type": "person_name",
+            "start": 32010,
+            "end": 32450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "contributor",
+            "entity_type": "occupation",
+            "start": 36450,
+            "end": 37170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "de Finance",
+            "entity_type": "organization",
+            "start": 38010,
+            "end": 39010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 45570,
+            "end": 45970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 109720,
+            "end": 110200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 120880,
+            "end": 121800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL token",
+            "entity_type": "money_amount",
+            "start": 128560,
+            "end": 129280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "tokens",
+            "entity_type": "money_amount",
+            "start": 136630,
+            "end": 136950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "to",
+            "entity_type": "money_amount",
+            "start": 151710,
+            "end": 152310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "three days",
+            "entity_type": "duration",
+            "start": 161010,
+            "end": 161490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "location",
+            "start": 161690,
+            "end": 162170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "validators",
+            "entity_type": "occupation",
+            "start": 201780,
+            "end": 202460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Defi hackathon",
+            "entity_type": "event",
+            "start": 216240,
+            "end": 217320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 217800,
+            "end": 218240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Serum",
+            "entity_type": "organization",
+            "start": 218400,
+            "end": 218800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "February this year",
+            "entity_type": "date_interval",
+            "start": 218960,
+            "end": 220080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "organization",
+            "start": 227480,
+            "end": 228080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "two weeks",
+            "entity_type": "duration",
+            "start": 244830,
+            "end": 245230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Devnet",
+            "entity_type": "organization",
+            "start": 247070,
+            "end": 247470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL",
+            "entity_type": "money_amount",
+            "start": 261350,
+            "end": 261670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "solid",
+            "entity_type": "money_amount",
+            "start": 265550,
+            "end": 266030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "sols",
+            "entity_type": "money_amount",
+            "start": 275850,
+            "end": 276370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 281290,
+            "end": 282010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 296280,
+            "end": 297000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 303040,
+            "end": 303480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "five SOL",
+            "entity_type": "money_amount",
+            "start": 310640,
+            "end": 311160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "five STSOL",
+            "entity_type": "money_amount",
+            "start": 312560,
+            "end": 313720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "STSOL tokens",
+            "entity_type": "money_amount",
+            "start": 317000,
+            "end": 318080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "sol",
+            "entity_type": "money_amount",
+            "start": 319280,
+            "end": 319640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL token",
+            "entity_type": "money_amount",
+            "start": 324710,
+            "end": 325390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "few seconds",
+            "entity_type": "duration",
+            "start": 336430,
+            "end": 337230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ST SOL",
+            "entity_type": "money_amount",
+            "start": 349430,
+            "end": 350110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sdsol",
+            "entity_type": "money_amount",
+            "start": 402850,
+            "end": 403610,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SDSOL",
+            "entity_type": "money_amount",
+            "start": 405900,
+            "end": 406580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "STSOL",
+            "entity_type": "money_amount",
+            "start": 414620,
+            "end": 415300,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL",
+            "entity_type": "money_amount",
+            "start": 416500,
+            "end": 416780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ana",
+            "entity_type": "location",
+            "start": 442200,
+            "end": 442840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 443840,
+            "end": 444760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SOL tokens",
+            "entity_type": "money_amount",
+            "start": 447400,
+            "end": 448120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "SD SOL",
+            "entity_type": "money_amount",
+            "start": 449280,
+            "end": 449960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tristan",
+            "entity_type": "person_name",
+            "start": 454160,
+            "end": 454520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tristan",
+            "entity_type": "person_name",
+            "start": 455160,
+            "end": 455640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 463900,
+            "end": 464300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "und USDT",
+            "entity_type": "money_amount",
+            "start": 464700,
+            "end": 465780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 468980,
+            "end": 469380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 473220,
+            "end": 473700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Marinade",
+            "entity_type": "organization",
+            "start": 489460,
+            "end": 490100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "investor",
+            "entity_type": "occupation",
+            "start": 499760,
+            "end": 500400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Marinade Finance",
+            "entity_type": "organization",
+            "start": 507040,
+            "end": 508480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "tiny cc",
+            "entity_type": "url",
+            "start": 515440,
+            "end": 517040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "builders",
+            "entity_type": "occupation",
+            "start": 539160,
+            "end": 539520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Marinade",
+            "entity_type": "organization",
+            "start": 539840,
+            "end": 540520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "system partners",
+            "entity_type": "organization",
+            "start": 540840,
+            "end": 541880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Michael",
+            "entity_type": "person_name",
+            "start": 548790,
+            "end": 549190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "a minute or two",
+            "entity_type": "duration",
+            "start": 554870,
+            "end": 555430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "psyoption",
+            "entity_type": "organization",
+            "start": 555950,
+            "end": 556630,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

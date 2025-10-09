@@ -1,0 +1,112 @@
+{
+    "video_file": "2023-02-19_DI_7M6s_mpo_When Was the Bitcoin White Paper Published.mp3",
+    "entities": [
+        {
+            "text": "late 2008",
+            "entity_type": "date_interval",
+            "start": 8280,
+            "end": 9360,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 14320,
+            "end": 15040,
+            "confidence": null
+        },
+        {
+            "text": "cryptography",
+            "entity_type": "occupation",
+            "start": 16960,
+            "end": 17680,
+            "confidence": null
+        },
+        {
+            "text": "Satoshi Nakamoto",
+            "entity_type": "person_name",
+            "start": 21000,
+            "end": 23040,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 23440,
+            "end": 24040,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoins",
+            "entity_type": "money_amount",
+            "start": 31010,
+            "end": 31690,
+            "confidence": null
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 35970,
+            "end": 36450,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "late 2008",
+            "entity_type": "date_interval",
+            "start": 8280,
+            "end": 9360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 14320,
+            "end": 15040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "cryptography",
+            "entity_type": "occupation",
+            "start": 16960,
+            "end": 17680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Satoshi Nakamoto",
+            "entity_type": "person_name",
+            "start": 21000,
+            "end": 23040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 23440,
+            "end": 24040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bitcoins",
+            "entity_type": "money_amount",
+            "start": 31010,
+            "end": 31690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "miners",
+            "entity_type": "occupation",
+            "start": 35970,
+            "end": 36450,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

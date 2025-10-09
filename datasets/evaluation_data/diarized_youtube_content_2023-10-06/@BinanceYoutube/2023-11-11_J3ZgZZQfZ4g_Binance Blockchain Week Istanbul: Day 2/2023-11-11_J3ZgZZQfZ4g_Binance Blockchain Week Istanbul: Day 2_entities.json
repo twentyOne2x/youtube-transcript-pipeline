@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-11-11_J3ZgZZQfZ4g_Binance Blockchain Week Istanbul: Day 2.mp3",
+    "entities": [
+        {
+            "text": "binance Blockchain week",
+            "entity_type": "event",
+            "start": 8000,
+            "end": 9120,
+            "confidence": null
+        },
+        {
+            "text": "Istanbul",
+            "entity_type": "location",
+            "start": 9120,
+            "end": 9760,
+            "confidence": null
+        },
+        {
+            "text": "Suzanne",
+            "entity_type": "person_name",
+            "start": 34580,
+            "end": 35340,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "binance Blockchain week",
+            "entity_type": "event",
+            "start": 8000,
+            "end": 9120,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Istanbul",
+            "entity_type": "location",
+            "start": 9120,
+            "end": 9760,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Suzanne",
+            "entity_type": "person_name",
+            "start": 34580,
+            "end": 35340,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

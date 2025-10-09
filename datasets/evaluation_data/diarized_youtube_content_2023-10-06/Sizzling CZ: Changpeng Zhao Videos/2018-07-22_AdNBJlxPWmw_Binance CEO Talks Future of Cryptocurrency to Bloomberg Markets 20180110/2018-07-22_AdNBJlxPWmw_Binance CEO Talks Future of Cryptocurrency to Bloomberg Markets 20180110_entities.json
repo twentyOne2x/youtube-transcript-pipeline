@@ -1,0 +1,907 @@
+{
+    "video_file": "2018-07-22_AdNBJlxPWmw_Binance CEO Talks Future of Cryptocurrency to Bloomberg Markets 20180110.mp3",
+    "entities": [
+        {
+            "text": "Joe Changpeng",
+            "entity_type": "person_name",
+            "start": 3680,
+            "end": 4840,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 5320,
+            "end": 5680,
+            "confidence": null
+        },
+        {
+            "text": "Nats",
+            "entity_type": "person_name",
+            "start": 9120,
+            "end": 9680,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 16040,
+            "end": 16319,
+            "confidence": null
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 16560,
+            "end": 17000,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 20000,
+            "end": 20320,
+            "confidence": null
+        },
+        {
+            "text": "South Korea's government",
+            "entity_type": "organization",
+            "start": 22400,
+            "end": 23600,
+            "confidence": null
+        },
+        {
+            "text": "Korea",
+            "entity_type": "location",
+            "start": 47819,
+            "end": 48420,
+            "confidence": null
+        },
+        {
+            "text": "Japanese Korean",
+            "entity_type": "nationality",
+            "start": 61620,
+            "end": 62620,
+            "confidence": null
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 78080,
+            "end": 78520,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 80960,
+            "end": 81240,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 85880,
+            "end": 86200,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 99280,
+            "end": 99600,
+            "confidence": null
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 101280,
+            "end": 101680,
+            "confidence": null
+        },
+        {
+            "text": "Taiwan",
+            "entity_type": "location",
+            "start": 109600,
+            "end": 110240,
+            "confidence": null
+        },
+        {
+            "text": "Hong Kong",
+            "entity_type": "location",
+            "start": 110240,
+            "end": 110680,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 154290,
+            "end": 154690,
+            "confidence": null
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 157930,
+            "end": 158410,
+            "confidence": null
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 179470,
+            "end": 179910,
+            "confidence": null
+        },
+        {
+            "text": "a couple of weeks",
+            "entity_type": "duration",
+            "start": 191590,
+            "end": 192310,
+            "confidence": null
+        },
+        {
+            "text": "male",
+            "entity_type": "gender_sexuality",
+            "start": 219110,
+            "end": 219590,
+            "confidence": null
+        },
+        {
+            "text": "25",
+            "entity_type": "person_age",
+            "start": 220670,
+            "end": 221150,
+            "confidence": null
+        },
+        {
+            "text": "35",
+            "entity_type": "person_age",
+            "start": 221310,
+            "end": 221910,
+            "confidence": null
+        },
+        {
+            "text": "10,000",
+            "entity_type": "money_amount",
+            "start": 240800,
+            "end": 241400,
+            "confidence": null
+        },
+        {
+            "text": "$100,000",
+            "entity_type": "money_amount",
+            "start": 241640,
+            "end": 242640,
+            "confidence": null
+        },
+        {
+            "text": "institutional investors",
+            "entity_type": "occupation",
+            "start": 260289,
+            "end": 261369,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 298070,
+            "end": 298310,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 298950,
+            "end": 299230,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 305150,
+            "end": 305350,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 306310,
+            "end": 306590,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 307230,
+            "end": 307870,
+            "confidence": null
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 310590,
+            "end": 310950,
+            "confidence": null
+        },
+        {
+            "text": "Japan",
+            "entity_type": "location",
+            "start": 311550,
+            "end": 312150,
+            "confidence": null
+        },
+        {
+            "text": "Korea",
+            "entity_type": "location",
+            "start": 313700,
+            "end": 314100,
+            "confidence": null
+        },
+        {
+            "text": "European",
+            "entity_type": "nationality",
+            "start": 315700,
+            "end": 316180,
+            "confidence": null
+        },
+        {
+            "text": "uk",
+            "entity_type": "location",
+            "start": 317060,
+            "end": 317460,
+            "confidence": null
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 317700,
+            "end": 318420,
+            "confidence": null
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 318820,
+            "end": 319460,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 339980,
+            "end": 340460,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 368400,
+            "end": 368960,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 381220,
+            "end": 381660,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 386820,
+            "end": 387220,
+            "confidence": null
+        },
+        {
+            "text": "Warren Buffett",
+            "entity_type": "person_name",
+            "start": 400990,
+            "end": 401830,
+            "confidence": null
+        },
+        {
+            "text": "investors",
+            "entity_type": "occupation",
+            "start": 402310,
+            "end": 402710,
+            "confidence": null
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 404270,
+            "end": 404710,
+            "confidence": null
+        },
+        {
+            "text": "Jamie Dimon",
+            "entity_type": "person_name",
+            "start": 409070,
+            "end": 409790,
+            "confidence": null
+        },
+        {
+            "text": "Janet Yellen",
+            "entity_type": "person_name",
+            "start": 410670,
+            "end": 411470,
+            "confidence": null
+        },
+        {
+            "text": "Jamie",
+            "entity_type": "person_name",
+            "start": 418150,
+            "end": 418790,
+            "confidence": null
+        },
+        {
+            "text": "two months",
+            "entity_type": "duration",
+            "start": 425110,
+            "end": 425550,
+            "confidence": null
+        },
+        {
+            "text": "Warren Buffett",
+            "entity_type": "person_name",
+            "start": 429190,
+            "end": 429910,
+            "confidence": null
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 461030,
+            "end": 461630,
+            "confidence": null
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 466230,
+            "end": 466870,
+            "confidence": null
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 478110,
+            "end": 478510,
+            "confidence": null
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 479270,
+            "end": 479670,
+            "confidence": null
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 487170,
+            "end": 487930,
+            "confidence": null
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 502170,
+            "end": 502890,
+            "confidence": null
+        },
+        {
+            "text": "Joe Changpeng",
+            "entity_type": "person_name",
+            "start": 505850,
+            "end": 506690,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 506970,
+            "end": 507250,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 510250,
+            "end": 510970,
+            "confidence": null
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 512970,
+            "end": 513690,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Joe Changpeng",
+            "entity_type": "person_name",
+            "start": 3680,
+            "end": 4840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 5320,
+            "end": 5680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Nats",
+            "entity_type": "person_name",
+            "start": 9120,
+            "end": 9680,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 16040,
+            "end": 16319,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 16560,
+            "end": 17000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 20000,
+            "end": 20320,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "South Korea's government",
+            "entity_type": "organization",
+            "start": 22400,
+            "end": 23600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Korea",
+            "entity_type": "location",
+            "start": 47819,
+            "end": 48420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Japanese Korean",
+            "entity_type": "nationality",
+            "start": 61620,
+            "end": 62620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 78080,
+            "end": 78520,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 80960,
+            "end": 81240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 85880,
+            "end": 86200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 99280,
+            "end": 99600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tokyo",
+            "entity_type": "location",
+            "start": 101280,
+            "end": 101680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Taiwan",
+            "entity_type": "location",
+            "start": 109600,
+            "end": 110240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hong Kong",
+            "entity_type": "location",
+            "start": 110240,
+            "end": 110680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 154290,
+            "end": 154690,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "an hour",
+            "entity_type": "duration",
+            "start": 157930,
+            "end": 158410,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 179470,
+            "end": 179910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a couple of weeks",
+            "entity_type": "duration",
+            "start": 191590,
+            "end": 192310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "male",
+            "entity_type": "gender_sexuality",
+            "start": 219110,
+            "end": 219590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "25",
+            "entity_type": "person_age",
+            "start": 220670,
+            "end": 221150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "35",
+            "entity_type": "person_age",
+            "start": 221310,
+            "end": 221910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "10,000",
+            "entity_type": "money_amount",
+            "start": 240800,
+            "end": 241400,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$100,000",
+            "entity_type": "money_amount",
+            "start": 241640,
+            "end": 242640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "institutional investors",
+            "entity_type": "occupation",
+            "start": 260289,
+            "end": 261369,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 298070,
+            "end": 298310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 298950,
+            "end": 299230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 305150,
+            "end": 305350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 306310,
+            "end": 306590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 307230,
+            "end": 307870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 310590,
+            "end": 310950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Japan",
+            "entity_type": "location",
+            "start": 311550,
+            "end": 312150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Korea",
+            "entity_type": "location",
+            "start": 313700,
+            "end": 314100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "European",
+            "entity_type": "nationality",
+            "start": 315700,
+            "end": 316180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "uk",
+            "entity_type": "location",
+            "start": 317060,
+            "end": 317460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 317700,
+            "end": 318420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 318820,
+            "end": 319460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 339980,
+            "end": 340460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 368400,
+            "end": 368960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 381220,
+            "end": 381660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 386820,
+            "end": 387220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Warren Buffett",
+            "entity_type": "person_name",
+            "start": 400990,
+            "end": 401830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "investors",
+            "entity_type": "occupation",
+            "start": 402310,
+            "end": 402710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "bitcoin",
+            "entity_type": "money_amount",
+            "start": 404270,
+            "end": 404710,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jamie Dimon",
+            "entity_type": "person_name",
+            "start": 409070,
+            "end": 409790,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Janet Yellen",
+            "entity_type": "person_name",
+            "start": 410670,
+            "end": 411470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jamie",
+            "entity_type": "person_name",
+            "start": 418150,
+            "end": 418790,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "two months",
+            "entity_type": "duration",
+            "start": 425110,
+            "end": 425550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Warren Buffett",
+            "entity_type": "person_name",
+            "start": 429190,
+            "end": 429910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 461030,
+            "end": 461630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 466230,
+            "end": 466870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 478110,
+            "end": 478510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 479270,
+            "end": 479670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 487170,
+            "end": 487930,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2018",
+            "entity_type": "date_interval",
+            "start": 502170,
+            "end": 502890,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joe Changpeng",
+            "entity_type": "person_name",
+            "start": 505850,
+            "end": 506690,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 506970,
+            "end": 507250,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 510250,
+            "end": 510970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bloomberg",
+            "entity_type": "organization",
+            "start": 512970,
+            "end": 513690,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

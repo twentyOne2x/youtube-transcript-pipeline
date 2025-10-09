@@ -1,0 +1,37 @@
+{
+    "video_file": "2023-03-10_gSlTBc6ZO7s_A Night to Remember: Binance AU Super Meetup in Sydney.mp3",
+    "entities": [
+        {
+            "text": "du mil aventitre",
+            "entity_type": "date_interval",
+            "start": 1600,
+            "end": 2440,
+            "confidence": null
+        },
+        {
+            "text": "Australia",
+            "entity_type": "location",
+            "start": 11520,
+            "end": 11840,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "du mil aventitre",
+            "entity_type": "date_interval",
+            "start": 1600,
+            "end": 2440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Australia",
+            "entity_type": "location",
+            "start": 11520,
+            "end": 11840,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

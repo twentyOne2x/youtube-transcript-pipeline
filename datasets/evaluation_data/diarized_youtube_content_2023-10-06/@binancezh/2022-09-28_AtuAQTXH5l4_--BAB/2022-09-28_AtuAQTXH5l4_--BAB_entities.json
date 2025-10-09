@@ -1,0 +1,52 @@
+{
+    "video_file": "2022-09-28_AtuAQTXH5l4_--BAB.mp3",
+    "entities": [
+        {
+            "text": "Dabi",
+            "entity_type": "person_name",
+            "start": 32460,
+            "end": 33020,
+            "confidence": null
+        },
+        {
+            "text": "Vitalik",
+            "entity_type": "person_name",
+            "start": 127680,
+            "end": 128480,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 133520,
+            "end": 134160,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Dabi",
+            "entity_type": "person_name",
+            "start": 32460,
+            "end": 33020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Vitalik",
+            "entity_type": "person_name",
+            "start": 127680,
+            "end": 128480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 133520,
+            "end": 134160,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

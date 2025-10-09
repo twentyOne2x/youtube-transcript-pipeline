@@ -1,0 +1,82 @@
+{
+    "video_file": "2021-07-08_22M50jOv_rE_How to Post a Trade Ad on Binance P2P - #Binance Official Guide.mp3",
+    "entities": [
+        {
+            "text": "sellers",
+            "entity_type": "occupation",
+            "start": 21120,
+            "end": 21560,
+            "confidence": null
+        },
+        {
+            "text": "Fiat",
+            "entity_type": "money_amount",
+            "start": 64790,
+            "end": 65150,
+            "confidence": null
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 90990,
+            "end": 91950,
+            "confidence": null
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 94510,
+            "end": 95470,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 140199,
+            "end": 140759,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "sellers",
+            "entity_type": "occupation",
+            "start": 21120,
+            "end": 21560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Fiat",
+            "entity_type": "money_amount",
+            "start": 64790,
+            "end": 65150,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 90990,
+            "end": 91950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "15 minutes",
+            "entity_type": "duration",
+            "start": 94510,
+            "end": 95470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 140199,
+            "end": 140759,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

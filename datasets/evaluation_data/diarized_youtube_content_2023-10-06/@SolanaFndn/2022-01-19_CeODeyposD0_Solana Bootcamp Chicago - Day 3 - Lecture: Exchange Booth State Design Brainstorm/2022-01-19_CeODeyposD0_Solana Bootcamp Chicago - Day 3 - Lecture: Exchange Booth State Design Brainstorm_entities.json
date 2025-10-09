@@ -1,0 +1,742 @@
+{
+    "video_file": "2022-01-19_CeODeyposD0_Solana Bootcamp Chicago - Day 3 - Lecture: Exchange Booth State Design Brainstorm.mp3",
+    "entities": [
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 97870,
+            "end": 98190,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 102790,
+            "end": 103030,
+            "confidence": null
+        },
+        {
+            "text": "amb",
+            "entity_type": "person_name",
+            "start": 180520,
+            "end": 181040,
+            "confidence": null
+        },
+        {
+            "text": "Mint",
+            "entity_type": "money_amount",
+            "start": 214690,
+            "end": 214970,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 221090,
+            "end": 221490,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 317620,
+            "end": 317900,
+            "confidence": null
+        },
+        {
+            "text": "Andy",
+            "entity_type": "person_name",
+            "start": 435980,
+            "end": 436500,
+            "confidence": null
+        },
+        {
+            "text": "Exchange Booth",
+            "entity_type": "organization",
+            "start": 486740,
+            "end": 487700,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 491940,
+            "end": 492540,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 493220,
+            "end": 493740,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 612000,
+            "end": 612240,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 798660,
+            "end": 799060,
+            "confidence": null
+        },
+        {
+            "text": "owner",
+            "entity_type": "occupation",
+            "start": 816630,
+            "end": 816910,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 914160,
+            "end": 914400,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1095500,
+            "end": 1096020,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 1155760,
+            "end": 1156040,
+            "confidence": null
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1160600,
+            "end": 1160880,
+            "confidence": null
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1163680,
+            "end": 1163960,
+            "confidence": null
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1203300,
+            "end": 1203660,
+            "confidence": null
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 1280210,
+            "end": 1280490,
+            "confidence": null
+        },
+        {
+            "text": "vault A",
+            "entity_type": "location",
+            "start": 1285810,
+            "end": 1286410,
+            "confidence": null
+        },
+        {
+            "text": "Vault A",
+            "entity_type": "location",
+            "start": 1293050,
+            "end": 1293810,
+            "confidence": null
+        },
+        {
+            "text": "PDA",
+            "entity_type": "money_amount",
+            "start": 1294570,
+            "end": 1295010,
+            "confidence": null
+        },
+        {
+            "text": "mint A",
+            "entity_type": "money_amount",
+            "start": 1301490,
+            "end": 1302010,
+            "confidence": null
+        },
+        {
+            "text": "mint A",
+            "entity_type": "money_amount",
+            "start": 1303850,
+            "end": 1304490,
+            "confidence": null
+        },
+        {
+            "text": "vault A",
+            "entity_type": "location",
+            "start": 1307450,
+            "end": 1307970,
+            "confidence": null
+        },
+        {
+            "text": "vaults A and B",
+            "entity_type": "location",
+            "start": 1377770,
+            "end": 1380920,
+            "confidence": null
+        },
+        {
+            "text": "PDAs",
+            "entity_type": "occupation",
+            "start": 1407280,
+            "end": 1407960,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1524560,
+            "end": 1525280,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1587750,
+            "end": 1588350,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1597750,
+            "end": 1598310,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1608750,
+            "end": 1609350,
+            "confidence": null
+        },
+        {
+            "text": "pda",
+            "entity_type": "occupation",
+            "start": 1737780,
+            "end": 1738300,
+            "confidence": null
+        },
+        {
+            "text": "mint",
+            "entity_type": "money_amount",
+            "start": 1828950,
+            "end": 1829270,
+            "confidence": null
+        },
+        {
+            "text": "Mint",
+            "entity_type": "organization",
+            "start": 1865080,
+            "end": 1865360,
+            "confidence": null
+        },
+        {
+            "text": "Mint",
+            "entity_type": "organization",
+            "start": 1880300,
+            "end": 1880740,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1898220,
+            "end": 1898740,
+            "confidence": null
+        },
+        {
+            "text": "Mint",
+            "entity_type": "money_amount",
+            "start": 1943520,
+            "end": 1944000,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2040150,
+            "end": 2040750,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2240720,
+            "end": 2241200,
+            "confidence": null
+        },
+        {
+            "text": "ken",
+            "entity_type": "money_amount",
+            "start": 2251190,
+            "end": 2251550,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2262070,
+            "end": 2262470,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2267670,
+            "end": 2268070,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2273510,
+            "end": 2273910,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2277450,
+            "end": 2277850,
+            "confidence": null
+        },
+        {
+            "text": "$10",
+            "entity_type": "money_amount",
+            "start": 2279650,
+            "end": 2280290,
+            "confidence": null
+        },
+        {
+            "text": "$7",
+            "entity_type": "money_amount",
+            "start": 2282530,
+            "end": 2283330,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2286970,
+            "end": 2287330,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2294570,
+            "end": 2295090,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 97870,
+            "end": 98190,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 102790,
+            "end": 103030,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "amb",
+            "entity_type": "person_name",
+            "start": 180520,
+            "end": 181040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mint",
+            "entity_type": "money_amount",
+            "start": 214690,
+            "end": 214970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 221090,
+            "end": 221490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 317620,
+            "end": 317900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Andy",
+            "entity_type": "person_name",
+            "start": 435980,
+            "end": 436500,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Exchange Booth",
+            "entity_type": "organization",
+            "start": 486740,
+            "end": 487700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 491940,
+            "end": 492540,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 493220,
+            "end": 493740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 612000,
+            "end": 612240,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 798660,
+            "end": 799060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "owner",
+            "entity_type": "occupation",
+            "start": 816630,
+            "end": 816910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 914160,
+            "end": 914400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1095500,
+            "end": 1096020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 1155760,
+            "end": 1156040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1160600,
+            "end": 1160880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1163680,
+            "end": 1163960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vault",
+            "entity_type": "location",
+            "start": 1203300,
+            "end": 1203660,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "admin",
+            "entity_type": "occupation",
+            "start": 1280210,
+            "end": 1280490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vault A",
+            "entity_type": "location",
+            "start": 1285810,
+            "end": 1286410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Vault A",
+            "entity_type": "location",
+            "start": 1293050,
+            "end": 1293810,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PDA",
+            "entity_type": "money_amount",
+            "start": 1294570,
+            "end": 1295010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mint A",
+            "entity_type": "money_amount",
+            "start": 1301490,
+            "end": 1302010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mint A",
+            "entity_type": "money_amount",
+            "start": 1303850,
+            "end": 1304490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vault A",
+            "entity_type": "location",
+            "start": 1307450,
+            "end": 1307970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "vaults A and B",
+            "entity_type": "location",
+            "start": 1377770,
+            "end": 1380920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PDAs",
+            "entity_type": "occupation",
+            "start": 1407280,
+            "end": 1407960,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1524560,
+            "end": 1525280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1587750,
+            "end": 1588350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1597750,
+            "end": 1598310,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1608750,
+            "end": 1609350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pda",
+            "entity_type": "occupation",
+            "start": 1737780,
+            "end": 1738300,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "mint",
+            "entity_type": "money_amount",
+            "start": 1828950,
+            "end": 1829270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mint",
+            "entity_type": "organization",
+            "start": 1865080,
+            "end": 1865360,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mint",
+            "entity_type": "organization",
+            "start": 1880300,
+            "end": 1880740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 1898220,
+            "end": 1898740,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Mint",
+            "entity_type": "money_amount",
+            "start": 1943520,
+            "end": 1944000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2040150,
+            "end": 2040750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2240720,
+            "end": 2241200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "ken",
+            "entity_type": "money_amount",
+            "start": 2251190,
+            "end": 2251550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2262070,
+            "end": 2262470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2267670,
+            "end": 2268070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2273510,
+            "end": 2273910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2277450,
+            "end": 2277850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$10",
+            "entity_type": "money_amount",
+            "start": 2279650,
+            "end": 2280290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "$7",
+            "entity_type": "money_amount",
+            "start": 2282530,
+            "end": 2283330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2286970,
+            "end": 2287330,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2294570,
+            "end": 2295090,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

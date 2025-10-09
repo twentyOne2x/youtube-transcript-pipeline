@@ -1,0 +1,52 @@
+{
+    "video_file": "2018-10-09_vnJCT_ZZRF0_DELTA Summit Malta 2018.mp3",
+    "entities": [
+        {
+            "text": "politicians",
+            "entity_type": "occupation",
+            "start": 72690,
+            "end": 73490,
+            "confidence": null
+        },
+        {
+            "text": "Malta",
+            "entity_type": "location",
+            "start": 100550,
+            "end": 101110,
+            "confidence": null
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 124330,
+            "end": 134150,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "politicians",
+            "entity_type": "occupation",
+            "start": 72690,
+            "end": 73490,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Malta",
+            "entity_type": "location",
+            "start": 100550,
+            "end": 101110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 124330,
+            "end": 134150,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

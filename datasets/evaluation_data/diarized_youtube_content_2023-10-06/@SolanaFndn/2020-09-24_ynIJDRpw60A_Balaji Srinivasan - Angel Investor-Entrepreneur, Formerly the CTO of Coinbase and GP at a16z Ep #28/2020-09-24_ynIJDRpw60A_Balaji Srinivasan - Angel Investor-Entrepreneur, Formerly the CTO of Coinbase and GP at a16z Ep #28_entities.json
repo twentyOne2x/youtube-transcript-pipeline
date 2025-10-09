@@ -1,0 +1,5842 @@
+{
+    "video_file": "2020-09-24_ynIJDRpw60A_Balaji Srinivasan - Angel Investor-Entrepreneur, Formerly the CTO of Coinbase and GP at a16z Ep #28.mp3",
+    "entities": [
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 16039,
+            "end": 16800,
+            "confidence": null
+        },
+        {
+            "text": "Balaji Srinivasan",
+            "entity_type": "person_name",
+            "start": 21360,
+            "end": 22920,
+            "confidence": null
+        },
+        {
+            "text": "former CTO",
+            "entity_type": "occupation",
+            "start": 24000,
+            "end": 24720,
+            "confidence": null
+        },
+        {
+            "text": "Coinbase Garden",
+            "entity_type": "organization",
+            "start": 24800,
+            "end": 25720,
+            "confidence": null
+        },
+        {
+            "text": "GP8816Z",
+            "entity_type": "organization",
+            "start": 25790,
+            "end": 27070,
+            "confidence": null
+        },
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 37830,
+            "end": 38590,
+            "confidence": null
+        },
+        {
+            "text": "pandemic",
+            "entity_type": "event",
+            "start": 56520,
+            "end": 57160,
+            "confidence": null
+        },
+        {
+            "text": "USSR",
+            "entity_type": "location",
+            "start": 72640,
+            "end": 73280,
+            "confidence": null
+        },
+        {
+            "text": "Chernobyl",
+            "entity_type": "location",
+            "start": 79760,
+            "end": 80280,
+            "confidence": null
+        },
+        {
+            "text": "paranoid",
+            "entity_type": "medical_condition",
+            "start": 83460,
+            "end": 83900,
+            "confidence": null
+        },
+        {
+            "text": "swine flu",
+            "entity_type": "medical_condition",
+            "start": 93700,
+            "end": 94620,
+            "confidence": null
+        },
+        {
+            "text": "SARS",
+            "entity_type": "medical_condition",
+            "start": 95620,
+            "end": 96220,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 150510,
+            "end": 150870,
+            "confidence": null
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 151310,
+            "end": 151870,
+            "confidence": null
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 153510,
+            "end": 153870,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 155310,
+            "end": 155550,
+            "confidence": null
+        },
+        {
+            "text": "virus",
+            "entity_type": "medical_condition",
+            "start": 174840,
+            "end": 175160,
+            "confidence": null
+        },
+        {
+            "text": "west",
+            "entity_type": "location",
+            "start": 179160,
+            "end": 179320,
+            "confidence": null
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 181960,
+            "end": 182600,
+            "confidence": null
+        },
+        {
+            "text": "nine months",
+            "entity_type": "duration",
+            "start": 190450,
+            "end": 190890,
+            "confidence": null
+        },
+        {
+            "text": "Black Death",
+            "entity_type": "medical_condition",
+            "start": 202130,
+            "end": 202730,
+            "confidence": null
+        },
+        {
+            "text": "virus",
+            "entity_type": "medical_condition",
+            "start": 204250,
+            "end": 204649,
+            "confidence": null
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 214990,
+            "end": 215390,
+            "confidence": null
+        },
+        {
+            "text": "New York",
+            "entity_type": "location",
+            "start": 215910,
+            "end": 216470,
+            "confidence": null
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 217550,
+            "end": 217830,
+            "confidence": null
+        },
+        {
+            "text": "hospital workers",
+            "entity_type": "occupation",
+            "start": 222590,
+            "end": 223390,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 244640,
+            "end": 244960,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 250880,
+            "end": 251200,
+            "confidence": null
+        },
+        {
+            "text": "pandemic",
+            "entity_type": "event",
+            "start": 257640,
+            "end": 258000,
+            "confidence": null
+        },
+        {
+            "text": "a million",
+            "entity_type": "statistics",
+            "start": 263240,
+            "end": 263560,
+            "confidence": null
+        },
+        {
+            "text": "Spanish flu",
+            "entity_type": "medical_condition",
+            "start": 266640,
+            "end": 267240,
+            "confidence": null
+        },
+        {
+            "text": "100 million",
+            "entity_type": "statistics",
+            "start": 267720,
+            "end": 268360,
+            "confidence": null
+        },
+        {
+            "text": "vaccinate",
+            "entity_type": "medical_process",
+            "start": 278320,
+            "end": 278800,
+            "confidence": null
+        },
+        {
+            "text": "endemic",
+            "entity_type": "event",
+            "start": 279600,
+            "end": 280120,
+            "confidence": null
+        },
+        {
+            "text": "several million",
+            "entity_type": "statistics",
+            "start": 283400,
+            "end": 284080,
+            "confidence": null
+        },
+        {
+            "text": "10",
+            "entity_type": "statistics",
+            "start": 285600,
+            "end": 285800,
+            "confidence": null
+        },
+        {
+            "text": "nine months",
+            "entity_type": "duration",
+            "start": 317200,
+            "end": 317640,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 351140,
+            "end": 351420,
+            "confidence": null
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 376040,
+            "end": 376560,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 408230,
+            "end": 408630,
+            "confidence": null
+        },
+        {
+            "text": "Asia",
+            "entity_type": "location",
+            "start": 409870,
+            "end": 410230,
+            "confidence": null
+        },
+        {
+            "text": "COVID",
+            "entity_type": "medical_condition",
+            "start": 416120,
+            "end": 416440,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 426120,
+            "end": 426520,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 435200,
+            "end": 435520,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 436000,
+            "end": 436280,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 436640,
+            "end": 436920,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 437680,
+            "end": 438080,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 442480,
+            "end": 442840,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 443520,
+            "end": 443720,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 444240,
+            "end": 444520,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 445240,
+            "end": 445560,
+            "confidence": null
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 452120,
+            "end": 452600,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 466720,
+            "end": 467080,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 468720,
+            "end": 469080,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 481030,
+            "end": 481310,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 483030,
+            "end": 483390,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 484630,
+            "end": 484950,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 487109,
+            "end": 487390,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 498650,
+            "end": 499050,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 501770,
+            "end": 502330,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 502570,
+            "end": 502970,
+            "confidence": null
+        },
+        {
+            "text": "Salana",
+            "entity_type": "money_amount",
+            "start": 503250,
+            "end": 503770,
+            "confidence": null
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 508570,
+            "end": 509290,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 512170,
+            "end": 512650,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 520290,
+            "end": 520650,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 521170,
+            "end": 521450,
+            "confidence": null
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 521530,
+            "end": 521930,
+            "confidence": null
+        },
+        {
+            "text": "Americans",
+            "entity_type": "nationality",
+            "start": 536640,
+            "end": 537120,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 537520,
+            "end": 537920,
+            "confidence": null
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 561070,
+            "end": 561430,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 564750,
+            "end": 565030,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 565630,
+            "end": 566070,
+            "confidence": null
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 581230,
+            "end": 581670,
+            "confidence": null
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 584030,
+            "end": 584350,
+            "confidence": null
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 639750,
+            "end": 640230,
+            "confidence": null
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 642110,
+            "end": 642590,
+            "confidence": null
+        },
+        {
+            "text": "German",
+            "entity_type": "nationality",
+            "start": 643550,
+            "end": 644030,
+            "confidence": null
+        },
+        {
+            "text": "Pacific Ocean",
+            "entity_type": "location",
+            "start": 647430,
+            "end": 648230,
+            "confidence": null
+        },
+        {
+            "text": "Pacific",
+            "entity_type": "location",
+            "start": 664710,
+            "end": 665110,
+            "confidence": null
+        },
+        {
+            "text": "Atlantic",
+            "entity_type": "location",
+            "start": 665350,
+            "end": 665870,
+            "confidence": null
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 712810,
+            "end": 713090,
+            "confidence": null
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 730300,
+            "end": 730980,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 740700,
+            "end": 741140,
+            "confidence": null
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 760070,
+            "end": 760470,
+            "confidence": null
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 788950,
+            "end": 789350,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 789910,
+            "end": 790310,
+            "confidence": null
+        },
+        {
+            "text": "Claros",
+            "entity_type": "money_amount",
+            "start": 791710,
+            "end": 792310,
+            "confidence": null
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 827320,
+            "end": 827520,
+            "confidence": null
+        },
+        {
+            "text": "Yale Law",
+            "entity_type": "organization",
+            "start": 831460,
+            "end": 832180,
+            "confidence": null
+        },
+        {
+            "text": "Kennedy School of Government",
+            "entity_type": "organization",
+            "start": 836780,
+            "end": 837660,
+            "confidence": null
+        },
+        {
+            "text": "head of state",
+            "entity_type": "occupation",
+            "start": 837980,
+            "end": 838420,
+            "confidence": null
+        },
+        {
+            "text": "head of network",
+            "entity_type": "occupation",
+            "start": 838740,
+            "end": 839300,
+            "confidence": null
+        },
+        {
+            "text": "Columbia School of Journalism",
+            "entity_type": "organization",
+            "start": 840460,
+            "end": 841700,
+            "confidence": null
+        },
+        {
+            "text": "Wall street",
+            "entity_type": "location",
+            "start": 851660,
+            "end": 852100,
+            "confidence": null
+        },
+        {
+            "text": "Silicon Valley",
+            "entity_type": "location",
+            "start": 852540,
+            "end": 853380,
+            "confidence": null
+        },
+        {
+            "text": "Columbia School of Journalism",
+            "entity_type": "organization",
+            "start": 854580,
+            "end": 855740,
+            "confidence": null
+        },
+        {
+            "text": "Kendi School of Government",
+            "entity_type": "organization",
+            "start": 855740,
+            "end": 856820,
+            "confidence": null
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 866030,
+            "end": 866350,
+            "confidence": null
+        },
+        {
+            "text": "Schneier",
+            "entity_type": "person_name",
+            "start": 933080,
+            "end": 933640,
+            "confidence": null
+        },
+        {
+            "text": "Matt Blaze",
+            "entity_type": "person_name",
+            "start": 933840,
+            "end": 934520,
+            "confidence": null
+        },
+        {
+            "text": "Stalin",
+            "entity_type": "person_name",
+            "start": 989080,
+            "end": 989560,
+            "confidence": null
+        },
+        {
+            "text": "Stalin",
+            "entity_type": "person_name",
+            "start": 990200,
+            "end": 990640,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 1008370,
+            "end": 1008890,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1041710,
+            "end": 1042030,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1077890,
+            "end": 1078290,
+            "confidence": null
+        },
+        {
+            "text": "California",
+            "entity_type": "location",
+            "start": 1088370,
+            "end": 1089130,
+            "confidence": null
+        },
+        {
+            "text": "Texas",
+            "entity_type": "location",
+            "start": 1089330,
+            "end": 1089810,
+            "confidence": null
+        },
+        {
+            "text": "Illinois",
+            "entity_type": "location",
+            "start": 1090130,
+            "end": 1090690,
+            "confidence": null
+        },
+        {
+            "text": "10 or",
+            "entity_type": "duration",
+            "start": 1109510,
+            "end": 1109910,
+            "confidence": null
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 1110310,
+            "end": 1110630,
+            "confidence": null
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 1125470,
+            "end": 1126270,
+            "confidence": null
+        },
+        {
+            "text": "2000 election",
+            "entity_type": "event",
+            "start": 1129390,
+            "end": 1130510,
+            "confidence": null
+        },
+        {
+            "text": "Bush",
+            "entity_type": "person_name",
+            "start": 1130910,
+            "end": 1131390,
+            "confidence": null
+        },
+        {
+            "text": "United states",
+            "entity_type": "location",
+            "start": 1146570,
+            "end": 1147210,
+            "confidence": null
+        },
+        {
+            "text": "New Hampshire",
+            "entity_type": "location",
+            "start": 1160530,
+            "end": 1161090,
+            "confidence": null
+        },
+        {
+            "text": "Pennsylvania",
+            "entity_type": "location",
+            "start": 1161250,
+            "end": 1162010,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1170990,
+            "end": 1171430,
+            "confidence": null
+        },
+        {
+            "text": "blockchain operating systems designer",
+            "entity_type": "occupation",
+            "start": 1183190,
+            "end": 1185070,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1200340,
+            "end": 1201060,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 1201740,
+            "end": 1202140,
+            "confidence": null
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 1204580,
+            "end": 1205140,
+            "confidence": null
+        },
+        {
+            "text": "the U.S",
+            "entity_type": "location",
+            "start": 1209379,
+            "end": 1209780,
+            "confidence": null
+        },
+        {
+            "text": "coronavirus",
+            "entity_type": "medical_condition",
+            "start": 1216220,
+            "end": 1216580,
+            "confidence": null
+        },
+        {
+            "text": "Supreme Court",
+            "entity_type": "organization",
+            "start": 1228500,
+            "end": 1229260,
+            "confidence": null
+        },
+        {
+            "text": "Florida",
+            "entity_type": "location",
+            "start": 1259570,
+            "end": 1260210,
+            "confidence": null
+        },
+        {
+            "text": "2000 election",
+            "entity_type": "event",
+            "start": 1262890,
+            "end": 1263490,
+            "confidence": null
+        },
+        {
+            "text": "four years",
+            "entity_type": "duration",
+            "start": 1281080,
+            "end": 1281480,
+            "confidence": null
+        },
+        {
+            "text": "Republicans",
+            "entity_type": "political_affiliation",
+            "start": 1330490,
+            "end": 1331010,
+            "confidence": null
+        },
+        {
+            "text": "Blue",
+            "entity_type": "political_affiliation",
+            "start": 1332010,
+            "end": 1332290,
+            "confidence": null
+        },
+        {
+            "text": "red",
+            "entity_type": "political_affiliation",
+            "start": 1332410,
+            "end": 1332650,
+            "confidence": null
+        },
+        {
+            "text": "governor",
+            "entity_type": "occupation",
+            "start": 1355010,
+            "end": 1355330,
+            "confidence": null
+        },
+        {
+            "text": "coronavirus",
+            "entity_type": "medical_condition",
+            "start": 1361490,
+            "end": 1361770,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 1379650,
+            "end": 1379930,
+            "confidence": null
+        },
+        {
+            "text": "Defense one",
+            "entity_type": "organization",
+            "start": 1391410,
+            "end": 1392210,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1403210,
+            "end": 1403570,
+            "confidence": null
+        },
+        {
+            "text": "Venezuela",
+            "entity_type": "location",
+            "start": 1417690,
+            "end": 1418370,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1447790,
+            "end": 1448190,
+            "confidence": null
+        },
+        {
+            "text": "January 21st",
+            "entity_type": "date",
+            "start": 1460110,
+            "end": 1461190,
+            "confidence": null
+        },
+        {
+            "text": "blue",
+            "entity_type": "political_affiliation",
+            "start": 1467170,
+            "end": 1467530,
+            "confidence": null
+        },
+        {
+            "text": "California",
+            "entity_type": "location",
+            "start": 1485410,
+            "end": 1486050,
+            "confidence": null
+        },
+        {
+            "text": "Washington",
+            "entity_type": "location",
+            "start": 1486050,
+            "end": 1486530,
+            "confidence": null
+        },
+        {
+            "text": "Oregon",
+            "entity_type": "location",
+            "start": 1486530,
+            "end": 1486890,
+            "confidence": null
+        },
+        {
+            "text": "Nevada",
+            "entity_type": "location",
+            "start": 1486890,
+            "end": 1487330,
+            "confidence": null
+        },
+        {
+            "text": "marijuana",
+            "entity_type": "drug",
+            "start": 1512430,
+            "end": 1512950,
+            "confidence": null
+        },
+        {
+            "text": "Podesta",
+            "entity_type": "person_name",
+            "start": 1526230,
+            "end": 1526950,
+            "confidence": null
+        },
+        {
+            "text": "blue",
+            "entity_type": "political_affiliation",
+            "start": 1529750,
+            "end": 1530110,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1542230,
+            "end": 1542710,
+            "confidence": null
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 1548390,
+            "end": 1548670,
+            "confidence": null
+        },
+        {
+            "text": "1945",
+            "entity_type": "date_interval",
+            "start": 1550270,
+            "end": 1550990,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1551190,
+            "end": 1551710,
+            "confidence": null
+        },
+        {
+            "text": "75 years",
+            "entity_type": "duration",
+            "start": 1552870,
+            "end": 1553470,
+            "confidence": null
+        },
+        {
+            "text": "Soviet Union",
+            "entity_type": "location",
+            "start": 1562270,
+            "end": 1563070,
+            "confidence": null
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 1570890,
+            "end": 1571570,
+            "confidence": null
+        },
+        {
+            "text": "1790",
+            "entity_type": "date_interval",
+            "start": 1577370,
+            "end": 1578090,
+            "confidence": null
+        },
+        {
+            "text": "1820",
+            "entity_type": "date_interval",
+            "start": 1578370,
+            "end": 1579170,
+            "confidence": null
+        },
+        {
+            "text": "1990",
+            "entity_type": "date_interval",
+            "start": 1582610,
+            "end": 1583250,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1583490,
+            "end": 1584090,
+            "confidence": null
+        },
+        {
+            "text": "a thousand years",
+            "entity_type": "duration",
+            "start": 1592410,
+            "end": 1592970,
+            "confidence": null
+        },
+        {
+            "text": "the USSR",
+            "entity_type": "location",
+            "start": 1594410,
+            "end": 1595090,
+            "confidence": null
+        },
+        {
+            "text": "USA",
+            "entity_type": "location",
+            "start": 1596300,
+            "end": 1596620,
+            "confidence": null
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 1597140,
+            "end": 1597540,
+            "confidence": null
+        },
+        {
+            "text": "historian",
+            "entity_type": "occupation",
+            "start": 1602140,
+            "end": 1602660,
+            "confidence": null
+        },
+        {
+            "text": "3000",
+            "entity_type": "date_interval",
+            "start": 1603100,
+            "end": 1603540,
+            "confidence": null
+        },
+        {
+            "text": "the US Government",
+            "entity_type": "organization",
+            "start": 1623610,
+            "end": 1624490,
+            "confidence": null
+        },
+        {
+            "text": "2008 crisis",
+            "entity_type": "event",
+            "start": 1628170,
+            "end": 1629250,
+            "confidence": null
+        },
+        {
+            "text": "Iraq war",
+            "entity_type": "event",
+            "start": 1630530,
+            "end": 1631090,
+            "confidence": null
+        },
+        {
+            "text": "COVID 19",
+            "entity_type": "medical_condition",
+            "start": 1634770,
+            "end": 1635370,
+            "confidence": null
+        },
+        {
+            "text": "foreign policy.com",
+            "entity_type": "url",
+            "start": 1636250,
+            "end": 1637450,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1640850,
+            "end": 1641130,
+            "confidence": null
+        },
+        {
+            "text": "Haiti",
+            "entity_type": "location",
+            "start": 1650910,
+            "end": 1651390,
+            "confidence": null
+        },
+        {
+            "text": "West Africa",
+            "entity_type": "location",
+            "start": 1651950,
+            "end": 1652630,
+            "confidence": null
+        },
+        {
+            "text": "U.S. marines",
+            "entity_type": "location",
+            "start": 1653750,
+            "end": 1654470,
+            "confidence": null
+        },
+        {
+            "text": "The US",
+            "entity_type": "location",
+            "start": 1659270,
+            "end": 1659630,
+            "confidence": null
+        },
+        {
+            "text": "The US",
+            "entity_type": "location",
+            "start": 1667710,
+            "end": 1668190,
+            "confidence": null
+        },
+        {
+            "text": "COVID 19",
+            "entity_type": "medical_condition",
+            "start": 1674350,
+            "end": 1674990,
+            "confidence": null
+        },
+        {
+            "text": "World War II",
+            "entity_type": "event",
+            "start": 1678780,
+            "end": 1679420,
+            "confidence": null
+        },
+        {
+            "text": "9. 11",
+            "entity_type": "medical_condition",
+            "start": 1682100,
+            "end": 1682620,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 1684460,
+            "end": 1684780,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1685580,
+            "end": 1685940,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1686420,
+            "end": 1686620,
+            "confidence": null
+        },
+        {
+            "text": "World War II",
+            "entity_type": "event",
+            "start": 1689740,
+            "end": 1690220,
+            "confidence": null
+        },
+        {
+            "text": "Vietnam",
+            "entity_type": "location",
+            "start": 1691900,
+            "end": 1692420,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1702780,
+            "end": 1703260,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1711040,
+            "end": 1711320,
+            "confidence": null
+        },
+        {
+            "text": "internationalist",
+            "entity_type": "political_affiliation",
+            "start": 1713000,
+            "end": 1713720,
+            "confidence": null
+        },
+        {
+            "text": "2015",
+            "entity_type": "date_interval",
+            "start": 1716520,
+            "end": 1717080,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1720080,
+            "end": 1720520,
+            "confidence": null
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1730280,
+            "end": 1731080,
+            "confidence": null
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 1734360,
+            "end": 1734840,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1739240,
+            "end": 1739640,
+            "confidence": null
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1740000,
+            "end": 1740440,
+            "confidence": null
+        },
+        {
+            "text": "Science",
+            "entity_type": "occupation",
+            "start": 1747240,
+            "end": 1747640,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1747840,
+            "end": 1748080,
+            "confidence": null
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1753440,
+            "end": 1753680,
+            "confidence": null
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1753840,
+            "end": 1754159,
+            "confidence": null
+        },
+        {
+            "text": "Math",
+            "entity_type": "occupation",
+            "start": 1758600,
+            "end": 1759040,
+            "confidence": null
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1759360,
+            "end": 1759800,
+            "confidence": null
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1767250,
+            "end": 1767610,
+            "confidence": null
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1770970,
+            "end": 1771330,
+            "confidence": null
+        },
+        {
+            "text": "scientists",
+            "entity_type": "occupation",
+            "start": 1772450,
+            "end": 1773010,
+            "confidence": null
+        },
+        {
+            "text": "scientists",
+            "entity_type": "occupation",
+            "start": 1775570,
+            "end": 1776050,
+            "confidence": null
+        },
+        {
+            "text": "Surgeon General",
+            "entity_type": "occupation",
+            "start": 1791750,
+            "end": 1792430,
+            "confidence": null
+        },
+        {
+            "text": "three months",
+            "entity_type": "duration",
+            "start": 1795670,
+            "end": 1796110,
+            "confidence": null
+        },
+        {
+            "text": "three months",
+            "entity_type": "duration",
+            "start": 1818030,
+            "end": 1818390,
+            "confidence": null
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 1833770,
+            "end": 1834250,
+            "confidence": null
+        },
+        {
+            "text": "biomedical person",
+            "entity_type": "occupation",
+            "start": 1838210,
+            "end": 1839010,
+            "confidence": null
+        },
+        {
+            "text": "Physics",
+            "entity_type": "occupation",
+            "start": 1844170,
+            "end": 1844650,
+            "confidence": null
+        },
+        {
+            "text": "Cox",
+            "entity_type": "person_name",
+            "start": 1848610,
+            "end": 1848930,
+            "confidence": null
+        },
+        {
+            "text": "Florida",
+            "entity_type": "location",
+            "start": 1910930,
+            "end": 1911450,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 1911930,
+            "end": 1912410,
+            "confidence": null
+        },
+        {
+            "text": "Moses Naim",
+            "entity_type": "person_name",
+            "start": 1941430,
+            "end": 1942110,
+            "confidence": null
+        },
+        {
+            "text": "Martin Guri",
+            "entity_type": "person_name",
+            "start": 1943790,
+            "end": 1944590,
+            "confidence": null
+        },
+        {
+            "text": "Snowden",
+            "entity_type": "person_name",
+            "start": 1963420,
+            "end": 1963980,
+            "confidence": null
+        },
+        {
+            "text": "Soviet secret police",
+            "entity_type": "organization",
+            "start": 1972020,
+            "end": 1972980,
+            "confidence": null
+        },
+        {
+            "text": "the United States",
+            "entity_type": "location",
+            "start": 2017250,
+            "end": 2017970,
+            "confidence": null
+        },
+        {
+            "text": "presidency",
+            "entity_type": "organization",
+            "start": 2022530,
+            "end": 2023290,
+            "confidence": null
+        },
+        {
+            "text": "Greg Ritchie",
+            "entity_type": "person_name",
+            "start": 2034830,
+            "end": 2035710,
+            "confidence": null
+        },
+        {
+            "text": "Greg Richie",
+            "entity_type": "person_name",
+            "start": 2041190,
+            "end": 2041750,
+            "confidence": null
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2045150,
+            "end": 2046110,
+            "confidence": null
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2058230,
+            "end": 2059070,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2060640,
+            "end": 2061320,
+            "confidence": null
+        },
+        {
+            "text": "Oculus",
+            "entity_type": "organization",
+            "start": 2066760,
+            "end": 2067360,
+            "confidence": null
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2101940,
+            "end": 2102740,
+            "confidence": null
+        },
+        {
+            "text": "Bolivia",
+            "entity_type": "location",
+            "start": 2111100,
+            "end": 2111620,
+            "confidence": null
+        },
+        {
+            "text": "Tazikistan",
+            "entity_type": "location",
+            "start": 2112620,
+            "end": 2113260,
+            "confidence": null
+        },
+        {
+            "text": "Hong Kong",
+            "entity_type": "location",
+            "start": 2118470,
+            "end": 2118990,
+            "confidence": null
+        },
+        {
+            "text": "North Dakota",
+            "entity_type": "location",
+            "start": 2120790,
+            "end": 2121470,
+            "confidence": null
+        },
+        {
+            "text": "New Zealand",
+            "entity_type": "location",
+            "start": 2121950,
+            "end": 2122430,
+            "confidence": null
+        },
+        {
+            "text": "nickel",
+            "entity_type": "money_amount",
+            "start": 2122710,
+            "end": 2123190,
+            "confidence": null
+        },
+        {
+            "text": "Pakistani",
+            "entity_type": "nationality",
+            "start": 2129510,
+            "end": 2130550,
+            "confidence": null
+        },
+        {
+            "text": "brickmaker",
+            "entity_type": "occupation",
+            "start": 2130550,
+            "end": 2131310,
+            "confidence": null
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 2146300,
+            "end": 2146860,
+            "confidence": null
+        },
+        {
+            "text": "Neil Simmons",
+            "entity_type": "person_name",
+            "start": 2157660,
+            "end": 2158340,
+            "confidence": null
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 2159660,
+            "end": 2160020,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 2164860,
+            "end": 2165340,
+            "confidence": null
+        },
+        {
+            "text": "1980",
+            "entity_type": "date_interval",
+            "start": 2166460,
+            "end": 2167198,
+            "confidence": null
+        },
+        {
+            "text": "1990",
+            "entity_type": "date_interval",
+            "start": 2167362,
+            "end": 2168100,
+            "confidence": null
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 2168660,
+            "end": 2169100,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2170640,
+            "end": 2171280,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2174960,
+            "end": 2175600,
+            "confidence": null
+        },
+        {
+            "text": "2010",
+            "entity_type": "date_interval",
+            "start": 2176360,
+            "end": 2176960,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2178440,
+            "end": 2178920,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2180640,
+            "end": 2181280,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2182400,
+            "end": 2182960,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2184240,
+            "end": 2184960,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2186920,
+            "end": 2187440,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2188360,
+            "end": 2188840,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2192680,
+            "end": 2193200,
+            "confidence": null
+        },
+        {
+            "text": "British",
+            "entity_type": "nationality",
+            "start": 2195680,
+            "end": 2196160,
+            "confidence": null
+        },
+        {
+            "text": "the UK",
+            "entity_type": "location",
+            "start": 2198700,
+            "end": 2199100,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2201260,
+            "end": 2201820,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2202980,
+            "end": 2203580,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2207580,
+            "end": 2208220,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2215780,
+            "end": 2216380,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2218620,
+            "end": 2219180,
+            "confidence": null
+        },
+        {
+            "text": "2019",
+            "entity_type": "date_interval",
+            "start": 2220980,
+            "end": 2221580,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2226260,
+            "end": 2226740,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2228860,
+            "end": 2229420,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2229780,
+            "end": 2230180,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2237220,
+            "end": 2237700,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2242140,
+            "end": 2242780,
+            "confidence": null
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 2248980,
+            "end": 2249220,
+            "confidence": null
+        },
+        {
+            "text": "detox",
+            "entity_type": "medical_process",
+            "start": 2258990,
+            "end": 2259550,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2269990,
+            "end": 2270390,
+            "confidence": null
+        },
+        {
+            "text": "Starbucks",
+            "entity_type": "organization",
+            "start": 2276150,
+            "end": 2276630,
+            "confidence": null
+        },
+        {
+            "text": "40 years",
+            "entity_type": "duration",
+            "start": 2279610,
+            "end": 2280050,
+            "confidence": null
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 2282130,
+            "end": 2282530,
+            "confidence": null
+        },
+        {
+            "text": "the ussr",
+            "entity_type": "location",
+            "start": 2298730,
+            "end": 2299770,
+            "confidence": null
+        },
+        {
+            "text": "the Soviet Union",
+            "entity_type": "location",
+            "start": 2310560,
+            "end": 2311440,
+            "confidence": null
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2313520,
+            "end": 2314080,
+            "confidence": null
+        },
+        {
+            "text": "Ukraine",
+            "entity_type": "location",
+            "start": 2314400,
+            "end": 2315040,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2324160,
+            "end": 2324680,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2346980,
+            "end": 2347460,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2360670,
+            "end": 2361150,
+            "confidence": null
+        },
+        {
+            "text": "New Zealand",
+            "entity_type": "location",
+            "start": 2365030,
+            "end": 2365590,
+            "confidence": null
+        },
+        {
+            "text": "Canada",
+            "entity_type": "location",
+            "start": 2366590,
+            "end": 2366870,
+            "confidence": null
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2369230,
+            "end": 2369750,
+            "confidence": null
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2372630,
+            "end": 2373030,
+            "confidence": null
+        },
+        {
+            "text": "Finland",
+            "entity_type": "location",
+            "start": 2390480,
+            "end": 2391000,
+            "confidence": null
+        },
+        {
+            "text": "Sweden",
+            "entity_type": "location",
+            "start": 2391000,
+            "end": 2391680,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2413370,
+            "end": 2413770,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2439240,
+            "end": 2439600,
+            "confidence": null
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 2485330,
+            "end": 2485930,
+            "confidence": null
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 2494680,
+            "end": 2495040,
+            "confidence": null
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 2496120,
+            "end": 2496400,
+            "confidence": null
+        },
+        {
+            "text": "the USA",
+            "entity_type": "location",
+            "start": 2512360,
+            "end": 2513160,
+            "confidence": null
+        },
+        {
+            "text": "the Americas",
+            "entity_type": "location",
+            "start": 2513810,
+            "end": 2514770,
+            "confidence": null
+        },
+        {
+            "text": "the uk",
+            "entity_type": "location",
+            "start": 2515410,
+            "end": 2515850,
+            "confidence": null
+        },
+        {
+            "text": "the Americas",
+            "entity_type": "location",
+            "start": 2518050,
+            "end": 2518730,
+            "confidence": null
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2519810,
+            "end": 2520330,
+            "confidence": null
+        },
+        {
+            "text": "Spain",
+            "entity_type": "location",
+            "start": 2520810,
+            "end": 2521330,
+            "confidence": null
+        },
+        {
+            "text": "South America",
+            "entity_type": "location",
+            "start": 2522370,
+            "end": 2523250,
+            "confidence": null
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 2523690,
+            "end": 2524170,
+            "confidence": null
+        },
+        {
+            "text": "England",
+            "entity_type": "location",
+            "start": 2524650,
+            "end": 2525210,
+            "confidence": null
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 2527210,
+            "end": 2527730,
+            "confidence": null
+        },
+        {
+            "text": "Spain",
+            "entity_type": "location",
+            "start": 2530130,
+            "end": 2530410,
+            "confidence": null
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 2530410,
+            "end": 2530730,
+            "confidence": null
+        },
+        {
+            "text": "England",
+            "entity_type": "location",
+            "start": 2530730,
+            "end": 2531210,
+            "confidence": null
+        },
+        {
+            "text": "the Netherlands",
+            "entity_type": "location",
+            "start": 2531210,
+            "end": 2531970,
+            "confidence": null
+        },
+        {
+            "text": "Native Americans",
+            "entity_type": "nationality",
+            "start": 2542830,
+            "end": 2543550,
+            "confidence": null
+        },
+        {
+            "text": "Canada",
+            "entity_type": "location",
+            "start": 2579750,
+            "end": 2580110,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2580750,
+            "end": 2581070,
+            "confidence": null
+        },
+        {
+            "text": "West Virginia",
+            "entity_type": "location",
+            "start": 2601380,
+            "end": 2602020,
+            "confidence": null
+        },
+        {
+            "text": "technology",
+            "entity_type": "occupation",
+            "start": 2639340,
+            "end": 2639740,
+            "confidence": null
+        },
+        {
+            "text": "finance",
+            "entity_type": "occupation",
+            "start": 2640540,
+            "end": 2641180,
+            "confidence": null
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 2641660,
+            "end": 2642620,
+            "confidence": null
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 2643260,
+            "end": 2643820,
+            "confidence": null
+        },
+        {
+            "text": "Oculus",
+            "entity_type": "organization",
+            "start": 2676060,
+            "end": 2676780,
+            "confidence": null
+        },
+        {
+            "text": "Michael Shivalev",
+            "entity_type": "person_name",
+            "start": 2678060,
+            "end": 2679220,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 2679540,
+            "end": 2679980,
+            "confidence": null
+        },
+        {
+            "text": "Fireblocks",
+            "entity_type": "organization",
+            "start": 2680860,
+            "end": 2681580,
+            "confidence": null
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2682820,
+            "end": 2683380,
+            "confidence": null
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2686260,
+            "end": 2686780,
+            "confidence": null
+        },
+        {
+            "text": "product managers",
+            "entity_type": "occupation",
+            "start": 2691820,
+            "end": 2693020,
+            "confidence": null
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2700460,
+            "end": 2700940,
+            "confidence": null
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2708830,
+            "end": 2709230,
+            "confidence": null
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 2715710,
+            "end": 2716350,
+            "confidence": null
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2722270,
+            "end": 2722830,
+            "confidence": null
+        },
+        {
+            "text": "PayPal",
+            "entity_type": "organization",
+            "start": 2726270,
+            "end": 2726910,
+            "confidence": null
+        },
+        {
+            "text": "Facebook",
+            "entity_type": "organization",
+            "start": 2728350,
+            "end": 2729230,
+            "confidence": null
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2757000,
+            "end": 2757480,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 2820350,
+            "end": 2820870,
+            "confidence": null
+        },
+        {
+            "text": "Zuck",
+            "entity_type": "person_name",
+            "start": 2828830,
+            "end": 2829310,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2834790,
+            "end": 2835270,
+            "confidence": null
+        },
+        {
+            "text": "Facebook",
+            "entity_type": "organization",
+            "start": 2835270,
+            "end": 2835590,
+            "confidence": null
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2835910,
+            "end": 2836630,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 2836830,
+            "end": 2837150,
+            "confidence": null
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2865420,
+            "end": 2865980,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2867300,
+            "end": 2867940,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2868460,
+            "end": 2868740,
+            "confidence": null
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2869100,
+            "end": 2869620,
+            "confidence": null
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2870190,
+            "end": 2870470,
+            "confidence": null
+        },
+        {
+            "text": "Borland",
+            "entity_type": "organization",
+            "start": 2870790,
+            "end": 2871310,
+            "confidence": null
+        },
+        {
+            "text": "90s",
+            "entity_type": "date_interval",
+            "start": 2874790,
+            "end": 2875110,
+            "confidence": null
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2877110,
+            "end": 2877670,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2878270,
+            "end": 2878910,
+            "confidence": null
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 2879150,
+            "end": 2879590,
+            "confidence": null
+        },
+        {
+            "text": "2000s",
+            "entity_type": "date_interval",
+            "start": 2884950,
+            "end": 2885510,
+            "confidence": null
+        },
+        {
+            "text": "2010s",
+            "entity_type": "date_interval",
+            "start": 2885710,
+            "end": 2886230,
+            "confidence": null
+        },
+        {
+            "text": "Uniforacle",
+            "entity_type": "organization",
+            "start": 2887350,
+            "end": 2888350,
+            "confidence": null
+        },
+        {
+            "text": "TikT",
+            "entity_type": "organization",
+            "start": 2894230,
+            "end": 2894790,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2903800,
+            "end": 2904320,
+            "confidence": null
+        },
+        {
+            "text": "July 10, 2019",
+            "entity_type": "date",
+            "start": 2916800,
+            "end": 2918240,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2919840,
+            "end": 2920440,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2920640,
+            "end": 2921120,
+            "confidence": null
+        },
+        {
+            "text": "2010",
+            "entity_type": "date_interval",
+            "start": 2923160,
+            "end": 2923760,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2936650,
+            "end": 2937210,
+            "confidence": null
+        },
+        {
+            "text": "Delaware",
+            "entity_type": "location",
+            "start": 2937370,
+            "end": 2937850,
+            "confidence": null
+        },
+        {
+            "text": "Aragon",
+            "entity_type": "organization",
+            "start": 2951730,
+            "end": 2952250,
+            "confidence": null
+        },
+        {
+            "text": "Project, Stripe, Atlas",
+            "entity_type": "organization",
+            "start": 2952250,
+            "end": 2953610,
+            "confidence": null
+        },
+        {
+            "text": "September",
+            "entity_type": "date_interval",
+            "start": 2970020,
+            "end": 2970500,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2972220,
+            "end": 2972900,
+            "confidence": null
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2975580,
+            "end": 2976100,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco.",
+            "entity_type": "location",
+            "start": 2986330,
+            "end": 2986970,
+            "confidence": null
+        },
+        {
+            "text": "sf",
+            "entity_type": "location",
+            "start": 2990450,
+            "end": 2991090,
+            "confidence": null
+        },
+        {
+            "text": "sf",
+            "entity_type": "location",
+            "start": 2996130,
+            "end": 2996610,
+            "confidence": null
+        },
+        {
+            "text": "Palm Springs",
+            "entity_type": "location",
+            "start": 2997890,
+            "end": 2998650,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3001810,
+            "end": 3002530,
+            "confidence": null
+        },
+        {
+            "text": "la",
+            "entity_type": "location",
+            "start": 3015840,
+            "end": 3016120,
+            "confidence": null
+        },
+        {
+            "text": "Hills",
+            "entity_type": "location",
+            "start": 3037600,
+            "end": 3037880,
+            "confidence": null
+        },
+        {
+            "text": "hills",
+            "entity_type": "location",
+            "start": 3041480,
+            "end": 3041920,
+            "confidence": null
+        },
+        {
+            "text": "homeless",
+            "entity_type": "occupation",
+            "start": 3056560,
+            "end": 3057120,
+            "confidence": null
+        },
+        {
+            "text": "COVID",
+            "entity_type": "medical_condition",
+            "start": 3070690,
+            "end": 3071090,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3084610,
+            "end": 3085330,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco Bay",
+            "entity_type": "location",
+            "start": 3093290,
+            "end": 3094490,
+            "confidence": null
+        },
+        {
+            "text": "west coast",
+            "entity_type": "location",
+            "start": 3114970,
+            "end": 3115330,
+            "confidence": null
+        },
+        {
+            "text": "Houston",
+            "entity_type": "location",
+            "start": 3119650,
+            "end": 3120090,
+            "confidence": null
+        },
+        {
+            "text": "North Dakota",
+            "entity_type": "location",
+            "start": 3121250,
+            "end": 3121890,
+            "confidence": null
+        },
+        {
+            "text": "opec",
+            "entity_type": "organization",
+            "start": 3150670,
+            "end": 3151190,
+            "confidence": null
+        },
+        {
+            "text": "Teleport",
+            "entity_type": "organization",
+            "start": 3157700,
+            "end": 3158380,
+            "confidence": null
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 3163540,
+            "end": 3164060,
+            "confidence": null
+        },
+        {
+            "text": "2014",
+            "entity_type": "date_interval",
+            "start": 3165660,
+            "end": 3166220,
+            "confidence": null
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 3169980,
+            "end": 3170420,
+            "confidence": null
+        },
+        {
+            "text": "Colombia, Medellin",
+            "entity_type": "location",
+            "start": 3188140,
+            "end": 3189700,
+            "confidence": null
+        },
+        {
+            "text": "narcos",
+            "entity_type": "occupation",
+            "start": 3194540,
+            "end": 3195100,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3212880,
+            "end": 3213640,
+            "confidence": null
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 3233240,
+            "end": 3233640,
+            "confidence": null
+        },
+        {
+            "text": "executives",
+            "entity_type": "occupation",
+            "start": 3258640,
+            "end": 3259520,
+            "confidence": null
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 3286260,
+            "end": 3286620,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 3287700,
+            "end": 3288140,
+            "confidence": null
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3321130,
+            "end": 3322010,
+            "confidence": null
+        },
+        {
+            "text": "Europe",
+            "entity_type": "location",
+            "start": 3324490,
+            "end": 3324850,
+            "confidence": null
+        },
+        {
+            "text": "Asia",
+            "entity_type": "location",
+            "start": 3325090,
+            "end": 3325450,
+            "confidence": null
+        },
+        {
+            "text": "247",
+            "entity_type": "duration",
+            "start": 3329330,
+            "end": 3330090,
+            "confidence": null
+        },
+        {
+            "text": "24 7",
+            "entity_type": "duration",
+            "start": 3333250,
+            "end": 3334090,
+            "confidence": null
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 3347680,
+            "end": 3347920,
+            "confidence": null
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 3368720,
+            "end": 3369120,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 3403710,
+            "end": 3404070,
+            "confidence": null
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 3425640,
+            "end": 3439580,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 16039,
+            "end": 16800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Balaji Srinivasan",
+            "entity_type": "person_name",
+            "start": 21360,
+            "end": 22920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "former CTO",
+            "entity_type": "occupation",
+            "start": 24000,
+            "end": 24720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Coinbase Garden",
+            "entity_type": "organization",
+            "start": 24800,
+            "end": 25720,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "GP8816Z",
+            "entity_type": "organization",
+            "start": 25790,
+            "end": 27070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Anatoly",
+            "entity_type": "person_name",
+            "start": 37830,
+            "end": 38590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "pandemic",
+            "entity_type": "event",
+            "start": 56520,
+            "end": 57160,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USSR",
+            "entity_type": "location",
+            "start": 72640,
+            "end": 73280,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Chernobyl",
+            "entity_type": "location",
+            "start": 79760,
+            "end": 80280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "paranoid",
+            "entity_type": "medical_condition",
+            "start": 83460,
+            "end": 83900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "swine flu",
+            "entity_type": "medical_condition",
+            "start": 93700,
+            "end": 94620,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "SARS",
+            "entity_type": "medical_condition",
+            "start": 95620,
+            "end": 96220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 150510,
+            "end": 150870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 151310,
+            "end": 151870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 153510,
+            "end": 153870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 155310,
+            "end": 155550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "virus",
+            "entity_type": "medical_condition",
+            "start": 174840,
+            "end": 175160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "west",
+            "entity_type": "location",
+            "start": 179160,
+            "end": 179320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 181960,
+            "end": 182600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "nine months",
+            "entity_type": "duration",
+            "start": 190450,
+            "end": 190890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Black Death",
+            "entity_type": "medical_condition",
+            "start": 202130,
+            "end": 202730,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "virus",
+            "entity_type": "medical_condition",
+            "start": 204250,
+            "end": 204649,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Wuhan",
+            "entity_type": "location",
+            "start": 214990,
+            "end": 215390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "New York",
+            "entity_type": "location",
+            "start": 215910,
+            "end": 216470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Italy",
+            "entity_type": "location",
+            "start": 217550,
+            "end": 217830,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "hospital workers",
+            "entity_type": "occupation",
+            "start": 222590,
+            "end": 223390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 244640,
+            "end": 244960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 250880,
+            "end": 251200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "pandemic",
+            "entity_type": "event",
+            "start": 257640,
+            "end": 258000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a million",
+            "entity_type": "statistics",
+            "start": 263240,
+            "end": 263560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Spanish flu",
+            "entity_type": "medical_condition",
+            "start": 266640,
+            "end": 267240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "100 million",
+            "entity_type": "statistics",
+            "start": 267720,
+            "end": 268360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "vaccinate",
+            "entity_type": "medical_process",
+            "start": 278320,
+            "end": 278800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "endemic",
+            "entity_type": "event",
+            "start": 279600,
+            "end": 280120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "several million",
+            "entity_type": "statistics",
+            "start": 283400,
+            "end": 284080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "10",
+            "entity_type": "statistics",
+            "start": 285600,
+            "end": 285800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "nine months",
+            "entity_type": "duration",
+            "start": 317200,
+            "end": 317640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 351140,
+            "end": 351420,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 376040,
+            "end": 376560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 408230,
+            "end": 408630,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Asia",
+            "entity_type": "location",
+            "start": 409870,
+            "end": 410230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "COVID",
+            "entity_type": "medical_condition",
+            "start": 416120,
+            "end": 416440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 426120,
+            "end": 426520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 435200,
+            "end": 435520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 436000,
+            "end": 436280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 436640,
+            "end": 436920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 437680,
+            "end": 438080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 442480,
+            "end": 442840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 443520,
+            "end": 443720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 444240,
+            "end": 444520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 445240,
+            "end": 445560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a few years",
+            "entity_type": "duration",
+            "start": 452120,
+            "end": 452600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 466720,
+            "end": 467080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 468720,
+            "end": 469080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 481030,
+            "end": 481310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 483030,
+            "end": 483390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 484630,
+            "end": 484950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 487109,
+            "end": 487390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 498650,
+            "end": 499050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 501770,
+            "end": 502330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 502570,
+            "end": 502970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Salana",
+            "entity_type": "money_amount",
+            "start": 503250,
+            "end": 503770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 508570,
+            "end": 509290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 512170,
+            "end": 512650,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 520290,
+            "end": 520650,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 521170,
+            "end": 521450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 521530,
+            "end": 521930,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Americans",
+            "entity_type": "nationality",
+            "start": 536640,
+            "end": 537120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 537520,
+            "end": 537920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 561070,
+            "end": 561430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 564750,
+            "end": 565030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 565630,
+            "end": 566070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 581230,
+            "end": 581670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 584030,
+            "end": 584350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 639750,
+            "end": 640230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 642110,
+            "end": 642590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "German",
+            "entity_type": "nationality",
+            "start": 643550,
+            "end": 644030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Pacific Ocean",
+            "entity_type": "location",
+            "start": 647430,
+            "end": 648230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Pacific",
+            "entity_type": "location",
+            "start": 664710,
+            "end": 665110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Atlantic",
+            "entity_type": "location",
+            "start": 665350,
+            "end": 665870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Chinese",
+            "entity_type": "nationality",
+            "start": 712810,
+            "end": 713090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 730300,
+            "end": 730980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 740700,
+            "end": 741140,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "lawyer",
+            "entity_type": "occupation",
+            "start": 760070,
+            "end": 760470,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Solana",
+            "entity_type": "money_amount",
+            "start": 788950,
+            "end": 789350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 789910,
+            "end": 790310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Claros",
+            "entity_type": "money_amount",
+            "start": 791710,
+            "end": 792310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "judge",
+            "entity_type": "occupation",
+            "start": 827320,
+            "end": 827520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Yale Law",
+            "entity_type": "organization",
+            "start": 831460,
+            "end": 832180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Kennedy School of Government",
+            "entity_type": "organization",
+            "start": 836780,
+            "end": 837660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "head of state",
+            "entity_type": "occupation",
+            "start": 837980,
+            "end": 838420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "head of network",
+            "entity_type": "occupation",
+            "start": 838740,
+            "end": 839300,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Columbia School of Journalism",
+            "entity_type": "organization",
+            "start": 840460,
+            "end": 841700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Wall street",
+            "entity_type": "location",
+            "start": 851660,
+            "end": 852100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Silicon Valley",
+            "entity_type": "location",
+            "start": 852540,
+            "end": 853380,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Columbia School of Journalism",
+            "entity_type": "organization",
+            "start": 854580,
+            "end": 855740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Kendi School of Government",
+            "entity_type": "organization",
+            "start": 855740,
+            "end": 856820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 866030,
+            "end": 866350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Schneier",
+            "entity_type": "person_name",
+            "start": 933080,
+            "end": 933640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Matt Blaze",
+            "entity_type": "person_name",
+            "start": 933840,
+            "end": 934520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stalin",
+            "entity_type": "person_name",
+            "start": 989080,
+            "end": 989560,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Stalin",
+            "entity_type": "person_name",
+            "start": 990200,
+            "end": 990640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 1008370,
+            "end": 1008890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1041710,
+            "end": 1042030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1077890,
+            "end": 1078290,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "California",
+            "entity_type": "location",
+            "start": 1088370,
+            "end": 1089130,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Texas",
+            "entity_type": "location",
+            "start": 1089330,
+            "end": 1089810,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Illinois",
+            "entity_type": "location",
+            "start": 1090130,
+            "end": 1090690,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "10 or",
+            "entity_type": "duration",
+            "start": 1109510,
+            "end": 1109910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 1110310,
+            "end": 1110630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 1125470,
+            "end": 1126270,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2000 election",
+            "entity_type": "event",
+            "start": 1129390,
+            "end": 1130510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Bush",
+            "entity_type": "person_name",
+            "start": 1130910,
+            "end": 1131390,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "United states",
+            "entity_type": "location",
+            "start": 1146570,
+            "end": 1147210,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "New Hampshire",
+            "entity_type": "location",
+            "start": 1160530,
+            "end": 1161090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Pennsylvania",
+            "entity_type": "location",
+            "start": 1161250,
+            "end": 1162010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1170990,
+            "end": 1171430,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "blockchain operating systems designer",
+            "entity_type": "occupation",
+            "start": 1183190,
+            "end": 1185070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1200340,
+            "end": 1201060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 1201740,
+            "end": 1202140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 1204580,
+            "end": 1205140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the U.S",
+            "entity_type": "location",
+            "start": 1209379,
+            "end": 1209780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "coronavirus",
+            "entity_type": "medical_condition",
+            "start": 1216220,
+            "end": 1216580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Supreme Court",
+            "entity_type": "organization",
+            "start": 1228500,
+            "end": 1229260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Florida",
+            "entity_type": "location",
+            "start": 1259570,
+            "end": 1260210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2000 election",
+            "entity_type": "event",
+            "start": 1262890,
+            "end": 1263490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "four years",
+            "entity_type": "duration",
+            "start": 1281080,
+            "end": 1281480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Republicans",
+            "entity_type": "political_affiliation",
+            "start": 1330490,
+            "end": 1331010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Blue",
+            "entity_type": "political_affiliation",
+            "start": 1332010,
+            "end": 1332290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "red",
+            "entity_type": "political_affiliation",
+            "start": 1332410,
+            "end": 1332650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "governor",
+            "entity_type": "occupation",
+            "start": 1355010,
+            "end": 1355330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "coronavirus",
+            "entity_type": "medical_condition",
+            "start": 1361490,
+            "end": 1361770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 1379650,
+            "end": 1379930,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Defense one",
+            "entity_type": "organization",
+            "start": 1391410,
+            "end": 1392210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1403210,
+            "end": 1403570,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Venezuela",
+            "entity_type": "location",
+            "start": 1417690,
+            "end": 1418370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1447790,
+            "end": 1448190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "January 21st",
+            "entity_type": "date",
+            "start": 1460110,
+            "end": 1461190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "blue",
+            "entity_type": "political_affiliation",
+            "start": 1467170,
+            "end": 1467530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "California",
+            "entity_type": "location",
+            "start": 1485410,
+            "end": 1486050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Washington",
+            "entity_type": "location",
+            "start": 1486050,
+            "end": 1486530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oregon",
+            "entity_type": "location",
+            "start": 1486530,
+            "end": 1486890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Nevada",
+            "entity_type": "location",
+            "start": 1486890,
+            "end": 1487330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "marijuana",
+            "entity_type": "drug",
+            "start": 1512430,
+            "end": 1512950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Podesta",
+            "entity_type": "person_name",
+            "start": 1526230,
+            "end": 1526950,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "blue",
+            "entity_type": "political_affiliation",
+            "start": 1529750,
+            "end": 1530110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1542230,
+            "end": 1542710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "American",
+            "entity_type": "nationality",
+            "start": 1548390,
+            "end": 1548670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1945",
+            "entity_type": "date_interval",
+            "start": 1550270,
+            "end": 1550990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1551190,
+            "end": 1551710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "75 years",
+            "entity_type": "duration",
+            "start": 1552870,
+            "end": 1553470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Soviet Union",
+            "entity_type": "location",
+            "start": 1562270,
+            "end": 1563070,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 1570890,
+            "end": 1571570,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1790",
+            "entity_type": "date_interval",
+            "start": 1577370,
+            "end": 1578090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1820",
+            "entity_type": "date_interval",
+            "start": 1578370,
+            "end": 1579170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1990",
+            "entity_type": "date_interval",
+            "start": 1582610,
+            "end": 1583250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 1583490,
+            "end": 1584090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a thousand years",
+            "entity_type": "duration",
+            "start": 1592410,
+            "end": 1592970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the USSR",
+            "entity_type": "location",
+            "start": 1594410,
+            "end": 1595090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "USA",
+            "entity_type": "location",
+            "start": 1596300,
+            "end": 1596620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 1597140,
+            "end": 1597540,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "historian",
+            "entity_type": "occupation",
+            "start": 1602140,
+            "end": 1602660,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "3000",
+            "entity_type": "date_interval",
+            "start": 1603100,
+            "end": 1603540,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US Government",
+            "entity_type": "organization",
+            "start": 1623610,
+            "end": 1624490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2008 crisis",
+            "entity_type": "event",
+            "start": 1628170,
+            "end": 1629250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Iraq war",
+            "entity_type": "event",
+            "start": 1630530,
+            "end": 1631090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "COVID 19",
+            "entity_type": "medical_condition",
+            "start": 1634770,
+            "end": 1635370,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "foreign policy.com",
+            "entity_type": "url",
+            "start": 1636250,
+            "end": 1637450,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1640850,
+            "end": 1641130,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Haiti",
+            "entity_type": "location",
+            "start": 1650910,
+            "end": 1651390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "West Africa",
+            "entity_type": "location",
+            "start": 1651950,
+            "end": 1652630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "U.S. marines",
+            "entity_type": "location",
+            "start": 1653750,
+            "end": 1654470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "The US",
+            "entity_type": "location",
+            "start": 1659270,
+            "end": 1659630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "The US",
+            "entity_type": "location",
+            "start": 1667710,
+            "end": 1668190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "COVID 19",
+            "entity_type": "medical_condition",
+            "start": 1674350,
+            "end": 1674990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "World War II",
+            "entity_type": "event",
+            "start": 1678780,
+            "end": 1679420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "9. 11",
+            "entity_type": "medical_condition",
+            "start": 1682100,
+            "end": 1682620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 1684460,
+            "end": 1684780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1685580,
+            "end": 1685940,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 1686420,
+            "end": 1686620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "World War II",
+            "entity_type": "event",
+            "start": 1689740,
+            "end": 1690220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Vietnam",
+            "entity_type": "location",
+            "start": 1691900,
+            "end": 1692420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1702780,
+            "end": 1703260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1711040,
+            "end": 1711320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "internationalist",
+            "entity_type": "political_affiliation",
+            "start": 1713000,
+            "end": 1713720,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2015",
+            "entity_type": "date_interval",
+            "start": 1716520,
+            "end": 1717080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 1720080,
+            "end": 1720520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "computer science",
+            "entity_type": "occupation",
+            "start": 1730280,
+            "end": 1731080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 1734360,
+            "end": 1734840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1739240,
+            "end": 1739640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1740000,
+            "end": 1740440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Science",
+            "entity_type": "occupation",
+            "start": 1747240,
+            "end": 1747640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1747840,
+            "end": 1748080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "math",
+            "entity_type": "occupation",
+            "start": 1753440,
+            "end": 1753680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1753840,
+            "end": 1754159,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Math",
+            "entity_type": "occupation",
+            "start": 1758600,
+            "end": 1759040,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1759360,
+            "end": 1759800,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1767250,
+            "end": 1767610,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "science",
+            "entity_type": "occupation",
+            "start": 1770970,
+            "end": 1771330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "scientists",
+            "entity_type": "occupation",
+            "start": 1772450,
+            "end": 1773010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "scientists",
+            "entity_type": "occupation",
+            "start": 1775570,
+            "end": 1776050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Surgeon General",
+            "entity_type": "occupation",
+            "start": 1791750,
+            "end": 1792430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "three months",
+            "entity_type": "duration",
+            "start": 1795670,
+            "end": 1796110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "three months",
+            "entity_type": "duration",
+            "start": 1818030,
+            "end": 1818390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 1833770,
+            "end": 1834250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "biomedical person",
+            "entity_type": "occupation",
+            "start": 1838210,
+            "end": 1839010,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Physics",
+            "entity_type": "occupation",
+            "start": 1844170,
+            "end": 1844650,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Cox",
+            "entity_type": "person_name",
+            "start": 1848610,
+            "end": 1848930,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Florida",
+            "entity_type": "location",
+            "start": 1910930,
+            "end": 1911450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 1911930,
+            "end": 1912410,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Moses Naim",
+            "entity_type": "person_name",
+            "start": 1941430,
+            "end": 1942110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Martin Guri",
+            "entity_type": "person_name",
+            "start": 1943790,
+            "end": 1944590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Snowden",
+            "entity_type": "person_name",
+            "start": 1963420,
+            "end": 1963980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Soviet secret police",
+            "entity_type": "organization",
+            "start": 1972020,
+            "end": 1972980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the United States",
+            "entity_type": "location",
+            "start": 2017250,
+            "end": 2017970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "presidency",
+            "entity_type": "organization",
+            "start": 2022530,
+            "end": 2023290,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Greg Ritchie",
+            "entity_type": "person_name",
+            "start": 2034830,
+            "end": 2035710,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Greg Richie",
+            "entity_type": "person_name",
+            "start": 2041190,
+            "end": 2041750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2045150,
+            "end": 2046110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2058230,
+            "end": 2059070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2060640,
+            "end": 2061320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oculus",
+            "entity_type": "organization",
+            "start": 2066760,
+            "end": 2067360,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1992",
+            "entity_type": "date_interval",
+            "start": 2101940,
+            "end": 2102740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bolivia",
+            "entity_type": "location",
+            "start": 2111100,
+            "end": 2111620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Tazikistan",
+            "entity_type": "location",
+            "start": 2112620,
+            "end": 2113260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hong Kong",
+            "entity_type": "location",
+            "start": 2118470,
+            "end": 2118990,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "North Dakota",
+            "entity_type": "location",
+            "start": 2120790,
+            "end": 2121470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "New Zealand",
+            "entity_type": "location",
+            "start": 2121950,
+            "end": 2122430,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "nickel",
+            "entity_type": "money_amount",
+            "start": 2122710,
+            "end": 2123190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Pakistani",
+            "entity_type": "nationality",
+            "start": 2129510,
+            "end": 2130550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "brickmaker",
+            "entity_type": "occupation",
+            "start": 2130550,
+            "end": 2131310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 2146300,
+            "end": 2146860,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Neil Simmons",
+            "entity_type": "person_name",
+            "start": 2157660,
+            "end": 2158340,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "30 years",
+            "entity_type": "duration",
+            "start": 2159660,
+            "end": 2160020,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 2164860,
+            "end": 2165340,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1980",
+            "entity_type": "date_interval",
+            "start": 2166460,
+            "end": 2167198,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "1990",
+            "entity_type": "date_interval",
+            "start": 2167362,
+            "end": 2168100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2000",
+            "entity_type": "date_interval",
+            "start": 2168660,
+            "end": 2169100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2170640,
+            "end": 2171280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2174960,
+            "end": 2175600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2010",
+            "entity_type": "date_interval",
+            "start": 2176360,
+            "end": 2176960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2178440,
+            "end": 2178920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2180640,
+            "end": 2181280,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2182400,
+            "end": 2182960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2184240,
+            "end": 2184960,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2186920,
+            "end": 2187440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2188360,
+            "end": 2188840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2192680,
+            "end": 2193200,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "British",
+            "entity_type": "nationality",
+            "start": 2195680,
+            "end": 2196160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the UK",
+            "entity_type": "location",
+            "start": 2198700,
+            "end": 2199100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2201260,
+            "end": 2201820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2202980,
+            "end": 2203580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2207580,
+            "end": 2208220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2215780,
+            "end": 2216380,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2218620,
+            "end": 2219180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2019",
+            "entity_type": "date_interval",
+            "start": 2220980,
+            "end": 2221580,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2226260,
+            "end": 2226740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2228860,
+            "end": 2229420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2229780,
+            "end": 2230180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2237220,
+            "end": 2237700,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2242140,
+            "end": 2242780,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "China",
+            "entity_type": "location",
+            "start": 2248980,
+            "end": 2249220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "detox",
+            "entity_type": "medical_process",
+            "start": 2258990,
+            "end": 2259550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2269990,
+            "end": 2270390,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Starbucks",
+            "entity_type": "organization",
+            "start": 2276150,
+            "end": 2276630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "40 years",
+            "entity_type": "duration",
+            "start": 2279610,
+            "end": 2280050,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 2282130,
+            "end": 2282530,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the ussr",
+            "entity_type": "location",
+            "start": 2298730,
+            "end": 2299770,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the Soviet Union",
+            "entity_type": "location",
+            "start": 2310560,
+            "end": 2311440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2313520,
+            "end": 2314080,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Ukraine",
+            "entity_type": "location",
+            "start": 2314400,
+            "end": 2315040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2324160,
+            "end": 2324680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2346980,
+            "end": 2347460,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2360670,
+            "end": 2361150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "New Zealand",
+            "entity_type": "location",
+            "start": 2365030,
+            "end": 2365590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Canada",
+            "entity_type": "location",
+            "start": 2366590,
+            "end": 2366870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2369230,
+            "end": 2369750,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Russia",
+            "entity_type": "location",
+            "start": 2372630,
+            "end": 2373030,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Finland",
+            "entity_type": "location",
+            "start": 2390480,
+            "end": 2391000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sweden",
+            "entity_type": "location",
+            "start": 2391000,
+            "end": 2391680,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2413370,
+            "end": 2413770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2439240,
+            "end": 2439600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "United States",
+            "entity_type": "location",
+            "start": 2485330,
+            "end": 2485930,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 2494680,
+            "end": 2495040,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "US",
+            "entity_type": "location",
+            "start": 2496120,
+            "end": 2496400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the USA",
+            "entity_type": "location",
+            "start": 2512360,
+            "end": 2513160,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the Americas",
+            "entity_type": "location",
+            "start": 2513810,
+            "end": 2514770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the uk",
+            "entity_type": "location",
+            "start": 2515410,
+            "end": 2515850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the Americas",
+            "entity_type": "location",
+            "start": 2518050,
+            "end": 2518730,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "America",
+            "entity_type": "location",
+            "start": 2519810,
+            "end": 2520330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Spain",
+            "entity_type": "location",
+            "start": 2520810,
+            "end": 2521330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "South America",
+            "entity_type": "location",
+            "start": 2522370,
+            "end": 2523250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 2523690,
+            "end": 2524170,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "England",
+            "entity_type": "location",
+            "start": 2524650,
+            "end": 2525210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Germany",
+            "entity_type": "location",
+            "start": 2527210,
+            "end": 2527730,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Spain",
+            "entity_type": "location",
+            "start": 2530130,
+            "end": 2530410,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "France",
+            "entity_type": "location",
+            "start": 2530410,
+            "end": 2530730,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "England",
+            "entity_type": "location",
+            "start": 2530730,
+            "end": 2531210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the Netherlands",
+            "entity_type": "location",
+            "start": 2531210,
+            "end": 2531970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Native Americans",
+            "entity_type": "nationality",
+            "start": 2542830,
+            "end": 2543550,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Canada",
+            "entity_type": "location",
+            "start": 2579750,
+            "end": 2580110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2580750,
+            "end": 2581070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "West Virginia",
+            "entity_type": "location",
+            "start": 2601380,
+            "end": 2602020,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "technology",
+            "entity_type": "occupation",
+            "start": 2639340,
+            "end": 2639740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "finance",
+            "entity_type": "occupation",
+            "start": 2640540,
+            "end": 2641180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "mathematics",
+            "entity_type": "occupation",
+            "start": 2641660,
+            "end": 2642620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "physics",
+            "entity_type": "occupation",
+            "start": 2643260,
+            "end": 2643820,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oculus",
+            "entity_type": "organization",
+            "start": 2676060,
+            "end": 2676780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Michael Shivalev",
+            "entity_type": "person_name",
+            "start": 2678060,
+            "end": 2679220,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 2679540,
+            "end": 2679980,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Fireblocks",
+            "entity_type": "organization",
+            "start": 2680860,
+            "end": 2681580,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2682820,
+            "end": 2683380,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2686260,
+            "end": 2686780,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "product managers",
+            "entity_type": "occupation",
+            "start": 2691820,
+            "end": 2693020,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2700460,
+            "end": 2700940,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "the US",
+            "entity_type": "location",
+            "start": 2708830,
+            "end": 2709230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "dollar",
+            "entity_type": "money_amount",
+            "start": 2715710,
+            "end": 2716350,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2722270,
+            "end": 2722830,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "PayPal",
+            "entity_type": "organization",
+            "start": 2726270,
+            "end": 2726910,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Facebook",
+            "entity_type": "organization",
+            "start": 2728350,
+            "end": 2729230,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Libra",
+            "entity_type": "zodiac_sign",
+            "start": 2757000,
+            "end": 2757480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 2820350,
+            "end": 2820870,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Zuck",
+            "entity_type": "person_name",
+            "start": 2828830,
+            "end": 2829310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2834790,
+            "end": 2835270,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Facebook",
+            "entity_type": "organization",
+            "start": 2835270,
+            "end": 2835590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2835910,
+            "end": 2836630,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 2836830,
+            "end": 2837150,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Ethereum",
+            "entity_type": "money_amount",
+            "start": 2865420,
+            "end": 2865980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2867300,
+            "end": 2867940,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2868460,
+            "end": 2868740,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2869100,
+            "end": 2869620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Google",
+            "entity_type": "organization",
+            "start": 2870190,
+            "end": 2870470,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Borland",
+            "entity_type": "organization",
+            "start": 2870790,
+            "end": 2871310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "90s",
+            "entity_type": "date_interval",
+            "start": 2874790,
+            "end": 2875110,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Microsoft",
+            "entity_type": "organization",
+            "start": 2877110,
+            "end": 2877670,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2878270,
+            "end": 2878910,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Apple",
+            "entity_type": "organization",
+            "start": 2879150,
+            "end": 2879590,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2000s",
+            "entity_type": "date_interval",
+            "start": 2884950,
+            "end": 2885510,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2010s",
+            "entity_type": "date_interval",
+            "start": 2885710,
+            "end": 2886230,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Uniforacle",
+            "entity_type": "organization",
+            "start": 2887350,
+            "end": 2888350,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "TikT",
+            "entity_type": "organization",
+            "start": 2894230,
+            "end": 2894790,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2903800,
+            "end": 2904320,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "July 10, 2019",
+            "entity_type": "date",
+            "start": 2916800,
+            "end": 2918240,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2919840,
+            "end": 2920440,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 2920640,
+            "end": 2921120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2010",
+            "entity_type": "date_interval",
+            "start": 2923160,
+            "end": 2923760,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2936650,
+            "end": 2937210,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Delaware",
+            "entity_type": "location",
+            "start": 2937370,
+            "end": 2937850,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Aragon",
+            "entity_type": "organization",
+            "start": 2951730,
+            "end": 2952250,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Project, Stripe, Atlas",
+            "entity_type": "organization",
+            "start": 2952250,
+            "end": 2953610,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "September",
+            "entity_type": "date_interval",
+            "start": 2970020,
+            "end": 2970500,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 2972220,
+            "end": 2972900,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Oracle",
+            "entity_type": "organization",
+            "start": 2975580,
+            "end": 2976100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco.",
+            "entity_type": "location",
+            "start": 2986330,
+            "end": 2986970,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "sf",
+            "entity_type": "location",
+            "start": 2990450,
+            "end": 2991090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "sf",
+            "entity_type": "location",
+            "start": 2996130,
+            "end": 2996610,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Palm Springs",
+            "entity_type": "location",
+            "start": 2997890,
+            "end": 2998650,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3001810,
+            "end": 3002530,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "la",
+            "entity_type": "location",
+            "start": 3015840,
+            "end": 3016120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Hills",
+            "entity_type": "location",
+            "start": 3037600,
+            "end": 3037880,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "hills",
+            "entity_type": "location",
+            "start": 3041480,
+            "end": 3041920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "homeless",
+            "entity_type": "occupation",
+            "start": 3056560,
+            "end": 3057120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "COVID",
+            "entity_type": "medical_condition",
+            "start": 3070690,
+            "end": 3071090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3084610,
+            "end": 3085330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco Bay",
+            "entity_type": "location",
+            "start": 3093290,
+            "end": 3094490,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "west coast",
+            "entity_type": "location",
+            "start": 3114970,
+            "end": 3115330,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Houston",
+            "entity_type": "location",
+            "start": 3119650,
+            "end": 3120090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "North Dakota",
+            "entity_type": "location",
+            "start": 3121250,
+            "end": 3121890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "opec",
+            "entity_type": "organization",
+            "start": 3150670,
+            "end": 3151190,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Teleport",
+            "entity_type": "organization",
+            "start": 3157700,
+            "end": 3158380,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2020",
+            "entity_type": "date_interval",
+            "start": 3163540,
+            "end": 3164060,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2014",
+            "entity_type": "date_interval",
+            "start": 3165660,
+            "end": 3166220,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "2017",
+            "entity_type": "date_interval",
+            "start": 3169980,
+            "end": 3170420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Colombia, Medellin",
+            "entity_type": "location",
+            "start": 3188140,
+            "end": 3189700,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "narcos",
+            "entity_type": "occupation",
+            "start": 3194540,
+            "end": 3195100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3212880,
+            "end": 3213640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "20 years",
+            "entity_type": "duration",
+            "start": 3233240,
+            "end": 3233640,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "executives",
+            "entity_type": "occupation",
+            "start": 3258640,
+            "end": 3259520,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "manager",
+            "entity_type": "occupation",
+            "start": 3286260,
+            "end": 3286620,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 3287700,
+            "end": 3288140,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "San Francisco",
+            "entity_type": "location",
+            "start": 3321130,
+            "end": 3322010,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Europe",
+            "entity_type": "location",
+            "start": 3324490,
+            "end": 3324850,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Asia",
+            "entity_type": "location",
+            "start": 3325090,
+            "end": 3325450,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "247",
+            "entity_type": "duration",
+            "start": 3329330,
+            "end": 3330090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "24 7",
+            "entity_type": "duration",
+            "start": 3333250,
+            "end": 3334090,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Twitter",
+            "entity_type": "organization",
+            "start": 3347680,
+            "end": 3347920,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "GitHub",
+            "entity_type": "organization",
+            "start": 3368720,
+            "end": 3369120,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 3403710,
+            "end": 3404070,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Sam",
+            "entity_type": "person_name",
+            "start": 3425640,
+            "end": 3439580,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

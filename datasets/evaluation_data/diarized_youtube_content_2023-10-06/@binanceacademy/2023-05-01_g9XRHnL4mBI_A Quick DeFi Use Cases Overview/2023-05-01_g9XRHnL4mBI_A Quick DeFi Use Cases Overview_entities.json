@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-05-01_g9XRHnL4mBI_A Quick DeFi Use Cases Overview.mp3",
+    "entities": [
+        {
+            "text": "FI",
+            "entity_type": "money_amount",
+            "start": 4320,
+            "end": 4800,
+            "confidence": null
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "money_amount",
+            "start": 12800,
+            "end": 13440,
+            "confidence": null
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 39150,
+            "end": 39750,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "FI",
+            "entity_type": "money_amount",
+            "start": 4320,
+            "end": 4800,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DeFi",
+            "entity_type": "money_amount",
+            "start": 12800,
+            "end": 13440,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "DEFI",
+            "entity_type": "organization",
+            "start": 39150,
+            "end": 39750,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

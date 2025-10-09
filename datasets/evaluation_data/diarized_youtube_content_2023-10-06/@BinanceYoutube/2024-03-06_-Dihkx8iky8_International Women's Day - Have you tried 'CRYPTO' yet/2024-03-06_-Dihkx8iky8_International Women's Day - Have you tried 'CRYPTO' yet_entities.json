@@ -1,0 +1,82 @@
+{
+    "video_file": "2024-03-06_-Dihkx8iky8_International Women's Day - Have you tried 'CRYPTO' yet.mp3",
+    "entities": [
+        {
+            "text": "husband",
+            "entity_type": "marital_status",
+            "start": 27560,
+            "end": 28000,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 46940,
+            "end": 47420,
+            "confidence": null
+        },
+        {
+            "text": "$25",
+            "entity_type": "money_amount",
+            "start": 51220,
+            "end": 51900,
+            "confidence": null
+        },
+        {
+            "text": "Binance Academy",
+            "entity_type": "organization",
+            "start": 54500,
+            "end": 55460,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 57220,
+            "end": 57820,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "husband",
+            "entity_type": "marital_status",
+            "start": 27560,
+            "end": 28000,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 46940,
+            "end": 47420,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "$25",
+            "entity_type": "money_amount",
+            "start": 51220,
+            "end": 51900,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance Academy",
+            "entity_type": "organization",
+            "start": 54500,
+            "end": 55460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 57220,
+            "end": 57820,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

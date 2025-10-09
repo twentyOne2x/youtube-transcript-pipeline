@@ -1,0 +1,52 @@
+{
+    "video_file": "2022-06-23_kRQ5QX3cyF4_CZ-?CZ?.mp3",
+    "entities": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 240,
+            "end": 640,
+            "confidence": null
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 3960,
+            "end": 4480,
+            "confidence": null
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 10320,
+            "end": 10720,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 240,
+            "end": 640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 3960,
+            "end": 4480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Covid",
+            "entity_type": "medical_condition",
+            "start": 10320,
+            "end": 10720,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

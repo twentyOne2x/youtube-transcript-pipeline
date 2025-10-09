@@ -1,0 +1,52 @@
+{
+    "video_file": "2020-06-22_y3dYW9raaFk_Binance.mp3",
+    "entities": [
+        {
+            "text": "bin",
+            "entity_type": "money_amount",
+            "start": 28310,
+            "end": 28750,
+            "confidence": null
+        },
+        {
+            "text": "btc",
+            "entity_type": "money_amount",
+            "start": 30790,
+            "end": 31510,
+            "confidence": null
+        },
+        {
+            "text": "usdt",
+            "entity_type": "money_amount",
+            "start": 31510,
+            "end": 32390,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "bin",
+            "entity_type": "money_amount",
+            "start": 28310,
+            "end": 28750,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "btc",
+            "entity_type": "money_amount",
+            "start": 30790,
+            "end": 31510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "usdt",
+            "entity_type": "money_amount",
+            "start": 31510,
+            "end": 32390,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

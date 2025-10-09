@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-10-17_GMKG9TkELjY_Double or nothing pt.123.mp3",
+    "entities": [
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 320,
+            "end": 920,
+            "confidence": null
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 5320,
+            "end": 5880,
+            "confidence": null
+        },
+        {
+            "text": "pruda",
+            "entity_type": "person_name",
+            "start": 43310,
+            "end": 43940,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 320,
+            "end": 920,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "USDC",
+            "entity_type": "money_amount",
+            "start": 5320,
+            "end": 5880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "pruda",
+            "entity_type": "person_name",
+            "start": 43310,
+            "end": 43940,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

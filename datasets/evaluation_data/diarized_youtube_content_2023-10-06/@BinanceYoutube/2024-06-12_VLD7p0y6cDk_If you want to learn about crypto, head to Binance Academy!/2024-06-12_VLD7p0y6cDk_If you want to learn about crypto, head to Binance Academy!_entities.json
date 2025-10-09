@@ -1,0 +1,52 @@
+{
+    "video_file": "2024-06-12_VLD7p0y6cDk_If you want to learn about crypto, head to Binance Academy!.mp3",
+    "entities": [
+        {
+            "text": "A few minutes",
+            "entity_type": "duration",
+            "start": 21760,
+            "end": 22840,
+            "confidence": null
+        },
+        {
+            "text": "a few minutes",
+            "entity_type": "duration",
+            "start": 27280,
+            "end": 28000,
+            "confidence": null
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 28400,
+            "end": 28960,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "A few minutes",
+            "entity_type": "duration",
+            "start": 21760,
+            "end": 22840,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "a few minutes",
+            "entity_type": "duration",
+            "start": 27280,
+            "end": 28000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Bitcoin",
+            "entity_type": "money_amount",
+            "start": 28400,
+            "end": 28960,
+            "confidence": null,
+            "speaker": "C"
+        }
+    ]
+}

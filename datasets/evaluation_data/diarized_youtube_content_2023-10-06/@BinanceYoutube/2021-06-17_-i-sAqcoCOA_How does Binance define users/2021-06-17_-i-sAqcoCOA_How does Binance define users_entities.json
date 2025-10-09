@@ -1,0 +1,37 @@
+{
+    "video_file": "2021-06-17_-i-sAqcoCOA_How does Binance define users.mp3",
+    "entities": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 480,
+            "end": 840,
+            "confidence": null
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 20160,
+            "end": 20600,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 480,
+            "end": 840,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developer",
+            "entity_type": "occupation",
+            "start": 20160,
+            "end": 20600,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

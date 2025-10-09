@@ -1,0 +1,112 @@
+{
+    "video_file": "2024-10-11_X-shdtwAVvY_Double or nothing.mp3",
+    "entities": [
+        {
+            "text": "One USDC",
+            "entity_type": "money_amount",
+            "start": 400,
+            "end": 1200,
+            "confidence": null
+        },
+        {
+            "text": "Two USDC",
+            "entity_type": "money_amount",
+            "start": 5200,
+            "end": 6080,
+            "confidence": null
+        },
+        {
+            "text": "4 USDC",
+            "entity_type": "money_amount",
+            "start": 10160,
+            "end": 11000,
+            "confidence": null
+        },
+        {
+            "text": "8 USDC",
+            "entity_type": "money_amount",
+            "start": 16320,
+            "end": 17480,
+            "confidence": null
+        },
+        {
+            "text": "16 USDC",
+            "entity_type": "money_amount",
+            "start": 22400,
+            "end": 23600,
+            "confidence": null
+        },
+        {
+            "text": "32. USDC",
+            "entity_type": "money_amount",
+            "start": 28640,
+            "end": 30480,
+            "confidence": null
+        },
+        {
+            "text": "32 USDC",
+            "entity_type": "money_amount",
+            "start": 41820,
+            "end": 44300,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "One USDC",
+            "entity_type": "money_amount",
+            "start": 400,
+            "end": 1200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Two USDC",
+            "entity_type": "money_amount",
+            "start": 5200,
+            "end": 6080,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "4 USDC",
+            "entity_type": "money_amount",
+            "start": 10160,
+            "end": 11000,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "8 USDC",
+            "entity_type": "money_amount",
+            "start": 16320,
+            "end": 17480,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "16 USDC",
+            "entity_type": "money_amount",
+            "start": 22400,
+            "end": 23600,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "32. USDC",
+            "entity_type": "money_amount",
+            "start": 28640,
+            "end": 30480,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "32 USDC",
+            "entity_type": "money_amount",
+            "start": 41820,
+            "end": 44300,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

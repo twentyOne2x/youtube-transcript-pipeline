@@ -1,0 +1,277 @@
+{
+    "video_file": "2022-09-20_i9gG_mjB_KQ_Solana Changelog - September 19th, 2022 - Larger TXs, PubSub docs, & Summer Camp winners!.mp3",
+    "entities": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 2320,
+            "end": 2640,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 3000,
+            "end": 3560,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 3840,
+            "end": 4400,
+            "confidence": null
+        },
+        {
+            "text": "core engineering team",
+            "entity_type": "organization",
+            "start": 27450,
+            "end": 29090,
+            "confidence": null
+        },
+        {
+            "text": "Pierre",
+            "entity_type": "person_name",
+            "start": 75090,
+            "end": 75650,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 117530,
+            "end": 117970,
+            "confidence": null
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 181830,
+            "end": 182310,
+            "confidence": null
+        },
+        {
+            "text": "Summer camp hackathon",
+            "entity_type": "event",
+            "start": 189310,
+            "end": 190550,
+            "confidence": null
+        },
+        {
+            "text": "summer camp",
+            "entity_type": "event",
+            "start": 193950,
+            "end": 194550,
+            "confidence": null
+        },
+        {
+            "text": "ironforge",
+            "entity_type": "organization",
+            "start": 198750,
+            "end": 199550,
+            "confidence": null
+        },
+        {
+            "text": "James",
+            "entity_type": "person_name",
+            "start": 216990,
+            "end": 217510,
+            "confidence": null
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 235870,
+            "end": 236110,
+            "confidence": null
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 276540,
+            "end": 277260,
+            "confidence": null
+        },
+        {
+            "text": "Salon",
+            "entity_type": "organization",
+            "start": 279740,
+            "end": 280180,
+            "confidence": null
+        },
+        {
+            "text": "week",
+            "entity_type": "duration",
+            "start": 284860,
+            "end": 285100,
+            "confidence": null
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 287540,
+            "end": 287980,
+            "confidence": null
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 288740,
+            "end": 289100,
+            "confidence": null
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 289100,
+            "end": 289380,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 2320,
+            "end": 2640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 3000,
+            "end": 3560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 3840,
+            "end": 4400,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "core engineering team",
+            "entity_type": "organization",
+            "start": 27450,
+            "end": 29090,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Pierre",
+            "entity_type": "person_name",
+            "start": 75090,
+            "end": 75650,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 117530,
+            "end": 117970,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 181830,
+            "end": 182310,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Summer camp hackathon",
+            "entity_type": "event",
+            "start": 189310,
+            "end": 190550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "summer camp",
+            "entity_type": "event",
+            "start": 193950,
+            "end": 194550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "ironforge",
+            "entity_type": "organization",
+            "start": 198750,
+            "end": 199550,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "James",
+            "entity_type": "person_name",
+            "start": 216990,
+            "end": 217510,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 235870,
+            "end": 236110,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "developers",
+            "entity_type": "occupation",
+            "start": 276540,
+            "end": 277260,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Salon",
+            "entity_type": "organization",
+            "start": 279740,
+            "end": 280180,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "week",
+            "entity_type": "duration",
+            "start": 284860,
+            "end": 285100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Jacob",
+            "entity_type": "person_name",
+            "start": 287540,
+            "end": 287980,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Colin",
+            "entity_type": "person_name",
+            "start": 288740,
+            "end": 289100,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Joe",
+            "entity_type": "person_name",
+            "start": 289100,
+            "end": 289380,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}

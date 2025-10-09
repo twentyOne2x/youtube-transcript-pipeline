@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-06-20_LYpTPmp9rzU_Could #Binance CEO be a professional footballer in another life #CR7 has his doubts..mp3",
+    "entities": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 1000,
+            "end": 1600,
+            "confidence": null
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 1600,
+            "end": 2200,
+            "confidence": null
+        },
+        {
+            "text": "CZ",
+            "entity_type": "person_name",
+            "start": 2200,
+            "end": 3000,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "Binance",
+            "entity_type": "organization",
+            "start": 1000,
+            "end": 1600,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CEO",
+            "entity_type": "occupation",
+            "start": 1600,
+            "end": 2200,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "CZ",
+            "entity_type": "person_name",
+            "start": 2200,
+            "end": 3000,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "video_file": "2023-05-09_hW3MYGBPvIM_Build The Block: Trailer.mp3",
+    "entities": [
+        {
+            "text": "entrepreneur",
+            "entity_type": "occupation",
+            "start": 9880,
+            "end": 10640,
+            "confidence": null
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 47020,
+            "end": 47460,
+            "confidence": null
+        },
+        {
+            "text": "may",
+            "entity_type": "date_interval",
+            "start": 55420,
+            "end": 55700,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "entrepreneur",
+            "entity_type": "occupation",
+            "start": 9880,
+            "end": 10640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "judges",
+            "entity_type": "occupation",
+            "start": 47020,
+            "end": 47460,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "may",
+            "entity_type": "date_interval",
+            "start": 55420,
+            "end": 55700,
+            "confidence": null,
+            "speaker": "A"
+        }
+    ]
+}

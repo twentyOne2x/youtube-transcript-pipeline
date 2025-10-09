@@ -1,0 +1,97 @@
+{
+    "video_file": "2019-03-14_ZqKM9Eilx20_Binance Charity - Lunch for children.mp3",
+    "entities": [
+        {
+            "text": "2009",
+            "entity_type": "date_interval",
+            "start": 6720,
+            "end": 7560,
+            "confidence": null
+        },
+        {
+            "text": "AIDS",
+            "entity_type": "medical_condition",
+            "start": 8160,
+            "end": 8640,
+            "confidence": null
+        },
+        {
+            "text": "Kampala",
+            "entity_type": "location",
+            "start": 20000,
+            "end": 20880,
+            "confidence": null
+        },
+        {
+            "text": "Africa",
+            "entity_type": "location",
+            "start": 102570,
+            "end": 102890,
+            "confidence": null
+        },
+        {
+            "text": "malnutrition",
+            "entity_type": "medical_condition",
+            "start": 108770,
+            "end": 109770,
+            "confidence": null
+        },
+        {
+            "text": "Binance charity",
+            "entity_type": "organization",
+            "start": 110710,
+            "end": 111630,
+            "confidence": null
+        }
+    ],
+    "entities_with_speakers": [
+        {
+            "text": "2009",
+            "entity_type": "date_interval",
+            "start": 6720,
+            "end": 7560,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "AIDS",
+            "entity_type": "medical_condition",
+            "start": 8160,
+            "end": 8640,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Kampala",
+            "entity_type": "location",
+            "start": 20000,
+            "end": 20880,
+            "confidence": null,
+            "speaker": "A"
+        },
+        {
+            "text": "Africa",
+            "entity_type": "location",
+            "start": 102570,
+            "end": 102890,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "malnutrition",
+            "entity_type": "medical_condition",
+            "start": 108770,
+            "end": 109770,
+            "confidence": null,
+            "speaker": "B"
+        },
+        {
+            "text": "Binance charity",
+            "entity_type": "organization",
+            "start": 110710,
+            "end": 111630,
+            "confidence": null,
+            "speaker": "B"
+        }
+    ]
+}
