@@ -664,6 +664,83 @@ def print_summary_table(csv_path: str, added_df: Optional[pd.DataFrame] = None):
     logging.info("=" * 60 + "\n")
 
 
+import re  # top-level (you already import re elsewhere)
+
+def _parse_id_list_env(var: str) -> list[str]:
+    raw = os.getenv(var, "") or ""
+    return [x.strip() for x in re.split(r"[,\s]+", raw) if x.strip()]
+
+async def fetch_specific_videos(
+    api_key: str,
+    credentials: Optional[ServiceAccountCredentials],
+    csv_file_path: str,
+    existing_video_ids: set,
+    video_ids: List[str],
+    keywords: Optional[List[str]] = None,
+    keywords_to_exclude: Optional[List[str]] = None,
+):
+    """
+    Fetch exact videos by ID and append to CSV (no channel walking).
+    Applies optional include/exclude keyword filters on title.
+    """
+    if not video_ids:
+        return
+
+    youtube = build('youtube', 'v3', credentials=credentials, developerKey=api_key)
+
+    def include_by_keywords(title: str) -> bool:
+        t = (title or "").lower()
+        if keywords:
+            if not any(k.lower() in t for k in keywords):
+                return False
+        if keywords_to_exclude:
+            if any(k.lower() in t for k in keywords_to_exclude):
+                return False
+        return True
+
+    MAX_IDS_PER_REQUEST = 50
+    rows: List[dict] = []
+
+    for i in range(0, len(video_ids), MAX_IDS_PER_REQUEST):
+        batch = video_ids[i:i + MAX_IDS_PER_REQUEST]
+        try:
+            resp = youtube.videos().list(part="snippet", id=",".join(batch)).execute()
+            items = resp.get('items', [])
+        except Exception as e:
+            logging.error(f"[specific_videos] Error fetching batch: {e}")
+            continue
+
+        for item in items:
+            vid = item.get('id')
+            if not vid or vid in existing_video_ids:
+                continue
+
+            sn = item.get('snippet', {}) or {}
+            title = sn.get('title', '')
+            if not include_by_keywords(title):
+                continue
+
+            ch_id = sn.get('channelId', '') or ''
+            ch_name = sn.get('channelTitle', '') or ''
+            published_at = sn.get('publishedAt')
+            if not published_at:
+                continue
+
+            dt = _parse_iso_utc(published_at)
+            rows.append({
+                'video_id': vid,
+                'title': title,
+                'channel_name': ch_name,
+                'channel_id': ch_id,
+                'published_date': dt.strftime("%Y-%m-%d"),
+                'url': f'https://www.youtube.com/watch?v={vid}',
+            })
+
+    save_video_info_to_csv(rows, csv_file_path, existing_video_ids)
+    existing_video_ids.update({r['video_id'] for r in rows})
+    logging.info(f"[specific_videos] Saved {len(rows)} specific videos to CSV.")
+
+
 def run():
     fetch_videos = True
 
@@ -731,6 +808,27 @@ def run():
     except FileNotFoundError:
         df_before = pd.DataFrame(columns=['video_id'])
     prev_ids = set(df_before['video_id'].astype(str)) if 'video_id' in df_before.columns else set()
+
+    # NEW: optional specific video IDs (comma or newline separated)
+    specific_video_ids = _parse_id_list_env("YOUTUBE_VIDEO_IDS")
+
+    # Build credentials once (match your channel flow behavior)
+    service_account_file = os.environ.get('SERVICE_ACCOUNT_FILE')
+    credentials: Optional[ServiceAccountCredentials] = None
+    if service_account_file:
+        credentials = authenticate_service_account(service_account_file)
+
+    # Add specific videos first (so channel walks won’t re-add them)
+    if specific_video_ids:
+        asyncio.run(fetch_specific_videos(
+            api_key=api_key,
+            credentials=credentials,
+            csv_file_path=csv_path,
+            existing_video_ids=prev_ids,
+            video_ids=specific_video_ids,
+            keywords=[],  # or reuse your globals
+            keywords_to_exclude=[],  # or reuse your globals
+        ))
 
     # Fetch videos
     yt_playlists = os.environ.get('YOUTUBE_PLAYLISTS')
