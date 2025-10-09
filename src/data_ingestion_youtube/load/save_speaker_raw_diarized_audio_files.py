@@ -19,6 +19,7 @@ import requests
 from dotenv import load_dotenv
 
 from src import YOUTUBE_VIDEO_DIRECTORY, root_directory
+from src.utils.global_thread_guard import get_global_thread_limiter
 
 load_dotenv()
 
@@ -700,6 +701,7 @@ def print_plan_summary(buckets: Dict[str, List[str]]) -> None:
 def worker_with_backlog(api_key_index, api_key, file_paths, cache, global_progress=None):
     set_api_key(api_key)
     logger = ThreadLogger.get_logger(api_key_index)
+    limiter = get_global_thread_limiter()
 
     total = len(file_paths)
     logger.info(f"Starting worker with {total} files to process")
@@ -717,14 +719,18 @@ def worker_with_backlog(api_key_index, api_key, file_paths, cache, global_progre
         logger.info(f"Processing batch {i // batch_size + 1}: files {i + 1}-{i + len(batch)} of {total}")
         logger.info(f"Queue status: Completed={completed}, Remaining={total - (i + len(batch))}")
 
-        with ThreadPoolExecutor(max_workers=batch_size) as executor:
-            futures = []
-            for file_path in batch:
-                # tiny jitter to avoid synchronized POSTs
-                time.sleep(random.uniform(0.1, 0.3))
-                futures.append(executor.submit(
-                    transcribe_single_file, api_key, file_path, cache.cache_file, logger
-                ))
+        worker_count = max(1, min(batch_size, len(batch)))
+        with limiter.claim(worker_count, label="diarization-batch"):
+            with ThreadPoolExecutor(max_workers=worker_count) as executor:
+                futures = []
+                for file_path in batch:
+                    # tiny jitter to avoid synchronized POSTs
+                    time.sleep(random.uniform(0.1, 0.3))
+                    futures.append(
+                        executor.submit(
+                            transcribe_single_file, api_key, file_path, cache.cache_file, logger
+                        )
+                    )
 
             # Wait for batch
             for fut in futures:

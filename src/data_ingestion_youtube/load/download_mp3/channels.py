@@ -2,6 +2,7 @@ import os, unicodedata, logging, asyncio, random
 from typing import Dict, List, Optional, Tuple
 from .config import Settings, DlStatus
 from .downloader import make_ydl_opts, download_one
+from src.utils.global_thread_guard import get_global_thread_limiter
 
 def sanitize_filename(filename: str) -> str:
     replacements = {
@@ -57,34 +58,45 @@ async def _guarded_download(loop, executor, url, ydl_opts, out_path, settings: S
 async def download_batch(video_infos: List[Dict], base_dir: str, settings: Settings, cookie_file: Optional[str] = None,
                          sem: Optional[asyncio.Semaphore] = None):
     loop = asyncio.get_event_loop()
-    executor = None
-    try:
-        from concurrent.futures import ThreadPoolExecutor
-        executor = ThreadPoolExecutor(max_workers=min(max(2, settings.global_max_downloads), 4))
-        tasks = []
+    prepared: List[Tuple[str, Dict, str]] = []
 
-        for info in video_infos:
-            await asyncio.sleep(0.5 + random.random() * 0.75)
-            video_id = extract_video_id(info.get('url', ''))
-            if not video_id:
-                logging.error(f"Could not extract video ID from URL: {info.get('url')}")
-                continue
-            video_dir_path, base_filename, out_path = build_paths(base_dir, info, settings.audio_format)
-            if settings.download_audio and settings.skip_if_exists and os.path.exists(out_path):
-                logging.debug(f"Skip (exists): {out_path}")  # was logging.info
-                continue
-            ydl_opts = make_ydl_opts(video_dir_path, base_filename, cookie_file, settings)
+    for info in video_infos:
+        await asyncio.sleep(0.5 + random.random() * 0.75)
+        video_id = extract_video_id(info.get('url', ''))
+        if not video_id:
+            logging.error(f"Could not extract video ID from URL: {info.get('url')}")
+            continue
+        video_dir_path, base_filename, out_path = build_paths(base_dir, info, settings.audio_format)
+        if settings.download_audio and settings.skip_if_exists and os.path.exists(out_path):
+            logging.debug(f"Skip (exists): {out_path}")  # was logging.info
+            continue
+        ydl_opts = make_ydl_opts(video_dir_path, base_filename, cookie_file, settings)
+        prepared.append((info['url'], ydl_opts, out_path))
+
+    if not prepared:
+        logging.info("Nothing to download in this batch.")
+        return []
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    pool_size = min(max(2, settings.global_max_downloads), 4)
+    limiter = get_global_thread_limiter()
+    token = None
+    executor = None
+
+    try:
+        token = await asyncio.to_thread(limiter.acquire, pool_size, label="download_mp3")
+        executor = ThreadPoolExecutor(max_workers=pool_size)
+
+        tasks = []
+        for url, ydl_opts, out_path in prepared:
             if sem is None:
-                tasks.append(asyncio.create_task(_guarded_download(loop, executor, info['url'], ydl_opts, out_path, settings)))
+                tasks.append(asyncio.create_task(_guarded_download(loop, executor, url, ydl_opts, out_path, settings)))
             else:
-                async def guarded(u=info['url'], o=ydl_opts, p=out_path):
+                async def guarded(u=url, o=ydl_opts, p=out_path):
                     async with sem:
                         return await _guarded_download(loop, executor, u, o, p, settings)
                 tasks.append(asyncio.create_task(guarded()))
-
-        if not tasks:
-            logging.info("Nothing to download in this batch.")
-            return []
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
         statuses: list[DlStatus] = []
@@ -103,10 +115,14 @@ async def download_batch(video_infos: List[Dict], base_dir: str, settings: Setti
                 statuses.append(DlStatus.ERR)
 
         ok = sum(1 for s in statuses if s == DlStatus.OK)
-        logging.info(f"Batch complete: {ok}/{len(statuses)} succeeded "
-                     f"(rate={statuses.count(DlStatus.RATE)}, sabr={statuses.count(DlStatus.SABR)}, "
-                     f"no_audio={statuses.count(DlStatus.NOAUDIO)}, err={statuses.count(DlStatus.ERR)})")
+        logging.info(
+            f"Batch complete: {ok}/{len(statuses)} succeeded "
+            f"(rate={statuses.count(DlStatus.RATE)}, sabr={statuses.count(DlStatus.SABR)}, "
+            f"no_audio={statuses.count(DlStatus.NOAUDIO)}, err={statuses.count(DlStatus.ERR)})"
+        )
         return statuses
     finally:
         if executor:
             executor.shutdown(wait=False)
+        if token:
+            await asyncio.to_thread(limiter.release, token)
