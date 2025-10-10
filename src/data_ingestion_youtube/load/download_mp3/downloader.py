@@ -9,13 +9,19 @@ from .formats import ranked_audio_format_ids, debug_log_formats
 from src import YOUTUBE_VIDEO_DIRECTORY
 from src.utils.gcs import maybe_upload
 
-_YT_BASE_PATH = Path(YOUTUBE_VIDEO_DIRECTORY).resolve()
+def _yt_base_path() -> Path:
+    override = os.environ.get("YOUTUBE_VIDEO_DIRECTORY")
+    if override:
+        return Path(override).resolve()
+    return Path(YOUTUBE_VIDEO_DIRECTORY).resolve()
 
 def _relative_key(path: Path) -> str:
+    base = _yt_base_path()
+    resolved = path.resolve()
     try:
-        return path.resolve().relative_to(_YT_BASE_PATH).as_posix()
+        return resolved.relative_to(base).as_posix()
     except ValueError:
-        return path.name
+        return resolved.name
 
 def _post_download(target_path: Optional[str], settings: Settings) -> None:
     if not target_path:

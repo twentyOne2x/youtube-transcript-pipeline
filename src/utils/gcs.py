@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import mimetypes
+import subprocess
 import threading
 from functools import lru_cache
 from pathlib import Path
 from typing import Optional
 
+from google.auth.exceptions import DefaultCredentialsError
 from google.cloud import storage
 
 _client_lock = threading.Lock()
@@ -23,11 +25,26 @@ def _guess_content_type(path: Path) -> str:
 
 
 def upload_file(local_path: Path, bucket_name: str, blob_name: str) -> None:
-    client = _storage_client()
+    try:
+        client = _storage_client()
+    except DefaultCredentialsError:
+        _upload_with_gsutil(local_path, bucket_name, blob_name)
+        return
+
     bucket = client.bucket(bucket_name)
     blob = bucket.blob(blob_name)
     blob.content_type = _guess_content_type(local_path)
     blob.upload_from_filename(local_path.as_posix())
+
+
+def _upload_with_gsutil(local_path: Path, bucket_name: str, blob_name: str) -> None:
+    dest = f"gs://{bucket_name}/{blob_name}"
+    subprocess.run([
+        "gsutil",
+        "cp",
+        local_path.as_posix(),
+        dest,
+    ], check=True)
 
 
 def maybe_upload(

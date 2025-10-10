@@ -49,7 +49,11 @@ def _build_paths(event: Mp3DownloadEvent) -> tuple[Path, str]:
 
 def _relative_key(local_path: Path) -> str:
     base_dir = Path(os.environ.get("YOUTUBE_VIDEO_DIRECTORY", YOUTUBE_VIDEO_DIRECTORY)).resolve()
-    return local_path.resolve().relative_to(base_dir).as_posix()
+    resolved = local_path.resolve()
+    try:
+        return resolved.relative_to(base_dir).as_posix()
+    except ValueError:
+        return resolved.name
 
 
 def download_mp3(event: Mp3DownloadEvent, settings: Optional[Settings] = None) -> DownloadArtifact:

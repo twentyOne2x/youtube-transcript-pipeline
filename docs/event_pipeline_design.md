@@ -128,7 +128,7 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 - [x] ~~Configure GCS notification (or Pub/Sub message) for MP3 finalize.~~
 - [x] ~~Deploy diarization worker.~~
 - [x] ~~Deploy warehouse ingestion function/service.~~
-- [ ] End-to-end test with a single channel and verify artifacts in GCS + downstream ingestion.
+- [x] ~~End-to-end test with a single channel and verify artifacts in GCS + downstream ingestion.~~
 
 ### Phase 3 — Binance & Pump.fun Integration
 - [ ] Scheduler-driven sitemap crawl (Cloud Run job).
@@ -151,6 +151,7 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 - Local automation: `Makefile` for venv bootstrap, pytest, Docker builds, and Cloud Run deploys.
 - Bootstrap script `infra/gcloud/bootstrap_youtube_pipeline.sh` provisions Pub/Sub topics and service accounts.
 - Tests: `tests/test_event_schemas.py` + `tests/test_youtube_services.py` cover serialization and service wiring (run with `make test`).
+- Live validation (`scripts/run_youtube_e2e.py`) on 2025-10-10 processed video `H46AkZbr9K0`, storing outputs under `gs://media-just-skyline-474622-e1/youtube_e2e/a25a24ca/` and writing warehouse buffers to `/tmp/youtube_pipeline_e2e/a25a24ca/`.
 
 ## Testing Strategy
 
