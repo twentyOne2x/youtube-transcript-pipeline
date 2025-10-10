@@ -1,10 +1,42 @@
 import os, time, logging
+from pathlib import Path
 from typing import Optional
 import yt_dlp as ydlp
 from yt_dlp import DownloadError
 from .config import Settings, DlStatus
 from .clients import set_client, ClientRotator
 from .formats import ranked_audio_format_ids, debug_log_formats
+from src import YOUTUBE_VIDEO_DIRECTORY
+from src.utils.gcs import maybe_upload
+
+_YT_BASE_PATH = Path(YOUTUBE_VIDEO_DIRECTORY).resolve()
+
+def _relative_key(path: Path) -> str:
+    try:
+        return path.resolve().relative_to(_YT_BASE_PATH).as_posix()
+    except ValueError:
+        return path.name
+
+def _post_download(target_path: Optional[str], settings: Settings) -> None:
+    if not target_path:
+        return
+    path = Path(target_path)
+    if not path.exists():
+        return
+    gcs_uri = maybe_upload(
+        path,
+        bucket=settings.gcs_bucket,
+        prefix=settings.gcs_prefix,
+        relative_key=_relative_key(path),
+    )
+    if gcs_uri:
+        logging.info("Uploaded to GCS: %s", gcs_uri)
+        if settings.gcs_bucket and not settings.keep_local_files:
+            try:
+                path.unlink()
+                logging.debug("Removed local copy after upload: %s", path)
+            except OSError as exc:
+                logging.warning("Failed to remove local file %s: %s", path, exc)
 
 def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional[str], settings: Settings) -> dict:
     audio_pref = "bestaudio[ext=m4a]/bestaudio[acodec^=mp4a]/140/251/bestaudio"
@@ -67,6 +99,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
 
             if settings.download_audio and target_path and os.path.exists(target_path):
                 logging.info(f"Already exists: {target_path}")
+                _post_download(target_path, settings)
                 return DlStatus.OK
 
             candidates = ranked_audio_format_ids(info, settings)
@@ -86,6 +119,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                         ydl.download([url])
                     if target_path and os.path.exists(target_path):
                         logging.info(f"Saved: {target_path}")
+                        _post_download(target_path, settings)
                     else:
                         logging.warning(f"Download reported success but file not found at expected path: {target_path}")
                     return DlStatus.OK
@@ -105,6 +139,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                                 ydl.download([url])
                             if target_path and os.path.exists(target_path):
                                 logging.info(f"Saved: {target_path}")
+                                _post_download(target_path, settings)
                                 return DlStatus.OK
                         except DownloadError:
                             # fall through to try the next candidate
@@ -135,6 +170,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 ydl.download([url])
             if target_path and os.path.exists(target_path):
                 logging.info(f"Saved: {target_path}")
+                _post_download(target_path, settings)
             else:
                 logging.warning(f"Download reported success but file not found at expected path: {target_path}")
             return DlStatus.OK

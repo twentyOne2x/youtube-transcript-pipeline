@@ -1,5 +1,6 @@
 from enum import Enum
 from dataclasses import dataclass, field
+from typing import Optional
 import os
 
 class DlStatus(str, Enum):
@@ -35,3 +36,7 @@ class Settings:
     preferred_itags: list[str] = field(default_factory=lambda: [
         s.strip() for s in os.environ.get("PREFERRED_ITAGS", "").split(",") if s.strip()
     ])
+
+    gcs_bucket: Optional[str] = os.environ.get("YOUTUBE_GCS_BUCKET")
+    gcs_prefix: str = os.environ.get("YOUTUBE_GCS_PREFIX", "youtube_audio")
+    keep_local_files: bool = os.environ.get("YOUTUBE_KEEP_LOCAL", "true").lower() == "true"

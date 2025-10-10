@@ -8,6 +8,8 @@ def root_directory():
 # Define the YouTube video directory
 YOUTUBE_VIDEO_DIRECTORY = str(root_directory() / "datasets" / "evaluation_data" / "diarized_youtube_content_2023-10-06/")
 
+# Base directory for Pump.fun livestream captures
+PUMPFUN_STREAM_DIRECTORY = str(root_directory() / "datasets" / "evaluation_data" / "pumpfun_streams")
+
 # Export for backwards compatibility
 root_dir = root_directory()
-
