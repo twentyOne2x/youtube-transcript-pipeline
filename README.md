@@ -13,6 +13,8 @@ Batch-download YouTube audio (MP3) with resilient cookie/client rotation, then g
 - **Idempotent:** skips items that already exist or have valid sidecars; persistent cache for transcripts.
 - **Adaptive concurrency:** global semaphore auto-tunes based on success/error rates.
 - **Clear progress:** plan tables + global counters; CSVs land in `data/links/youtube/`.
+- **Pump.fun support:** download archived livestream clips as MP4/MP3 into a parallel directory tree.
+- **Binance Academy support:** crawl Learn & Earn courses, pull hosted videos, and store alongside structured metadata.
 
 ---
 
@@ -141,6 +143,131 @@ python -m src.data_ingestion_youtube.load.save_speaker_raw_diarized_audio_files
 
 A persistent cache lives at: `<YOUTUBE_VIDEO_DIRECTORY>/.diarization_cache.pkl`
 
+## Pump.fun livestream downloads
+
+Download archived Pump.fun livestream clips into `datasets/evaluation_data/pumpfun_streams/<coin-name>_<mint-prefix>/...`.
+
+```bash
+# Example: grab the newest clip for a mint address
+.venv/bin/python -m src.data_ingestion_pumpfun.cli \
+  --rooms G278EULAmdbd3rUrUhrKX6zgs1NS68XdhLMsG1s5pump \
+  --max-clips 3
+```
+
+For recurring channels, keep a JSON config in `data/links/pumpfun/pumpfun_rooms.json`:
+
+```json
+{
+  "defaults": { "max_clips": 0 },
+  "rooms": [
+    { "room": "Af4F…Hpump", "label": "Official Dudas" },
+    { "room": "B1oE…rpump", "label": "rasmr" }
+  ]
+}
+```
+
+When this file exists the CLI will auto-load it, grab **all clips** (`max_clips: 0`), and log each channel name. Top it up with new mint addresses as needed.
+
+Key options:
+
+- `--rooms` / `--rooms-file` – list of Pump.fun room IDs (coin mint addresses).
+- `--max-clips` – cap the number of clips to pull per room.
+- `--mp4-only`, `--mp3-only`, `--no-mp4` – control which formats are saved.
+- `--output-dir` – override the default target directory.
+- `--config` – provide an alternate rooms configuration file.
+
+Environment overrides (optional):
+
+- `PUMPFUN_API_BASE` (default `https://livestream-api.pump.fun`)
+- `PUMPFUN_CLIPS_BASE` (default `https://clips.pump.fun`)
+- `PUMPFUN_COIN_API_BASE` (default `https://frontend-api-v3.pump.fun`)
+- `PUMPFUN_MAX_CLIPS_PER_ROOM` (default `25`)
+- `PUMPFUN_DOWNLOAD_MP4`, `PUMPFUN_DOWNLOAD_MP3`, `PUMPFUN_SKIP_EXISTING`
+- `PUMPFUN_MP3_BITRATE` (default `192k`)
+- `PUMPFUN_GCS_BUCKET` (optional) upload outputs straight to GCS; pair with Google auth (`GOOGLE_APPLICATION_CREDENTIALS` or gcloud auth).
+- `PUMPFUN_GCS_PREFIX` (default `pumpfun_streams`) controls the remote folder.
+- `PUMPFUN_KEEP_LOCAL` (default `true`) keep/delete local copies after upload.
+
+### Refreshing channel names
+
+If you add new mints without labels, auto-fill them via:
+
+```bash
+.venv/bin/python -m src.data_ingestion_pumpfun.room_config \
+  data/links/pumpfun/pumpfun_rooms.json --refresh-labels
+```
+
+The helper hits Pump.fun’s public API to backfill the `label` field for each mint.
+
+### Provisioning Google Cloud Storage
+
+Ship large media to Cloud Storage rather than Git:
+
+```bash
+# Authenticate first: gcloud auth login
+./scripts/setup_storage_bucket.sh create --bucket my-media-bucket --location us-central1
+# Optional extras
+./scripts/setup_storage_bucket.sh create --bucket my-media-bucket --versioning --retention-days 30
+```
+
+To sync any existing downloads:
+
+```bash
+./scripts/setup_storage_bucket.sh sync --bucket my-media-bucket --prefix pumpfun_streams
+```
+
+To stage uploads in phases:
+
+```bash
+# 1) Push metadata first (skip mp3/mp4)
+PATH="../rag/google-cloud-sdk/bin:$PATH" ./scripts/setup_storage_bucket.sh sync \
+  --bucket my-media-bucket \
+  --source datasets/evaluation_data/pumpfun_streams \
+  --prefix pumpfun_streams \
+  --exclude '.*\\.(mp3|mp4)$'
+
+# 2) Later, send audio/video (skip json)
+PATH="../rag/google-cloud-sdk/bin:$PATH" ./scripts/setup_storage_bucket.sh sync \
+  --bucket my-media-bucket \
+  --source datasets/evaluation_data/pumpfun_streams \
+  --prefix pumpfun_streams \
+  --exclude '.*\\.json$'
+```
+
+Set `PUMPFUN_GCS_BUCKET=my-media-bucket` (and credentials via `GOOGLE_APPLICATION_CREDENTIALS` or `gcloud auth`) before running the downloader and files will stream directly to `gs://my-media-bucket/pumpfun_streams/...`. Toggle `PUMPFUN_KEEP_LOCAL=0` to clean up local clips after upload.
+
+### Binance Academy videos
+
+Fetch Learn & Earn videos by language via the new CLI:
+
+```bash
+source .venv/bin/activate
+export BINANCE_GCS_BUCKET=my-media-bucket              # optional
+python -m src.data_ingestion_binance.cli --languages en --limit 5
+```
+
+The crawler reads the `learnAndEarn` XML sitemaps, extracts Wistia video links, downloads the highest-quality MP4, writes `metadata.json`, and (optionally) uploads both to GCS under `binance_academy/<language>/<course>/<video>.mp4`. Override defaults with:
+
+- `BINANCE_LANGUAGE_CODES` – comma-separated language codes from the Binance sitemaps (`en`, `fr`, …).
+- `BINANCE_OUTPUT_DIR` – local target directory (default `datasets/evaluation_data/binance_academy`).
+- `BINANCE_GCS_BUCKET`, `BINANCE_GCS_PREFIX`, `BINANCE_KEEP_LOCAL` – mirror the Pump.fun/YT behaviour for direct cloud uploads.
+- `BINANCE_REQUEST_TIMEOUT`, `BINANCE_WISTIA_TIMEOUT` – HTTP timeouts.
+
+To process a single course (or re-run one video), pass `--include-course` with the full URL; the command supports repeated flags.
+
+### Automating with GitHub Actions
+
+A reusable workflow (`.github/workflows/pumpfun-download.yml`) runs the downloader on a schedule or on-demand and syncs the results to Google Cloud Storage (GCS). To enable it:
+
+1. Create a GCP bucket (e.g. `pumpfun-assets`) and service account with `Storage Object Admin`.
+2. Add repository secrets:
+   - `GCP_PROJECT_ID` – target project.
+   - `GCP_SA_KEY` – service-account JSON (base64 **not** required).
+   - `GCS_BUCKET` – bucket name.
+3. Optionally provide `max_clips_override` when triggering `workflow_dispatch`; omit or set `0` to download everything per room.
+
+Outputs are also archived as a GitHub workflow artifact, but GCS is the scalable home for MP4/MP3: Git LFS quickly becomes costly and has bandwidth caps, whereas object storage gives cheap, durable access and simple querying (via signed URLs, lifecycle rules, or downstream indexing in BigQuery/BigLake). Keep metadata alongside the media in GCS—e.g., sync the `metadata.json` files or stream an index into a database for faster queries.
+
 ## How it works (high level)
 
 ### Downloading (`src/data_ingestion_youtube/load/download_mp3/...`)
@@ -179,6 +306,8 @@ Many knobs are environment-driven. Important ones:
 - `BATCH_SIZE` – items per wave
 - `FFMPEG_THREADS` – cap FFmpeg CPU
 - `preferred_itags`, `audio_format` (mp3/m4a/opus), etc.
+- `YOUTUBE_GCS_BUCKET` / `YOUTUBE_GCS_PREFIX` – optional GCS upload target for audio.
+- `YOUTUBE_KEEP_LOCAL` – keep local MP3s after upload (default true; set false only if downstream jobs read from GCS).
 
 ### Planning / Prioritization
 - `PRIORITIZE_SMALL_CHANNELS` – fewest missing first

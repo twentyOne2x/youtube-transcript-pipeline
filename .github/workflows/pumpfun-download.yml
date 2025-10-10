@@ -1,0 +1,85 @@
+name: Pumpfun Downloader
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_clips_override:
+        description: "Optional max clips per room (0 = all)"
+        required: false
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      PYTHON_VERSION: "3.12"
+      CONFIG_PATH: data/links/pumpfun/pumpfun_rooms.json
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set max clips override
+        id: maxclips
+        run: |
+          if [ -n "${{ github.event.inputs.max_clips_override }}" ]; then
+            echo "PUMPFUN_MAX_CLIPS=${{ github.event.inputs.max_clips_override }}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Pumpfun downloader
+        env:
+          PUMPFUN_MAX_CLIPS_PER_ROOM: ${{ env.PUMPFUN_MAX_CLIPS }}
+        run: |
+          source .venv/bin/activate
+          python -m src.data_ingestion_pumpfun.cli --config "${CONFIG_PATH}"
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+        if: ${{ success() && secrets.GCP_SA_KEY != '' }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+        if: ${{ success() && secrets.GCP_SA_KEY != '' }}
+
+      - name: Upload to Cloud Storage
+        env:
+          GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+        if: ${{ success() && secrets.GCS_BUCKET != '' }}
+        run: |
+          if [ -d datasets/evaluation_data/pumpfun_streams ]; then
+            gsutil -m rsync -r datasets/evaluation_data/pumpfun_streams "gs://${GCS_BUCKET}/pumpfun_streams"
+          else
+            echo "No pumpfun outputs found to upload."
+          fi
+
+      - name: Upload as workflow artifact
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: pumpfun-streams
+          path: datasets/evaluation_data/pumpfun_streams
+          if-no-files-found: warn
