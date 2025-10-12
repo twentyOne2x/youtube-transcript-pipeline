@@ -295,6 +295,7 @@ Outputs are also archived as a GitHub workflow artifact, but GCS is the scalable
 Many knobs are environment-driven. Important ones:
 
 ### Cookies & Browser
+- Troubleshooting guide: [`docs/youtube_cookie_playbook.md`](docs/youtube_cookie_playbook.md)
 - `BROWSER` / `PROFILE` – where to export cookies from
 - `USE_COOKIE_CACHE` – `1` to reuse cached cookies
 - `MAX_COOKIE_AGE_DAYS` – recache after N days
