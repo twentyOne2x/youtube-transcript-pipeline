@@ -23,9 +23,9 @@ YouTube PubSubHubbub ─▶ Cloud Run (Webhook Handler) ─┐
                                                      ▼
                            Cloud Run / Function (Warehouse Ingestion) ─▶ BigQuery / search index
 
-Binance crawler (Cloud Scheduler + Cloud Run) ─▶ binance-course topic ─▶ Downloader → GCS → diarization-ready
+Cloud Scheduler ─▶ Cloud Run (Binance Course Publisher) ─▶ binance-course topic ─▶ Cloud Run (Binance Downloader) → GCS → mp3-ready → diarization-ready
 
-Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader → GCS → diarization-ready
+Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip topic ─▶ Cloud Run (Pump.fun Downloader) → GCS → mp3-ready → diarization-ready
 ```
 
 ### Topics / Events
@@ -37,8 +37,8 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 | `mp3-ready`              | `{ "gcsUri", "metadataUri", "videoId" }`        | MP3 downloader                        | Diarization worker                        |
 | GCS finalize (MP3)       | Storage event (if we prefer Eventarc)           | Cloud Storage                         | Diarization worker (alternative trigger) |
 | `diarization-ready`      | `{ "mp3Uri", "diarizedUri", "entitiesUri" }`    | Diarization worker                    | Warehouse ingestion / downstream         |
-| `binance-course`         | `{ "courseUrl", "language" }`                   | Scheduler-based sitemap crawler       | Binance downloader                        |
-| `pumpfun-clip`           | `{ "clipUrl" }`                                 | (Future) Pump.fun event discovery     | Pump.fun downloader                       |
+| `binance-course`         | `{ "courseUrl", "language" }`                   | Binance course publisher               | Binance downloader                        |
+| `pumpfun-clip`           | `{ "room", "clipId", "playlistUrl", "clip", "coin" }` | Pump.fun clip publisher                 | Pump.fun downloader                       |
 
 ## Component Overview
 
@@ -74,14 +74,29 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 - Integrates with the existing “ingestion” repo via REST or Pub/Sub.
 
 ### 6. Binance Pipeline
-- Cloud Scheduler daily job triggers Cloud Run “sitemap crawler”.
-- Crawler publishes course URLs to `binance-course`.
-- Downloader reuses `src/data_ingestion_binance` modules to fetch Wistia MP4s, save to GCS, and emit `diarization-ready`.
+- **Binance Course Publisher (Cloud Run)**
+  - Triggered via Cloud Scheduler HTTP task (configurable cadence).
+  - Uses `discover_courses` to read Binance sitemaps and publish `BinanceCourseEvent` messages to `binance-course`.
+  - Supports ad-hoc course lists via payload (Scheduler or manual trigger).
+- **Binance Downloader (Cloud Run)**
+  - Pub/Sub push subscriber on `binance-course`.
+  - Reuses `src/data_ingestion_binance` downloader to grab MP4 + metadata, transcodes to MP3, uploads artefacts to GCS, and publishes `Mp3ReadyEvent` to `mp3-ready`.
+  - Cleans up local artefacts when `BINANCE_KEEP_LOCAL=0`.
 
 ### 7. Pump.fun Pipeline
-- Interim: run existing CLI via Cloud Scheduler.
-- Target: event feed ingesting clip URLs (Twitter, RSS, custom webhook). Publishes to `pumpfun-clip`.
-- Downloader reuses Pump.fun module, writes to GCS, emits `diarization-ready`.
+- **Pump.fun Clip Publisher (Cloud Run)**
+  - Triggered by Cloud Scheduler (recommended every 5–10 minutes).
+  - Hydrates room labels from `pumpfun_rooms.json` (or `PUMPFUN_ROOMS` env) and uses `discover_clip_events` to enqueue fresh clips on `pumpfun-clip`.
+  - Skips clips already present in GCS when `PUMPFUN_SKIP_EXISTING=1`.
+- **Pump.fun Downloader (Cloud Run)**
+  - Pub/Sub push subscriber consuming `pumpfun-clip`.
+  - Invokes existing ffmpeg-based downloader, uploads metadata/mp3 to `gs://<bucket>/<prefix>/`, and publishes `Mp3ReadyEvent` (skipping duplicates).
+  - Requires `PUMPFUN_GCS_BUCKET`/`PUMPFUN_GCS_PREFIX`. Automatically disables local retention for Cloud Run.
+
+### 8. State Notifications (Telegram)
+- The notifier now lives in a separate repository [`twentyOne2x/telegram-state-notifier`](https://github.com/twentyOne2x/telegram-state-notifier) (FastAPI + native Telegram API).
+- Subscribe the deployed service to each stage topic (`yt-new-video`, `mp3-ready`, `diarization-ready`, `ingestion-diarization-ready`) with per-stage subscriptions so the `source` attribute identifies the originating component.
+- Messages are Markdown-formatted and include the pipeline name prefix plus the relevant identifier (video ID, clip ID, or URI). Debug mode (`ENABLE_DEBUG_EVENTS=1`) suppresses outgoing messages but keeps structured logs.
 
 ## Deployment Plan
 
@@ -118,7 +133,7 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 - [x] ~~Finalize Pub/Sub topic naming & message schemas.~~
 - [x] ~~Write Dockerfiles for each component.~~
 - [x] ~~Add Makefile targets for `build`, `push`, `deploy`.~~
-- [ ] Configure Secret Manager entries (YouTube API, AssemblyAI, Pump.fun keys).
+- [x] ~~Configure Secret Manager entries (YouTube API, AssemblyAI, Pump.fun keys).~~
 - [ ] Update docs for environment variables and module behavior (README sections done).
 
 ### Phase 2 — YouTube Pipeline
@@ -131,27 +146,29 @@ Pump.fun scheduler / webhook (TBD) ─▶ pumpfun-clip topic ─▶ Downloader �
 - [x] ~~End-to-end test with a single channel and verify artifacts in GCS + downstream ingestion.~~
 
 ### Phase 3 — Binance & Pump.fun Integration
-- [ ] Scheduler-driven sitemap crawl (Cloud Run job).
-- [ ] Deploy Binance downloader (reusing new modules).
-- [ ] Integrate with diarization-ready event.
-- [ ] Define Pump.fun source strategy (RSS, manual list, or webhook).
-- [ ] Deploy Pump.fun downloader with Pub/Sub topic.
+- [x] Scheduler-driven sitemap crawl (Cloud Run job).
+- [x] Deploy Binance downloader (reusing new modules).
+- [x] Integrate with diarization-ready event (via mp3-ready topic).
+- [x] Define Pump.fun source strategy (Scheduler + room config).
+- [x] Deploy Pump.fun downloader with Pub/Sub topic.
 
 ### Phase 4 — Enhancements & Monitoring
 - [ ] Centralized logging (Cloud Logging dashboards).
 - [ ] Alerting (errors per topic / service).
 - [ ] Dead-letter queues for failed messages.
 - [ ] Optional: BigQuery pipeline / ingestion repo integration tests.
+- [ ] Deploy Telegram notifier service & subscribe to state topics.
 
 ## Implementation Status — YouTube Pipeline
 
 - Core event schemas live in `src/event_pipeline/schemas.py` with topic constants and helpers.
 - Service containers added under `services/` (`youtube_webhook`, `metadata_enricher`, `mp3_downloader`, `diarization_worker`, `warehouse_ingestion`) each with FastAPI entrypoints and Dockerfiles.
 - Common settings + Pub/Sub helpers live in `src/event_pipeline/settings.py` and `src/event_pipeline/pubsub.py`; YouTube-specific orchestration in `src/event_pipeline/youtube/`.
-- Local automation: `Makefile` for venv bootstrap, pytest, Docker builds, and Cloud Run deploys.
+- Local automation: `Makefile` for venv bootstrap, pytest, Docker builds, and Cloud Run depdloys.
 - Bootstrap script `infra/gcloud/bootstrap_youtube_pipeline.sh` provisions Pub/Sub topics and service accounts.
 - Tests: `tests/test_event_schemas.py` + `tests/test_youtube_services.py` cover serialization and service wiring (run with `make test`).
 - Live validation (`scripts/run_youtube_e2e.py`) on 2025-10-10 processed video `H46AkZbr9K0`, storing outputs under `gs://media-just-skyline-474622-e1/youtube_e2e/a25a24ca/` and writing warehouse buffers to `/tmp/youtube_pipeline_e2e/a25a24ca/`.
+- Secret-backed Cloud Run deploys: metadata pulls `youtube-api-key`, diarizer pulls `assemblyai-api-key`, warehouse republishes to `ingestion-diarization-ready` and can POST to an `INGESTION_ENDPOINT` for the external ingestion service.
 
 ## Testing Strategy
 
