@@ -37,6 +37,7 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 | `mp3-ready`              | `{ "gcsUri", "metadataUri", "videoId" }`        | MP3 downloader                        | Diarization worker                        |
 | GCS finalize (MP3)       | Storage event (if we prefer Eventarc)           | Cloud Storage                         | Diarization worker (alternative trigger) |
 | `diarization-ready`      | `{ "mp3Uri", "diarizedUri", "entitiesUri" }`    | Diarization worker                    | Warehouse ingestion / downstream         |
+| `yt-cookie-request`      | `{ "videoId", "channelId", "reason", "details" }` | MP3 downloader (auth failure)         | Telegram notifier / operators            |
 | `binance-course`         | `{ "courseUrl", "language" }`                   | Binance course publisher               | Binance downloader                        |
 | `pumpfun-clip`           | `{ "room", "clipId", "playlistUrl", "clip", "coin" }` | Pump.fun clip publisher                 | Pump.fun downloader                       |
 
@@ -49,31 +50,39 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 
 ### 2. Metadata Enricher (Cloud Run)
 - Subscribes to `yt-new-video`.
-- Calls YouTube Data API, stores metadata (Firestore/BigQuery), updates summary CSV.
-- Emits `mp3-download`.
-- Reuses logic from `fetch_youtube_video_details_from_handles.py`.
+- Calls YouTube Data API for the fresh upload, caches the raw snippet JSON to `/tmp/youtube_metadata/<video_id>.video_metadata.json`.
+- Emits `mp3-download` with `source=metadata-enricher` and attaches lightweight title/publishedAt metadata for downstream naming.
+- Reuses the shared client in `src/event_pipeline/youtube/metadata.py`.
 
-### 3. MP3 Downloader (Cloud Run Job)
+### 3. MP3 Downloader (Cloud Run Service)
 - Subscribes to `mp3-download`.
-- Runs `yt-dlp` using existing `download_mp3` module.
-- Uploads MP3 + metadata.json to `gs://media-just-skyline-474622-e1/youtube_audio/...`.
-- Emits `mp3-ready`.
-- Requires container with ffmpeg, yt-dlp, python libs.
+- Invokes the shared `download_mp3` helper (yt-dlp + ffmpeg) to save audio under `/tmp/youtube_audio/<channel>/<video>/`.
+- Uploads the final MP3 to `gs://media-just-skyline-474622-e1/youtube_audio/...` via `maybe_upload` and, when configured, removes the local copy.
+- Emits `mp3-ready` with the resulting GCS URI (`source=mp3-downloader`).
+- Container bundles yt-dlp, ffmpeg, and browser-cookie support for rate-limited channels.
+- When authentication fails (e.g., `Sign in to confirm you're not a bot`), the service publishes a `yt-cookie-request` event so the Telegram bot can prompt operators for refreshed cookies.
 
 ### 4. Diarization Worker (Cloud Run / Function)
-- Triggered by `mp3-ready` topic or by GCS finalize.
-- Streams MP3 to AssemblyAI, waits for diarization & entities.
-- Writes `_diarized_content.json` & `_entities.json` back to the same prefix.
-- Emits `diarization-ready`.
-- Uses current `save_speaker_raw_diarized_audio_files.py` logic.
+- Subscribes to `mp3-ready`.
+- Downloads (or streams) the MP3, submits it to AssemblyAI with speaker diarization + entity detection enabled.
+- Supports multiple AssemblyAI API keys via round-robin rotation (`ASSEMBLY_AI_API_KEYS` in `.env`).
+- Writes `<video_id>_diarized.json` (+ optional entities JSON) to `/tmp/diarization` and re-uploads to `gs://media-just-skyline-474622-e1/youtube_diarized/<video_id>/`.
+- Emits `diarization-ready` (`source=diarization-worker`) for downstream ingestion.
 
 ### 5. Warehouse Ingestion (Cloud Run / Function)
 - Subscribes to `diarization-ready`.
-- Loads transcript metadata into BigQuery (or other datastore).
-- Optionally updates downstream search indices.
-- Integrates with the existing “ingestion” repo via REST or Pub/Sub.
+- Buffers each event to `WAREHOUSE_BUFFER_DIR` (JSON snapshot) and republishes to `ingestion-diarization-ready` with `source=warehouse-ingestion`.
+- Optionally POSTs the payload to an external ingestion endpoint when `INGESTION_ENDPOINT` is configured.
+- Acts as the bridge to the Pinecone-backed ingestion stack.
 
-### 6. Binance Pipeline
+### 6. Diarization Indexer (Cloud Run)
+- Push-subscription target for `diarization-ready` (`projects/just-skyline-474622-e1/subscriptions/diarization-indexer-videos`).
+- Validates Pub/Sub signature (optional) then hydrates namespace/channel policy before ingest.
+- Downloads the referenced diarization + entity JSON, generates parent/child vectors, and upserts them into Pinecone.
+- Responds with 204 on success so Pub/Sub can ack; failures bubble 5xx and trigger retries / dead-lettering.
+- Deployment image: `us-central1-docker.pkg.dev/just-skyline-474622-e1/ingestion/diarization-indexer:latest`.
+
+### 7. Binance Pipeline
 - **Binance Course Publisher (Cloud Run)**
   - Triggered via Cloud Scheduler HTTP task (configurable cadence).
   - Uses `discover_courses` to read Binance sitemaps and publish `BinanceCourseEvent` messages to `binance-course`.
@@ -83,7 +92,7 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
   - Reuses `src/data_ingestion_binance` downloader to grab MP4 + metadata, transcodes to MP3, uploads artefacts to GCS, and publishes `Mp3ReadyEvent` to `mp3-ready`.
   - Cleans up local artefacts when `BINANCE_KEEP_LOCAL=0`.
 
-### 7. Pump.fun Pipeline
+### 8. Pump.fun Pipeline
 - **Pump.fun Clip Publisher (Cloud Run)**
   - Triggered by Cloud Scheduler (recommended every 5–10 minutes).
   - Hydrates room labels from `pumpfun_rooms.json` (or `PUMPFUN_ROOMS` env) and uses `discover_clip_events` to enqueue fresh clips on `pumpfun-clip`.
@@ -93,10 +102,38 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
   - Invokes existing ffmpeg-based downloader, uploads metadata/mp3 to `gs://<bucket>/<prefix>/`, and publishes `Mp3ReadyEvent` (skipping duplicates).
   - Requires `PUMPFUN_GCS_BUCKET`/`PUMPFUN_GCS_PREFIX`. Automatically disables local retention for Cloud Run.
 
-### 8. State Notifications (Telegram)
+### 9. State Notifications (Telegram)
 - The notifier now lives in a separate repository [`twentyOne2x/telegram-state-notifier`](https://github.com/twentyOne2x/telegram-state-notifier) (FastAPI + native Telegram API).
 - Subscribe the deployed service to each stage topic (`yt-new-video`, `mp3-ready`, `diarization-ready`, `ingestion-diarization-ready`) with per-stage subscriptions so the `source` attribute identifies the originating component.
 - Messages are Markdown-formatted and include the pipeline name prefix plus the relevant identifier (video ID, clip ID, or URI). Debug mode (`ENABLE_DEBUG_EVENTS=1`) suppresses outgoing messages but keeps structured logs.
+- Stage map currently recognises: `youtube-webhook`, `metadata-enricher`, `mp3-downloader`, `pumpfun-downloader`, `binance-downloader`, `diarization-worker`, `warehouse-ingestion`, and `diarization-indexer`. Extend the map or attributes if new producers are added.
+- Planned improvement: emit an explicit “cookie refresh required” notification when the downloader raises repeated 403/NoSuchFormat errors or detects an expired cookie file.
+- Operators receive actionable alerts when `yt-cookie-request` is published; the bot explains how to run `python scripts/fetch_youtube_cookies.py --browser brave --profile Default` locally and falls back to a manual DevTools workflow. Replying to the bot with either a Netscape cookie file or a raw `Cookie:` header automatically uploads a new Secret Manager version and acknowledges the prompt.
+
+### 10. YouTube Cookie Management
+- Daily reliability for the downloader depends on supplying fresh YouTube cookies. Full playbook lives in `docs/youtube_cookie_playbook.md`; key points are summarised here.
+- **Linux workstation flow (preferred):**
+  1. Ensure Brave/Chrome profile on the same host is logged into the YouTube account that can see private/age-gated videos.
+  2. Run `./get_youtube_cookies.sh` (set `BROWSER=brave|chrome` and `PROFILE=<name>` when needed). The script spins up a lightweight virtualenv, calls `yt-dlp --cookies-from-browser`, validates Netscape format, and writes `src/data_ingestion_youtube/load/youtube_cookies.txt`.
+     - Alternatively run `python3 scripts/fetch_youtube_cookies.py --browser brave --profile Default --secret projects/<proj>/secrets/youtube-cookies --service youtube-mp3-downloader --project <proj>` to export, upload a new Secret Manager version, and redeploy Cloud Run in one step. Supply `--cookie-header-file` if you already copied a raw `Cookie:` header.
+  3. Verify the export with `yt-dlp --cookies youtube_cookies.txt --simulate https://www.youtube.com/watch?v=BaW_jenozKc`.
+  4. Upload the cookie file to Secret Manager for Cloud Run consumption, e.g.  
+     `gcloud secrets versions add youtube-cookies --data-file=src/data_ingestion_youtube/load/youtube_cookies.txt`  
+     then mount in each service:  
+     `gcloud run services update youtube-mp3-downloader --region us-central1 --set-secrets YOUTUBE_COOKIE_FILE=youtube-cookies:latest:/workspace/youtube_cookies.txt`.
+- **Runtime options recognised by the downloader:**
+  - `YOUTUBE_COOKIE_FILE`: absolute path to a Netscape cookie jar (typically the Secret Manager mount path).
+  - `YOUTUBE_COOKIE_B64`: base64-encoded cookie payload; decoded to `/tmp/youtube_cookies.txt` (or `YOUTUBE_COOKIE_TMP`).
+  - `YOUTUBE_COOKIE_SECRET` (+ optional `YOUTUBE_COOKIE_SECRET_VERSION`): Secret Manager resource name; fetched at startup and cached to `/tmp`.
+  - Set `DEFAULT_CLIENT=android` and `USE_BROWSER_COOKIES=false` on Cloud Run to avoid attempting local keyring lookups.
+- **Headless / automation notes:**
+  - Cloud Run itself cannot run Chromium with profile access, so cookie refresh must occur off-cluster (workstation, Cloud Workstation, or VM). The refreshed `youtube_cookies.txt` is treated as data and injected via Secret Manager or baked into an artifact.
+  - For scheduled refresh, set up a Linux cron job (e.g. Cloud Workstation) that runs `get_youtube_cookies.sh`, validates freshness (`MAX_COOKIE_AGE_DAYS`), and pushes a new secret version.
+  - Advanced option: Playwright/Puppeteer script to perform a programmatic login and export cookies. Requires handling MFA and consent flows; keep as a future enhancement.
+- **Manual fallback:** when automated export fails, the script prompts for a pasted `Cookie` header (from DevTools → Network). Convert to Netscape format and store in the same location.
+- **Operational safeguards:**
+  - The downloader logs when cookies are missing or stale; hook this to a Pub/Sub + Telegram alert that pings operators (“Cookies expired – run get_youtube_cookies.sh”).
+  - Track cookie expiry via `MAX_COOKIE_AGE_DAYS` and consider wiring the Telegram notifier to send prompts when the downloader switches to cookie-less mode.
 
 ## Deployment Plan
 
@@ -134,7 +171,7 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - [x] ~~Write Dockerfiles for each component.~~
 - [x] ~~Add Makefile targets for `build`, `push`, `deploy`.~~
 - [x] ~~Configure Secret Manager entries (YouTube API, AssemblyAI, Pump.fun keys).~~
-- [ ] Update docs for environment variables and module behavior (README sections done).
+- [x] ~~Update docs for environment variables and module behavior (README + design doc).~~
 
 ### Phase 2 — YouTube Pipeline
 - [x] ~~Implement Cloud Run webhook handler.~~
@@ -157,18 +194,23 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - [ ] Alerting (errors per topic / service).
 - [ ] Dead-letter queues for failed messages.
 - [ ] Optional: BigQuery pipeline / ingestion repo integration tests.
-- [ ] Deploy Telegram notifier service & subscribe to state topics.
+- [x] ~~Deploy Telegram notifier service (Cloud Run).~~
+- [ ] Wire dedicated Pub/Sub subscriptions per stage (`yt-new-video`, `mp3-download`, `mp3-ready`, `diarization-ready`, `ingestion-diarization-ready`) to the notifier.
+- [ ] Add automated smoke test that publishes synthetic events and confirms Telegram delivery.
 
 ## Implementation Status — YouTube Pipeline
 
 - Core event schemas live in `src/event_pipeline/schemas.py` with topic constants and helpers.
 - Service containers added under `services/` (`youtube_webhook`, `metadata_enricher`, `mp3_downloader`, `diarization_worker`, `warehouse_ingestion`) each with FastAPI entrypoints and Dockerfiles.
 - Common settings + Pub/Sub helpers live in `src/event_pipeline/settings.py` and `src/event_pipeline/pubsub.py`; YouTube-specific orchestration in `src/event_pipeline/youtube/`.
+- Diarization worker supports multi-key AssemblyAI rotation via `ASSEMBLY_AI_API_KEYS`; fallback to single `ASSEMBLY_AI_API_KEY` remains.
+- Warehouse ingestion republishes downstream events and the separate diarization indexer service (ingestion repo) consumes `diarization-ready` → Pinecone.
 - Local automation: `Makefile` for venv bootstrap, pytest, Docker builds, and Cloud Run depdloys.
 - Bootstrap script `infra/gcloud/bootstrap_youtube_pipeline.sh` provisions Pub/Sub topics and service accounts.
-- Tests: `tests/test_event_schemas.py` + `tests/test_youtube_services.py` cover serialization and service wiring (run with `make test`).
+- Tests: `tests/test_event_schemas.py` + `tests/test_youtube_services.py` cover serialization, service wiring, and AssemblyAI key rotation (run with `make test` or `pytest`).
 - Live validation (`scripts/run_youtube_e2e.py`) on 2025-10-10 processed video `H46AkZbr9K0`, storing outputs under `gs://media-just-skyline-474622-e1/youtube_e2e/a25a24ca/` and writing warehouse buffers to `/tmp/youtube_pipeline_e2e/a25a24ca/`.
-- Secret-backed Cloud Run deploys: metadata pulls `youtube-api-key`, diarizer pulls `assemblyai-api-key`, warehouse republishes to `ingestion-diarization-ready` and can POST to an `INGESTION_ENDPOINT` for the external ingestion service.
+- Secret-backed Cloud Run deploys: metadata pulls `youtube-api-key`, diarizer pulls `assemblyai-api-key(s)`, warehouse republishes to `ingestion-diarization-ready` and can POST to an `INGESTION_ENDPOINT` for the external ingestion service.
+- Telegram notifier deployed separately; currently subscribed to `yt-new-video` with additional stage subscriptions pending.
 
 ## Testing Strategy
 
@@ -176,6 +218,7 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - [ ] `pytest` suites for sitemap parsing, Wistia downloader, Pump.fun modules.
 - [ ] Mocked tests for YouTube metadata fetcher (using `responses` or `httpretty`).
 - [ ] Tests for GCS upload helper (`src/utils/gcs`).
+- [x] AssemblyAI key rotation + service wiring (`tests/test_youtube_services.py`).
 
 ### Container Tests
 - [ ] `python -m compileall` (already used) on all service modules.
@@ -191,6 +234,8 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - [ ] Run Binance crawler once, inspect downloaded MP4/metadata in GCS.
 - [ ] Trigger Pump.fun pipeline with known clip URL and verify output.
 - [ ] Confirm diarization worker handles >5 concurrent jobs (AssemblyAI rate limits).
+- [ ] Publish staged events through Pub/Sub to confirm Telegram notifications for every pipeline stage.
+- [ ] Regenerate cookies via `get_youtube_cookies.sh`, push to Secret Manager, and confirm the downloader picks up the new version without redeploy.
 
 ## Notes on Costs & Limits
 - Cloud Run free tier: 180,000 vCPU-seconds & 360,000 GB-seconds per month (per region). The workload stays within free limits for low frequency.
@@ -199,7 +244,8 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - AssemblyAI billing remains as per usage.
 
 ## Next Steps
-- Agree on message schema & topics (final review).
-- Prioritize containerization of metadata downloader and MP3 pipeline.
-- Set up CI/CD workflow for automated deployment.
-- Implement staging environment test harness.
+- Provision / verify remaining Pub/Sub subscriptions (stage-specific Telegram subs + any missing warehouse/downstream consumers).
+- Script a smoke-test harness that publishes synthetic `yt-new-video` → validates end-to-end artifacts + Telegram delivery.
+- Expand monitoring: Stackdriver alerts on Pub/Sub dead-letter counts, Cloud Run 5xx, AssemblyAI quota.
+- Harden ingestion runbooks (replay tooling, Pinecone health checks, AssemblyAI key rotation process).
+- Implement cookie-refresh notifications (Telegram ping + runbook link) triggered when the downloader detects missing/expired cookies.

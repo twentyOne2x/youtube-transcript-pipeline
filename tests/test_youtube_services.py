@@ -1,4 +1,7 @@
+import base64
+import importlib
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -97,6 +100,8 @@ def test_mp3_downloader_publishes_ready_event(monkeypatch, tmp_path):
     from services.mp3_downloader.app import app
 
     monkeypatch.setenv("YOUTUBE_VIDEO_DIRECTORY", tmp_path.as_posix())
+    monkeypatch.delenv("YOUTUBE_COOKIE_FILE", raising=False)
+    monkeypatch.delenv("YOUTUBE_COOKIE_B64", raising=False)
     published = []
 
     fake_artifact = DownloadArtifact(
@@ -136,9 +141,11 @@ def test_mp3_downloader_publishes_ready_event(monkeypatch, tmp_path):
 def test_diarization_worker_publishes_ready_event(monkeypatch):
     from services.diarization_worker.app import app
 
+    monkeypatch.setenv("ASSEMBLY_AI_API_KEYS", "")
     monkeypatch.setenv("ASSEMBLY_AI_API_KEY", "dummy")
 
     published = []
+    received_keys = []
 
     result = DiarizationResult(
         diarized_path=Path("/tmp/diarized.json"),
@@ -148,6 +155,7 @@ def test_diarization_worker_publishes_ready_event(monkeypatch):
     )
 
     def fake_run(event, api_key, bucket):
+        received_keys.append(api_key)
         return result
 
     def fake_build(event, res):
@@ -180,6 +188,65 @@ def test_diarization_worker_publishes_ready_event(monkeypatch):
     topic, event, attrs = published[0]
     assert topic == "diarization-ready"
     assert attrs["source"] == "diarization-worker"
+    assert received_keys == ["dummy"]
+
+
+def test_diarization_worker_rotates_multiple_api_keys(monkeypatch):
+    monkeypatch.setenv("ASSEMBLY_AI_API_KEYS", "key-1,key-2")
+    monkeypatch.delenv("ASSEMBLY_AI_API_KEY", raising=False)
+
+    from services.diarization_worker.app import app
+
+    published = []
+    received_keys = []
+
+    result = DiarizationResult(
+        diarized_path=Path("/tmp/diarized.json"),
+        diarized_uri="gs://bucket/diarized.json",
+        entities_path=None,
+        entities_uri=None,
+    )
+
+    def fake_run(event, api_key, bucket):
+        received_keys.append(api_key)
+        return result
+
+    def fake_publish(topic, event, attributes=None):
+        published.append((topic, attributes))
+        return "msg-5"
+
+    monkeypatch.setattr("services.diarization_worker.app.run_diarization", fake_run)
+    monkeypatch.setattr("services.diarization_worker.app.publish_event", fake_publish)
+
+    client = TestClient(app)
+    payload = Mp3ReadyEvent(
+        gcs_uri="gs://bucket/audio.mp3",
+        metadata_uri=None,
+        video_id="abc123def45",
+    ).to_base64_json()
+
+    client.post("/pubsub/push", json={"message": {"data": payload}})
+    client.post("/pubsub/push", json={"message": {"data": payload}})
+
+    assert received_keys == ["key-1", "key-2"]
+    assert len(published) == 2
+
+
+def test_prepare_cookie_file_writes_base64(monkeypatch, tmp_path):
+    from services.mp3_downloader import app
+
+    cookie_text = "# Netscape HTTP Cookie File\n.youtube.com\tTRUE\t/\tTRUE\t0\tVISITOR_INFO1_LIVE\tvalue"
+    encoded = base64.b64encode(cookie_text.encode("utf-8")).decode("utf-8")
+    cookie_path = tmp_path / "cookies.txt"
+
+    monkeypatch.delenv("YOUTUBE_COOKIE_FILE", raising=False)
+    monkeypatch.setenv("YOUTUBE_COOKIE_B64", encoded)
+    monkeypatch.setenv("YOUTUBE_COOKIE_TMP", cookie_path.as_posix())
+
+    app._prepare_cookie_file()
+
+    assert os.environ.get("YOUTUBE_COOKIE_FILE") == cookie_path.as_posix()
+    assert cookie_path.read_text(encoding="utf-8") == cookie_text
 
 
 def test_warehouse_ingestion_writes_buffer(monkeypatch, tmp_path):
@@ -199,3 +266,41 @@ def test_warehouse_ingestion_writes_buffer(monkeypatch, tmp_path):
     assert len(files) == 1
     saved = json.loads(files[0].read_text())
     assert saved["mp3_uri"] == "gs://bucket/audio.mp3"
+
+
+def test_mp3_downloader_cookie_failure_triggers_request(monkeypatch, tmp_path):
+    mp3_module = importlib.import_module("services.mp3_downloader.app")
+    mp3_module._COOKIE_ALERTED.clear()
+
+    monkeypatch.setenv("YOUTUBE_VIDEO_DIRECTORY", tmp_path.as_posix())
+    monkeypatch.setenv("YOUTUBE_COOKIE_TOPIC", "yt-cookie-request")
+    monkeypatch.delenv("YOUTUBE_COOKIE_FILE", raising=False)
+    published: list = []
+
+    def fake_download(event):
+        raise RuntimeError("Failed to download vid: Sign in to confirm you're not a bot.")
+
+    def fake_publish(topic, event, attributes=None):
+        published.append((topic, event, attributes))
+        return "msg-cookie"
+
+    monkeypatch.setattr(mp3_module, "download_mp3", fake_download)
+    monkeypatch.setattr(mp3_module, "publish_event", fake_publish)
+
+    client = TestClient(mp3_module.app)
+    envelope = {
+        "message": {
+            "data": Mp3DownloadEvent(
+                video_id="abc123def45",
+                channel_id="UC123",
+                metadata={},
+            ).to_base64_json()
+        }
+    }
+    response = client.post("/pubsub/push", json=envelope)
+    assert response.status_code == 500
+    assert published
+    topic, event, attrs = published[0]
+    assert topic == "yt-cookie-request"
+    assert event.video_id == "abc123def45"
+    assert attrs["source"] == "youtube-cookie"

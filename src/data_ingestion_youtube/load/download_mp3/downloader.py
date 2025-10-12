@@ -105,12 +105,19 @@ def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional
         ydl_opts["merge_output_format"] = "mp3"
     return ydl_opts
 
-def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings: Settings, retries: int = 4) -> str:
+def download_one(
+    url: str,
+    ydl_opts: dict,
+    target_path: Optional[str],
+    settings: Settings,
+    retries: int = 4,
+) -> tuple[str, Optional[str]]:
     if ydlp is None:  # pragma: no cover - requires yt-dlp runtime
         raise ImportError("yt_dlp is required to download videos")
     using_cookies = bool(ydl_opts.get("_fallback_cookie_file")) or ("_browser" in ydl_opts and "_profile" in ydl_opts)
     rot = ClientRotator(using_cookies, settings)
     set_client(ydl_opts, rot.current())
+    last_error: Optional[str] = None
 
     for attempt in range(1, retries + 1):
         try:
@@ -122,7 +129,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
             if settings.download_audio and target_path and os.path.exists(target_path):
                 logging.info(f"Already exists: {target_path}")
                 _post_download(target_path, settings)
-                return DlStatus.OK
+                return DlStatus.OK, None
 
             candidates = ranked_audio_format_ids(info, settings)
             if not candidates:
@@ -131,7 +138,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                     logging.warning(f"No audio-only formats for client={prev}. Rotating → {nxt}")
                     set_client(ydl_opts, nxt)
                     continue
-                return DlStatus.NOAUDIO
+                return DlStatus.NOAUDIO, "no audio formats available"
 
             rotate_next_client = False
 
@@ -144,10 +151,11 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                         _post_download(target_path, settings)
                     else:
                         logging.warning(f"Download reported success but file not found at expected path: {target_path}")
-                    return DlStatus.OK
+                    return DlStatus.OK, None
 
                 except DownloadError as fe:
                     s = str(fe)
+                    last_error = s
 
                     # Clean retry for 416 on this SAME format
                     if "HTTP Error 416" in s and target_path and os.path.exists(target_path):
@@ -162,7 +170,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                             if target_path and os.path.exists(target_path):
                                 logging.info(f"Saved: {target_path}")
                                 _post_download(target_path, settings)
-                                return DlStatus.OK
+                                return DlStatus.OK, None
                         except DownloadError:
                             # fall through to try the next candidate
                             pass
@@ -195,10 +203,11 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 _post_download(target_path, settings)
             else:
                 logging.warning(f"Download reported success but file not found at expected path: {target_path}")
-            return DlStatus.OK
+            return DlStatus.OK, None
 
         except DownloadError as e:
             s = str(e)
+            last_error = s
 
             # Auth/rate limiting paths
             if ("Sign in to confirm" in s or "HTTP Error 429" in s) and using_cookies:
@@ -211,12 +220,12 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                     continue
 
             if "HTTP Error 429" in s:
-                return DlStatus.RATE
+                return DlStatus.RATE, s
 
             # Hard failures that won't improve with retries
             if any(msg in s for msg in ("Video unavailable", "Private video", "This video is no longer available")):
                 logging.error(s)
-                return DlStatus.ERR
+                return DlStatus.ERR, s
 
             logging.warning(f"Attempt {attempt} failed during info extraction: {s}. Backing off…")
             time.sleep(5 * attempt)
@@ -225,7 +234,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 logging.info(f"Switching client {prev} → {nxt}")
                 set_client(ydl_opts, nxt)
                 continue
-            return DlStatus.ERR
+            return DlStatus.ERR, s
 
         except Exception as e:
             logging.exception(f"Unexpected error on attempt {attempt}: {e}")
@@ -235,6 +244,7 @@ def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings:
                 logging.info(f"Switching client {prev} → {nxt}")
                 set_client(ydl_opts, nxt)
                 continue
-            return DlStatus.ERR
+            last_error = str(e)
+            return DlStatus.ERR, last_error
 
-    return DlStatus.ERR
+    return DlStatus.ERR, last_error

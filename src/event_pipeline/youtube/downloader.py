@@ -61,13 +61,21 @@ def download_mp3(event: Mp3DownloadEvent, settings: Optional[Settings] = None) -
     channel_dir, file_stem = _build_paths(event)
     work_dir = channel_dir / file_stem
     work_dir.mkdir(parents=True, exist_ok=True)
-    ydl_opts = make_ydl_opts(str(work_dir), file_stem, None, settings)
+    cookie_file: Optional[str] = None
+    if settings.cookie_file:
+        candidate = Path(settings.cookie_file).expanduser()
+        if candidate.is_file():
+            cookie_file = candidate.as_posix()
+        else:
+            LOG.warning("Configured YOUTUBE_COOKIE_FILE not found or not a file: %s", candidate)
+    ydl_opts = make_ydl_opts(str(work_dir), file_stem, cookie_file, settings)
     target_path = os.path.join(str(work_dir), f"{file_stem}.mp3")
     url = f"https://www.youtube.com/watch?v={event.video_id}"
     LOG.info("Downloading %s → %s", url, target_path)
-    status = download_one(url, ydl_opts, target_path, settings)
+    status, err = download_one(url, ydl_opts, target_path, settings)
     if status != DlStatus.OK:
-        raise RuntimeError(f"Failed to download {event.video_id}: status={status}")
+        details = err or status
+        raise RuntimeError(f"Failed to download {event.video_id}: {details}")
 
     local_path = Path(target_path)
     gcs_uri = None

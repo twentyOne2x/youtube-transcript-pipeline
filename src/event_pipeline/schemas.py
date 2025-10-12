@@ -17,6 +17,7 @@ class TopicName(str, Enum):
     DIARIZATION_READY = "diarization-ready"
     BINANCE_COURSE = "binance-course"
     PUMPFUN_CLIP = "pumpfun-clip"
+    YOUTUBE_COOKIE = "yt-cookie-request"
 
 
 class BaseEvent(BaseModel):
@@ -100,6 +101,13 @@ class DiarizationReadyEvent(BaseEvent):
         if not value.startswith("gs://"):
             raise ValueError("GCS URIs must start with 'gs://'")
         return value
+
+
+class YouTubeCookieRequestEvent(BaseEvent):
+    video_id: str = Field(min_length=1)
+    channel_id: str = Field(min_length=1)
+    reason: str = Field(min_length=1)
+    details: Optional[str] = None
 
 
 def decode_pubsub_message(

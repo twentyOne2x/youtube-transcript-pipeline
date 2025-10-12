@@ -40,3 +40,4 @@ class Settings:
     gcs_bucket: Optional[str] = os.environ.get("YOUTUBE_GCS_BUCKET")
     gcs_prefix: str = os.environ.get("YOUTUBE_GCS_PREFIX", "youtube_audio")
     keep_local_files: bool = os.environ.get("YOUTUBE_KEEP_LOCAL", "true").lower() == "true"
+    cookie_file: Optional[str] = os.environ.get("YOUTUBE_COOKIE_FILE")

@@ -5,6 +5,7 @@ from src.event_pipeline.schemas import (
     Mp3DownloadEvent,
     Mp3ReadyEvent,
     TopicName,
+    YouTubeCookieRequestEvent,
     YouTubeNewVideoEvent,
     decode_pubsub_message,
 )
@@ -45,3 +46,16 @@ def test_decode_pubsub_message():
 def test_diarization_ready_requires_gcs_uris():
     with pytest.raises(ValueError):
         DiarizationReadyEvent(mp3_uri="gs://bucket/file.mp3", diarized_uri="http://bad", entities_uri=None)
+
+
+def test_cookie_request_event_roundtrip():
+    event = YouTubeCookieRequestEvent(
+        video_id="vid123",
+        channel_id="UC123",
+        reason="cookie_required",
+        details="Sign in to confirm you're not a bot.",
+    )
+    encoded = event.to_base64_json()
+    decoded = YouTubeCookieRequestEvent.from_base64(encoded)
+    assert decoded.video_id == event.video_id
+    assert decoded.reason == "cookie_required"
