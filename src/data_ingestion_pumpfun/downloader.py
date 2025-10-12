@@ -10,7 +10,7 @@ from typing import Dict, Optional
 import shutil
 
 from .config import PumpfunSettings
-from src.utils.gcs import maybe_upload
+from src.utils.gcs import blob_exists, maybe_upload
 
 
 LOG = logging.getLogger(__name__)
@@ -109,13 +109,59 @@ def download_clip(
     mp3_path = clip_dir / f"{base_name}.mp3"
     metadata_path = clip_dir / "metadata.json"
 
+    try:
+        relative_dir = clip_dir.relative_to(base_dir)
+    except ValueError:
+        relative_dir = Path(clip_dir.name)
+
+    metadata_relative = (relative_dir / metadata_path.name).as_posix()
+    mp4_relative = (relative_dir / mp4_path.name).as_posix()
+    mp3_relative = (relative_dir / mp3_path.name).as_posix()
+
+    def _build_gcs_uri(relative_key: str) -> Optional[str]:
+        if not settings.gcs_bucket:
+            return None
+        parts = [p for p in (settings.gcs_prefix, relative_key) if p]
+        return f"gs://{settings.gcs_bucket}/{'/'.join(parts)}"
+
+    if settings.skip_existing and settings.gcs_bucket:
+        metadata_blob = "/".join(p for p in (settings.gcs_prefix, metadata_relative) if p)
+        mp4_blob = "/".join(p for p in (settings.gcs_prefix, mp4_relative) if p)
+        mp3_blob = "/".join(p for p in (settings.gcs_prefix, mp3_relative) if p)
+
+        metadata_exists = blob_exists(settings.gcs_bucket, metadata_blob)
+        mp4_exists = True if not settings.download_mp4 else blob_exists(settings.gcs_bucket, mp4_blob)
+        mp3_exists = True if not settings.download_mp3 else blob_exists(settings.gcs_bucket, mp3_blob)
+
+        if metadata_exists and mp4_exists and mp3_exists:
+            LOG.info("Skipping clip %s/%s (artifacts already uploaded)", room_name, clip.get("clipId"))
+            return ClipDownloadResult(
+                room_name=room_name,
+                clip_id=clip.get("clipId", ""),
+                mp4_path=None,
+                mp3_path=None,
+                skipped=True,
+                metadata_path=None,
+                gcs_mp4_uri=_build_gcs_uri(mp4_relative) if settings.download_mp4 else None,
+                gcs_mp3_uri=_build_gcs_uri(mp3_relative) if settings.download_mp3 else None,
+                gcs_metadata_uri=_build_gcs_uri(metadata_relative),
+            )
+
     if settings.skip_existing and mp4_path.exists() and (not settings.download_mp3 or mp3_path.exists()):
         LOG.info("Skipping clip %s/%s (files already exist)", room_name, clip.get("clipId"))
         if not metadata_path.exists():
             _write_metadata(metadata_path, clip, coin)
-        return ClipDownloadResult(room_name, clip.get("clipId", ""), mp4_path if mp4_path.exists() else None,
-                                  mp3_path if mp3_path.exists() else None, skipped=True,
-                                  metadata_path=metadata_path if metadata_path.exists() else None)
+        return ClipDownloadResult(
+            room_name,
+            clip.get("clipId", ""),
+            mp4_path if mp4_path.exists() else None,
+            mp3_path if mp3_path.exists() else None,
+            skipped=True,
+            metadata_path=metadata_path if metadata_path.exists() else None,
+            gcs_mp4_uri=_build_gcs_uri(mp4_relative) if settings.download_mp4 else None,
+            gcs_mp3_uri=_build_gcs_uri(mp3_relative) if settings.download_mp3 else None,
+            gcs_metadata_uri=_build_gcs_uri(metadata_relative),
+        )
 
     _write_metadata(metadata_path, clip, coin)
 
@@ -173,16 +219,10 @@ def download_clip(
     gcs_mp4_uri = None
     gcs_mp3_uri = None
 
-    try:
-        relative_dir = clip_dir.relative_to(base_dir)
-    except ValueError:
-        relative_dir = Path(clip_dir.name)
+    rel_mp4 = mp4_relative if mp4_result_path else None
+    rel_mp3 = mp3_relative if mp3_result_path else None
 
-    rel_metadata = (relative_dir / metadata_path.name).as_posix()
-    rel_mp4 = (relative_dir / mp4_path.name).as_posix() if mp4_result_path else None
-    rel_mp3 = (relative_dir / mp3_path.name).as_posix() if mp3_result_path else None
-
-    gcs_metadata_uri = maybe_upload(metadata_path, bucket=settings.gcs_bucket, prefix=settings.gcs_prefix, relative_key=rel_metadata) or gcs_metadata_uri
+    gcs_metadata_uri = maybe_upload(metadata_path, bucket=settings.gcs_bucket, prefix=settings.gcs_prefix, relative_key=metadata_relative) or gcs_metadata_uri
     if mp4_result_path:
         gcs_mp4_uri = maybe_upload(mp4_result_path, bucket=settings.gcs_bucket, prefix=settings.gcs_prefix, relative_key=rel_mp4 or mp4_result_path.name) or gcs_mp4_uri
     if mp3_result_path:
