@@ -5,16 +5,28 @@ import subprocess
 import threading
 from functools import lru_cache
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
-from google.auth.exceptions import DefaultCredentialsError
-from google.cloud import storage
+try:
+    from google.auth.exceptions import DefaultCredentialsError  # type: ignore
+except ImportError:  # pragma: no cover - fallback for minimal environments
+    class DefaultCredentialsError(Exception):
+        """Fallback when google-auth is unavailable."""
+
+        pass
+
+try:
+    from google.cloud import storage  # type: ignore
+except ImportError:  # pragma: no cover - optional dependency
+    storage = None  # type: ignore
 
 _client_lock = threading.Lock()
 
 
 @lru_cache(maxsize=1)
-def _storage_client() -> storage.Client:
+def _storage_client() -> Any:
+    if storage is None:  # pragma: no cover - requires google-cloud-storage
+        raise ImportError("google-cloud-storage is required for storage client operations")
     with _client_lock:
         return storage.Client()
 
@@ -27,7 +39,7 @@ def _guess_content_type(path: Path) -> str:
 def upload_file(local_path: Path, bucket_name: str, blob_name: str) -> None:
     try:
         client = _storage_client()
-    except DefaultCredentialsError:
+    except (DefaultCredentialsError, ImportError):
         _upload_with_gsutil(local_path, bucket_name, blob_name)
         return
 
@@ -35,6 +47,28 @@ def upload_file(local_path: Path, bucket_name: str, blob_name: str) -> None:
     blob = bucket.blob(blob_name)
     blob.content_type = _guess_content_type(local_path)
     blob.upload_from_filename(local_path.as_posix())
+
+
+def blob_exists(bucket_name: str, blob_name: str) -> bool:
+    """
+    Check whether a blob exists in GCS. Falls back to `gsutil stat` when the
+    storage client cannot be initialized (e.g. missing ADC).
+    """
+    try:
+        client = _storage_client()
+    except (DefaultCredentialsError, ImportError):
+        dest = f"gs://{bucket_name}/{blob_name}"
+        result = subprocess.run(
+            ["gsutil", "-q", "stat", dest],
+            check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        return result.returncode == 0
+
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
+    return blob.exists()
 
 
 def _upload_with_gsutil(local_path: Path, bucket_name: str, blob_name: str) -> None:

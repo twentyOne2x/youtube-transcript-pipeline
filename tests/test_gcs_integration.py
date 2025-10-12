@@ -5,12 +5,21 @@ import uuid
 import pytest
 from dotenv import load_dotenv
 from google.api_core.exceptions import Forbidden, NotFound
-from google.auth.exceptions import DefaultCredentialsError
-from google.cloud import storage
+try:
+    from google.auth.exceptions import DefaultCredentialsError
+except ImportError:  # pragma: no cover - dependency optional for unit runs
+    DefaultCredentialsError = Exception  # type: ignore
+
+try:
+    from google.cloud import storage
+except ImportError:  # pragma: no cover - skip when google-cloud-storage is absent
+    storage = None
 
 
 @pytest.mark.integration
 def test_media_bucket_exists_and_allows_roundtrip(tmp_path):
+    if storage is None:
+        pytest.skip("google-cloud-storage not available")
     load_dotenv()
     bucket_name = os.getenv("MEDIA_BUCKET", "media-just-skyline-474622-e1")
 
