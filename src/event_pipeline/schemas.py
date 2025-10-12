@@ -59,6 +59,19 @@ class Mp3DownloadEvent(BaseEvent):
     metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
+class BinanceCourseEvent(BaseEvent):
+    course_url: str = Field(min_length=1)
+    language: str = Field(min_length=1)
+
+
+class PumpfunClipEvent(BaseEvent):
+    room: str = Field(min_length=1)
+    clip_id: str = Field(min_length=1)
+    playlist_url: str = Field(min_length=1)
+    clip: Dict[str, Any] = Field(default_factory=dict)
+    coin: Dict[str, Any] = Field(default_factory=dict)
+
+
 class Mp3ReadyEvent(BaseEvent):
     gcs_uri: str = Field(min_length=1)
     metadata_uri: Optional[str] = None

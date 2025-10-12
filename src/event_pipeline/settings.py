@@ -19,11 +19,14 @@ class PipelineSettings(BaseSettings):
     mp3_download_topic: str = Field(default=TopicName.MP3_DOWNLOAD.value, validation_alias="MP3_DOWNLOAD_TOPIC")
     mp3_ready_topic: str = Field(default=TopicName.MP3_READY.value, validation_alias="MP3_READY_TOPIC")
     diarization_ready_topic: str = Field(default=TopicName.DIARIZATION_READY.value, validation_alias="DIARIZATION_READY_TOPIC")
+    binance_course_topic: str = Field(default=TopicName.BINANCE_COURSE.value, validation_alias="BINANCE_COURSE_TOPIC")
+    pumpfun_clip_topic: str = Field(default=TopicName.PUMPFUN_CLIP.value, validation_alias="PUMPFUN_CLIP_TOPIC")
     youtube_api_key: Optional[str] = Field(default=None, validation_alias="YOUTUBE_API_KEY")
     youtube_api_key_secret: Optional[str] = Field(default=None, validation_alias="YOUTUBE_API_KEY_SECRET")
     assembly_ai_api_key: Optional[str] = Field(default=None, validation_alias="ASSEMBLY_AI_API_KEY")
     assembly_ai_secret: Optional[str] = Field(default=None, validation_alias="ASSEMBLY_AI_SECRET")
     media_bucket: str = Field(..., validation_alias="MEDIA_BUCKET")
+    ingestion_topic: str = Field(default="ingestion-diarization-ready", validation_alias="INGESTION_TOPIC")
 
 
 @lru_cache(maxsize=1)
