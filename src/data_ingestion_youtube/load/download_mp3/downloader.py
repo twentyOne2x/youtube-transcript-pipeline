@@ -1,8 +1,17 @@
 import os, time, logging
 from pathlib import Path
 from typing import Optional
-import yt_dlp as ydlp
-from yt_dlp import DownloadError
+
+try:
+    import yt_dlp as ydlp  # type: ignore
+    from yt_dlp import DownloadError  # type: ignore
+except ImportError:  # pragma: no cover - optional during unit tests
+    ydlp = None
+
+    class DownloadError(Exception):
+        """Fallback DownloadError when yt-dlp is unavailable."""
+
+        pass
 from .config import Settings, DlStatus
 from .clients import set_client, ClientRotator
 from .formats import ranked_audio_format_ids, debug_log_formats
@@ -70,12 +79,17 @@ def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional
 
         # Cookies
         "_fallback_cookie_file": cookie_file if cookie_file else None,
-        "_browser": settings.browser,
-        "_profile": settings.profile,
 
         "restrictfilenames": True,
         "prefer_ffmpeg": True,
     }
+
+    if settings.use_browser_cookies:
+        ydl_opts["_browser"] = settings.browser
+        ydl_opts["_profile"] = settings.profile
+    else:
+        ydl_opts.pop("_browser", None)
+        ydl_opts.pop("_profile", None)
 
     # Limit FFmpeg CPU threads (helps VM responsiveness)
     ff_threads = int(os.environ.get("FFMPEG_THREADS", "1"))
@@ -92,6 +106,8 @@ def make_ydl_opts(video_dir_path: str, base_filename: str, cookie_file: Optional
     return ydl_opts
 
 def download_one(url: str, ydl_opts: dict, target_path: Optional[str], settings: Settings, retries: int = 4) -> str:
+    if ydlp is None:  # pragma: no cover - requires yt-dlp runtime
+        raise ImportError("yt_dlp is required to download videos")
     using_cookies = bool(ydl_opts.get("_fallback_cookie_file")) or ("_browser" in ydl_opts and "_profile" in ydl_opts)
     rot = ClientRotator(using_cookies, settings)
     set_client(ydl_opts, rot.current())

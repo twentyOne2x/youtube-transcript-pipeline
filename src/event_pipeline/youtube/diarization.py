@@ -9,9 +9,20 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-import assemblyai as aai
-from google.auth.exceptions import DefaultCredentialsError
-from google.cloud import storage
+try:
+    import assemblyai as aai  # type: ignore
+except ImportError:  # pragma: no cover - optional during unit test runs
+    aai = None
+
+try:
+    from google.auth.exceptions import DefaultCredentialsError  # type: ignore
+except ImportError:  # pragma: no cover
+    DefaultCredentialsError = Exception  # type: ignore
+
+try:
+    from google.cloud import storage  # type: ignore
+except ImportError:  # pragma: no cover
+    storage = None  # type: ignore
 
 from src.event_pipeline.schemas import DiarizationReadyEvent, Mp3ReadyEvent
 from src.utils.gcs import maybe_upload
@@ -43,6 +54,8 @@ def _prefix(event: Mp3ReadyEvent) -> str:
 def run_diarization(event: Mp3ReadyEvent, api_key: str, bucket: str) -> DiarizationResult:
     if not api_key:
         raise ValueError("AssemblyAI API key required for diarization.")
+    if aai is None:
+        raise ImportError("assemblyai package is required for diarization")
     aai.settings.api_key = api_key
     transcriber = aai.Transcriber()
     LOG.info("Submitting %s for diarization", event.gcs_uri)
@@ -107,9 +120,11 @@ def _download_gcs_object(uri: str) -> str:
     os.close(fd)
     tmp = Path(temp_path)
     try:
+        if storage is None:
+            raise ImportError("google-cloud-storage not available")
         client = storage.Client()
         client.bucket(bucket_name).blob(blob_name).download_to_filename(tmp.as_posix())
-    except DefaultCredentialsError:
+    except (DefaultCredentialsError, ImportError):
         subprocess.run(["gsutil", "cp", uri, tmp.as_posix()], check=True)
     return tmp.as_posix()
 

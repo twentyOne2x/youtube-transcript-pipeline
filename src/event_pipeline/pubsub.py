@@ -5,7 +5,10 @@ import logging
 from functools import lru_cache
 from typing import Mapping, Optional
 
-from google.cloud import pubsub_v1
+try:
+    from google.cloud import pubsub_v1  # type: ignore
+except ImportError:  # pragma: no cover - optional dependency
+    pubsub_v1 = None  # type: ignore
 
 from .schemas import BaseEvent
 from .settings import get_settings
@@ -15,6 +18,8 @@ LOG = logging.getLogger(__name__)
 
 @lru_cache(maxsize=1)
 def _publisher_client() -> pubsub_v1.PublisherClient:
+    if pubsub_v1 is None:  # pragma: no cover - requires google-cloud-pubsub
+        raise ImportError("google-cloud-pubsub is required for publish operations")
     return pubsub_v1.PublisherClient()
 
 

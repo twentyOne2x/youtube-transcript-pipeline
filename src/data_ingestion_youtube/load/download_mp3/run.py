@@ -169,7 +169,7 @@ def _print_plan_summary_table(plan_per_channel: Dict[str, List[Dict]]) -> None:
     cnt_width = 8
     top_width = 90
 
-    print("\n=== Download Plan Summary (newest → oldest) ===")
+    print("\n=== Download Plan Summary (newest -> oldest) ===")
     print(f"{'Channel':{ch_width}} {'Missing':>{cnt_width}}  Top-3 most recent missing")
     print("-" * (ch_width + cnt_width + 2 + 64))
 
