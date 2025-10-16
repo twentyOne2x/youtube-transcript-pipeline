@@ -162,6 +162,8 @@ def test_diarization_worker_publishes_ready_event(monkeypatch):
         return DiarizationReadyEvent(
             mp3_uri=event.gcs_uri,
             diarized_uri=res.diarized_uri,
+            metadata_uri=event.metadata_uri,
+            video_id=event.video_id,
             entities_uri=res.entities_uri,
         )
 
@@ -257,6 +259,8 @@ def test_warehouse_ingestion_writes_buffer(monkeypatch, tmp_path):
     event = DiarizationReadyEvent(
         mp3_uri="gs://bucket/audio.mp3",
         diarized_uri="gs://bucket/diarized.json",
+        metadata_uri="gs://bucket/meta.json",
+        video_id="abc123def45",
         entities_uri=None,
     )
     envelope = {"message": {"data": event.to_base64_json()}}

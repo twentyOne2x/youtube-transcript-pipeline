@@ -76,11 +76,11 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - Acts as the bridge to the Pinecone-backed ingestion stack.
 
 ### 6. Diarization Indexer (Cloud Run)
-- Push-subscription target for `diarization-ready` (`projects/just-skyline-474622-e1/subscriptions/diarization-indexer-videos`).
-- Validates Pub/Sub signature (optional) then hydrates namespace/channel policy before ingest.
-- Downloads the referenced diarization + entity JSON, generates parent/child vectors, and upserts them into Pinecone.
+- Push-subscription target for `diarization-ready` (see `services/diarization_indexer/app.py` in this repo).
+- Requires `OPENAI_API_KEY`, `PINECONE_API_KEY`, `PINECONE_INDEX` (plus optional `PINECONE_NAMESPACE`, `EMBEDDING_MODEL`, `INDEXER_CHUNK_MAX_CHARS`).
+- Streams the diarization JSON from GCS, chunks text (default 1.2k characters), generates embeddings with OpenAI, and upserts vectors into Pinecone with rich metadata (`pumpfun_clip_id`, `pumpfun_coin_name`, timing, speaker).
+- Optional clean-up toggles (`INDEXER_DELETE_MP3`, `INDEXER_DELETE_DIARIZED`) remove artefacts from GCS once the vector write succeeds.
 - Responds with 204 on success so Pub/Sub can ack; failures bubble 5xx and trigger retries / dead-lettering.
-- Deployment image: `us-central1-docker.pkg.dev/just-skyline-474622-e1/ingestion/diarization-indexer:latest`.
 
 ### 7. Binance Pipeline
 - **Binance Course Publisher (Cloud Run)**
@@ -100,7 +100,7 @@ Cloud Scheduler ─▶ Cloud Run (Pump.fun Clip Publisher) ─▶ pumpfun-clip t
 - **Pump.fun Downloader (Cloud Run)**
   - Pub/Sub push subscriber consuming `pumpfun-clip`.
   - Invokes existing ffmpeg-based downloader, uploads metadata/mp3 to `gs://<bucket>/<prefix>/`, and publishes `Mp3ReadyEvent` (skipping duplicates).
-  - Requires `PUMPFUN_GCS_BUCKET`/`PUMPFUN_GCS_PREFIX`. Automatically disables local retention for Cloud Run.
+  - Requires `PUMPFUN_GCS_BUCKET`/`PUMPFUN_GCS_PREFIX`. Forces MP3-only extraction and disables local retention for Cloud Run to keep livestream payloads lightweight.
 
 ### 9. State Notifications (Telegram)
 - The notifier now lives in a separate repository [`twentyOne2x/telegram-state-notifier`](https://github.com/twentyOne2x/telegram-state-notifier) (FastAPI + native Telegram API).

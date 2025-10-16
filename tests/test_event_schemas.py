@@ -45,7 +45,13 @@ def test_decode_pubsub_message():
 
 def test_diarization_ready_requires_gcs_uris():
     with pytest.raises(ValueError):
-        DiarizationReadyEvent(mp3_uri="gs://bucket/file.mp3", diarized_uri="http://bad", entities_uri=None)
+        DiarizationReadyEvent(
+            mp3_uri="gs://bucket/file.mp3",
+            diarized_uri="http://bad",
+            metadata_uri=None,
+            video_id="vid123",
+            entities_uri=None,
+        )
 
 
 def test_cookie_request_event_roundtrip():

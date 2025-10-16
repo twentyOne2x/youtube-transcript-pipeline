@@ -31,6 +31,7 @@ declare -A service_accounts=(
   ["${SERVICE_PREFIX}downloader"]="Subscribes mp3-download, publishes mp3-ready"
   ["${SERVICE_PREFIX}diarizer"]="Subscribes mp3-ready, publishes diarization-ready"
   ["${SERVICE_PREFIX}warehouse"]="Subscribes diarization-ready"
+  ["${SERVICE_PREFIX}diarization-indexer"]="Indexes diarization outputs into Pinecone"
   ["${SERVICE_PREFIX}binance-crawler"]="Publishes binance-course events"
   ["${SERVICE_PREFIX}binance-downloader"]="Consumes binance-course, publishes mp3-ready"
   ["${SERVICE_PREFIX}pumpfun-publisher"]="Publishes pumpfun-clip events"
@@ -87,6 +88,14 @@ gcloud projects add-iam-policy-binding "${PROJECT}" \
   --role="roles/pubsub.subscriber"
 
 gcloud projects add-iam-policy-binding "${PROJECT}" \
+  --member="serviceAccount:${SERVICE_PREFIX}diarization-indexer@${PROJECT}.iam.gserviceaccount.com" \
+  --role="roles/pubsub.subscriber"
+
+gcloud projects add-iam-policy-binding "${PROJECT}" \
+  --member="serviceAccount:${SERVICE_PREFIX}diarization-indexer@${PROJECT}.iam.gserviceaccount.com" \
+  --role="roles/storage.objectAdmin"
+
+gcloud projects add-iam-policy-binding "${PROJECT}" \
   --member="serviceAccount:${SERVICE_PREFIX}binance-crawler@${PROJECT}.iam.gserviceaccount.com" \
   --role="roles/pubsub.publisher"
 
@@ -123,6 +132,7 @@ echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}metadata --topic=yt-
 echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}downloader --topic=mp3-download --push-endpoint=https://<downloader-url>/pubsub/push --project=${PROJECT}"
 echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}diarizer --topic=mp3-ready --push-endpoint=https://<diarizer-url>/pubsub/push --project=${PROJECT}"
 echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}warehouse --topic=diarization-ready --push-endpoint=https://<warehouse-url>/pubsub/push --project=${PROJECT}"
+echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}diarization-indexer --topic=diarization-ready --push-endpoint=https://<diarization-indexer-url>/pubsub/push --project=${PROJECT}"
 echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}binance-downloader --topic=binance-course --push-endpoint=https://<binance-downloader-url>/pubsub/push --project=${PROJECT}"
 echo "  gcloud pubsub subscriptions create ${SERVICE_PREFIX}pumpfun-downloader --topic=pumpfun-clip --push-endpoint=https://<pumpfun-downloader-url>/pubsub/push --project=${PROJECT}"
 

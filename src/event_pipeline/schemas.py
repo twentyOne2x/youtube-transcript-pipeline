@@ -91,9 +91,11 @@ class Mp3ReadyEvent(BaseEvent):
 class DiarizationReadyEvent(BaseEvent):
     mp3_uri: str = Field(min_length=1)
     diarized_uri: str = Field(min_length=1)
+    metadata_uri: Optional[str] = None
+    video_id: str = Field(min_length=1)
     entities_uri: Optional[str] = None
 
-    @field_validator("mp3_uri", "diarized_uri", "entities_uri")
+    @field_validator("mp3_uri", "diarized_uri", "metadata_uri", "entities_uri")
     @classmethod
     def _validate_uri(cls, value: Optional[str]) -> Optional[str]:
         if value is None:

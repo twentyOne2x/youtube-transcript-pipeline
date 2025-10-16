@@ -3,8 +3,6 @@ from __future__ import annotations
 import json
 import logging
 import os
-import subprocess
-import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -14,18 +12,8 @@ try:
 except ImportError:  # pragma: no cover - optional during unit test runs
     aai = None
 
-try:
-    from google.auth.exceptions import DefaultCredentialsError  # type: ignore
-except ImportError:  # pragma: no cover
-    DefaultCredentialsError = Exception  # type: ignore
-
-try:
-    from google.cloud import storage  # type: ignore
-except ImportError:  # pragma: no cover
-    storage = None  # type: ignore
-
 from src.event_pipeline.schemas import DiarizationReadyEvent, Mp3ReadyEvent
-from src.utils.gcs import maybe_upload
+from src.utils.gcs import download_file, maybe_upload
 
 LOG = logging.getLogger(__name__)
 
@@ -104,34 +92,13 @@ def build_ready_event(src_event: Mp3ReadyEvent, result: DiarizationResult) -> Di
     return DiarizationReadyEvent(
         mp3_uri=src_event.gcs_uri,
         diarized_uri=result.diarized_uri,
+        metadata_uri=src_event.metadata_uri,
+        video_id=src_event.video_id,
         entities_uri=result.entities_uri,
     )
 
 
 def _resolve_audio_source(gcs_or_path: str) -> str:
     if gcs_or_path.startswith("gs://"):
-        return _download_gcs_object(gcs_or_path)
+        return download_file(gcs_or_path).as_posix()
     return gcs_or_path
-
-
-def _download_gcs_object(uri: str) -> str:
-    bucket_name, blob_name = _split_gs_uri(uri)
-    fd, temp_path = tempfile.mkstemp(suffix=Path(blob_name).suffix or ".mp3")
-    os.close(fd)
-    tmp = Path(temp_path)
-    try:
-        if storage is None:
-            raise ImportError("google-cloud-storage not available")
-        client = storage.Client()
-        client.bucket(bucket_name).blob(blob_name).download_to_filename(tmp.as_posix())
-    except (DefaultCredentialsError, ImportError):
-        subprocess.run(["gsutil", "cp", uri, tmp.as_posix()], check=True)
-    return tmp.as_posix()
-
-
-def _split_gs_uri(uri: str) -> tuple[str, str]:
-    without_scheme = uri[len("gs://") :]
-    bucket, _, blob = without_scheme.partition("/")
-    if not bucket or not blob:
-        raise ValueError(f"Invalid GCS URI: {uri}")
-    return bucket, blob

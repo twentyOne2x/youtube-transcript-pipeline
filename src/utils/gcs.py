@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import mimetypes
+import os
 import subprocess
 import threading
+import tempfile
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Optional
@@ -107,3 +109,48 @@ def maybe_upload(
     blob_name = "/".join(parts)
     upload_file(local_path, bucket, blob_name)
     return f"gs://{bucket}/{blob_name}"
+
+
+def split_gs_uri(uri: str) -> tuple[str, str]:
+    if not uri.startswith("gs://"):
+        raise ValueError(f"Invalid GCS URI: {uri}")
+    without_scheme = uri[len("gs://") :]
+    bucket, _, blob = without_scheme.partition("/")
+    if not bucket or not blob:
+        raise ValueError(f"Invalid GCS URI: {uri}")
+    return bucket, blob
+
+
+def download_file(uri: str, destination: Optional[Path] = None) -> Path:
+    bucket_name, blob_name = split_gs_uri(uri)
+    if destination is None:
+        suffix = Path(blob_name).suffix or ""
+        fd, temp_path = tempfile.mkstemp(suffix=suffix)
+        os.close(fd)
+        destination = Path(temp_path)
+
+    try:
+        client = _storage_client()
+    except (DefaultCredentialsError, ImportError):
+        subprocess.run(
+            ["gsutil", "cp", uri, destination.as_posix()],
+            check=True,
+        )
+        return destination
+
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
+    blob.download_to_filename(destination.as_posix())
+    return destination
+
+
+def delete_blob(uri: str) -> None:
+    bucket_name, blob_name = split_gs_uri(uri)
+    try:
+        client = _storage_client()
+    except (DefaultCredentialsError, ImportError):
+        subprocess.run(["gsutil", "rm", uri], check=True)
+        return
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
+    blob.delete()

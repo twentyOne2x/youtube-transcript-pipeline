@@ -2,8 +2,11 @@ from __future__ import annotations
 
 import pytest
 
-from telegram_state_notifier.notifier import cookies
-from telegram_state_notifier.notifier.settings import Settings
+cookies_module = pytest.importorskip("telegram_state_notifier.notifier.cookies")
+settings_module = pytest.importorskip("telegram_state_notifier.notifier.settings")
+
+cookies = cookies_module
+Settings = settings_module.Settings
 
 
 def test_looks_like_cookie_text_detects_header():

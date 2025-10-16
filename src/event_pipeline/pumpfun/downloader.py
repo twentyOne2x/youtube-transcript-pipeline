@@ -20,6 +20,10 @@ def _ensure_settings() -> PumpfunSettings:
         settings = replace(settings, keep_local_files=False)
     if not settings.skip_existing:
         settings = replace(settings, skip_existing=True)
+    if settings.download_mp4:
+        settings = replace(settings, download_mp4=False)
+    if not settings.download_mp3:
+        settings = replace(settings, download_mp3=True)
     return settings
 
 

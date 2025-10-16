@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib
 from types import SimpleNamespace
 from pathlib import Path
 
@@ -19,7 +20,10 @@ def _envelope(event) -> dict:
 
 
 def test_pumpfun_pipeline_end_to_end(monkeypatch):
-    from services import pumpfun_publisher, pumpfun_downloader, diarization_worker, diarization_indexer
+    pumpfun_publisher = importlib.import_module("services.pumpfun_publisher.app")
+    pumpfun_downloader = importlib.import_module("services.pumpfun_downloader.app")
+    diarization_worker = importlib.import_module("services.diarization_worker.app")
+    diarization_indexer = importlib.import_module("services.diarization_indexer.app")
 
     sample_event = PumpfunClipEvent(
         room="room-xyz",
@@ -36,14 +40,14 @@ def test_pumpfun_pipeline_end_to_end(monkeypatch):
         published_messages.append((topic, event, {"source": topic.split("-")[0]}))
 
     # Pumpfun publisher setup
-    monkeypatch.setattr(pumpfun_publisher.app, "_discover", lambda payload: [sample_event])
+    monkeypatch.setattr(pumpfun_publisher, "_discover", lambda payload: [sample_event])
     monkeypatch.setattr(
-        pumpfun_publisher.app,
+        pumpfun_publisher,
         "get_settings",
         lambda: SimpleNamespace(pumpfun_clip_topic="pumpfun-clip"),
     )
     monkeypatch.setattr(
-        pumpfun_publisher.app,
+        pumpfun_publisher,
         "publish_event",
         lambda topic, event, attributes=None: record_publish("publisher", event, topic=topic),
     )
@@ -55,17 +59,17 @@ def test_pumpfun_pipeline_end_to_end(monkeypatch):
         video_id="pumpfun_room-xyz_clip-123",
     )
     monkeypatch.setattr(
-        pumpfun_downloader.app,
+        pumpfun_downloader,
         "process_clip_event",
         lambda event: mp3_event,
     )
     monkeypatch.setattr(
-        pumpfun_downloader.app,
+        pumpfun_downloader,
         "get_settings",
         lambda: SimpleNamespace(mp3_ready_topic="mp3-ready"),
     )
     monkeypatch.setattr(
-        pumpfun_downloader.app,
+        pumpfun_downloader,
         "publish_event",
         lambda topic, event, attributes=None: record_publish("downloader", event, topic=topic),
     )
@@ -78,12 +82,12 @@ def test_pumpfun_pipeline_end_to_end(monkeypatch):
         entities_uri=None,
     )
     monkeypatch.setattr(
-        diarization_worker.app,
+        diarization_worker,
         "run_diarization",
         lambda event, api_key, bucket: diarization_result,
     )
     monkeypatch.setattr(
-        diarization_worker.app,
+        diarization_worker,
         "get_settings",
         lambda: SimpleNamespace(
             assembly_ai_keys=[],
@@ -93,7 +97,7 @@ def test_pumpfun_pipeline_end_to_end(monkeypatch):
         ),
     )
     monkeypatch.setattr(
-        diarization_worker.app,
+        diarization_worker,
         "publish_event",
         lambda topic, event, attributes=None: record_publish("diarizer", event, topic=topic),
     )
@@ -103,8 +107,8 @@ def test_pumpfun_pipeline_end_to_end(monkeypatch):
         indexed_events.append(event)
         return IndexingResult(chunk_count=1, vector_count=1, deleted_mp3=False, deleted_diarized=False)
 
-    monkeypatch.setattr(diarization_indexer.app, "_settings", lambda: SimpleNamespace())
-    monkeypatch.setattr(diarization_indexer.app, "process_event", fake_process_event)
+    monkeypatch.setattr(diarization_indexer, "_settings", lambda: SimpleNamespace())
+    monkeypatch.setattr(diarization_indexer, "process_event", fake_process_event)
 
     publisher_client = TestClient(pumpfun_publisher.app)
     downloader_client = TestClient(pumpfun_downloader.app)

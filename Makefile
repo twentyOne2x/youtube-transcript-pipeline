@@ -4,7 +4,7 @@ TAG ?= latest
 MEDIA_BUCKET ?= media-just-skyline-474622-e1
 IMAGE_PREFIX ?= gcr.io/$(PROJECT)
 SERVICES := youtube_webhook metadata_enricher mp3_downloader diarization_worker warehouse_ingestion \
-	pumpfun_publisher pumpfun_downloader binance_crawler binance_downloader
+	diarization_indexer pumpfun_publisher pumpfun_downloader binance_crawler binance_downloader
 
 .PHONY: help
 help:
