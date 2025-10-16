@@ -69,10 +69,14 @@ def _publish(events: Sequence[PumpfunClipEvent]) -> int:
 
 @app.post("/trigger")
 async def trigger(request: Request) -> Dict[str, Any]:
-    try:
-        body = await request.json()
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=400, detail="Invalid JSON payload")
+    raw_body = await request.body()
+    if not raw_body or not raw_body.strip():
+        body: Dict[str, Any] = {}
+    else:
+        try:
+            body = json.loads(raw_body.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            raise HTTPException(status_code=400, detail="Invalid JSON payload")
     payload = _parse_payload(body)
     events = _discover(payload)
     published = _publish(events)

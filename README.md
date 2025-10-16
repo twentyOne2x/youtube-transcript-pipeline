@@ -30,6 +30,7 @@ See the appendix for a detailed comparison between the first commit and the curr
 - **Pump.fun support:** download archived livestream clips as MP4/MP3 into a parallel directory tree.
 - **Binance Academy support:** crawl Learn & Earn courses, pull hosted videos, and store alongside structured metadata.
 - **Event-driven deployment:** Cloud Run + Pub/Sub services emit Telegram notifications (`/runs`, `/gce`, `/cost*`, cookie prompts) so operations stay visible.
+- **Vector indexing:** a Pinecone-backed indexer consumes `diarization-ready` events, embeds Pump.fun/YouTube transcripts with OpenAI, and can purge source audio after ingestion.
 
 ---
 
@@ -202,6 +203,7 @@ Environment overrides (optional):
 - `PUMPFUN_GCS_BUCKET` (optional) upload outputs straight to GCS; pair with Google auth (`GOOGLE_APPLICATION_CREDENTIALS` or gcloud auth).
 - `PUMPFUN_GCS_PREFIX` (default `pumpfun_streams`) controls the remote folder.
 - `PUMPFUN_KEEP_LOCAL` (default `true`) keep/delete local copies after upload.
+  - The Cloud Run downloader ignores MP4 requests and enforces MP3-only + `PUMPFUN_KEEP_LOCAL=0` so heavy livestreams never persist on the container filesystem.
 
 ### Refreshing channel names
 
@@ -248,6 +250,50 @@ PATH="../rag/google-cloud-sdk/bin:$PATH" ./scripts/setup_storage_bucket.sh sync 
   --prefix pumpfun_streams \
   --exclude '.*\\.json$'
 ```
+
+### Cloud pipeline (Pump.fun → MP3 → diarization → Pinecone)
+
+End-to-end automation reuses the shared Cloud Run stack:
+
+1. **Bootstrap Pub/Sub + IAM**  
+   Run `infra/gcloud/bootstrap_youtube_pipeline.sh` (pass `PROJECT`, `REGION`, `MEDIA_BUCKET`, `SERVICE_PREFIX` as needed). This now provisions service accounts for the Pump.fun publisher/downloader *and* the new `diarization-indexer`.
+
+2. **Deploy services**  
+   Build & push containers:  
+   ```bash
+   make build SERVICE=pumpfun_publisher
+   make build SERVICE=pumpfun_downloader
+   make build SERVICE=diarization_worker
+   make build SERVICE=diarization_indexer
+   ```  
+   Deploy each (`make deploy SERVICE=...`) with environment variables:
+   - Common: `GCP_PROJECT`, `MEDIA_BUCKET`, `PUMPFUN_GCS_BUCKET`, `PUMPFUN_GCS_PREFIX`
+   - `pumpfun_publisher`: optionally `PUMPFUN_ROOMS`, `PUMPFUN_ROOMS_CONFIG`, `PUMPFUN_MAX_CLIPS_PER_ROOM`
+   - `pumpfun_downloader`: no MP4 artefacts are kept; set `PUMPFUN_MP3_BITRATE` if you need higher bitrate audio.
+   - `diarization_worker`: `ASSEMBLY_AI_API_KEY` or `ASSEMBLY_AI_API_KEYS`
+   - `diarization_indexer`:  
+     `OPENAI_API_KEY`, `PINECONE_API_KEY`, `PINECONE_INDEX`, optional `PINECONE_NAMESPACE`, `EMBEDDING_MODEL` (default `text-embedding-3-small`)
+
+3. **Streaming heavy clips without storing media**  
+   Set `INDEXER_DELETE_MP3=1` and/or `INDEXER_DELETE_DIARIZED=1` on the indexer to delete the MP3 and AssemblyAI JSON from GCS once vectors land in Pinecone. Pair this with a bucket lifecycle rule (e.g. 1–3 days) as a second line of defense.
+
+4. **Scheduling**  
+   Create a Cloud Scheduler job that POSTs to `pumpfun-publisher` `/trigger` every 5–10 minutes. Both the downloader and diarization worker are Pub/Sub push subscribers (`pumpfun-clip` → `mp3-ready` → `diarization-ready`). The indexer listens on `diarization-ready` and upserts into Pinecone.
+
+5. **Vector database hygiene**  
+   The indexer attaches rich metadata (`pumpfun_clip_id`, `pumpfun_room`, `pumpfun_coin_name`, segment timing in seconds) so downstream search/UIs can filter. Adjust chunk size via `INDEXER_CHUNK_MAX_CHARS` (default 1200 characters) if you want denser or sparser vectors.
+
+### Local smoke test
+
+Run the fully mocked pipeline test before deploying or when debugging:
+
+```bash
+.venv/bin/python -m pytest tests/test_pipeline_flow.py
+```
+
+The test drives the publisher → downloader → diarization worker → indexer flow and verifies the Pub/Sub payloads without calling external APIs. Pair it with your Cloud Run + Pub/Sub smoke checks (`scripts/smoke_test_pumpfun.py`) to validate the live deployment.
+
+This setup keeps storage lean (MP4 disabled, MP3 optional), handles AssemblyAI + OpenAI credentials safely through Secret Manager, and delivers fully diarized Pump.fun clips straight into your vector database with minimal operator touch.
 
 Set `PUMPFUN_GCS_BUCKET=my-media-bucket` (and credentials via `GOOGLE_APPLICATION_CREDENTIALS` or `gcloud auth`) before running the downloader and files will stream directly to `gs://my-media-bucket/pumpfun_streams/...`. Toggle `PUMPFUN_KEEP_LOCAL=0` to clean up local clips after upload.
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pytest
+from fastapi.testclient import TestClient
 
 from src.data_ingestion_pumpfun.downloader import ClipDownloadResult
 from src.event_pipeline.pumpfun.publisher import discover_clip_events
@@ -94,3 +95,26 @@ def test_process_clip_event_skipped(monkeypatch, pumpfun_event):
 
     ready = process_clip_event(pumpfun_event)
     assert ready is None
+
+
+def test_pumpfun_publisher_allows_empty_body(monkeypatch):
+    from services.pumpfun_publisher import app as publisher_app
+
+    events_captured = []
+
+    def fake_discover(payload):
+        events_captured.append(payload)
+        return []
+
+    def fake_publish(events):
+        assert events == []
+        return 0
+
+    monkeypatch.setattr("services.pumpfun_publisher.app._discover", fake_discover)
+    monkeypatch.setattr("services.pumpfun_publisher.app._publish", fake_publish)
+
+    client = TestClient(publisher_app.app)
+    response = client.post("/trigger")
+    assert response.status_code == 200
+    assert response.json() == {"published": 0}
+    assert events_captured == [{}]
