@@ -205,7 +205,36 @@ def download_clip(
                 settings.mp3_bitrate,
                 str(mp3_path),
             ]
-            _run_ffmpeg(args)
+            try:
+                _run_ffmpeg(args)
+            except RuntimeError:
+                # If a previous run was interrupted (Ctrl-C/timeout), ffmpeg may have left a
+                # corrupt/truncated mp4 on disk. In that case the mp3 extraction fails (e.g.
+                # "moov atom not found") and the "skip existing" logic would prevent a re-download
+                # forever. Recover by deleting the mp4 and retrying once.
+                if settings.download_mp4 and mp4_result_path and mp4_path.exists() and settings.skip_existing:
+                    try:
+                        mp4_path.unlink()
+                    except OSError:
+                        pass
+                    LOG.warning("mp3 extraction failed; re-downloading mp4 and retrying once: %s", mp4_path)
+                    _run_ffmpeg(
+                        [
+                            settings.ffmpeg_bin,
+                            "-y",
+                            "-loglevel",
+                            "error",
+                            "-hide_banner",
+                            "-i",
+                            playlist_url,
+                            "-c",
+                            "copy",
+                            str(mp4_path),
+                        ]
+                    )
+                    _run_ffmpeg(args)
+                else:
+                    raise
         mp3_result_path = mp3_path
 
     if not settings.download_mp4 and mp4_path.exists() and not settings.download_mp3:
